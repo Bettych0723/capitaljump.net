@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Contact 頁專用頁首底圖（.page-header.page-header-contact）。
+       其他頁：page-header.svg＝光路匯流、about＝等角三層平台、work＝上升柱狀圖。
+       這張用「訊息往返」的構圖：右側＝兩個對話框（送出／回覆）與擴散訊號環，
+       左側＝地點標記與同心圓（對應頁面下方的辦公室地圖）。
+       版面依據與 page-header.svg 相同：標題置中落在 y 150–330，
+       手機只顯示中間約 x 680–1240，中央保留網格紋理。 -->
+  <defs>
+    <linearGradient id="pcBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="pcMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.28"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pcBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.36"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="pcBubbleA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00C9D6" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="pcBubbleB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4DA3FF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="pcLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#4DA3FF" stop-opacity="0.15"/>
+      <stop offset="0.6" stop-color="#00D8CE" stop-opacity="0.6"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <pattern id="pcGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 L0 60" fill="none" stroke="#3F9BBE" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pcGridMaskG" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pcGridMask"><rect width="1920" height="480" fill="url(#pcGridMaskG)"/></mask>
+
+    <linearGradient id="pcPinFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.7" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="pcPinMask"><rect x="0" y="0" width="620" height="480" fill="url(#pcPinFade)"/></mask>
+
+    <radialGradient id="pcDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.62"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.40"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.12"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pcTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.65"/>
+      <stop offset="0.22" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pcBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.85"/>
+      <stop offset="0.14" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="pcSoft" filterUnits="userSpaceOnUse" x="1180" y="40" width="700" height="400"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="pcSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+
+  <style>
+    /* 送出的訊息沿線飛向對話框；對話框內的三點輪流亮（正在回覆）；地點標記擴散 */
+    @keyframes pcTrail  { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -400; } }
+    @keyframes pcDot    { 0%,100% { opacity: .25; } 50% { opacity: .95; } }
+    @keyframes pcRipple { 0% { transform: scale(1); opacity: .45; } 70% { opacity: .08; } 100% { transform: scale(2.8); opacity: 0; } }
+    @keyframes pcFloat  { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+    .pc-trail { stroke-dasharray: 34 366; animation: pcTrail 4.5s linear infinite; }
+    .pc-dot   { animation: pcDot 1.8s ease-in-out infinite; }
+    .pc-dot-2 { animation-delay: -1.2s; }
+    .pc-dot-3 { animation-delay: -0.6s; }
+    .pc-ripple   { transform-box: view-box; transform-origin: 300px 330px; animation: pcRipple 6s cubic-bezier(.2,.6,.3,1) infinite; }
+    .pc-ripple-2 { animation-delay: -3s; }
+    .pc-bubble-a { animation: pcFloat 7s ease-in-out infinite; }
+    .pc-bubble-b { animation: pcFloat 7s ease-in-out infinite; animation-delay: -3.5s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pc-trail, .pc-dot, .pc-ripple, .pc-bubble-a, .pc-bubble-b { animation: none; }
+      .pc-trail, .pc-ripple { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="1920" height="480" fill="url(#pcBg)"/>
+  <g mask="url(#pcGridMask)"><rect width="1920" height="480" fill="url(#pcGrid)"/></g>
+  <ellipse cx="1660" cy="200" rx="420" ry="300" fill="url(#pcMint)"/>
+  <ellipse cx="240"  cy="380" rx="480" ry="290" fill="url(#pcBlue)"/>
+
+  <!-- 2. 左側：地點標記＋擴散圈（對應頁面下方的辦公室地圖） -->
+  <g mask="url(#pcPinMask)">
+    <g fill="none" stroke="#4DA3FF" stroke-width="2">
+      <circle class="pc-ripple"             cx="300" cy="330" r="46"/>
+      <circle class="pc-ripple pc-ripple-2" cx="300" cy="330" r="46"/>
+    </g>
+    <g fill="none" stroke="#4DA3FF" stroke-opacity="0.35" stroke-width="1.5">
+      <circle cx="300" cy="330" r="86"/>
+      <circle cx="300" cy="330" r="136" stroke-opacity="0.18"/>
+    </g>
+    <!-- 標記本體 -->
+    <path d="M 300,268 c -26,0 -47,21 -47,47 c 0,33 47,77 47,77 c 0,0 47,-44 47,-77 c 0,-26 -21,-47 -47,-47 z"
+          fill="#0A8BFF" fill-opacity="0.16" stroke="#4DA3FF" stroke-opacity="0.75" stroke-width="2"/>
+    <circle cx="300" cy="315" r="13" fill="#C6E4FF" fill-opacity="0.85"/>
+    <!-- 走線 -->
+    <g fill="none" stroke="#3F9BBE" stroke-opacity="0.30" stroke-width="1.5" stroke-linecap="round">
+      <path d="M 120,150 H 240 V 210"/>
+      <path d="M 480,150 H 420 V 240"/>
+    </g>
+  </g>
+
+  <!-- 3. 訊息飛向對話框的線 -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M 700,400 C 900,392 1100,356 1240,286" stroke="url(#pcLine)" stroke-width="8" filter="url(#pcSoft)" opacity="0.5"/>
+    <path d="M 700,400 C 900,392 1100,356 1240,286" stroke="url(#pcLine)" stroke-width="2"/>
+    <path class="pc-trail" pathLength="400" d="M 700,400 C 900,392 1100,356 1240,286" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+
+  <!-- 4. 右側：兩個對話框 -->
+  <!-- 後方：回覆（藍） -->
+  <g class="pc-bubble-b">
+    <path d="M 1480,300 h 300 a 18,18 0 0 1 18,18 v 86 a 18,18 0 0 1 -18,18 h -232 l -40,34 v -34 h -28 a 18,18 0 0 1 -18,-18 v -86 a 18,18 0 0 1 18,-18 z"
+          fill="url(#pcBubbleB)" stroke="#4DA3FF" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g stroke="#4DA3FF" stroke-opacity="0.40" stroke-width="7" stroke-linecap="round">
+      <path d="M 1512,340 H 1700"/>
+      <path d="M 1512,372 H 1628"/>
+    </g>
+  </g>
+
+  <!-- 前方：送出（薄荷綠），內有輸入中的三點 -->
+  <g class="pc-bubble-a">
+    <path d="M 1256,126 h 372 a 20,20 0 0 1 20,20 v 112 a 20,20 0 0 1 -20,20 h -300 l -48,40 v -40 h -24 a 20,20 0 0 1 -20,-20 v -112 a 20,20 0 0 1 20,-20 z"
+          fill="url(#pcBubbleA)" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2"/>
+    <g stroke="#00FFBF" stroke-opacity="0.45" stroke-width="8" stroke-linecap="round">
+      <path d="M 1292,170 H 1560"/>
+      <path d="M 1292,206 H 1470"/>
+    </g>
+    <g fill="#DFFFF6">
+      <circle class="pc-dot"            cx="1300" cy="244" r="7"/>
+      <circle class="pc-dot pc-dot-3"   cx="1328" cy="244" r="7"/>
+      <circle class="pc-dot pc-dot-2"   cx="1356" cy="244" r="7"/>
+    </g>
+    <circle cx="1648" cy="146" r="18" fill="#00FFBF" fill-opacity="0.32" filter="url(#pcSoft2)"/>
+    <circle cx="1648" cy="146" r="6.5" fill="#DFFFF6"/>
+  </g>
+
+  <!-- 5. 幾何飾件 -->
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 1760,430 l 18,-18 l -18,-18"/>
+    <path d="M 1800,430 l 18,-18 l -18,-18"/>
+  </g>
+
+  <!-- 6. 中央壓暗＋上下收邊 -->
+  <ellipse cx="960" cy="250" rx="1020" ry="300" fill="url(#pcDim)"/>
+  <rect width="1920" height="480" fill="url(#pcTopFade)"/>
+  <rect width="1920" height="480" fill="url(#pcBotFade)"/>
+</svg>

@@ -1,0 +1,244 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="CAPITAL JUMP brand key visual: three streams of light converging into a single pulsing node">
+  <defs>
+
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.42" stop-color="#032B3E"/>
+      <stop offset="0.72" stop-color="#03212F"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="gMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.44"/>
+      <stop offset="0.22" stop-color="#00D8CE" stop-opacity="0.21"/>
+      <stop offset="0.55" stop-color="#0095D8" stop-opacity="0.10"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="gBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#0A8BFF" stop-opacity="0.58"/>
+      <stop offset="0.4"  stop-color="#0075F1" stop-opacity="0.20"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="gCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.16" stop-color="#C6FFEE" stop-opacity="0.95"/>
+      <stop offset="0.42" stop-color="#00FFBF" stop-opacity="0.55"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="sweep" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#0075F1" stop-opacity="0.28"/>
+      <stop offset="0.68" stop-color="#00C9D6" stop-opacity="0.24"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="l1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0"/>
+      <stop offset="0.22" stop-color="#00FFBF" stop-opacity="0.6"/>
+      <stop offset="1"    stop-color="#8BFFE4" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="l2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#4DA3FF" stop-opacity="0"/>
+      <stop offset="0.22" stop-color="#4DA3FF" stop-opacity="0.65"/>
+      <stop offset="1"    stop-color="#C6FFEE" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="l3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.22" stop-color="#0A8BFF" stop-opacity="0.7"/>
+      <stop offset="1"    stop-color="#8BFFE4" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="lOut" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.3" stop-color="#00FFBF" stop-opacity="0.8"/>
+      <stop offset="1"   stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="soft"  x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="soft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="haze"  x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="80"/></filter>
+
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 L0 60" fill="none" stroke="#3F9BBE" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridBig" width="300" height="300" patternUnits="userSpaceOnUse">
+      <path d="M300 0 L0 0 L0 300" fill="none" stroke="#5FC4E0" stroke-opacity="0.16" stroke-width="1.5"/>
+    </pattern>
+
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.4" fill="#00FFBF" fill-opacity="0.5"/>
+    </pattern>
+    <linearGradient id="dotsFade" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.55" stop-color="#fff" stop-opacity="0.28"/>
+      <stop offset="1"    stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="dotsFadeTR" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#fff" stop-opacity="0.75"/>
+      <stop offset="0.6"  stop-color="#fff" stop-opacity="0.16"/>
+      <stop offset="1"    stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="dotsMask"><rect x="0" y="690" width="660" height="390" fill="url(#dotsFade)"/></mask>
+    <mask id="dotsMaskTR"><rect x="1420" y="0" width="500" height="300" fill="url(#dotsFadeTR)"/></mask>
+
+    <radialGradient id="gridMask" cx="0.42" cy="0.48" r="0.64">
+      <stop offset="0"    stop-color="#000000"/>
+      <stop offset="0.45" stop-color="#3a3a3a"/>
+      <stop offset="1"    stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="edgeOnly"><rect width="1920" height="1080" fill="url(#gridMask)"/></mask>
+
+    <radialGradient id="dim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.48"/>
+      <stop offset="0.62" stop-color="#01080E" stop-opacity="0.20"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="topFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.72"/>
+      <stop offset="0.18" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="botFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.55"/>
+      <stop offset="0.2"  stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* dasharray 用 "亮段 + 暗段" 的一半路徑長，讓每條線上同時有 2 顆光點，
+       dashoffset 走完一個 pattern（500）即無縫循環 */
+    @keyframes cjFlow   { from { stroke-dashoffset: 0; }   to { stroke-dashoffset: -500; } }
+    @keyframes cjPulse  { 0%,100% { opacity: .45; transform: scale(1); }
+                          50%     { opacity: 1;   transform: scale(1.22); } }
+    @keyframes cjCoreDot{ 0%,100% { opacity: .8; } 50% { opacity: 1; } }
+    @keyframes cjSpin   { to { transform: rotate(360deg); } }
+    @keyframes cjBreathe{ 0%,100% { opacity: .7; } 50% { opacity: 1; } }
+    /* 由匯流點向外擴散的訊號環 */
+    @keyframes cjRipple { 0%   { transform: scale(1);   opacity: .55; }
+                          70%  { opacity: .10; }
+                          100% { transform: scale(3.4); opacity: 0; } }
+
+    .cj-flow      { stroke-dasharray: 56 444; animation: cjFlow 7s linear infinite; }
+    .cj-flow-2    { animation-duration: 9s;  animation-delay: -3s; }
+    .cj-flow-3    { animation-duration: 11s; animation-delay: -6s; }
+    .cj-flow-out  { stroke-dasharray: 74 426; animation: cjFlow 5.5s linear infinite; }
+
+    .cj-core    { transform-box: fill-box; transform-origin: center; animation: cjPulse 4.5s ease-in-out infinite; }
+    .cj-coredot { animation: cjCoreDot 4.5s ease-in-out infinite; }
+    .cj-ring    { transform-box: view-box; transform-origin: 1450px 560px; animation: cjSpin 60s linear infinite; }
+    .cj-ring-2  { animation-duration: 45s; animation-direction: reverse; }
+    .cj-halo    { animation: cjBreathe 6s ease-in-out infinite; }
+
+    .cj-ripple   { transform-box: view-box; transform-origin: 1450px 560px;
+                   animation: cjRipple 6s cubic-bezier(.2,.6,.3,1) infinite; }
+    .cj-ripple-2 { animation-delay: -2s; }
+    .cj-ripple-3 { animation-delay: -4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cj-flow, .cj-flow-out, .cj-core, .cj-coredot, .cj-ring, .cj-halo, .cj-ripple { animation: none; }
+      .cj-flow, .cj-flow-out, .cj-ripple { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底 -->
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <!-- 2. 斜向能量帶 -->
+  <path d="M -300,1140 L 760,1140 L 1980,180 L 1980,-120 L 900,-120 Z" fill="url(#sweep)" filter="url(#haze)"/>
+
+  <!-- 3. 網格（外圍） -->
+  <g mask="url(#edgeOnly)">
+    <rect width="1920" height="1080" fill="url(#grid)"/>
+    <rect width="1920" height="1080" fill="url(#gridBig)"/>
+  </g>
+
+  <!-- 4. 光暈 -->
+  <ellipse class="cj-halo" cx="1470" cy="560" rx="680" ry="600" fill="url(#gMint)"/>
+  <ellipse cx="80" cy="930" rx="700" ry="540" fill="url(#gBlue)"/>
+
+  <!-- 5. 點陣紋理（左下 + 右上，平衡對角） -->
+  <rect x="0" y="690" width="660" height="390" fill="url(#dots)" mask="url(#dotsMask)"/>
+  <rect x="1420" y="0" width="500" height="300" fill="url(#dots)" mask="url(#dotsMaskTR)"/>
+
+  <!-- 6. 擴散訊號環 -->
+  <g fill="none" stroke="#00FFBF" stroke-width="2">
+    <circle class="cj-ripple"              cx="1450" cy="560" r="96"/>
+    <circle class="cj-ripple cj-ripple-2"  cx="1450" cy="560" r="96"/>
+    <circle class="cj-ripple cj-ripple-3"  cx="1450" cy="560" r="96"/>
+  </g>
+
+  <!-- 7. 雷達／防護環 -->
+  <g fill="none" stroke="#00FFBF">
+    <circle class="cj-ring"            cx="1450" cy="560" r="152" stroke-opacity="0.32" stroke-width="1.5" stroke-dasharray="4 16"/>
+    <circle class="cj-ring cj-ring-2"  cx="1450" cy="560" r="234" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="2 22"/>
+    <circle class="cj-ring"            cx="1450" cy="560" r="336" stroke-opacity="0.13" stroke-width="1.5" stroke-dasharray="2 30"/>
+    <circle cx="1450" cy="560" r="84" stroke-opacity="0.42" stroke-width="2"/>
+  </g>
+
+  <!-- 8. 三條光路匯流成一 -->
+  <g fill="none" stroke-linecap="round">
+
+    <g filter="url(#soft)" stroke-opacity="0.6">
+      <path d="M -80,200 C 360,200 640,360 920,450 S 1300,548 1450,560" stroke="url(#l1)" stroke-width="12"/>
+      <path d="M -80,620 C 380,620 720,600 1020,578 S 1330,562 1450,560" stroke="url(#l2)" stroke-width="12"/>
+      <path d="M -80,940 C 440,940 780,790 1070,660 S 1345,572 1450,560" stroke="url(#l3)" stroke-width="12"/>
+      <path d="M 1450,560 C 1650,560 1800,450 2020,250" stroke="url(#lOut)" stroke-width="22"/>
+    </g>
+
+    <path d="M -80,200 C 360,200 640,360 920,450 S 1300,548 1450,560" stroke="url(#l1)" stroke-width="3.5"/>
+    <path d="M -80,620 C 380,620 720,600 1020,578 S 1330,562 1450,560" stroke="url(#l2)" stroke-width="3.5"/>
+    <path d="M -80,940 C 440,940 780,790 1070,660 S 1345,572 1450,560" stroke="url(#l3)" stroke-width="3.5"/>
+    <path d="M 1450,560 C 1650,560 1800,450 2020,250" stroke="url(#lOut)" stroke-width="5"/>
+
+    <!-- 流動光點（每條線同時 2 顆） -->
+    <g stroke-linecap="round" filter="url(#soft2)">
+      <path class="cj-flow" pathLength="1000" d="M -80,200 C 360,200 640,360 920,450 S 1300,548 1450,560" stroke="#B6FFEC" stroke-width="9"/>
+      <path class="cj-flow cj-flow-2" pathLength="1000" d="M -80,620 C 380,620 720,600 1020,578 S 1330,562 1450,560" stroke="#FFFFFF" stroke-width="9"/>
+      <path class="cj-flow cj-flow-3" pathLength="1000" d="M -80,940 C 440,940 780,790 1070,660 S 1345,572 1450,560" stroke="#A8DEFF" stroke-width="9"/>
+      <path class="cj-flow-out" pathLength="1000" d="M 1450,560 C 1650,560 1800,450 2020,250" stroke="#FFFFFF" stroke-width="10"/>
+    </g>
+    <!-- 光點核心（細一點的亮芯，讓光點更立體） -->
+    <g stroke-linecap="round">
+      <path class="cj-flow" pathLength="1000" d="M -80,200 C 360,200 640,360 920,450 S 1300,548 1450,560" stroke="#FFFFFF" stroke-width="3"/>
+      <path class="cj-flow cj-flow-2" pathLength="1000" d="M -80,620 C 380,620 720,600 1020,578 S 1330,562 1450,560" stroke="#FFFFFF" stroke-width="3"/>
+      <path class="cj-flow cj-flow-3" pathLength="1000" d="M -80,940 C 440,940 780,790 1070,660 S 1345,572 1450,560" stroke="#FFFFFF" stroke-width="3"/>
+      <path class="cj-flow-out" pathLength="1000" d="M 1450,560 C 1650,560 1800,450 2020,250" stroke="#FFFFFF" stroke-width="3.5"/>
+    </g>
+  </g>
+
+  <!-- 9. 路徑節點 -->
+  <g fill="#C6FFEE">
+    <circle cx="920"  cy="450" r="5"/>
+    <circle cx="1020" cy="578" r="5"/>
+    <circle cx="1070" cy="660" r="5"/>
+    <circle cx="430"  cy="222" r="3.5" fill-opacity="0.6"/>
+    <circle cx="600"  cy="614" r="3.5" fill-opacity="0.6"/>
+    <circle cx="700"  cy="884" r="3.5" fill-opacity="0.6"/>
+    <circle cx="1780" cy="360" r="3.5" fill-opacity="0.6"/>
+  </g>
+
+  <!-- 10. 匯流核心 -->
+  <g>
+    <circle class="cj-core" cx="1450" cy="560" r="230" fill="url(#gCore)" opacity="0.55"/>
+    <circle class="cj-coredot" cx="1450" cy="560" r="46" fill="#00FFBF" fill-opacity="0.35" filter="url(#soft2)"/>
+    <circle cx="1450" cy="560" r="17" fill="#00FFBF"/>
+    <circle cx="1450" cy="560" r="8.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 11. 幾何飾件 -->
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.32" stroke-linecap="round">
+    <path d="M 1700,880 l 26,26 l -26,26"/>
+    <path d="M 1760,880 l 26,26 l -26,26"/>
+  </g>
+  <g stroke="#4DA3FF" fill="none" stroke-width="2" stroke-opacity="0.28" stroke-linecap="round">
+    <path d="M 214,946 l -26,26 l 26,26"/>
+    <path d="M 154,946 l -26,26 l 26,26"/>
+  </g>
+
+  <!-- 12. 左側輕度壓暗 + 上下收邊 -->
+  <ellipse cx="700" cy="540" rx="960" ry="580" fill="url(#dim)"/>
+  <rect width="1920" height="1080" fill="url(#topFade)"/>
+  <rect width="1920" height="1080" fill="url(#botFade)"/>
+</svg>

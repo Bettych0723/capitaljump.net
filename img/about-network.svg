@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- About 頁 05「International clients」區塊底圖：分散的節點以弧線相連，象徵跨時區協作。
+       文字會直接壓在上面，所以線條與節點都刻意低對比（節點 0.24、光點 0.28，並在 CSS 再疊一層遮罩；實測白字與內文都過 AA）；不標任何地名或國旗，避免暗示未經證實的據點。
+       與 page-header.svg / background.svg 同一套配色。 -->
+  <defs>
+    <linearGradient id="anBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#0B1220"/>
+      <stop offset="0.5" stop-color="#07182A"/>
+      <stop offset="1"   stop-color="#0B1220"/>
+    </linearGradient>
+    <radialGradient id="anMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="anBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0A8BFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="anDots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.3" fill="#3F9BBE" fill-opacity="0.22"/>
+    </pattern>
+    <radialGradient id="anDotsFade" cx="0.5" cy="0.5" r="0.55">
+      <stop offset="0"   stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="0.7" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="anDotsMask"><rect width="1600" height="900" fill="url(#anDotsFade)"/></mask>
+  </defs>
+
+  <style>
+    @keyframes anFlow { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -500; } }
+    .an-flow   { stroke-dasharray: 30 470; animation: anFlow 12s linear infinite; }
+    .an-flow-2 { animation-duration: 16s; animation-delay: -6s; }
+    .an-flow-3 { animation-duration: 14s; animation-delay: -10s; }
+    @media (prefers-reduced-motion: reduce) { .an-flow { animation: none; opacity: 0; } }
+  </style>
+
+  <rect width="1600" height="900" fill="url(#anBg)"/>
+  <rect width="1600" height="900" fill="url(#anDots)" mask="url(#anDotsMask)"/>
+  <ellipse cx="260"  cy="720" rx="520" ry="360" fill="url(#anBlue)"/>
+  <ellipse cx="1360" cy="180" rx="520" ry="360" fill="url(#anMint)"/>
+
+  <!-- 弧線連結 -->
+  <g fill="none" stroke-linecap="round">
+    <g stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1.5">
+      <path d="M 160,300 Q 520,80 880,260"/>
+      <path d="M 880,260 Q 1180,90 1440,300"/>
+      <path d="M 240,700 Q 640,500 1040,640"/>
+      <path d="M 1040,640 Q 1300,480 1480,640"/>
+      <path d="M 160,300 Q 180,520 240,700"/>
+      <path d="M 880,260 Q 980,450 1040,640"/>
+      <path d="M 1440,300 Q 1500,470 1480,640"/>
+    </g>
+    <!-- 沿弧線移動的光點 -->
+    <g stroke="#8BFFE4" stroke-opacity="0.28" stroke-width="2">
+      <path class="an-flow" pathLength="1000" d="M 160,300 Q 520,80 880,260"/>
+      <path class="an-flow an-flow-2" pathLength="1000" d="M 240,700 Q 640,500 1040,640"/>
+      <path class="an-flow an-flow-3" pathLength="1000" d="M 880,260 Q 1180,90 1440,300"/>
+    </g>
+  </g>
+
+  <!-- 節點 -->
+  <g>
+    <g fill="#00FFBF" fill-opacity="0.06">
+      <circle cx="160"  cy="300" r="16"/>
+      <circle cx="880"  cy="260" r="16"/>
+      <circle cx="1440" cy="300" r="16"/>
+      <circle cx="240"  cy="700" r="16"/>
+      <circle cx="1040" cy="640" r="16"/>
+      <circle cx="1480" cy="640" r="16"/>
+    </g>
+    <g fill="#8BFFE4" fill-opacity="0.24">
+      <circle cx="160"  cy="300" r="4.5"/>
+      <circle cx="880"  cy="260" r="4.5"/>
+      <circle cx="1440" cy="300" r="4.5"/>
+      <circle cx="240"  cy="700" r="4.5"/>
+      <circle cx="1040" cy="640" r="4.5"/>
+      <circle cx="1480" cy="640" r="4.5"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440" role="img"
+     aria-label="Illustration: three disconnected vendor panels on the left versus one connected platform on the right">
+  <!-- Services 開場插圖。對應文案：「多數公司得拼湊不同廠商來開發、防護、維運；這三件事我們一手包辦。」
+       左＝三塊互不相連、斷線的面板（拼湊多家廠商）；中＝箭頭；右＝同樣三件事收在一個面板裡，
+       以實線連到同一個核心（同一個負全責的夥伴）。全圖無文字，縮小後仍讀得出對比。 -->
+  <defs>
+    <linearGradient id="siBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#101B2E"/>
+      <stop offset="1"    stop-color="#0B1220"/>
+    </linearGradient>
+
+    <radialGradient id="siGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.22"/>
+      <stop offset="0.5" stop-color="#00D8CE" stop-opacity="0.08"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="siCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.2"  stop-color="#C6FFEE" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#00FFBF" stop-opacity="0.35"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="siPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.04"/>
+    </linearGradient>
+
+    <pattern id="siGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.14" stroke-width="1"/>
+    </pattern>
+
+    <filter id="siSoft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+
+  <style>
+    /* 左側：斷開的連線間歇閃爍（接不起來）。右側：光點沿連線流向核心，核心呼吸。 */
+    @keyframes siFlicker { 0%,100% { opacity: .5; } 45% { opacity: .18; } 55% { opacity: .55; } }
+    @keyframes siFlow    { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -120; } }
+    @keyframes siPulse   { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+
+    .si-flicker   { animation: siFlicker 3.2s ease-in-out infinite; }
+    .si-flicker-2 { animation-delay: -1.1s; }
+    .si-flicker-3 { animation-delay: -2.2s; }
+    .si-flow   { stroke-dasharray: 14 106; animation: siFlow 3s linear infinite; }
+    .si-flow-2 { animation-delay: -1s; }
+    .si-flow-3 { animation-delay: -2s; }
+    .si-core   { transform-box: fill-box; transform-origin: center; animation: siPulse 4.5s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .si-flicker, .si-flow, .si-core { animation: none; }
+      .si-flow { opacity: 0; }
+    }
+  </style>
+
+  <!-- 底 -->
+  <rect width="640" height="440" rx="18" fill="url(#siBg)"/>
+  <rect width="640" height="440" rx="18" fill="url(#siGrid)"/>
+  <ellipse cx="470" cy="220" rx="210" ry="180" fill="url(#siGlow)"/>
+
+  <!-- ================= 左：拼湊多家廠商 ================= -->
+  <g>
+    <!-- 三塊各自為政的面板，刻意不對齊、邊框灰藍 -->
+    <g fill="#16243A" fill-opacity="0.75" stroke="#41536E" stroke-width="1.5">
+      <rect x="44"  y="70"  width="120" height="76" rx="12"/>
+      <rect x="86"  y="188" width="120" height="76" rx="12"/>
+      <rect x="40"  y="300" width="120" height="76" rx="12"/>
+    </g>
+    <!-- 面板內各自不同的小圖形＝不同廠商的做法 -->
+    <g stroke="#7D8DA6" stroke-width="2" fill="none">
+      <rect x="86"  y="96"  width="36" height="24" rx="4"/>
+      <circle cx="146" cy="226" r="14"/>
+      <path d="M 100,352 l 18,-30 l 18,30 z"/>
+    </g>
+    <!-- 斷掉的連線：虛線、對不上、末端沒有節點 -->
+    <g fill="none" stroke="#5A6B84" stroke-width="2" stroke-dasharray="8 9" stroke-linecap="round">
+      <path class="si-flicker"              d="M 164,108 L 214,108 L 214,150"/>
+      <path class="si-flicker si-flicker-2" d="M 206,226 L 244,226"/>
+      <path class="si-flicker si-flicker-3" d="M 160,338 L 206,338 L 206,286"/>
+    </g>
+    <!-- 斷點的小叉號 -->
+    <g stroke="#7D8DA6" stroke-width="2" stroke-linecap="round" opacity="0.75">
+      <path d="M 208,156 l 12,12 M 220,156 l -12,12"/>
+      <path d="M 250,220 l 12,12 M 262,220 l -12,12"/>
+      <path d="M 200,272 l 12,12 M 212,272 l -12,12"/>
+    </g>
+  </g>
+
+  <!-- ================= 中：箭頭 ================= -->
+  <g stroke="#00FFBF" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
+    <path d="M 286,210 l 20,20 l -20,20"/>
+    <path d="M 316,210 l 20,20 l -20,20" opacity="0.75"/>
+  </g>
+
+  <!-- ================= 右：一個負全責的夥伴 ================= -->
+  <g>
+    <!-- 外框：三件事收在同一個面板裡 -->
+    <rect x="372" y="60" width="228" height="326" rx="20" fill="url(#siPanel)" stroke="#00FFBF" stroke-opacity="0.55" stroke-width="2"/>
+
+    <!-- 中央核心 -->
+    <g>
+      <circle class="si-core" cx="486" cy="223" r="74" fill="url(#siCore)" opacity="0.5"/>
+      <circle cx="486" cy="223" r="30" fill="none" stroke="#00FFBF" stroke-opacity="0.45" stroke-width="2"/>
+      <circle cx="486" cy="223" r="14" fill="#00FFBF" fill-opacity="0.28" filter="url(#siSoft)"/>
+      <circle cx="486" cy="223" r="7" fill="#DFFFF6"/>
+    </g>
+
+    <!-- 三個節點：Build（上）／Secure（左下）／Run（右下），實線連到核心 -->
+    <g fill="none" stroke="#00FFBF" stroke-opacity="0.65" stroke-width="2">
+      <path d="M 486,146 L 486,193"/>
+      <path d="M 430,300 L 468,246"/>
+      <path d="M 542,300 L 504,246"/>
+    </g>
+    <g fill="none" stroke="#C6FFEE" stroke-width="3" stroke-linecap="round">
+      <path class="si-flow"            pathLength="120" d="M 486,146 L 486,193"/>
+      <path class="si-flow si-flow-2"  pathLength="120" d="M 430,300 L 468,246"/>
+      <path class="si-flow si-flow-3"  pathLength="120" d="M 542,300 L 504,246"/>
+    </g>
+
+    <!-- 三個節點本體：形狀與左側三塊對應（方＝開發、盾＝資安、圓＝維運） -->
+    <g>
+      <rect x="456" y="104" width="60" height="44" rx="10" fill="#0B1220" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2"/>
+      <rect x="472" y="118" width="28" height="16" rx="3" fill="none" stroke="#8BFFE4" stroke-width="2"/>
+
+      <path d="M 430,302 l 30,-12 l 30,12 v 26 c 0,20 -18,32 -30,36 c -12,-4 -30,-16 -30,-36 z"
+            fill="#0B1220" stroke="#4DA3FF" stroke-opacity="0.85" stroke-width="2"/>
+      <path d="M 448,330 l 8,8 l 16,-18" fill="none" stroke="#A8DEFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <circle cx="542" cy="322" r="30" fill="#0B1220" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2"/>
+      <path d="M 528,322 h 8 l 5,-11 l 7,22 l 5,-11 h 5" fill="none" stroke="#8BFFE4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

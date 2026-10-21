@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" width="640" height="560" role="img"
+     aria-label="Illustration: four overlapping fields of expertise converging on a single bright core">
+  <!-- About / Team 區塊的視覺主角：四個專業領域的色域彼此交疊，中央匯聚成一個亮點。
+       延續首頁主視覺「數道光匯流成一個節點」的語言：領域各自獨立，但交會處才是這支團隊。
+       抽象示意圖，不代表任何數據。 -->
+  <defs>
+    <radialGradient id="tcLobe" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.16"/>
+      <stop offset="0.55" stop-color="#0A8BFF" stop-opacity="0.07"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tcCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#DFFFF6" stop-opacity="0.95"/>
+      <stop offset="0.25" stop-color="#00FFBF" stop-opacity="0.65"/>
+      <stop offset="0.6"  stop-color="#00D8CE" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="tcGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#4DA3FF" stroke-opacity="0.10" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="tcMask" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0"   stop-color="#ffffff"/>
+      <stop offset="0.6" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#000000"/>
+    </radialGradient>
+    <mask id="tcGridMask"><rect width="640" height="560" fill="url(#tcMask)"/></mask>
+    <filter id="tcSoft" x="-60%" y="-60%" width="220%" height="220%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes tcPulse { 0%,100% { opacity: .75; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+    @keyframes tcRing  { 0% { r: 20; opacity: .55; } 100% { r: 150; opacity: 0; } }
+    @keyframes tcDrift { 0%,100% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -120; } }
+    .tc-core { transform-box: view-box; transform-origin: 320px 280px; animation: tcPulse 4.2s ease-in-out infinite; }
+    .tc-wave { animation: tcRing 5s ease-out infinite; }
+    .tc-wave2 { animation-delay: 1.7s; }
+    .tc-wave3 { animation-delay: 3.4s; }
+    .tc-feed { stroke-dasharray: 5 14; animation: tcDrift 4s linear infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .tc-core, .tc-wave, .tc-feed { animation: none; }
+      .tc-wave { opacity: 0; }
+    }
+  </style>
+
+  <g mask="url(#tcGridMask)"><rect width="640" height="560" fill="url(#tcGrid)"/></g>
+
+  <!-- 四個領域的色域，兩兩交疊 -->
+  <g>
+    <circle cx="236" cy="196" r="150" fill="url(#tcLobe)"/>
+    <circle cx="404" cy="196" r="150" fill="url(#tcLobe)"/>
+    <circle cx="236" cy="364" r="150" fill="url(#tcLobe)"/>
+    <circle cx="404" cy="364" r="150" fill="url(#tcLobe)"/>
+  </g>
+  <g fill="none" stroke="#4DA3FF" stroke-opacity="0.30" stroke-width="1.5">
+    <circle cx="236" cy="196" r="150"/>
+    <circle cx="404" cy="196" r="150"/>
+    <circle cx="236" cy="364" r="150"/>
+    <circle cx="404" cy="364" r="150"/>
+  </g>
+
+  <!-- 四個領域的節點，以及往中心匯流的線 -->
+  <g class="tc-feed" fill="none" stroke="#00FFBF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round">
+    <path d="M 160,120 C 220,170 270,220 310,268"/>
+    <path d="M 480,120 C 420,170 370,220 330,268"/>
+    <path d="M 160,440 C 220,390 270,340 310,292"/>
+    <path d="M 480,440 C 420,390 370,340 330,292"/>
+  </g>
+  <g>
+    <circle cx="160" cy="120" r="9" fill="#0B1220" stroke="#4DA3FF" stroke-opacity="0.75" stroke-width="2.5"/>
+    <circle cx="480" cy="120" r="9" fill="#0B1220" stroke="#4DA3FF" stroke-opacity="0.75" stroke-width="2.5"/>
+    <circle cx="160" cy="440" r="9" fill="#0B1220" stroke="#4DA3FF" stroke-opacity="0.75" stroke-width="2.5"/>
+    <circle cx="480" cy="440" r="9" fill="#0B1220" stroke="#4DA3FF" stroke-opacity="0.75" stroke-width="2.5"/>
+  </g>
+  <g fill="#4DA3FF" fill-opacity="0.85">
+    <circle cx="160" cy="120" r="3.5"/>
+    <circle cx="480" cy="120" r="3.5"/>
+    <circle cx="160" cy="440" r="3.5"/>
+    <circle cx="480" cy="440" r="3.5"/>
+  </g>
+
+  <!-- 中央：交會處 -->
+  <g fill="none" stroke="#00FFBF" stroke-opacity="0.45" stroke-width="2">
+    <circle class="tc-wave" cx="320" cy="280" r="20"/>
+    <circle class="tc-wave tc-wave2" cx="320" cy="280" r="20"/>
+    <circle class="tc-wave tc-wave3" cx="320" cy="280" r="20"/>
+  </g>
+  <circle cx="320" cy="280" r="96" fill="url(#tcCore)" filter="url(#tcSoft)"/>
+  <g class="tc-core">
+    <circle cx="320" cy="280" r="34" fill="#0B1220" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="3"/>
+    <circle cx="320" cy="280" r="13" fill="#DFFFF6"/>
+  </g>
+</svg>

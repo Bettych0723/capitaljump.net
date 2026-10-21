@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 260" width="220" height="260" role="img" aria-label="Illustration: data copied to a second store with a restore arrow looping back, under a shield">
+  <!-- What we manage 04：備份與災難復原。資料複製到第二份，還原箭頭繞回來，下方盾牌代表營運持續。 -->
+  <g fill="#16243C" stroke="#2F6E87" stroke-opacity="0.65" stroke-width="2">
+    <rect x="26" y="56" width="74" height="22" rx="6"/>
+    <rect x="26" y="84" width="74" height="22" rx="6"/>
+    <rect x="26" y="112" width="74" height="22" rx="6"/>
+  </g>
+  <g fill="#4DA3FF" fill-opacity="0.75">
+    <circle cx="38" cy="67" r="3.5"/><circle cx="38" cy="95" r="3.5"/><circle cx="38" cy="123" r="3.5"/>
+  </g>
+  <g fill="#0E2436" stroke="#00FFBF" stroke-opacity="0.6" stroke-width="2">
+    <rect x="120" y="56" width="74" height="22" rx="6"/>
+    <rect x="120" y="84" width="74" height="22" rx="6"/>
+    <rect x="120" y="112" width="74" height="22" rx="6"/>
+  </g>
+  <g fill="#00FFBF" fill-opacity="0.7">
+    <circle cx="132" cy="67" r="3.5"/><circle cx="132" cy="95" r="3.5"/><circle cx="132" cy="123" r="3.5"/>
+  </g>
+  <g stroke="#00FFBF" stroke-opacity="0.6" stroke-width="2.5" stroke-linecap="round">
+    <path d="M 104,67 H 114"/><path d="M 104,95 H 114"/><path d="M 104,123 H 114"/>
+  </g>
+  <path d="M 164,146 C 164,178 128,186 110,186 C 92,186 60,178 58,150" fill="none" stroke="#00FFBF" stroke-opacity="0.55" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="9 10"/>
+  <path d="M 50,158 L 58,144 L 66,158" fill="none" stroke="#00FFBF" stroke-opacity="0.75" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(110 218)">
+    <path d="M 0,-26 L 26,-16 V 2 C 26,16 14,24 0,28 C -14,24 -26,16 -26,2 V -16 Z" fill="#0A8BFF" fill-opacity="0.10" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M -10,2 L -3,10 L 11,-7" fill="none" stroke="#00FFBF" stroke-opacity="0.85" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- Google Analytics (GA4) — 評估 ID：G-ZM346VN1R1
+             本機預覽（localhost / 127.0.0.1 / 直接開檔）不載入，避免測試流量混進正式資料。
+             需要在本機驗證時，在網址後面加上 ?ga_test=1 即可暫時啟用。 -->
+        <script>
+            (function () {
+                var host = location.hostname;
+                var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '' || host.indexOf('.local') > -1;
+                var force = location.search.indexOf('ga_test=1') > -1;
+                if (isLocal && !force) { return; }
+
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function () { window.dataLayer.push(arguments); };
+
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZM346VN1R1';
+                document.head.appendChild(s);
+
+                gtag('js', new Date());
+                gtag('config', 'G-ZM346VN1R1');
+            })();
+        </script>
+        <title>Managed IT &amp; Cloud Services &mdash; AWS, Azure, GCP | CAPITAL JUMP</title>
+        <!-- 版面：Hero（文左圖右）＋常駐狀態條 → 右側圓點導覽 → 服務切換面板（本頁特有）→ 平台橫條 → 24 小時軌道 → 月約面板 → CTA -->
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="managed IT, cloud migration, AWS, Azure, Google Cloud, RMM, 24/7 monitoring, help desk, backup, disaster recovery, Microsoft 365, Google Workspace" name="keywords">
+        <meta content="Cloud migration and management, 24/7 monitoring, backup and disaster recovery, and responsive IT support &mdash; keeping your systems fast and available." name="description">
+
+        <link href="img/icon.png" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Dark Tech Theme Override (最後載入；移除本行即回復淺色) -->
+        <link href="css/dark-theme.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <!-- 真實電話 / 社群帳號待補（[待填]）後再啟用本區塊 -->
+        <!-- <div class="container-fluid bg-dark py-2 d-none d-md-flex">
+            <div class="container">
+                <div class="d-flex justify-content-between topbar">
+                    <div class="top-info">
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>[待填：Address]</small>
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>[待填：Email]</small>
+                    </div>
+                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We reply to every enquiry within one business day</small></div>
+                    <div class="top-link">
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Topbar End -->
+
+        <!-- Navbar Start -->
+        <!-- sticky-top：捲動時導覽列固定在視窗上方 -->
+        <div class="container-fluid bg-primary sticky-top">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-1">
+                    <a href="index.html" class="navbar-brand">
+                        <img width="182" height="60" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                    </a>
+                    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto mx-xl-auto p-1">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="service.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu bg-light m-0 rounded">
+                                    <a href="service.html" class="dropdown-item">All services</a>
+                                    <a href="service-software.html" class="dropdown-item">Custom software development</a>
+                                    <a href="service-cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+                                    <a href="service-managed-it.html" class="dropdown-item active">Managed IT and cloud</a>
+                                    <a href="game-development.html" class="dropdown-item">Game development</a>
+                                </div>
+                            </div>
+                            <a href="work.html" class="nav-item nav-link">Work</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact.html" class="btn btn-secondary rounded-pill py-2 px-4 my-3 d-xl-none">Let's talk</a>
+                        </div>
+                    </div>
+                    <div class="d-none d-xl-flex flex-shirink-0">
+                        <a href="contact.html" class="btn btn-secondary rounded-pill py-2 px-4">Let's talk</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header page-header-managed py-5">
+            <div class="container text-center py-5">
+                <h1 class="display-2 text-white mb-4 animated slideInDown">Managed IT and cloud</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="service.html">Services</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Managed IT and cloud</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Hero Start -->
+        <!-- 文案「Hero」。文字左、插圖右。標題用 .mi-hero-title 控制斷行，避免最後一行只剩一個字 -->
+        <div class="container-fluid pt-5 mt-4">
+            <div class="container pt-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay=".1s">
+                        <p class="h5 text-primary">Managed IT and cloud</p>
+                        <h2 class="display-5 mb-4 svc-hero-title">Your systems, running the way they should &mdash; without you having to think about it.</h2>
+                        <p class="fs-5 mb-4">We migrate, monitor, and manage your cloud and IT infrastructure so your team can focus on the business instead of the servers.</p>
+                        <div class="work-cta-actions">
+                            <a href="contact.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Get a managed IT quote</a>
+                            <a href="work.html#case-cloud" class="btn btn-ghost rounded-pill px-4 py-3">See a case</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay=".2s">
+                        <img width="640" height="460" src="img/managed-hero.svg" class="img-fluid mi-hero-art" alt="Illustration: servers on the left migrating up into a cloud platform on the right, with a monitoring pulse running along the bottom">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+
+        <!-- Section nav Start -->
+        <!-- 頁內導覽：沿用服務子頁共通的右側圓點索引 -->
+        <nav id="mi-sections" class="sw-dotnav" aria-label="Sections on this page">
+            <a class="nav-link" href="#what-we-manage"><span class="sw-dot" aria-hidden="true"></span><span class="sw-dot-label">What we manage</span></a>
+            <a class="nav-link" href="#platforms"><span class="sw-dot" aria-hidden="true"></span><span class="sw-dot-label">Platforms</span></a>
+            <a class="nav-link" href="#always-on"><span class="sw-dot" aria-hidden="true"></span><span class="sw-dot-label">Always on</span></a>
+            <a class="nav-link" href="#engagement"><span class="sw-dot" aria-hidden="true"></span><span class="sw-dot-label">Engagement</span></a>
+        </nav>
+        <!-- Section nav End -->
+
+
+        <!-- What we manage Start -->
+        <!-- 文案「Services」五項。本頁特有元件：左側切換軌、右側詳細面板。
+             桌機＝點左側切換右側內容；手機（<992px）＝切換軌隱藏，五個面板直接依序展開。 -->
+        <div class="container-fluid py-5 my-4" id="what-we-manage">
+            <div class="container py-5">
+                <div class="pb-5 wow fadeIn" data-wow-delay=".1s">
+                    <p class="h5 text-primary">What we manage</p>
+                    <h2 class="mb-0 h1">Five layers, one accountable team</h2>
+                </div>
+
+                <div class="mi-switch wow fadeIn" data-wow-delay=".1s">
+                    <ul class="mi-rail" role="tablist" aria-label="What we manage">
+                        <li role="presentation">
+                            <button class="mi-rail-btn is-active" type="button" role="tab" id="mi-tab-1" aria-controls="mi-panel-1" aria-selected="true">
+                                <span class="mi-rail-num">01</span>
+                                <span class="mi-rail-icon"><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i></span>
+                                <span class="mi-rail-text">Cloud migration and management</span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="mi-rail-btn" type="button" role="tab" id="mi-tab-2" aria-controls="mi-panel-2" aria-selected="false" tabindex="-1">
+                                <span class="mi-rail-num">02</span>
+                                <span class="mi-rail-icon"><i class="fas fa-desktop" aria-hidden="true"></i></span>
+                                <span class="mi-rail-text">Managed IT support and monitoring</span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="mi-rail-btn" type="button" role="tab" id="mi-tab-3" aria-controls="mi-panel-3" aria-selected="false" tabindex="-1">
+                                <span class="mi-rail-num">03</span>
+                                <span class="mi-rail-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></span>
+                                <span class="mi-rail-text">Network and infrastructure</span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="mi-rail-btn" type="button" role="tab" id="mi-tab-4" aria-controls="mi-panel-4" aria-selected="false" tabindex="-1">
+                                <span class="mi-rail-num">04</span>
+                                <span class="mi-rail-icon"><i class="fas fa-database" aria-hidden="true"></i></span>
+                                <span class="mi-rail-text">Backup and disaster recovery</span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="mi-rail-btn" type="button" role="tab" id="mi-tab-5" aria-controls="mi-panel-5" aria-selected="false" tabindex="-1">
+                                <span class="mi-rail-num">05</span>
+                                <span class="mi-rail-icon"><i class="fas fa-users" aria-hidden="true"></i></span>
+                                <span class="mi-rail-text">Workspace and collaboration</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="mi-panels">
+                        <article class="mi-panel is-active" id="mi-panel-1" role="tabpanel" aria-labelledby="mi-tab-1">
+                            <div class="mi-panel-main">
+                                <h3>Cloud migration and management</h3>
+                                <p>We plan and run the move to AWS, Azure, or Google Cloud, then stay on to manage the environment &mdash; including keeping the bill down to what you actually use.</p>
+                                <ul class="mi-panel-checks">
+                                    <li>Current-state assessment</li>
+                                    <li>Migration plan and runbook</li>
+                                    <li>Landing zone and accounts</li>
+                                    <li>Ongoing cost review</li>
+                                </ul>
+                            </div>
+                            <div class="mi-panel-aside">
+                                <img width="220" height="260" loading="lazy" src="img/svc-art-cloud.svg" class="mi-panel-art" alt="Illustration: server racks moving up into a cloud">
+                            </div>
+                        </article>
+
+                        <article class="mi-panel" id="mi-panel-2" role="tabpanel" aria-labelledby="mi-tab-2">
+                            <div class="mi-panel-main">
+                                <h3>Managed IT support and monitoring</h3>
+                                <p>Proactive monitoring (RMM) watches the systems so faults surface before your team runs into them &mdash; and when someone does need help, there is a responsive help desk to ask.</p>
+                                <ul class="mi-panel-checks">
+                                    <li>Server and endpoint monitoring</li>
+                                    <li>Alerting and escalation</li>
+                                    <li>Patching and updates</li>
+                                    <li>Help desk for your team</li>
+                                </ul>
+                            </div>
+                            <div class="mi-panel-aside">
+                                <img width="220" height="260" loading="lazy" src="img/svc-art-rmm.svg" class="mi-panel-art" alt="Illustration: a monitoring screen with a pulse line and an alert, beside a support headset">
+                            </div>
+                        </article>
+
+                        <article class="mi-panel" id="mi-panel-3" role="tabpanel" aria-labelledby="mi-tab-3">
+                            <div class="mi-panel-main">
+                                <h3>Network and infrastructure</h3>
+                                <p>Architecture design, deployment, and performance tuning &mdash; so the network underneath your applications is something you can stop thinking about.</p>
+                                <ul class="mi-panel-checks">
+                                    <li>Network architecture design</li>
+                                    <li>Deployment and configuration</li>
+                                    <li>Performance tuning</li>
+                                    <li>Capacity planning</li>
+                                </ul>
+                            </div>
+                            <div class="mi-panel-aside">
+                                <img width="220" height="260" loading="lazy" src="img/svc-art-network.svg" class="mi-panel-art" alt="Illustration: a network topology with a central hub connected to surrounding nodes">
+                            </div>
+                        </article>
+
+                        <article class="mi-panel" id="mi-panel-4" role="tabpanel" aria-labelledby="mi-tab-4">
+                            <div class="mi-panel-main">
+                                <h3>Backup, disaster recovery and business continuity</h3>
+                                <p>Backups that are actually restorable, a recovery plan that has been tried, and a continuity plan for the day something goes properly wrong.</p>
+                                <ul class="mi-panel-checks">
+                                    <li>Backup policy and scheduling</li>
+                                    <li>Offsite and cloud copies</li>
+                                    <li>Restore testing</li>
+                                    <li>Recovery plan documentation</li>
+                                </ul>
+                            </div>
+                            <div class="mi-panel-aside">
+                                <img width="220" height="260" loading="lazy" src="img/svc-art-backup.svg" class="mi-panel-art" alt="Illustration: data copied to a second store with a restore arrow looping back, under a shield">
+                            </div>
+                        </article>
+
+                        <article class="mi-panel" id="mi-panel-5" role="tabpanel" aria-labelledby="mi-tab-5">
+                            <div class="mi-panel-main">
+                                <h3>Workspace and collaboration</h3>
+                                <p>Microsoft 365 and Google Workspace set up and administered properly &mdash; accounts, permissions, and the day-to-day admin nobody wants to own.</p>
+                                <ul class="mi-panel-checks">
+                                    <li>Microsoft 365 tenant setup</li>
+                                    <li>Google Workspace setup</li>
+                                    <li>Accounts and permissions</li>
+                                    <li>Email and file migration</li>
+                                </ul>
+                            </div>
+                            <div class="mi-panel-aside">
+                                <img width="220" height="260" loading="lazy" src="img/svc-art-workspace.svg" class="mi-panel-art" alt="Illustration: a shared document window with three team members connected to it">
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- What we manage End -->
+
+
+        <!-- Platforms Start -->
+        <!-- 文案「Cloud migration & management — AWS, Azure, and Google Cloud, including cost optimization.」
+             做成一條橫向平台軌，不用卡片格線，避免與服務總覽頁的三卡片重複 -->
+        <div class="container-fluid bg-light py-5" id="platforms">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5 wow fadeIn" data-wow-delay=".1s">
+                        <p class="h5 text-primary">Platforms</p>
+                        <h2 class="mb-4 h1">We run it where you run it.</h2>
+                        <p class="mb-0">All three major clouds, with cost optimization built into the way we manage them &mdash; not treated as a separate project.</p>
+                    </div>
+                    <div class="col-lg-7 wow fadeIn" data-wow-delay=".2s">
+                        <ul class="mi-platforms">
+                            <li>
+                                <span class="mi-platform-mark"><i class="fab fa-aws" aria-hidden="true"></i></span>
+                                <span class="mi-platform-name">AWS</span>
+                            </li>
+                            <li>
+                                <span class="mi-platform-mark"><i class="fab fa-microsoft" aria-hidden="true"></i></span>
+                                <span class="mi-platform-name">Azure</span>
+                            </li>
+                            <li>
+                                <span class="mi-platform-mark"><i class="fab fa-google" aria-hidden="true"></i></span>
+                                <span class="mi-platform-name">Google Cloud</span>
+                            </li>
+                        </ul>
+                        <p class="mi-platform-note mb-0">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            Cost optimization is part of management &mdash; we keep reviewing what you are paying for.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Platforms End -->
+
+
+        <!-- Always on Start -->
+        <!-- 文案「24/7 monitoring」「proactive monitoring and a responsive help desk」「clear response targets」。
+             本頁第二個特有元件：一條 24 小時軌道，上面有持續移動的光點 -->
+        <div class="container-fluid py-5 my-4" id="always-on">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".1s" style="max-width: 680px;">
+                    <p class="h5 text-primary">Always on</p>
+                    <h2 class="mb-4 h1">Someone is watching, including at 3am</h2>
+                    <p class="mb-0">Monitoring does not clock off, and neither does the agreement behind it.</p>
+                </div>
+
+                <div class="mi-clock wow fadeIn" data-wow-delay=".1s">
+                    <div class="mi-clock-track" aria-hidden="true">
+                        <span class="mi-clock-pulse"></span>
+                        <span class="mi-clock-tick" style="left: 0%"><b>00</b></span>
+                        <span class="mi-clock-tick" style="left: 25%"><b>06</b></span>
+                        <span class="mi-clock-tick" style="left: 50%"><b>12</b></span>
+                        <span class="mi-clock-tick" style="left: 75%"><b>18</b></span>
+                        <span class="mi-clock-tick is-end" style="left: 100%"><b>24</b></span>
+                    </div>
+
+                    <ul class="mi-clock-points">
+                        <li>
+                            <span class="mi-clock-icon"><i class="fas fa-satellite-dish" aria-hidden="true"></i></span>
+                            <h3 class="h4">Proactive monitoring</h3>
+                            <p class="mb-0">We watch the systems continuously, so problems are found before they reach your team.</p>
+                        </li>
+                        <li>
+                            <span class="mi-clock-icon"><i class="fas fa-headset" aria-hidden="true"></i></span>
+                            <h3 class="h4">Responsive help desk</h3>
+                            <p class="mb-0">When something needs a person rather than an alert, there is one to ask.</p>
+                        </li>
+                        <li>
+                            <span class="mi-clock-icon"><i class="fas fa-stopwatch" aria-hidden="true"></i></span>
+                            <h3 class="h4">Clear response targets</h3>
+                            <p class="mb-0">Your agreement states what we respond to and how quickly, in writing.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Always on End -->
+
+
+        <!-- Engagement Start -->
+        <!-- 文案「Engagement」：按月合約、明確回應時效。做成一張「合約面板」，與資安頁的兩張對照卡區隔 -->
+        <div class="container-fluid bg-light py-5" id="engagement">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5 wow fadeIn" data-wow-delay=".1s">
+                        <p class="h5 text-primary">Engagement</p>
+                        <p class="mi-statement">Managed services run on monthly agreements with clear response targets, so support is predictable and always on.</p>
+                        <a href="contact.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white mt-4">Get a managed IT quote</a>
+                    </div>
+                    <div class="col-lg-7 wow fadeIn" data-wow-delay=".2s">
+                        <div class="mi-agreement">
+                            <span class="mi-agreement-tag">Monthly agreement</span>
+                            <ul class="mi-agreement-list">
+                                <li>
+                                    <span class="mi-agreement-icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></span>
+                                    <div>
+                                        <h4>Billed monthly</h4>
+                                        <p class="mb-0">A fixed monthly cost, so IT support is a line you can budget for rather than a surprise.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="mi-agreement-icon"><i class="fas fa-file-signature" aria-hidden="true"></i></span>
+                                    <div>
+                                        <h4>Response targets in writing</h4>
+                                        <p class="mb-0">What we cover and how quickly we respond is agreed up front, not decided when something breaks.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="mi-agreement-icon"><i class="fas fa-infinity" aria-hidden="true"></i></span>
+                                    <div>
+                                        <h4>Always on, not on request</h4>
+                                        <p class="mb-0">Monitoring runs continuously underneath the agreement &mdash; you do not have to notice first.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Engagement End -->
+
+
+        <!-- Closing CTA Start -->
+        <!-- 主要行動：Get a managed IT quote -->
+        <div class="container-fluid cta-band py-5">
+            <div class="container py-5 wow fadeIn" data-wow-delay=".1s">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <p class="h5 text-primary">Next step</p>
+                        <h2 class="mb-3 h1">Tell us what you are running today.</h2>
+                        <p class="mb-0">Book a 30-minute discovery call and we will tell you honestly whether &mdash; and how &mdash; we can help.</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="work-cta-actions">
+                            <a href="contact.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Get a managed IT quote</a>
+                            <a href="work.html" class="btn btn-ghost rounded-pill px-4 py-3">See our work</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="sw-other mb-0">Other practices :
+                    <a href="service-software.html">Custom software development</a>
+                    <a href="service-cybersecurity.html">Cybersecurity</a>
+                </p>
+            </div>
+        </div>
+        <!-- Closing CTA End -->
+
+        <!-- Footer Start -->
+         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".1s">
+            <div class="container pt-5 pb-4">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html" class="d-inline-block">
+                            <img width="182" height="60" loading="lazy" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                        </a>
+                        <p class="mt-4 text-light">An international software, security, and IT partner. We design, build, secure, and run the technology growing companies depend on.</p>
+                        <!-- 社群連結：待補真實帳號網址後啟用
+                        <div class="d-flex hightech-link">
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        </div>
+                        -->
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="about.html" class="h3 text-secondary">Company</a>
+                        <div class="mt-4 d-flex flex-column short-link">
+                            <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About</a>
+                            <a href="work.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Work</a>
+                            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
+                            <a href="game-development.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Game development</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="service.html" class="h3 text-secondary">Services</a>
+                        <div class="mt-4 d-flex flex-column help-link">
+                            <a href="service-software.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Custom software development</a>
+                            <a href="service-cybersecurity.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Cybersecurity</a>
+                            <a href="service-managed-it.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Managed IT and cloud</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="contact.html" class="h3 text-secondary">Contact</a>
+                        <div class="text-white mt-4 d-flex flex-column contact-link">
+                            <span class="pb-3 text-light border-primary"><i class="fas fa-envelope text-secondary me-2"></i><a href="mailto:capitaljumpinc@gmail.com" class="text-light">capitaljumpinc@gmail.com</a></span>
+                            <!-- <span class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> [待填：Phone]</span> -->
+                            <span class="py-3 text-light border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Vistra Corporate Services Centre, Ground Floor NPF Building, Beach Road, Apia, Samoa</span>
+                            <!-- <span class="py-3 text-light"><i class="fas fa-clock text-secondary me-2"></i> 09:00 - 18:00</span> -->
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-light mt-5 mb-4">
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span class="text-light"><span class="text-secondary">Copyright © CAPITAL JUMP INC.,</span> All rights reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <span class="text-light"><a href="privacy.html" class="footer-legal">Privacy policy</a></span><span class="footer-credit">Designed by <a href="https://htmlcodex.com" class="footer-legal" target="_blank" rel="noopener noreferrer">HTML Codex</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

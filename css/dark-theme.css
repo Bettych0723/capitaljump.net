@@ -1,0 +1,2199 @@
+/* ============================================================
+   HighTech — Dark Tech Theme Override
+   最後載入（bootstrap.min.css → style.css → 本檔），只覆蓋配色。
+   移除 <head> 中本檔的 <link> 即可回復原本淺色版。
+
+   注意：本站的 bootstrap.min.css 為 v5.0.0 編譯檔，
+   .bg-primary / .text-primary / .bg-light … 等工具類是「寫死色碼」，
+   不吃 :root 變數，所以下方必須逐一覆蓋這些 class。
+   style.css 內的 var(--bs-primary) / var(--bs-secondary) 則會跟著
+   下方 :root 重新定義自動變色。
+   ============================================================ */
+
+:root {
+    color-scheme: dark;
+
+    /* ============================================================
+       企業品牌色（CAPITAL JUMP）
+       ============================================================ */
+    --brand-primary:   #00FFBF;   /* Primary   — 主行動、重點文字、圖示 */
+    --brand-secondary: #0075F1;   /* Secondary — 輔助面／框線／次要行動 */
+
+    /* 中性色（指定可用） */
+    --neutral-deep: #033B54;      /* 深藍：亮底上的文字色、次要按鈕面、數據帶底 */
+    --neutral-600:  #444444;      /* 分隔線 */
+    --neutral-700:  #3B3B3B;      /* 備用（低調邊界／禁用態） */
+
+    /* ---- 語意對映 ---- */
+    --primary: var(--brand-primary);
+    --primary-hover: #5CFFD6;
+
+    --accent: var(--brand-secondary);
+    --accent-hover: #3D97FF;
+    /* #0075F1 在深底上只有約 4.2:1，內文級小字不過 AA；
+       因此「輔色當文字」時一律用這個提亮版（深底 7.1:1），
+       實心面／框線才用原始 #0075F1。 */
+    --accent-text: #4DA3FF;
+
+    /* 亮色（品牌主色）底上的文字色 = 深藍中性色，對比 9.1:1 */
+    --on-primary: var(--neutral-deep);
+
+    /* 主要行動按鈕（CTA）的漸層＋光暈：全站共用，改這三行即全站一起變 */
+    --cta-gradient: linear-gradient(90deg, #00FFBF, #5CFFD6);
+    --cta-glow: 0 10px 30px rgba(0, 255, 191, .25);
+    --cta-glow-hover: 0 14px 36px rgba(0, 255, 191, .38);
+
+    /* ---- 介面色 ---- */
+    --bg: #0B1220;
+    --surface: #121A2A;
+    --surface-2: #1A2436;
+    --surface-brand: var(--neutral-deep);   /* 品牌色調的深色帶（Facts 區） */
+    --footer-bg: #070C15;
+    --border: #263349;
+    --heading: #F1F5FB;
+    --text: #C7D2E1;
+    --text-muted: #8A97AC;
+
+    /* ---- 對映 Bootstrap 既有變數，讓 style.css 的 var() 跟著變 ---- */
+    --bs-primary: var(--primary);
+    --bs-secondary: var(--accent);
+    --bs-light: var(--surface);
+    --bs-body-bg: var(--bg);
+    --bs-body-color: var(--text);
+}
+
+
+/*** 全域 Start ***/
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--heading);
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* 用 .h5 當連結的（contact 卡片的電話 / Email）維持標題色，hover 才轉主色 */
+a.h1, a.h2, a.h3, a.h4, a.h5, a.h6 {
+    color: var(--heading);
+}
+
+a.h1:hover, a.h2:hover, a.h3:hover,
+a.h4:hover, a.h5:hover, a.h6:hover {
+    color: var(--primary);
+}
+
+hr {
+    border-color: var(--neutral-600);
+}
+
+/*** 全域 End ***/
+
+
+/*** 工具類反轉 Start ***/
+
+/* 原淺色區塊 → 深色卡片面 */
+.bg-light,
+.bg-white,
+.bg-body {
+    background-color: var(--surface) !important;
+}
+
+/* 原深色區塊（topbar / footer）→ 比底色再深一階 */
+.bg-dark {
+    background-color: var(--footer-bg) !important;
+}
+
+/* 品牌色底：主色 = cyan，第二色 = 薄荷綠 */
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--accent) !important;
+}
+
+/* 整段式（container-fluid）的品牌色底不適合直接翻成亮色滿版，改成深色面 */
+.container-fluid.bg-primary {                 /* Navbar 外框 */
+    background-color: var(--surface) !important;
+    border-bottom: 1px solid var(--border);
+}
+
+.container-fluid.bg-secondary {               /* 數據 Fact 區 → 品牌深藍帶 */
+    background-color: var(--surface-brand) !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+/* 文字工具類 */
+.text-primary { color: var(--primary) !important; }
+.text-primary1 { color: var(--accent-text) !important; }
+.text-secondary { color: var(--accent-text) !important; }
+.text-light { color: var(--text) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.text-white-50 { color: var(--text-muted) !important; }
+.text-dark, .text-body { color: var(--text) !important; }
+
+/* 邊框 */
+.border,
+.border-top,
+.border-bottom,
+.border-start,
+.border-end {
+    border-color: var(--border) !important;
+}
+
+.border-white {
+    border-color: var(--border) !important;
+}
+
+.border-primary {
+    border-color: rgba(0, 255, 191, .35) !important;
+}
+
+.border-secondary {
+    border-color: var(--brand-secondary) !important;
+}
+
+/*** 工具類反轉 End ***/
+
+
+/*** Topbar Start ***/
+
+/* 社群圓鈕：淺底 → 深色面 + 主色圖示 */
+.topbar .top-link .bg-light {
+    background-color: var(--surface-2) !important;
+    border: 1px solid var(--border);
+}
+
+/* #note 跑馬燈的 small 沿用父層 .text-secondary */
+#note small {
+    color: inherit;
+}
+
+/*** Topbar End ***/
+
+
+/*** Navbar Start ***/
+
+.navbar .navbar-nav .nav-link {
+    color: var(--text);
+}
+
+/* 目前頁 / hover 用品牌主色（18px 導覽字，輔色藍在深底上只有 4.2:1 會不過 AA） */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+.navbar .dropdown-menu {
+    background-color: var(--surface-2);
+    border: 1px solid var(--border);
+}
+
+.navbar .dropdown-item {
+    color: var(--text);
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background-color: var(--surface);
+    color: var(--primary);
+}
+
+/*** Navbar End ***/
+
+
+/*** Carousel / Page Header Start ***/
+
+/* 主視覺遮罩：加深到 .70 → .92，確保任何亮度的主視覺上白字都 ≥ 7:1 */
+.carousel-item::after {
+    background: linear-gradient(180deg, rgba(11, 18, 32, .70), rgba(11, 18, 32, .92));
+}
+
+/* 品牌 Key Visual 那張本身就是深色、中央也已壓暗，遮罩必須放輕才看得到圖。
+   改成「中段壓暗、上下放亮」的分段遮罩：文字帶（28%–78%）維持 .44，
+   上下緣降到 .06 / .12 讓 KV 露出來。
+   實測（canvas 取樣主視覺實際像素）：h1 5.5:1、內文 6.3:1、小標 16:1，全部過 AA。 */
+.carousel-item-kv::after {
+    background: linear-gradient(180deg,
+        rgba(11, 18, 32, .08) 0%,
+        rgba(11, 18, 32, .52) 26%,
+        rgba(11, 18, 32, .52) 80%,
+        rgba(11, 18, 32, .14) 100%);
+}
+
+/* A 案（文字左對齊）：遮罩改成「左濃右淡」的側向漸層，把右半邊還給主視覺。
+   上方另疊一層淺的縱向漸層，維持導覽列與主視覺的分離。
+   窄螢幕文字回到置中，所以側向漸層只在 ≥992px 生效。 */
+@media (min-width: 992px) {
+    /* 遮罩在 72% 之後完全放掉，匯流亮點（約 75%）與右側光束不被壓到。
+       實測（canvas 取樣＋Range 逐行文字框）1440：h1 7.6 / 內文 5.5；1900：h1 9+ / 內文 8+ */
+    .carousel-item-kv.hero-left::after {
+        background:
+            linear-gradient(180deg, rgba(11, 18, 32, .45) 0%, rgba(11, 18, 32, 0) 24%),
+            linear-gradient(90deg,
+                rgba(11, 18, 32, .72) 0%,
+                rgba(11, 18, 32, .66) 40%,
+                rgba(11, 18, 32, .24) 72%,
+                rgba(11, 18, 32, 0) 100%);
+    }
+
+    /* 照片那張底圖較亮，右側要留多一點遮罩 */
+    .hero-left:not(.carousel-item-kv)::after {
+        background:
+            linear-gradient(180deg, rgba(11, 18, 32, .55) 0%, rgba(11, 18, 32, 0) 24%),
+            linear-gradient(90deg,
+                rgba(11, 18, 32, .94) 0%,
+                rgba(11, 18, 32, .88) 34%,
+                rgba(11, 18, 32, .64) 62%,
+                rgba(11, 18, 32, .42) 100%);
+    }
+}
+
+/* 內頁頁首：品牌主視覺那套自製 SVG（img/page-header.svg），所有內頁共用。
+   中央壓暗已畫在 SVG 裡，這裡不再疊遮罩。background-size: cover 沿用 style.css */
+.page-header {
+    background-image: url(../img/page-header.svg);
+    background-position: center center;
+}
+
+/* About 頁專用頁首（三層平台堆疊）。About 的 Hero 插畫已經是光路匯流，
+   頁首再用同一種構圖會重複，所以只有這頁換圖。 */
+.page-header.page-header-about {
+    background-image: url(../img/page-header-about.svg);
+}
+
+/* Work 頁專用頁首（上升柱狀圖＋案例卡）：每頁頁首圖各自不同 */
+.page-header.page-header-work {
+    background-image: url(../img/page-header-work.svg);
+}
+
+/* Contact 頁專用頁首（對話框＋地點標記） */
+.page-header.page-header-contact {
+    background-image: url(../img/page-header-contact.svg);
+}
+
+/* Services 頁專用頁首（三條軌道匯合成一個核心） */
+.page-header.page-header-services {
+    background-image: url(../img/page-header-services.svg);
+}
+
+/* Custom Software Development 頁專用頁首（堆疊的程式碼視窗） */
+.page-header.page-header-software {
+    background-image: url(../img/page-header-software.svg);
+}
+
+/* Cybersecurity 頁專用頁首（雷達掃描與鎖定框） */
+.page-header.page-header-cyber {
+    background-image: url(../img/page-header-cyber.svg);
+}
+
+/* Managed IT & Cloud 頁專用頁首（機櫃往上遷移進雲端＋24 小時監控環） */
+.page-header.page-header-managed {
+    background-image: url(../img/page-header-managed.svg);
+}
+
+/* Game Development 頁專用頁首（手把與像素＋三種平台畫面） */
+.page-header.page-header-game {
+    background-image: url(../img/page-header-game.svg);
+}
+
+/* 手機：桌機版的圖案都分佈在左右兩側，cover 裁切後只剩中央空白，
+   每張頁首都另備一張把圖案收進中央的直向構圖 */
+@media (max-width: 767.98px) {
+    .page-header {
+        background-image: url(../img/page-header-m.svg);
+    }
+
+    .page-header.page-header-about {
+        background-image: url(../img/page-header-about-m.svg);
+    }
+
+    .page-header.page-header-work {
+        background-image: url(../img/page-header-work-m.svg);
+    }
+
+    .page-header.page-header-contact {
+        background-image: url(../img/page-header-contact-m.svg);
+    }
+
+    .page-header.page-header-services {
+        background-image: url(../img/page-header-services-m.svg);
+    }
+
+    .page-header.page-header-software {
+        background-image: url(../img/page-header-software-m.svg);
+    }
+
+    .page-header.page-header-cyber {
+        background-image: url(../img/page-header-cyber-m.svg);
+    }
+
+    .page-header.page-header-managed {
+        background-image: url(../img/page-header-managed-m.svg);
+    }
+
+    .page-header.page-header-game {
+        background-image: url(../img/page-header-game-m.svg);
+    }
+}
+
+/* 左右箭頭底色由 style.css 的 var(--bs-primary/secondary) 自動變 cyan / 薄荷綠，
+   Bootstrap 的箭頭圖示是白色 SVG，翻黑才看得清楚 */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* 主視覺按鈕：btn1 = 主要行動（品牌主色實心），btn2 = 次要行動（深藍面＋輔色框）
+   style.css 已把 border 設為 0，外框改用 inset box-shadow 畫。 */
+/* 主視覺的主要行動按鈕同樣用 --cta-* 漸層＋光暈。
+   不加上浮：按鈕本身掛著 animate.css 進場動畫（fill-mode: both），transform 會被動畫鎖住 */
+.carousel-caption .carousel-content a button.carousel-content-btn1 {
+    background: var(--cta-gradient);
+    color: var(--on-primary);
+    box-shadow: var(--cta-glow);
+}
+
+.carousel-caption .carousel-content a button.carousel-content-btn1:hover {
+    background: var(--cta-gradient);
+    color: var(--on-primary);
+    box-shadow: var(--cta-glow-hover);
+}
+
+/* 次要按鈕：與內頁的 .btn-ghost 同一種長相（透明底＋主色框與字），
+   全站的「第二順位行動」只有一種樣子。 */
+.carousel-caption .carousel-content a button.carousel-content-btn2 {
+    background: transparent;
+    color: var(--primary);
+    box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.carousel-caption .carousel-content a button.carousel-content-btn2:hover {
+    background: var(--primary);
+    color: var(--on-primary);
+    box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+/*** Carousel / Page Header End ***/
+
+
+/*** Button Start ***/
+
+/* 版型全站的 CTA 都掛 .btn-secondary，因此把它定義為「主要行動」＝ 品牌主色實心。
+   .btn-primary 則作為「次要行動」＝ 深藍面 + 品牌輔色框。
+   （純 #0075F1 實心配白字只有 3.6:1，不足以承載按鈕文字，故不用實心藍。） */
+/* 主要行動：品牌主色漸層＋薄荷綠光暈（與 Contact 送出按鈕同一組 --cta-* 設定）。
+   外框設透明，讓漸層延伸到按鈕邊緣，不會在右端露出一條純主色的框。 */
+.btn-secondary {
+    background-color: var(--primary);
+    background-image: var(--cta-gradient);
+    border-color: transparent;
+    color: var(--on-primary);
+    box-shadow: var(--cta-glow);
+    transition: box-shadow .2s, transform .2s;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+    background-color: var(--primary-hover);
+    background-image: var(--cta-gradient);
+    border-color: transparent;
+    color: var(--on-primary);
+    box-shadow: var(--cta-glow-hover);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+    transform: none;
+}
+
+/* 光暈取代了 Bootstrap 的 focus 外圈，鍵盤操作時改用 outline 標示焦點 */
+.btn-secondary:focus-visible,
+.contact-submit:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* 回到頂端固定在畫面角落，一直發光會干擾閱讀：保留漸層、不加光暈與上浮 */
+.btn-secondary.back-to-top,
+.btn-secondary.back-to-top:hover,
+.btn-secondary.back-to-top:focus {
+    box-shadow: 0 6px 18px rgba(1, 8, 14, .45);
+    transform: none;
+}
+
+.btn-primary {
+    background-color: var(--neutral-deep);
+    border-color: var(--brand-secondary);
+    color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: var(--neutral-deep);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* HTML 上寫死的 .text-white 落在亮底按鈕上會只剩 1.8:1，一律翻成深字 */
+.btn-secondary.text-white,
+.btn-secondary .text-white,
+.btn.bg-primary.text-white,
+.btn.bg-secondary.text-white {
+    color: var(--on-primary) !important;
+}
+
+/* 淺色按鈕（頁尾社群圓鈕）→ 深色面 */
+.btn-light {
+    background-color: var(--surface-2);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.btn-light:hover,
+.btn-light:focus {
+    background-color: var(--surface);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* 品牌主色圓鈕（流程步驟 / Why 條列 / contact 聯絡方式）→ 深藍圖示，9.1:1 */
+.btn-square.bg-primary > i,
+.btn-sm-square.bg-primary > i,
+.btn-md-square.bg-primary > i,
+.btn-lg-square.bg-primary > i {
+    color: var(--on-primary) !important;
+}
+
+/* 品牌輔色（藍）圓鈕 → 白色圖示 */
+.btn-square.bg-secondary > i,
+.btn-sm-square.bg-secondary > i,
+.btn-md-square.bg-secondary > i,
+.btn-lg-square.bg-secondary > i {
+    color: #ffffff !important;
+}
+
+/* 回到頂端 */
+.back-to-top i {
+    color: var(--on-primary) !important;
+}
+
+/*** Button End ***/
+
+
+/*** Services Start ***/
+
+.services .services-item {
+    box-shadow: 0 0 0 1px var(--border), 0 18px 40px rgba(0, 0, 0, .45);
+}
+
+.services .services-item:hover {
+    box-shadow: 0 0 0 1px rgba(0, 255, 191, .45), 0 18px 44px rgba(0, 0, 0, .55);
+}
+
+/* hover 遮罩：原本是亮藍 rgba(3,43,243,.8)，改為品牌主色微光 + 深底 */
+.services-content::after {
+    background: linear-gradient(180deg, rgba(0, 255, 191, .14), rgba(3, 59, 84, .94));
+}
+
+/*** Services End ***/
+
+
+/*** Blog Start ***/
+
+.blog-item {
+    border: 1px solid var(--border);
+}
+
+/* 頭像外框原為白圈，改成低調邊框色 */
+.blog-content img.border-white,
+.blog-content img.border {
+    border-color: var(--border) !important;
+}
+
+/* 卡片底部的主色橫條：cyan 底一律配深字、深圖示 */
+.blog-coment,
+.blog-coments {
+    border-color: rgba(11, 18, 32, .25) !important;
+}
+
+.blog-coment .text-white,
+.blog-coments .text-white,
+.blog-coment i,
+.blog-coments i,
+.blog-item span.bg-primary.text-white {
+    color: var(--on-primary) !important;
+}
+
+/* Share 滑出區塊在薄荷綠底上，文字與圖示同樣翻深 */
+.blog-btn-icon .blog-icon-1 p,
+.blog-btn-icon .blog-icon-1 i,
+.blog-btn-icon .blog-icon-2 i,
+.blog-item .blog-icon .btn {
+    color: var(--on-primary) !important;
+}
+
+/*** Blog End ***/
+
+
+/*** Contact Start ***/
+
+/* 聯絡卡片後方底紋：品牌深色蜂巢網路（img/background.svg），取代版型的白色編織紋。
+   SVG 本身就是深色，不再疊遮罩。 */
+.contact-detail::before {
+    background: url(../img/background.svg) center center no-repeat;
+    background-size: cover;
+}
+
+/* 原本寫死 #26d48c 的地圖框與表單框 → 深色面 */
+.contact-map,
+.contact-form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+/* ── Contact 頁（方案 C）配色；排版在 style.css ── */
+
+/* 流程帶 */
+.contact-step-num {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 6px rgba(0, 255, 191, .08);
+}
+
+.contact-step:not(:last-child)::after {
+    background: linear-gradient(90deg, var(--primary), rgba(0, 117, 241, .5));
+}
+
+.contact-step p {
+    color: var(--text);
+}
+
+/* 寬版表單卡 */
+/* 借用方案 B 的玻璃卡質感：淡薄荷綠細框＋深陰影浮起，上緣一條極淡的內側高光 */
+.contact-card {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 55%);
+    border: 1px solid rgba(0, 255, 191, .20);
+    box-shadow: 0 30px 60px rgba(1, 8, 14, .55), inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+.contact-card::after {
+    background: radial-gradient(circle, rgba(0, 255, 191, .14), rgba(0, 255, 191, 0) 70%);
+}
+
+.contact-card label,
+.contact-card legend {
+    color: var(--text);
+}
+
+/* 底線式輸入框：要壓過本檔 Form 區對 .form-control 的底色、邊框與 focus 光暈 */
+.contact-card .form-control,
+.contact-card .form-control:focus {
+    background: transparent;
+    color: var(--heading);
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-card .form-control:focus {
+    border-bottom-color: var(--primary);
+    box-shadow: 0 1px 0 0 var(--primary);
+}
+
+/* 驗證失敗：底線式欄位只標紅底線，不要冒出整圈外框 */
+.contact-card .form-control.is-invalid {
+    border: 0 !important;
+    border-bottom: 1px solid #FF6B7A !important;
+}
+
+/* 膠囊按鈕 */
+.contact-card .contact-chip span {
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.contact-card .contact-chip span:hover {
+    color: var(--heading);
+    border-color: var(--accent-text);
+}
+
+.contact-chip input:checked + span {
+    color: var(--primary);
+    background: rgba(0, 255, 191, .12);
+    border-color: var(--primary);
+}
+
+.contact-chip input:focus-visible + span {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.contact-actions small {
+    color: var(--text-muted);
+}
+
+.contact-actions small i {
+    color: var(--primary);
+}
+
+/* 送出按鈕：與全站主要行動按鈕同一組 --cta-* 漸層＋光暈 */
+.contact-submit {
+    background: var(--cta-gradient);
+    color: var(--on-primary);
+    box-shadow: var(--cta-glow);
+}
+
+.contact-submit:hover {
+    box-shadow: var(--cta-glow-hover);
+}
+
+.contact-submit:disabled {
+    box-shadow: none;
+}
+
+/* 聯絡資訊＋地圖 */
+/* 與上方表單卡同一套玻璃質感邊框與陰影 */
+.contact-locate {
+    border: 1px solid rgba(0, 255, 191, .20);
+    box-shadow: 0 30px 60px rgba(1, 8, 14, .55), inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+.contact-locate-info {
+    background: url(../img/background.svg) center / cover no-repeat;
+}
+
+.contact-li i,
+.contact-directions {
+    color: var(--primary);
+}
+
+.contact-li small {
+    color: var(--text);
+}
+
+.contact-li a,
+.contact-li span {
+    color: var(--heading);
+}
+
+.contact-li a:hover,
+.contact-directions:hover {
+    color: var(--primary-hover);
+}
+
+/* Google 嵌入地圖無法換配色：反相再把色相轉回來，得到深色底、亮色道路的地圖（標記仍是紅色） */
+.contact-map-embed {
+    background: var(--bg);
+}
+
+.contact-map-embed iframe {
+    filter: invert(90%) hue-rotate(180deg) saturate(.8) brightness(.95) contrast(.92);
+}
+
+/*** Contact End ***/
+
+
+/*** About Start ***/
+
+.trust-signal {
+    color: var(--text);
+}
+
+.trust-signal i {
+    color: var(--primary);
+}
+
+/* 能力標籤：品牌主色細框＋極淡底，與 Contact 的膠囊按鈕同一套語彙 */
+.capability-tag {
+    color: var(--heading);
+    background: rgba(0, 255, 191, .08);
+    border-color: rgba(0, 255, 191, .28);
+}
+
+.capability-tag i {
+    color: var(--primary);
+}
+
+/* 團隊群組卡 */
+.team-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.team-role + .team-role {
+    border-top-color: var(--border);
+}
+
+.team-role h5 {
+    color: var(--heading);
+}
+
+/*** About End ***/
+
+
+/*** About v2 Start ***/
+/* about.html 第二版配色；排版在 style.css。上方 About 區保留給 about-v1.html。 */
+
+/* 區塊編號：主色膠囊＋深藍字（9.1:1） */
+.about-num {
+    color: var(--on-primary);
+    background: var(--primary);
+}
+
+/* 信任資訊帶：ul 的底色透過 1px gap 露出來當分隔線 */
+.about-trust {
+    background: var(--border);
+    border-color: var(--border);
+}
+
+.about-trust li {
+    background: var(--surface);
+    color: var(--heading);
+}
+
+.about-trust li i {
+    color: var(--primary);
+}
+
+/* 引言卡：與 Contact 表單卡同一套玻璃質感 */
+.about-quote {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border: 1px solid rgba(0, 255, 191, .20);
+    box-shadow: 0 30px 60px rgba(1, 8, 14, .55), inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+.about-quote-mark {
+    color: var(--primary);
+}
+
+.about-quote blockquote {
+    color: var(--heading);
+}
+
+.about-quote figcaption {
+    color: var(--text-muted);
+}
+
+/* 價值卡：放在深色面區塊上，卡片用更深的底色拉開層次 */
+.about-value {
+    background: var(--bg);
+    border-color: var(--border);
+}
+
+.about-value:hover {
+    border-color: rgba(0, 255, 191, .45);
+    box-shadow: 0 20px 40px rgba(1, 8, 14, .5), 0 0 0 1px rgba(0, 255, 191, .15);
+}
+
+/* 能力面板與磚 */
+.about-coverage {
+    background: url(../img/background.svg) center / cover no-repeat;
+    border-color: rgba(0, 255, 191, .20);
+}
+
+.cap-tile {
+    background: rgba(11, 18, 32, .85);
+    border-color: var(--border);
+    color: var(--heading);
+}
+
+.cap-tile:hover {
+    border-color: rgba(0, 255, 191, .45);
+    box-shadow: 0 16px 34px rgba(1, 8, 14, .5), 0 0 24px rgba(0, 255, 191, .10);
+}
+
+.cap-tile-icon {
+    color: var(--primary);
+    background: rgba(0, 255, 191, .10);
+}
+
+/* 國際區 */
+/* 文字直接壓在網路圖上：疊一層深色遮罩，確保光點流過文字底下時仍過 AA */
+.about-intl {
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(rgba(11, 18, 32, .40), rgba(11, 18, 32, .40)),
+        url(../img/about-network.svg);
+}
+
+.intl-list li,
+.intl-list li:last-child {
+    border-color: rgba(63, 155, 190, .25);
+}
+
+.intl-icon {
+    color: var(--primary);
+    background: rgba(0, 255, 191, .10);
+    border: 1px solid rgba(0, 255, 191, .25);
+}
+
+.intl-list h5,
+.intl-list h3 {
+    color: var(--heading);
+}
+
+/*** About v2 End ***/
+
+
+/*** Work Start ***/
+/* work.html 配色；排版在 style.css */
+
+/* 跳轉連結 */
+.work-jump a {
+    color: var(--heading);
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.work-jump a:hover {
+    color: var(--heading);
+    border-color: rgba(0, 255, 191, .5);
+}
+
+.work-jump-icon {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: var(--primary);
+}
+
+.work-jump-text small {
+    color: var(--text-muted);
+}
+
+.work-jump-arrow {
+    color: var(--primary);
+}
+
+/* 示意案例橫幅：低調但清楚，左側主色粗線 */
+.work-note {
+    color: var(--text);
+    background: rgba(0, 255, 191, .05);
+    border-color: rgba(0, 255, 191, .25);
+    border-left-color: var(--primary);
+}
+
+.work-note-icon {
+    color: var(--primary);
+}
+
+.work-note-title {
+    color: var(--heading);
+}
+
+/* 案例結構流程條：玻璃卡片 */
+.work-structure {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: rgba(0, 255, 191, .20);
+    box-shadow: 0 30px 60px rgba(1, 8, 14, .45), inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+.work-structure-label {
+    color: var(--text);
+}
+
+/* 兩端：起點藍（問題）、終點主色（成果），和軸線的漸層方向一致 */
+.work-flow-ends {
+    color: var(--text-muted);
+}
+
+.work-flow-ends span:first-child {
+    color: var(--accent-text);
+}
+
+.work-flow-ends span:last-child {
+    color: var(--primary);
+}
+
+/* 前兩個節點用輔色藍 */
+.work-flow li:nth-child(1) .work-step-icon,
+.work-flow li:nth-child(2) .work-step-icon {
+    color: var(--accent-text);
+    border-color: rgba(77, 163, 255, .75);
+}
+
+.work-flow li {
+    color: var(--heading);
+}
+
+.work-flow-step {
+    color: var(--text-muted);
+}
+
+/* 軸線：起點偏藍、終點轉主色 */
+.work-flow::before {
+    background: linear-gradient(90deg, rgba(0, 117, 241, .45), rgba(0, 255, 191, .9));
+}
+
+.work-structure .work-step-icon {
+    background: var(--surface);
+}
+
+/* 最後一個節點填實，標示終點＝成果 */
+.work-flow li:last-child .work-step-icon {
+    color: var(--on-primary);
+    background: var(--primary);
+    box-shadow: 0 0 0 6px rgba(0, 255, 191, .12);
+}
+
+@media (max-width: 991.98px) {
+    .work-flow::before {
+        background: linear-gradient(180deg, rgba(0, 117, 241, .45), rgba(0, 255, 191, .9));
+    }
+}
+
+.work-structure-foot {
+    color: var(--text-muted);
+    border-top-color: var(--border);
+}
+
+/* 代表能力標籤：用輔色藍，與上方主色的服務標籤區隔 */
+.work-skills-title {
+    color: var(--text-muted);
+}
+
+.work-skills li {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .10);
+    border-color: rgba(77, 163, 255, .35);
+}
+
+/* 案例插圖外框帶一點藍 */
+.work-case-art {
+    border-color: rgba(77, 163, 255, .28);
+}
+
+/* 實際交付清單 */
+.work-delivered li {
+    color: var(--text);
+}
+
+.work-delivered li::before {
+    color: var(--primary);
+}
+
+/* 次要按鈕：薄荷綠外框 */
+.btn-ghost {
+    color: var(--primary);
+    background: transparent;
+    border-color: var(--primary);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus {
+    color: var(--on-primary);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* 服務標籤＝主色框；示意標籤＝中性灰框 */
+.work-tag {
+    color: var(--primary);
+    border-color: rgba(0, 255, 191, .5);
+}
+
+.work-tag-muted {
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.work-case-art {
+    border-color: var(--border);
+}
+
+/* 時間軸：由輔色藍（問題端）漸層到主色薄荷綠（成果端），與流程軸同一個方向 */
+.work-steps > li:not(:last-child)::before {
+    background: linear-gradient(rgba(0, 117, 241, .45), rgba(0, 255, 191, .75));
+}
+
+/* 前兩步（問題與做法）用輔色藍，後兩步（交付與成果）維持主色，
+   讓整頁跟首頁一樣有藍色點綴 */
+.work-steps > li:nth-child(1) .work-step-icon,
+.work-steps > li:nth-child(2) .work-step-icon {
+    color: var(--accent-text);
+    border-color: rgba(77, 163, 255, .75);
+    box-shadow: 0 0 0 5px rgba(0, 117, 241, .10);
+}
+
+.work-step-icon {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 5px rgba(0, 255, 191, .08);
+}
+
+/* 案例 2 在深色面區塊上，圖示底色跟著區塊走 */
+.bg-light .work-step-icon {
+    background: var(--surface);
+}
+
+.work-steps h5,
+.work-steps h4 {
+    color: var(--heading);
+}
+
+/* Results 強調框 */
+.work-result {
+    background: rgba(0, 255, 191, .07);
+    border-color: rgba(0, 255, 191, .35);
+}
+
+.work-result p {
+    color: var(--heading);
+}
+
+.work-metric-from {
+    color: var(--text-muted);
+}
+
+.work-metric i,
+.work-metric-to {
+    color: var(--primary);
+}
+
+.work-metric small {
+    color: var(--text);
+}
+
+/*** Work End ***/
+
+
+/*** Services Page Start ***/
+/* service.html 配色；排版在 style.css。圖示沿用首頁服務卡的輔色藍 */
+
+.svc-intro-art {
+    border-color: rgba(77, 163, 255, .28);
+}
+
+.svc-card {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.svc-card:hover {
+    border-color: rgba(0, 255, 191, .45);
+}
+
+.svc-stage {
+    color: var(--primary);
+}
+
+.svc-icon {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .12);
+    border-color: rgba(77, 163, 255, .40);
+}
+
+.svc-card h2 {
+    color: var(--heading);
+}
+
+.svc-card p {
+    color: var(--text);
+}
+
+.svc-chips {
+    border-top-color: var(--border);
+}
+
+.svc-chips li {
+    color: var(--text);
+    background: rgba(11, 18, 32, .55);
+    border-color: var(--border);
+}
+
+/* 遊戲開發分割卡 */
+.svc-game {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    /* border-color: var(--border); */
+}
+
+.svc-game-eyebrow {
+    color: var(--accent-text);
+}
+
+.svc-game-text h2 {
+    color: var(--heading);
+}
+
+.svc-game-text p {
+    color: var(--text);
+}
+
+/* 桌機：插圖左緣往文字那側淡出 */
+.svc-game-art::after {
+    background: linear-gradient(90deg, var(--surface) 0%, rgba(18, 26, 42, 0) 42%);
+}
+
+@media (max-width: 991.98px) {
+    /* 上圖下文時改成由下往上淡出 */
+    .svc-game-art::after {
+        background: linear-gradient(0deg, var(--surface) 0%, rgba(18, 26, 42, 0) 55%);
+    }
+}
+
+/* 軸線：起點輔色藍，終點主色，與 Work 頁的流程軸同一個語彙 */
+.svc-axis::before {
+    background: linear-gradient(90deg, rgba(0, 117, 241, .45), rgba(0, 255, 191, .9));
+}
+
+.svc-axis li::before {
+    background: var(--bg);
+    border-color: var(--primary);
+}
+
+.svc-axis li:first-child::before {
+    border-color: var(--accent-text);
+}
+
+.svc-axis strong {
+    color: var(--heading);
+}
+
+.svc-axis small {
+    color: var(--text-muted);
+}
+
+@media (max-width: 991.98px) {
+    .svc-axis li {
+        border-left-color: rgba(0, 255, 191, .35);
+    }
+
+    .svc-axis li:first-child {
+        border-left-color: rgba(77, 163, 255, .45);
+    }
+}
+
+/*** Services Page End ***/
+
+
+/*** Service: Software Start ***/
+/* service-software.html 配色；排版在 style.css */
+
+.sw-hero-art {
+    border-color: rgba(77, 163, 255, .28);
+}
+
+/* 頁內導覽（固定子選單） */
+.sw-subnav {
+    background: var(--surface);
+    border-bottom-color: var(--border);
+}
+
+.sw-subnav .nav-link {
+    color: var(--heading);
+    background: var(--bg);
+    border-color: var(--border);
+}
+
+.sw-subnav .nav-link i {
+    color: var(--primary);
+}
+
+.sw-subnav .nav-link:hover {
+    color: var(--heading);
+    border-color: rgba(0, 255, 191, .5);
+}
+
+/* 所在段落：主色框線＋淡主色底 */
+.sw-subnav .nav-link.active {
+    color: var(--primary);
+    background: rgba(0, 255, 191, .10);
+    border-color: var(--primary);
+}
+
+/* 右側圓點索引 */
+.sw-dotnav::before {
+    background: var(--border);
+}
+
+.sw-dot {
+    background: var(--border);
+}
+
+.sw-dotnav .nav-link:hover .sw-dot,
+.sw-dotnav .nav-link.active .sw-dot {
+    background: var(--primary);
+}
+
+.sw-dot-label {
+    color: var(--heading);
+    /* color: var(--accent-text) ; */
+    /* background: var(--surface-2);
+    border-color: var(--border); */
+}
+
+.sw-section-lead {
+    color: var(--text);
+    border-left-color: var(--primary);
+}
+
+/* What we build */
+.sw-build li {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.sw-build li:hover {
+    border-color: rgba(0, 255, 191, .45);
+}
+
+.sw-build-num {
+    color: var(--text-muted);
+}
+
+.sw-build-icon {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .12);
+    border-color: rgba(77, 163, 255, .40);
+}
+
+/* 橫跨兩欄的兩張改用主色圖示，錯開顏色 */
+.sw-build-wide .sw-build-icon {
+    color: var(--primary);
+    background: rgba(0, 255, 191, .08);
+    border-color: rgba(0, 255, 191, .35);
+}
+
+.sw-build h3 {
+    color: var(--heading);
+}
+
+.sw-build p {
+    color: var(--text);
+}
+
+/* Industries */
+.sw-industries li {
+    color: var(--heading);
+    background: rgba(11, 18, 32, .55);
+    border-color: var(--border);
+}
+
+.sw-industry-icon {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: rgba(0, 255, 191, .35);
+}
+
+/* How we engage：三張卡頂線由藍到綠，對應「依階段選擇」 */
+.sw-engage article {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+    border-top-color: var(--accent);
+}
+
+.sw-engage article:nth-child(2) {
+    border-top-color: #00C9D6;
+}
+
+.sw-engage article:nth-child(3) {
+    border-top-color: var(--primary);
+}
+
+.sw-engage-icon {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 5px rgba(0, 255, 191, .08);
+}
+
+.sw-engage h3 {
+    color: var(--heading);
+}
+
+.sw-engage p {
+    color: var(--text);
+}
+
+/* 三項承諾 */
+.sw-promise {
+    background: rgba(0, 255, 191, .04);
+    border-color: rgba(0, 255, 191, .35);
+}
+
+.sw-promise li {
+    color: var(--heading);
+}
+
+.sw-promise i {
+    color: var(--primary);
+}
+
+/* Our approach */
+.sw-approach-lead {
+    color: var(--text);
+}
+
+.sw-approach-quote {
+    color: var(--heading);
+}
+
+.sw-approach-quote::before {
+    background: var(--cta-gradient);
+}
+
+.sw-approach-points > div {
+    border-left-color: rgba(0, 255, 191, .35);
+}
+
+.sw-approach-points h4 {
+    color: var(--heading);
+}
+
+.sw-approach-points p {
+    color: var(--text-muted);
+}
+
+/* 其他專業連結 */
+.sw-other {
+    color: var(--text-muted);
+    border-top-color: var(--border);
+}
+
+.sw-other a {
+    color: var(--primary);
+}
+
+/*** Service: Software End ***/
+
+
+/*** Service: Cybersecurity Start ***/
+/* service-cybersecurity.html 配色；排版在 style.css。
+   這頁以輔色藍為主調（偵測、監控的語彙），主色留給行動點與「已修復」的狀態。 */
+
+.cy-hero-art {
+    border-color: rgba(77, 163, 255, .28);
+}
+
+/* 服務清單 */
+.cy-list > li {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.cy-list > li:hover {
+    border-color: rgba(0, 255, 191, .45);
+}
+
+.cy-list-num {
+    color: var(--accent-text);
+}
+
+.cy-list-icon {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 5px rgba(0, 255, 191, .08);
+}
+
+.cy-list-main h3 {
+    color: var(--heading);
+}
+
+.cy-list-main p {
+    color: var(--text);
+}
+
+/* 標籤欄左側的細線，把說明與範圍分開 */
+.cy-list-tags {
+    border-left-color: var(--border);
+}
+
+.cy-list-tags li {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .10);
+    border-color: rgba(77, 163, 255, .35);
+}
+
+/* Why it matters */
+.cy-statement {
+    color: var(--heading);
+    border-left-color: var(--primary);
+}
+
+.cy-split-card {
+    background: rgba(11, 18, 32, .55);
+    border-color: var(--border);
+}
+
+/* 左卡＝開發（輔色藍），右卡＝攻破（主色） */
+.cy-split-card:first-child .cy-split-icon {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .12);
+    border-color: rgba(77, 163, 255, .40);
+}
+
+.cy-split-card:last-of-type .cy-split-icon {
+    color: var(--primary);
+    background: rgba(0, 255, 191, .08);
+    border-color: rgba(0, 255, 191, .35);
+}
+
+.cy-split-card h4 {
+    color: var(--heading);
+}
+
+.cy-split-card p {
+    color: var(--text);
+}
+
+.cy-split-plus {
+    color: var(--text-muted);
+}
+
+/* 合規徽章 */
+.cy-badges li {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.cy-badge-mark {
+    color: var(--on-primary);
+    background: var(--cta-gradient);
+}
+
+.cy-badges h3 {
+    color: var(--heading);
+}
+
+.cy-badges p {
+    color: var(--text-muted);
+}
+
+/* 合作方式：單次用輔色藍，長期合約用主色 */
+.cy-engage article {
+    background: rgba(11, 18, 32, .55);
+    border-color: var(--border);
+}
+
+.cy-engage-ongoing {
+    border-color: rgba(0, 255, 191, .45);
+}
+
+.cy-engage-tag {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .10);
+    border-color: rgba(77, 163, 255, .35);
+}
+
+.cy-engage-ongoing .cy-engage-tag {
+    color: var(--on-primary);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.cy-engage h3 {
+    color: var(--heading);
+}
+
+.cy-engage p {
+    color: var(--text);
+}
+
+/*** Service: Cybersecurity End ***/
+
+
+/*** Work B Start ***/
+/* work-b.html 配色；排版在 style.css。卡片底色、邊框沿用 Blog 區塊的 .blog-item 設定 */
+
+/* 右上分類標籤：深底＋主色細框（實心主色只留給行動點） */
+.wb-tab {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: rgba(0, 255, 191, .45);
+}
+
+.wb-avatar {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: var(--border);
+    box-shadow: 0 0 0 4px rgba(0, 255, 191, .10);
+}
+
+/* 總覽卡：整張可點，滑過時框線轉主色 */
+.wb-card:hover {
+    border-color: rgba(0, 255, 191, .55) !important;
+    box-shadow: 0 24px 48px rgba(1, 8, 14, .55);
+}
+
+/* 卡片小標用輔色藍，和首頁 Proof 的「Case 01.」同一個用法 */
+.wb-card-kicker {
+    color: var(--accent-text);
+}
+
+.wb-card p {
+    color: var(--text);
+}
+
+.wb-card .wb-card-cta,
+.wb-card .wb-card-cta i {
+    color: var(--on-primary);
+}
+
+.wb-card:hover .wb-card-cta {
+    background: var(--primary-hover) !important;
+}
+
+.wb-card h5,
+.wb-card h3,
+.wb-principle h5,
+.wb-case h2 {
+    color: var(--heading);
+}
+
+/* 底部橫條：只有總覽卡的「Read the case」是實心主色（可點）；
+   案例大卡與原則卡的橫條是資訊，改成淡主色底，不像按鈕 */
+.wb-bar {
+    color: var(--text);
+    background: rgba(0, 255, 191, .06);
+    border-top: 1px solid var(--border);
+}
+
+.wb-bar small,
+.wb-bar-title,
+.wb-bar i {
+    color: var(--primary);
+}
+
+.wb-card .wb-card-cta {
+    border-top: 0;
+}
+
+.wb-case-bar li {
+    color: var(--text);
+    background: var(--surface-2);
+    border-color: var(--border);
+}
+
+.wb-label {
+    color: var(--heading);
+}
+
+.wb-label i {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: var(--primary);
+}
+
+.wb-block {
+    background: rgba(11, 18, 32, .55);
+    border-color: var(--border);
+}
+
+.wb-result {
+    background: rgba(0, 255, 191, .07);
+    border-color: rgba(0, 255, 191, .35);
+}
+
+.wb-result p {
+    color: var(--heading);
+}
+
+/* 共同原則：馬賽克 */
+.wb-common-lead {
+    color: var(--text);
+    border-left-color: var(--primary);
+}
+
+.wb-mo {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.wb-mo:hover {
+    border-color: rgba(0, 255, 191, .45);
+}
+
+/* 鏤空數字：只有描邊，當底紋用。這裡用輔色藍，是本區唯一的藍色 */
+.wb-mo-num {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(77, 163, 255, .26);
+}
+
+.wb-mo-icon {
+    color: var(--primary);
+    background: rgba(0, 255, 191, .08);
+    border-color: rgba(0, 255, 191, .35);
+}
+
+/* 藍色只出現在當底紋的鏤空數字上（淡、不搶戲），圖示一律維持主色，
+   避免整區藍綠交錯像棋盤 */
+
+.wb-mo h4,
+.wb-mo h3 {
+    color: var(--heading);
+}
+
+.wb-mo p {
+    color: var(--text);
+}
+
+/* 原則卡在深色面區塊上，改用玻璃質感與 Contact 表單卡一致 */
+.wb-principle {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: rgba(0, 255, 191, .20) !important;
+}
+
+/*** Work B End ***/
+
+
+/*** Form Start ***/
+
+.form-control,
+.form-select,
+textarea,
+input {
+    background-color: var(--surface-2);
+    color: var(--text);
+}
+
+/* HTML 上帶 .border-0，需用同等特異度補回可辨識的邊框 */
+.form-control.border-0,
+.form-select.border-0 {
+    border: 1px solid var(--border) !important;
+}
+
+.form-control::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 1;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--surface-2);
+    border-color: var(--primary);
+    color: var(--text);
+    box-shadow: 0 0 0 .2rem rgba(0, 255, 191, .25);
+}
+
+.form-control.border-0:focus,
+.form-select.border-0:focus {
+    border: 1px solid var(--primary) !important;
+}
+
+.form-label {
+    color: var(--heading);
+}
+
+/* 未通過驗證的欄位 */
+.form-control.is-invalid,
+.form-select.is-invalid,
+.form-control.border-0.is-invalid,
+.form-select.border-0.is-invalid {
+    border: 1px solid #FF6B7A !important;
+}
+
+.cf-field-error {
+    color: #FF8A96;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+/*** Form End ***/
+
+
+/*** Modal Start ***/
+
+/* 視窗背後的遮罩：Bootstrap 預設純黑 50%，改為品牌深色、壓暗一點讓視窗更聚焦 */
+.modal-backdrop {
+    background-color: #01080E;
+}
+
+.modal-backdrop.show {
+    opacity: .75;
+}
+
+/* 感謝視窗：與 Contact 表單卡同一套玻璃質感（淡薄荷綠細框＋陰影） */
+.thanks-modal {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 55%);
+    border: 1px solid rgba(0, 255, 191, .20);
+    box-shadow: 0 30px 60px rgba(1, 8, 14, .55), inset 0 1px 0 rgba(255, 255, 255, .05);
+    color: var(--text);
+}
+
+.thanks-modal h3 {
+    color: var(--heading);
+}
+
+.thanks-modal-icon {
+    color: var(--primary);
+    background: rgba(0, 255, 191, .10);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 8px rgba(0, 255, 191, .06);
+}
+
+/*** Modal End ***/
+
+
+/*** Footer Start ***/
+
+.footer {
+    color: var(--text);
+}
+
+.footer .hightech-link a:hover {
+    background: var(--primary);
+}
+
+.footer .hightech-link a:hover i {
+    color: var(--on-primary) !important;
+}
+
+/*** Footer End ***/
+
+
+/*** Service: Managed IT Start ***/
+/* service-managed-it.html 配色；排版在 style.css。
+   這頁的語彙是「持續運轉」：主色薄荷綠代表還在跑的東西（狀態點、脈衝、選中的服務），
+   輔色藍留給編號與平台這類標示用的元素。 */
+
+.mi-hero-art {
+    border-color: rgba(77, 163, 255, .28);
+}
+
+/* 服務切換軌 */
+.mi-rail-btn {
+    color: var(--text);
+    background: rgba(11, 18, 32, .45);
+    border-color: var(--border);
+}
+
+.mi-rail-btn:hover {
+    background: rgba(0, 255, 191, .05);
+    border-color: rgba(0, 255, 191, .35);
+}
+
+.mi-rail-btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* 選中的項目：左邊亮起主色，和右側面板是同一條脈絡 */
+.mi-rail-btn.is-active {
+    background: linear-gradient(100deg, rgba(0, 255, 191, .12) 0%, rgba(11, 18, 32, .45) 70%);
+    border-color: rgba(0, 255, 191, .45);
+}
+
+.mi-rail-num {
+    color: var(--accent-text);
+}
+
+.mi-rail-btn.is-active .mi-rail-num {
+    color: var(--primary);
+}
+
+.mi-rail-icon {
+    color: var(--accent-text);
+}
+
+.mi-rail-btn.is-active .mi-rail-icon {
+    color: var(--primary);
+}
+
+.mi-rail-text {
+    color: var(--text);
+}
+
+.mi-rail-btn.is-active .mi-rail-text {
+    color: var(--heading);
+}
+
+/* 服務面板 */
+.mi-panel {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.mi-panel h3 {
+    color: var(--heading);
+}
+
+.mi-panel p {
+    color: var(--text);
+}
+
+/* 包含項目清單：分隔線用邊框色，勾號用主色，文字比說明略淡一階 */
+.mi-panel-checks {
+    border-top-color: var(--border);
+}
+
+.mi-panel-checks li {
+    color: var(--text);
+}
+
+.mi-panel-checks li::before {
+    border-color: var(--primary);
+}
+
+
+/* 平台橫向軌 */
+.mi-platforms li {
+    background: rgba(11, 18, 32, .55);
+    border-color: var(--border);
+}
+
+.mi-platforms li:hover {
+    border-color: rgba(0, 255, 191, .40);
+}
+
+.mi-platform-mark {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .12);
+    border-color: rgba(77, 163, 255, .35);
+}
+
+.mi-platform-name {
+    color: var(--heading);
+}
+
+.mi-platform-note {
+    color: var(--text);
+    background: rgba(0, 255, 191, .06);
+    border-color: rgba(0, 255, 191, .22);
+}
+
+.mi-platform-note i {
+    color: var(--primary);
+}
+
+/* 24 小時軌道 */
+.mi-clock-track {
+    background: linear-gradient(90deg, rgba(0, 255, 191, .10) 0%, rgba(0, 255, 191, .45) 50%, rgba(0, 255, 191, .10) 100%);
+}
+
+.mi-clock-tick {
+    background: var(--bg);
+    box-shadow: 0 0 0 2px rgba(77, 163, 255, .45);
+}
+
+.mi-clock-tick b {
+    color: var(--text-muted);
+}
+
+/* 持續往右掃的光點：代表監控沒有下班 */
+.mi-clock-pulse {
+    background: var(--primary);
+    box-shadow: 0 0 0 6px rgba(0, 255, 191, .14), 0 0 18px rgba(0, 255, 191, .55);
+}
+
+.mi-clock-points li {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.mi-clock-icon {
+    color: var(--primary);
+    background: var(--bg);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 5px rgba(0, 255, 191, .08);
+}
+
+.mi-clock-points h4,
+.mi-clock-points h3 {
+    color: var(--heading);
+}
+
+.mi-clock-points p {
+    color: var(--text);
+}
+
+/* Engagement：合約面板 */
+.mi-statement {
+    color: var(--heading);
+    border-left-color: var(--primary);
+}
+
+.mi-agreement {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.mi-agreement-tag {
+    color: var(--on-primary);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.mi-agreement-list > li + li {
+    border-top-color: var(--border);
+}
+
+.mi-agreement-icon {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .12);
+    border-color: rgba(77, 163, 255, .35);
+}
+
+.mi-agreement-list h4 {
+    color: var(--heading);
+}
+
+.mi-agreement-list p {
+    color: var(--text);
+}
+/*** Service: Managed IT End ***/
+
+
+/*** Game Development Start ***/
+/* game-development.html 配色；排版在 style.css。
+   這頁的語彙是「一條從頭跑到尾的生產線」：軸線與節點用主色薄荷綠，
+   四張卡片的圖示用輔色藍，兩端的 Concept / LiveOps 標記才是實心主色。 */
+
+.gd-hero-art {
+    border-color: rgba(77, 163, 255, .28);
+}
+
+/* 軸線兩端的標記 */
+.gd-track-cap {
+    color: var(--on-primary);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* 中央縱線：兩端淡、中間亮，讓視線沿著線往下走 */
+.gd-steps::before {
+    background: linear-gradient(180deg,
+        rgba(0, 255, 191, .15) 0%,
+        rgba(0, 255, 191, .55) 18%,
+        rgba(0, 255, 191, .55) 82%,
+        rgba(0, 255, 191, .15) 100%);
+}
+
+/* 線上的節點 */
+.gd-steps > li::after {
+    background: var(--bg);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 5px rgba(0, 255, 191, .10);
+}
+
+.gd-step {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.gd-step:hover {
+    border-color: rgba(0, 255, 191, .45);
+}
+
+/* 卡片連到軸線的那一小段接頭 */
+.gd-step::after {
+    background: rgba(0, 255, 191, .35);
+}
+
+.gd-step-icon {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .12);
+    border-color: rgba(77, 163, 255, .35);
+}
+
+.gd-step h3 {
+    color: var(--heading);
+}
+
+.gd-step p {
+    color: var(--text);
+}
+
+/* 平台 */
+.gd-platform-icon {
+    color: var(--primary);
+}
+
+.gd-platform-name {
+    color: var(--heading);
+}
+
+.gd-porting {
+    color: var(--text);
+    background: rgba(0, 255, 191, .06);
+    border-color: rgba(0, 255, 191, .22);
+}
+
+.gd-porting i {
+    color: var(--primary);
+}
+/*** Game Development End ***/
+
+
+/*** Legal Start ***/
+/* privacy.html 配色；排版在 style.css。 */
+
+.legal p.legal-updated {
+    color: var(--text-muted);
+}
+
+.legal p.legal-lead {
+    color: var(--heading);
+}
+
+.legal-lead {
+    border-bottom-color: var(--border);
+}
+
+.legal h2,
+.legal h3 {
+    color: var(--heading);
+}
+
+.legal p,
+.legal li {
+    color: var(--text);
+}
+
+.legal a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal a:hover {
+    color: var(--primary-hover);
+}
+
+.legal code {
+    color: var(--accent-text);
+    background: rgba(0, 117, 241, .12);
+}
+/*** Legal End ***/
+
+
+/*** Footer legal link Start ***/
+/* 直接繼承版權列的文字顏色，兩者完全同色，滑過去才變主色 */
+.footer-legal {
+    color: inherit;
+}
+
+.footer-legal:hover,
+.footer-legal:focus {
+    color: var(--primary);
+}
+/*** Footer legal link End ***/
+
+
+/*** Footer credit Start ***/
+/* 版型署名：比隱私權連結再淡一階，用次要文字色，滑過去才變主色。
+   分隔線用與頁尾其他細線相同的 --border，不另外製造新的視覺層次。 */
+.footer-credit {
+    color: var(--text-muted);
+    border-left-color: var(--border);
+}
+
+.footer-credit .footer-legal {
+    color: inherit;
+}
+/*** Footer credit End ***/
+
+
+/*** Not found Start ***/
+/* 404.html 配色；排版在 style.css。
+   大型 404 用很淡的輔色藍當底紋，不搶走「怎麼回到正軌」的焦點。 */
+
+.nf-code {
+    color: rgba(77, 163, 255, .18);
+}
+
+.nf-main h2 {
+    color: var(--heading);
+}
+
+.nf-main p {
+    color: var(--text);
+}
+
+.nf-links {
+    background: linear-gradient(160deg, #13203A 0%, var(--surface) 60%);
+    border-color: var(--border);
+}
+
+.nf-links h3 {
+    color: var(--heading);
+}
+
+.nf-links li + li {
+    border-top-color: var(--border);
+}
+
+.nf-links a {
+    color: var(--text);
+}
+
+.nf-links a i {
+    color: var(--accent-text);
+}
+
+.nf-links a:hover {
+    color: var(--primary);
+}
+
+.nf-links a:hover i {
+    color: var(--primary);
+}
+/*** Not found End ***/
+
+
+/*** About photo band Start ***/
+.ab-photos img {
+    border-color: var(--border);
+}
+/*** About photo band End ***/
+
+
+
+
+
+/*** About team Start ***/
+/* 上半部：覆蓋圖與團隊運作說明 */
+.tv-chips li {
+    color: var(--heading);
+    background: rgba(0, 255, 191, .06);
+    border-color: rgba(0, 255, 191, .25);
+}
+
+.tv-chips i {
+    color: var(--primary);
+}
+
+.tv-side p {
+    color: var(--text);
+}
+
+/* 群組名用標題色，分隔線用邊框色，角色前的短線用主色 */
+.te-group-head {
+    border-bottom-color: var(--border);
+}
+
+.te-num {
+    color: var(--accent-text);
+}
+
+.te-group-head h4 {
+    color: var(--heading);
+}
+
+.te-roles h5 {
+    color: var(--heading);
+    border-left-color: var(--primary);
+}
+
+.te-roles p {
+    color: var(--text);
+}
+/*** About team End ***/

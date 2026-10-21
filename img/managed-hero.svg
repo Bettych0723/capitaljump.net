@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" width="640" height="460" role="img"
+     aria-label="Illustration: servers on the left migrating up into a cloud platform on the right, with a monitoring pulse running along the bottom">
+  <!-- Managed IT & Cloud 的 Hero 插圖。對應文案：「讓你的系統該怎麼跑就怎麼跑——你不必再操心。」
+       左下＝原本的機房機櫃；中間＝往上遷移的資料流；右上＝雲端平台與三個服務節點；
+       底部＝一條持續跑動的監控脈衝，代表 24/7 代管。 -->
+  <defs>
+    <linearGradient id="mhBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#101C30"/>
+      <stop offset="0.55" stop-color="#121A2A"/>
+      <stop offset="1"   stop-color="#0D1626"/>
+    </linearGradient>
+    <radialGradient id="mhGlowMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mhGlowBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0A8BFF" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="mhGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.12" stroke-width="1"/>
+    </pattern>
+    <clipPath id="mhClip"><rect x="0" y="0" width="640" height="460" rx="18"/></clipPath>
+    <filter id="mhSoft" x="-60%" y="-60%" width="220%" height="220%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes mhFlow { to { stroke-dashoffset: -150; } }
+    @keyframes mhRise { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(-150px); } }
+    @keyframes mhBeat { 0%,100% { opacity: .28; } 50% { opacity: 1; } }
+    @keyframes mhRun  { to { stroke-dashoffset: -900; } }
+    .mh-flow { stroke-dasharray: 9 15; animation: mhFlow 3s linear infinite; }
+    .mh-pkt  { transform-box: view-box; animation: mhRise 3.6s ease-in-out infinite; }
+    .mh-pkt2 { animation-delay: 1.2s; }
+    .mh-pkt3 { animation-delay: 2.4s; }
+    .mh-beat { animation: mhBeat 2.4s ease-in-out infinite; }
+    .mh-run  { stroke-dasharray: 130 770; animation: mhRun 5s linear infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .mh-flow, .mh-pkt, .mh-beat, .mh-run { animation: none; }
+      .mh-pkt { opacity: .8; }
+      .mh-run { stroke-dasharray: none; opacity: .45; }
+    }
+  </style>
+
+  <g clip-path="url(#mhClip)">
+    <rect width="640" height="460" fill="url(#mhBg)"/>
+    <rect width="640" height="460" fill="url(#mhGrid)"/>
+    <ellipse cx="452" cy="132" rx="230" ry="170" fill="url(#mhGlowMint)"/>
+    <ellipse cx="150" cy="340" rx="210" ry="160" fill="url(#mhGlowBlue)"/>
+
+    <!-- 右上：雲端平台 -->
+    <g>
+      <path d="M 352,150 a 34,34 0 0 1 34,-34 a 46,46 0 0 1 88,-10 a 33,33 0 0 1 31,44 Z"
+            fill="#0A8BFF" fill-opacity="0.10" stroke="#4DA3FF" stroke-opacity="0.5" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="356" y="160" width="226" height="112" rx="14"
+            fill="#16243C" fill-opacity="0.95" stroke="#2F6E87" stroke-opacity="0.6" stroke-width="1.5"/>
+      <g fill="#0E2436" stroke="#00FFBF" stroke-opacity="0.35" stroke-width="1.5">
+        <rect x="372" y="178" width="62" height="34" rx="8"/>
+        <rect x="444" y="178" width="62" height="34" rx="8"/>
+        <rect x="516" y="178" width="50" height="34" rx="8"/>
+      </g>
+      <g fill="#00FFBF" fill-opacity="0.8">
+        <circle class="mh-beat" cx="403" cy="195" r="4"/>
+        <circle class="mh-beat mh-pkt2" cx="475" cy="195" r="4"/>
+        <circle class="mh-beat mh-pkt3" cx="541" cy="195" r="4"/>
+      </g>
+      <g fill="none" stroke="#3F9BBE" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round">
+        <path d="M 372,234 H 566"/>
+        <path d="M 372,252 H 496"/>
+      </g>
+    </g>
+
+    <!-- 中間：遷移路徑與上升的資料封包 -->
+    <g class="mh-flow" fill="none" stroke="#00FFBF" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round">
+      <path d="M 150,320 C 150,236 260,236 330,214"/>
+      <path d="M 196,352 C 210,268 290,258 334,232"/>
+    </g>
+    <g fill="#00FFBF">
+      <rect class="mh-pkt" x="188" y="300" width="14" height="14" rx="3" fill-opacity="0.85"/>
+      <rect class="mh-pkt mh-pkt2" x="232" y="312" width="14" height="14" rx="3" fill-opacity="0.7"/>
+      <rect class="mh-pkt mh-pkt3" x="268" y="296" width="14" height="14" rx="3" fill-opacity="0.55"/>
+    </g>
+
+    <!-- 左下：原本的機櫃 -->
+    <g>
+      <rect x="60" y="300" width="192" height="130" rx="14"
+            fill="#16243C" fill-opacity="0.95" stroke="#2F6E87" stroke-opacity="0.55" stroke-width="1.5"/>
+      <g fill="#0E2436" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="1.5">
+        <rect x="76" y="316" width="160" height="30" rx="7"/>
+        <rect x="76" y="352" width="160" height="30" rx="7"/>
+        <rect x="76" y="388" width="160" height="30" rx="7"/>
+      </g>
+      <g fill="#4DA3FF" fill-opacity="0.8">
+        <circle cx="94" cy="331" r="4"/><circle cx="94" cy="367" r="4"/><circle cx="94" cy="403" r="4"/>
+      </g>
+      <g fill="none" stroke="#3F9BBE" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round">
+        <path d="M 112,331 H 214"/><path d="M 112,367 H 188"/><path d="M 112,403 H 204"/>
+      </g>
+    </g>
+
+    <!-- 底部：持續跑動的監控脈衝 -->
+    <g>
+      <path d="M 300,420 H 600" fill="none" stroke="#3F9BBE" stroke-opacity="0.25" stroke-width="1.5"/>
+      <path class="mh-run" d="M 300,420 h 52 l 14,-26 l 18,52 l 16,-26 h 46 l 13,-18 l 16,36 l 15,-18 h 52 l 14,-24 l 18,44 l 16,-20 h 44"
+            fill="none" stroke="#00FFBF" stroke-opacity="0.65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="mh-beat" cx="300" cy="420" r="12" fill="#00FFBF" fill-opacity="0.22" filter="url(#mhSoft)"/>
+      <circle class="mh-beat" cx="300" cy="420" r="5" fill="#00FFBF"/>
+    </g>
+
+    <rect x="0.75" y="0.75" width="638.5" height="458.5" rx="17.5" fill="none" stroke="#263349" stroke-width="1.5"/>
+  </g>
+</svg>

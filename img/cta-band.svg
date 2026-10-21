@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 420" width="1920" height="420" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <defs>
+
+    <linearGradient id="ctabg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#010C14"/>
+      <stop offset="0.45" stop-color="#04222F"/>
+      <stop offset="0.75" stop-color="#03212F"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="ctaMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.34"/>
+      <stop offset="0.28" stop-color="#00D8CE" stop-opacity="0.15"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="ctaBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0A8BFF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ctaLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.3"  stop-color="#0A8BFF" stop-opacity="0.55"/>
+      <stop offset="0.72" stop-color="#00FFBF" stop-opacity="0.85"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="ctaLine2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#4DA3FF" stop-opacity="0.5"/>
+      <stop offset="1"    stop-color="#8BFFE4" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <pattern id="ctaGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 L0 60" fill="none" stroke="#3F9BBE" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+
+    <pattern id="ctaDots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.4" fill="#00FFBF" fill-opacity="0.5"/>
+    </pattern>
+
+    <linearGradient id="ctaDotsFadeL" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"   stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="0.6" stop-color="#fff" stop-opacity="0.18"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ctaDotsFadeR" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#fff" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#fff" stop-opacity="0.14"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="ctaDotsMaskL"><rect x="0" y="230" width="420" height="190" fill="url(#ctaDotsFadeL)"/></mask>
+    <mask id="ctaDotsMaskR"><rect x="1560" y="0" width="360" height="180" fill="url(#ctaDotsFadeR)"/></mask>
+
+    <!-- 網格只出現在左右兩側，中央留給文字 -->
+    <radialGradient id="ctaEdgeMask" cx="0.5" cy="0.5" r="0.56">
+      <stop offset="0"    stop-color="#000000"/>
+      <stop offset="0.42" stop-color="#333333"/>
+      <stop offset="1"    stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="ctaEdgeOnly"><rect width="1920" height="420" fill="url(#ctaEdgeMask)"/></mask>
+
+    <!-- 中央壓暗，確保置中白字可讀 -->
+    <radialGradient id="ctaDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.78"/>
+      <stop offset="0.5"  stop-color="#01080E" stop-opacity="0.52"/>
+      <stop offset="0.82" stop-color="#01080E" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="ctaSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="ctaSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+
+  <rect width="1920" height="420" fill="url(#ctabg)"/>
+
+  <g mask="url(#ctaEdgeOnly)">
+    <rect width="1920" height="420" fill="url(#ctaGrid)"/>
+  </g>
+
+  <ellipse cx="120"  cy="400" rx="620" ry="360" fill="url(#ctaBlue)"/>
+  <ellipse cx="1640" cy="120" rx="640" ry="380" fill="url(#ctaMint)"/>
+
+  <rect x="0" y="230" width="420" height="190" fill="url(#ctaDots)" mask="url(#ctaDotsMaskL)"/>
+  <rect x="1560" y="0" width="360" height="180" fill="url(#ctaDots)" mask="url(#ctaDotsMaskR)"/>
+
+  <!-- 光路壓在下緣通過文字區，出了文字區才向右上收束。
+       文字（置中，最寬約畫面 22%–78%）落在 x 500–1420 / y 80–320 這塊，光路刻意避開。 -->
+  <g fill="none" stroke-linecap="round">
+    <g filter="url(#ctaSoft)" stroke-opacity="0.5">
+      <path d="M -80,268 C 300,350 640,378 1000,382 S 1450,362 1620,286 S 1860,150 1990,96" stroke="url(#ctaLine)" stroke-width="12"/>
+      <path d="M 1360,420 C 1520,392 1660,300 1760,206 S 1900,96 1990,52" stroke="url(#ctaLine2)" stroke-width="9"/>
+    </g>
+    <path d="M -80,268 C 300,350 640,378 1000,382 S 1450,362 1620,286 S 1860,150 1990,96" stroke="url(#ctaLine)" stroke-width="3"/>
+    <path d="M 1360,420 C 1520,392 1660,300 1760,206 S 1900,96 1990,52" stroke="url(#ctaLine2)" stroke-width="2.5"/>
+  </g>
+
+  <g fill="#C6FFEE">
+    <circle cx="1620" cy="286" r="4.5"/>
+    <circle cx="1760" cy="206" r="4" fill-opacity="0.75"/>
+    <circle cx="1000" cy="382" r="3.5" fill-opacity="0.55"/>
+    <circle cx="360"  cy="352" r="3" fill-opacity="0.4"/>
+  </g>
+
+  <g>
+    <circle cx="1836" cy="118" r="120" fill="url(#ctaMint)" opacity="0.7"/>
+    <circle cx="1836" cy="118" r="26" fill="#00FFBF" fill-opacity="0.30" filter="url(#ctaSoft2)"/>
+    <circle cx="1836" cy="118" r="8" fill="#DFFFF6"/>
+  </g>
+
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 1766,330 l 18,18 l -18,18"/>
+    <path d="M 1806,330 l 18,18 l -18,18"/>
+  </g>
+  <g stroke="#4DA3FF" fill="none" stroke-width="2" stroke-opacity="0.26" stroke-linecap="round">
+    <path d="M 154,74 l -18,18 l 18,18"/>
+    <path d="M 114,74 l -18,18 l 18,18"/>
+  </g>
+
+  <ellipse cx="960" cy="200" rx="1000" ry="300" fill="url(#ctaDim)"/>
+</svg>

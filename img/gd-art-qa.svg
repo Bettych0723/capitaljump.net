@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 200" width="230" height="200" role="img" aria-label="Illustration: a test checklist beside a version tag and an update cycle arrow">
+  <!-- What we do 04：QA 與 LiveOps。左＝測試清單，右上＝版本標籤，右下＝更新循環。 -->
+  <rect x="18" y="18" width="128" height="140" rx="12" fill="#16243C" stroke="#2F6E87" stroke-opacity="0.65" stroke-width="2"/>
+  <g fill="none" stroke="#00FFBF" stroke-opacity="0.85" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 36,48 L 43,56 L 57,40"/>
+    <path d="M 36,84 L 43,92 L 57,76"/>
+    <path d="M 36,120 L 43,128 L 57,112"/>
+  </g>
+  <g fill="none" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round">
+    <path d="M 72,48 H 128"/>
+    <path d="M 72,84 H 112"/>
+    <path d="M 72,120 H 124"/>
+  </g>
+  <g>
+    <rect x="156" y="30" width="60" height="30" rx="8" fill="#0B1220" stroke="#4DA3FF" stroke-opacity="0.7" stroke-width="2.5"/>
+    <path d="M 166,45 h 10" stroke="#4DA3FF" stroke-opacity="0.8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 184,45 h 22" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(176 136)">
+    <path d="M -28,0 a 28,28 0 1 1 10,21" fill="none" stroke="#00FFBF" stroke-opacity="0.65" stroke-width="3" stroke-linecap="round"/>
+    <path d="M -36,-10 L -28,-1 L -19,-9" fill="none" stroke="#00FFBF" stroke-opacity="0.85" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="6" fill="#4DA3FF" fill-opacity="0.75"/>
+  </g>
+  <g fill="#00FFBF" fill-opacity="0.5">
+    <circle cx="36" cy="176" r="4"/><circle cx="52" cy="176" r="4"/><circle cx="68" cy="176" r="4"/>
+  </g>
+</svg>

@@ -1,0 +1,4713 @@
+/*** Scroll behaviour Start ***/
+
+/* Bootstrap reboot 會在 :root 套用 scroll-behavior: smooth，
+   這會讓滑鼠滾輪變成緩動捲動，也會和 JS 寫入 scrollTop 的動畫互相打架
+   （實測落差可達 2896px）。這裡關掉，平滑捲動改由 js/main.js 針對
+   「回頂部」與「頁內錨點」個別處理，一次只會有一段動畫在跑。 */
+:root {
+    scroll-behavior: auto;
+}
+
+/*** Scroll behaviour End ***/
+
+
+/*** Spinner Start ***/
+
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .8s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+ }
+
+ #spinner.show {
+     transition: opacity .8s ease-out, visibility 0s linear .0s;
+     visibility: visible;
+     opacity: 1;
+ }
+
+/*** Spinner End ***/
+
+
+/*** Button Start ***/
+.btn {
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-md-square {
+    width: 46px;
+    height: 46px;
+}
+
+.btn-lg-square {
+    width: 58px;
+    height: 58px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-md-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+.back-to-top {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+/*** Button End ***/
+
+
+/*** Topbar Start ***/
+
+.topbar .top-info {
+    letter-spacing: 1px;
+}
+
+.topbar .top-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar .top-link a {
+    margin-right: 10px;
+}
+
+#note {
+    width: 500px;
+    overflow: hidden;
+}
+
+#note small {
+    position: relative;
+    display: inline-block;
+    animation: mymove 5s infinite;
+    animation-timing-function: all;
+}
+
+@keyframes mymove {
+    from {left: -100%;}
+    to {left: 100%;}
+}
+
+/*** Topbar End ***/
+
+
+/*** Navbar Start ***/
+
+/* CAPITAL JUMP 品牌 logo（img/cj-logo.png，反白版，原始尺寸 158x52）
+   不放大超過原始高度以免糊掉 */
+.navbar-brand .brand-logo {
+    height: 52px;
+    width: auto;
+    display: block;
+}
+
+.navbar-brand {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.footer .brand-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 575.98px) {
+    .navbar-brand .brand-logo {
+        height: 45px;
+    }
+}
+
+/* 固定在頂端的導覽列：捲動時內容從底下經過，加一道陰影做出層次
+   （深色主題另有 border-bottom，兩者一起用） */
+.container-fluid.bg-primary.sticky-top {
+    box-shadow: 0 6px 24px rgba(1, 8, 14, .45);
+}
+
+.navbar .navbar-nav {
+    padding: 15px 0;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 10px 15px;
+    color: var(--bs-white);
+    font-size: 18px;
+    outline: none;
+    
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--bs-secondary) !important;
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "font awesome 5 free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        transition: .5s;
+        opacity: 0;
+    }
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+    transform: rotateX(0deg);
+    visibility: visible;
+    transition: .5s;
+    opacity: 1;
+}
+
+/*** Navbar End ***/
+
+
+/*** Carousel Start ***/
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+.carousel-caption {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.carousel-item p:not(.hero-eyebrow) {
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+}
+
+.carousel-control-prev {
+    width: 90px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: var(--bs-primary);
+    border-radius: 0 50px 50px 0;
+    opacity: 1;
+}
+
+.carousel-control-prev:hover {
+    background: var(--bs-secondary);
+    transition: .8s;
+}
+
+.carousel-control-next {
+    width: 90px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: var(--bs-primary);
+    border-radius: 50px 0 0 50px;
+    opacity: 1;
+}
+
+.carousel-control-next:hover {
+    background: var(--bs-secondary);
+    transition: .8s;
+}
+
+.carousel-caption .carousel-content a button.carousel-content-btn1 {
+    background: var(--bs-secondary);
+    color: var(--bs-dark);
+    opacity: 1;
+    border: 0;
+    border-radius: 20px;
+}
+
+.carousel-caption .carousel-content a button.carousel-content-btn1:hover {
+    background: var(--bs-primary);
+    color: #ffffff;
+    border: 0;
+    opacity: 1;
+    transition: 1s;
+    border-radius: 20px;
+}
+
+.carousel-caption .carousel-content a button.carousel-content-btn2 {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    opacity: 1;
+    border: 0;
+    border-radius: 20px;
+}
+
+.carousel-caption .carousel-content a button.carousel-content-btn2:hover {
+    background: var(--bs-secondary);
+    color: var(--bs-dark);
+    border: 0;
+    opacity: 1;
+    transition: 1s;
+    border-radius: 20px;
+}
+
+#carouselId .carousel-indicators li {
+    width: 30px;
+    height: 10px;
+    background: var(--bs-primary);
+    margin: 10px;
+    border-radius: 30px;
+    opacity: 1;
+}
+
+#carouselId .carousel-indicators li:hover {
+    background: var(--bs-secondary);
+    opacity: 1;
+}
+
+@media (max-width: 992px) {
+    .carousel-item {
+        min-height: 500px;
+    }
+    
+    .carousel-item img {
+        min-height: 500px;
+        object-fit: cover;
+    }
+
+    .carousel-item h1,
+    .carousel-item .carousel-content h2 {
+        font-size: 40px !important;
+    }
+
+    .carousel-item p:not(.hero-eyebrow) {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        min-height: 400px;
+    }
+    
+    .carousel-item img {
+        min-height: 400px;
+        object-fit: cover;
+    }
+
+    .carousel-item h1,
+    .carousel-item .carousel-content h2 {
+        font-size: 28px !important;
+    }
+
+    .carousel-item p:not(.hero-eyebrow) {
+        font-size: 14px !important;
+    }
+}
+
+/* A 案：主視覺文字左對齊，右半邊讓給 Key Visual。
+   .carousel-content 本身是 .container，維持置中不動，文字才會跟導覽列的 logo 對齊；
+   只把容器「內部」改成左對齊並限制行寬。窄螢幕（<992px）仍維持置中。 */
+@media (min-width: 992px) {
+    .hero-left .carousel-content {
+        text-align: left;
+    }
+
+    .hero-left .carousel-content .hero-eyebrow,
+    .hero-left .carousel-content h1,
+    .hero-left .carousel-content h2,
+    .hero-left .carousel-content p {
+        max-width: 800px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* 內文行寬比標題再窄一點，維持易讀的字元數 */
+    .hero-left .carousel-content p:not(.hero-eyebrow) {
+        max-width: 620px;
+    }
+
+    /* 主視覺文字加一層極淡的暗影：不改變外觀，但讓文字壓在光線上時邊緣不糊。
+       （下方回報的 AA 對比數值是「不計入這層陰影」量到的，這只是額外保險） */
+    .hero-left .carousel-content h1,
+    .hero-left .carousel-content p,
+    .hero-left .carousel-content h2,
+    .hero-left .carousel-content .hero-eyebrow {
+        text-shadow: 0 2px 18px rgba(1, 8, 14, .55);
+    }
+}
+
+/* 中型桌機（992–1399px）版面較窄，620px 的內文會一路延伸到畫面 65% 處、伸進亮區，
+   內文對比會掉到 4.49（AA 需要 4.5）。這個級距把行寬收窄。 */
+@media (min-width: 992px) and (max-width: 1399.98px) {
+    .hero-left .carousel-content p:not(.hero-eyebrow) {
+        max-width: min(520px, 42vw);
+    }
+
+    .hero-left .carousel-content h1,
+    .hero-left .carousel-content h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-left .carousel-content p:not(.hero-eyebrow) {
+        margin-bottom: 2.2rem;
+    }
+}
+
+/* 版型的主視覺是 img-fluid（等比塞滿寬度），寬螢幕會被撐到 1000px 以上高，
+   上下留出大片空白死區。設高度上限並改 cover 裁切，讓文字與主視覺的比重平衡。 */
+/* @media (min-width: 1500px) {
+    .carousel-item img { */
+        /* .img-fluid 是 height:auto，單給 max-height 會讓瀏覽器改縮寬度（等比），
+           圖會塞不滿版面，必須給明確高度 object-fit 才有裁切的框 */
+        /* width: 100%;
+        height: 820px;
+        max-height: none;
+        object-fit: cover;
+        object-position: center;
+    }
+} */
+
+/* 手機／平板的主視覺編排修正
+   1. Bootstrap 的 .carousel-caption 預設 left/right 各 15%，在手機上文字只剩約 64% 寬，
+      標題被擠成很多短行。窄螢幕改成左右各 4%。
+   2. 兩顆 CTA 的 me-2 / ms-2 在堆疊時會把兩顆往反方向推（實測互差 9px），
+      而且上下沒有間距。窄螢幕改成等寬置中、上下留 12px。 */
+@media (max-width: 991.98px) {
+    .carousel-caption {
+        left: 4%;
+        right: 4%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .carousel-content > a {
+        display: block;
+        max-width: 260px;
+        margin: 0 auto 12px !important;
+    }
+
+    .carousel-content > a:last-of-type {
+        margin-bottom: 0 !important;
+    }
+
+    .carousel-content > a > button {
+        width: 100%;
+    }
+}
+
+/* 手機上左右箭頭會擠在文字旁邊（只差 24px），且滑動與下方指示點都能切換，
+   576px 以下直接隱藏 */
+@media (max-width: 575.98px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+}
+
+/* CAPITAL JUMP 的主視覺標題比版型 demo 長，版型原本的 500 / 400px 會被文字撐爆
+   （375px 下內容高 486px、上下各溢出約 63px / 23px），這裡拉高並縮小左右箭頭避免壓字 */
+/* 高度依實測的內容高度設定（991px 內容 284、768px 內容 215、385px 內容 351），
+   留約 90-140px 的上下呼吸空間即可，設太高下方會空一大塊 */
+@media (max-width: 992px) {
+    .carousel-item,
+    .carousel-item img {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item,
+    .carousel-item img {
+        min-height: 540px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--bs-white);
+}
+
+.page-header .breadcrumb-item,
+.page-header .breadcrumb-item a {
+    font-size: 18px;
+    color: var(--bs-white);
+}
+
+/* 主視覺文字沿用 animate.css 的 fadeInUp / fadeInRight / fadeInDown / fadeInLeft。
+   這裡只補上「減少動態效果」的處理：系統開啟該偏好時直接顯示完成狀態，
+   不跑任何位移與淡入。animate.css 本身沒有這層保護。 */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-caption .animated {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+
+/* 主視覺動態層。原本整張 hero-kv-1.svg 會動，放在 <img> 裡每一影格都要重繪整張
+   （含一個 80 半徑的高斯模糊），這是首頁主視覺區段捲不動的原因。現在靜態部分
+   烘焙成 hero-kv-1-base.webp 只畫一次，這一層只留會動的元素。
+   旋轉／縮放／透明度交給合成器，光流線改用三層描邊疊加取代模糊濾鏡。 */
+/* 左側壓暗 + 上下收邊。數值換算自原始 SVG（viewBox 1920x1080）：
+   dim 橢圓 cx700/cy540/rx960/ry580 → 36.46% / 50% / 50% / 53.7%。 */
+.hero-veil {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 50% 53.7% at 36.46% 50%,
+            rgba(1, 8, 14, .48) 0%,
+            rgba(1, 8, 14, .20) 62%,
+            rgba(1, 8, 14, 0) 100%),
+        linear-gradient(to bottom, rgba(1, 8, 14, .72) 0%, rgba(1, 8, 14, 0) 18%),
+        linear-gradient(to top,    rgba(1, 8, 14, .55) 0%, rgba(1, 8, 14, 0) 20%);
+}
+
+.hero-fx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* dasharray 用「亮段 + 暗段」的一半路徑長，讓每條線上同時有 2 顆光點，
+   dashoffset 走完一個 pattern（500）即無縫循環 */
+/* 光點沿路徑移動。offset-distance 屬於 transform 類動畫，由合成器處理，不產生重繪。
+   週期是原本虛線動畫的兩倍（虛線一個週期走半條路徑），同一條線的兩顆光點以半個
+   週期的延遲錯開，維持原本「每條線上同時有 2 顆光點」的節奏。 */
+@keyframes cjDot { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@keyframes cjPulse   { 0%, 100% { opacity: .45; transform: scale(1); }
+                       50%      { opacity: 1;   transform: scale(1.22); } }
+@keyframes cjCoreDot { 0%, 100% { opacity: .8; } 50% { opacity: 1; } }
+@keyframes cjSpin    { to { transform: rotate(360deg); } }
+@keyframes cjBreathe { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+@keyframes cjRipple  { 0%   { transform: scale(1);   opacity: .55; }
+                       70%  { opacity: .10; }
+                       100% { transform: scale(3.4); opacity: 0; } }
+
+
+
+.hero-fx .cj-dot {
+    offset-rotate: auto;
+    animation-name: cjDot;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+.hero-fx .cj-dot-1a,
+.hero-fx .cj-dot-1b {
+    offset-path: path("M -80,200 C 360,200 640,360 920,450 S 1300,548 1450,560");
+    animation-duration: 14s;
+}
+.hero-fx .cj-dot-1a { animation-delay: -0.392s; }
+.hero-fx .cj-dot-1b { animation-delay: -7.392s; }
+
+.hero-fx .cj-dot-2a,
+.hero-fx .cj-dot-2b {
+    offset-path: path("M -80,620 C 380,620 720,600 1020,578 S 1330,562 1450,560");
+    animation-duration: 18s;
+}
+.hero-fx .cj-dot-2a { animation-delay: -3.504s; }
+.hero-fx .cj-dot-2b { animation-delay: -12.504s; }
+
+.hero-fx .cj-dot-3a,
+.hero-fx .cj-dot-3b {
+    offset-path: path("M -80,940 C 440,940 780,790 1070,660 S 1345,572 1450,560");
+    animation-duration: 22s;
+}
+.hero-fx .cj-dot-3a { animation-delay: -6.616s; }
+.hero-fx .cj-dot-3b { animation-delay: -17.616s; }
+
+.hero-fx .cj-dot-4a,
+.hero-fx .cj-dot-4b {
+    offset-path: path("M 1450,560 C 1650,560 1800,450 2020,250");
+    animation-duration: 11s;
+}
+.hero-fx .cj-dot-4a { animation-delay: -0.407s; }
+.hero-fx .cj-dot-4b { animation-delay: -5.907s; }
+
+.hero-fx .cj-core    { transform-box: fill-box; transform-origin: center;
+                       animation: cjPulse 4.5s ease-in-out infinite; will-change: transform, opacity; }
+.hero-fx .cj-coredot { animation: cjCoreDot 4.5s ease-in-out infinite; will-change: opacity; }
+.hero-fx .cj-ring    { transform-box: view-box; transform-origin: 1450px 560px;
+                       animation: cjSpin 60s linear infinite; will-change: transform; }
+.hero-fx .cj-ring-2  { animation-duration: 45s; animation-direction: reverse; }
+/* 光暈整層做透明度動畫：CSS 對 DOM 元素的 opacity 動畫由合成器處理，不產生重繪。
+   它若留在 .hero-fx 裡，會被逐影格重繪的光流線連帶重畫（實測佔 7.2ms 中的 4.8ms）。 */
+.hero-halo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: cjBreathe 6s ease-in-out infinite;
+    will-change: opacity;
+}
+
+.hero-fx .cj-ripple   { transform-box: view-box; transform-origin: 1450px 560px;
+                        animation: cjRipple 6s cubic-bezier(.2, .6, .3, 1) infinite;
+                        will-change: transform, opacity; }
+.hero-fx .cj-ripple-2 { animation-delay: -2s; }
+.hero-fx .cj-ripple-3 { animation-delay: -4s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-fx .cj-dot,
+    .hero-fx .cj-core,
+    .hero-fx .cj-coredot,
+    .hero-fx .cj-ring,
+    .hero-halo,
+    .hero-fx .cj-ripple {
+        animation: none;
+        will-change: auto;
+    }
+
+    .hero-fx .cj-dot,
+    .hero-fx .cj-ripple {
+        opacity: 0;
+    }
+}
+
+/*** Carousel End ***/
+
+
+/*** Services Start ***/
+
+.services .services-item {
+    box-shadow: 0 0 60px rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    padding: 10px 0;
+    position: relative;
+}
+
+
+.services-content::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    border-radius: 18px 18px 0 0;
+    background: rgba(3, 43, 243, 0.8);
+    transition: .5s;
+}
+
+.services-content::after {
+    top: 0;
+    bottom: auto;
+    border-radius: 18px;
+}
+
+.services-item:hover .services-content::after {
+    height: 100%;
+    opacity: 1;
+    transition: .5s;
+}
+
+.services-item:hover .services-content-icon {
+    position: relative;
+    z-index: 2;
+}
+
+/* services-content-icon1 是本站新增的變體（hover 圖示改用品牌主色）。
+   版型原本只把 z-index 給 .services-content-icon，變體沒吃到，
+   hover 時 .services-content::after 這層遮罩會蓋在內容上、按鈕點不到。 */
+.services-item:hover .services-content-icon1 {
+    position: relative;
+    z-index: 2;
+}
+
+.services-item .services-content-icon i,
+.services-item .services-content-icon p,
+.services-item .services-content-icon1 i,
+.services-item .services-content-icon1 p {
+    transition: .5s;
+}
+
+.services-item:hover .services-content-icon i {
+    color: var(--bs-secondary) !important;
+}
+.services-item:hover .services-content-icon1 i {
+    color: var(--bs-primary) !important;
+}
+.services-item:hover .services-content-icon p,
+.services-item:hover .services-content-icon1 p {
+    color: var(--bs-white);
+}
+
+/* 結尾 CTA 帶：使用與主視覺同一套語彙的品牌底圖。
+   SVG 本身已把中央壓暗，置中白字直接壓在上面即可。
+   底圖用 .webp 而非原始的 cta-band.svg：該 SVG 內含 2 個 feGaussianBlur 濾鏡，
+   Chrome 以 CPU 柵格化，實測成本遠高於同尺寸點陣圖。請勿改回 .svg。 */
+.cta-band {
+    background-color: var(--bg);
+    background-image: url(../img/cta-band.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+/* ============================================================
+   How we work — 六步流程橫向輪播
+   桌機一次看 3 張、平板 2 張、手機 1 張，右側都會露出下一張一角。
+   捲動用 CSS scroll-snap，左右鍵與進度軌在 js/main.js。
+   ============================================================ */
+
+.process-carousel {
+    position: relative;
+}
+
+.process-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 4px;
+    /* 隱藏原生捲軸，改用下方的進度軌表示位置 */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.process-track::-webkit-scrollbar {
+    display: none;
+}
+
+.process-card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    background: var(--bs-light);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* 卡片寬度都留一點餘量，讓右側露出下一張的一角，提示還有更多（參考稿的作法） */
+@media (min-width: 768px) {
+    .process-card {
+        flex-basis: calc((100% - 24px) / 2 - 34px);
+    }
+}
+
+@media (min-width: 992px) {
+    .process-card {
+        flex-basis: calc((100% - 48px) / 3 - 30px);
+    }
+}
+
+.process-card-media {
+    position: relative;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-2);
+}
+
+.process-card-media i {
+    font-size: 52px;
+    color: var(--bs-primary);
+}
+
+/* 卡片改放圖（自製品牌圖或實拍照）時用這個 */
+.process-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.process-card-step {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    font-family: 'Saira', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.process-card-body {
+    padding: 22px 24px 26px;
+}
+
+.process-card-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.process-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.process-arrow:disabled {
+    opacity: .35;
+    cursor: default;
+}
+
+.process-progress {
+    flex: 1;
+    height: 2px;
+    background: var(--border);
+    position: relative;
+    margin-left: 10px;
+}
+
+.process-progress span {
+    position: absolute;
+    top: 0;
+    height: 2px;
+    background: var(--bs-primary);
+    transition: left .25s ease, width .25s ease;
+}
+
+/* 數據區計數動畫：main.js 會把數字從 0 跑到目標值。
+   數字位數增加（0 → 100）時 h1 會變寬，右側標籤被擠得重新斷行、整條色帶跟著跳動。
+   等寬數字 + 預留最終寬度，計數過程中版面就完全不動。 */
+.counter .counter-value {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+/* 目標值是 3 位數（100）的計數器先預留 3 個字元寬 */
+.counter .counter-value.counter-w3 {
+    min-width: 3ch;
+}
+
+/* Proof 區：右半欄卡片向下錯開（參考稿的錯落排版），窄螢幕不錯開直接堆疊 */
+@media (min-width: 768px) {
+    .proof-stagger {
+        margin-top: 120px;
+    }
+}
+
+/*** Services End ***/
+
+
+/*** Blog Start ***/
+.blog-item .blog-btn {
+    z-index: 2;
+}
+
+.blog-btn .blog-btn-icon {
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-btn-icon .blog-icon-2 {
+    display: flex;
+    position: absolute;
+    top: 6px;
+    left: -140px;
+    
+}
+
+.blog-btn-icon:hover .blog-icon-2 {
+    transition: 1s;
+    left: 5px;
+    top: 6px;
+    padding-bottom: 5px;
+}
+.blog-icon-1 {
+    position: relative;
+    top: -4px;
+}
+.blog-btn-icon:hover .blog-icon-1 {
+    top: 0;
+    right: -140px;
+    transition: 1s;
+}
+/*** Blog End ***/
+
+
+/*** Contact Start ***/
+.contact-detail::before {
+    position: absolute;
+    content: "";
+    height: 50%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgb(210, 243, 235, 1), rgba(230, 250, 245, .3)), url(../img/background.svg) center center no-repeat;
+    background-size: cover;
+    border-radius: 18px;
+    z-index: -1;
+}
+
+.contact-map {
+    background: #26d48c;
+}
+
+.contact-form {
+    background: #26d48c;
+}
+
+/* ── Contact 頁版面（方案 C）：流程帶 → 寬版表單 → 聯絡資訊＋地圖 ──
+   這裡只放排版；顏色在 dark-theme.css。比較用的三款方案保留在 preview-contact.html。 */
+
+/* 流程帶：三步驟橫排，數字之間有連接線 */
+.contact-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto 48px;
+}
+
+.contact-step {
+    position: relative;
+    text-align: center;
+}
+
+.contact-step-num {
+    position: relative;
+    z-index: 1;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Saira', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.contact-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: calc(50% + 40px);
+    right: calc(-50% + 16px);
+    height: 2px;
+}
+
+.contact-step p {
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+/* 導覽列的 Let's talk 在聯絡頁會跳到這張卡片。錨點指向卡片而非 <form>，
+   否則會跳過卡片標題「Send us a message」、從表單第一列開始；
+   scroll-margin-top 和全站其他錨點一致，避開固定在上方的導覽列。 */
+#send-message {
+    scroll-margin-top: 110px;
+}
+
+
+/* 寬版表單卡 */
+.contact-card {
+    position: relative;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 56px;
+    border-radius: 18px;
+}
+
+.contact-card::after {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.contact-card label,
+.contact-card legend {
+    display: block;
+    float: none;
+    width: auto;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+/* 底線式輸入框 */
+.contact-card .form-control,
+.contact-card .form-control:focus {
+    padding: 10px 0 12px;
+    border: 0;
+    border-radius: 0;
+    font-size: 18px;
+    box-shadow: none;
+}
+
+.contact-card textarea.form-control {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* 服務項目膠囊按鈕（radio）：原生 radio 隱藏但保留可聚焦 */
+.contact-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.contact-chip {
+    position: relative;
+    margin: 0;
+}
+
+.contact-chip input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.contact-card .contact-chip span {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 15px;
+    letter-spacing: 0;
+    text-transform: none;
+    cursor: pointer;
+    transition: border-color .2s, color .2s, background .2s;
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.contact-actions small {
+    font-size: 15px;
+}
+
+.contact-actions small i {
+    margin-right: 6px;
+}
+
+.contact-submit {
+    padding: 16px 36px;
+    border: 0;
+    border-radius: 999px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: box-shadow .2s, transform .2s;
+}
+
+.contact-submit:hover {
+    transform: translateY(-1px);
+}
+
+.contact-submit:disabled {
+    opacity: .6;
+    cursor: wait;
+    transform: none;
+}
+
+.contact-submit i {
+    margin-left: 10px;
+    transition: transform .2s;
+}
+
+.contact-submit:hover i {
+    transform: translateX(4px);
+}
+
+/* 聯絡資訊＋地圖 */
+.contact-locate {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    max-width: 1000px;
+    margin: 32px auto 0;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.contact-locate-info {
+    padding: 36px 32px;
+}
+
+.contact-locate-info h5,
+.contact-locate-info h4 {
+    margin-bottom: 20px;
+}
+
+.contact-li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.contact-li i {
+    width: 18px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.contact-li small {
+    display: block;
+    font-size: 13px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+/* 長信箱是不可斷詞的字串，窄螢幕要允許換行，否則會撐破容器 */
+.contact-li a,
+.contact-li span {
+    overflow-wrap: anywhere;
+}
+
+.contact-directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.contact-map-embed {
+    position: relative;
+    min-height: 340px;
+    overflow: hidden;
+}
+
+.contact-map-embed iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    border: 0;
+}
+
+@media (max-width: 991.98px) {
+    .contact-locate {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-map-embed {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contact-steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-step {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-align: left;
+    }
+
+    .contact-step-num {
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .contact-step:not(:last-child)::after {
+        display: none;
+    }
+
+    .contact-step p {
+        max-width: none;
+        margin: 0;
+    }
+
+    .contact-card {
+        padding: 32px 22px;
+    }
+
+    .contact-submit {
+        width: 100%;
+    }
+}
+
+/* 表單送出後的感謝視窗（#thankYouModal）；顏色在 dark-theme.css */
+.thanks-modal {
+    padding: 44px 32px 36px;
+    border-radius: 18px;
+}
+
+.thanks-modal-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+/*** Contact End ***/
+
+
+/*** About Start ***/
+/* 這裡只放排版；顏色在 dark-theme.css */
+
+/* Hero 下方的信任元素列。限制寬度是為了讓六項排成 3＋3，
+   不限制的話在寬螢幕會變成 5＋1，最後一項落單。 */
+.trust-signals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 32px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trust-signal {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+
+/* 技術能力標籤。同樣限制寬度避免最後一項在寬螢幕落單 */
+.capability-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.capability-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* 團隊群組卡：卡內可放多個角色，以分隔線區隔 */
+.team-card {
+    height: 100%;
+    padding: 32px;
+    border-radius: 18px;
+}
+
+.team-card-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.team-role + .team-role {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid transparent;
+}
+
+.team-role h5 {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+@media (max-width: 575.98px) {
+    .team-card {
+        padding: 24px;
+    }
+
+    .capability-tag {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+}
+
+/*** About End ***/
+
+
+/*** About v2 Start ***/
+/* about.html 第二版版面。上方 About 區的 .trust-signal / .capability-tag / .team-card
+   仍保留，給備份頁 about-v1.html 使用。這裡只放排版，顏色在 dark-theme.css。 */
+
+/* 區塊編號小膠囊（01–06） */
+.about-num {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 1px 8px;
+    border-radius: 6px;
+    font-size: .8em;
+    letter-spacing: .04em;
+    vertical-align: 1px;
+}
+
+/* Hero 插畫 */
+.about-hero-art {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+}
+
+/* 信任元素資訊帶：ul 底色當分隔線，li 之間留 1px gap，
+   欄數改變時分隔線自動正確，不必逐一處理邊框 */
+.about-trust {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    margin: 64px 0 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    overflow: hidden;
+}
+
+.about-trust li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 22px 14px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.about-trust li i {
+    font-size: 30px;
+}
+
+@media (max-width: 1199.98px) {
+    .about-trust {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about-trust {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 01 引言卡 */
+.about-quote {
+    position: relative;
+    margin: 0;
+    padding: 48px 40px 36px;
+    border-radius: 18px;
+}
+
+.about-quote-mark {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 40px;
+}
+
+.about-quote blockquote {
+    font-family: 'Saira', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.about-quote figcaption {
+    margin-top: 22px;
+    font-size: 13px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 575.98px) {
+    .about-quote {
+        padding: 32px 24px 28px;
+    }
+
+    .about-quote blockquote {
+        font-size: 24px;
+    }
+}
+
+/* 02 編號價值卡（編號圓圈沿用 Contact 流程帶的 .contact-step-num） */
+.about-value {
+    position: relative;
+    height: 100%;
+    padding: 36px 28px 32px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+
+.about-value:hover {
+    transform: translateY(-4px);
+}
+
+/* Contact 的編號圓圈是置中擺放（margin: 0 auto），價值卡內容靠左，這裡改回靠左。
+   兩個 class 的特異度也壓過 .contact-step-num 在手機版的 margin: 0 */
+.about-value .about-value-step {
+    margin: 0 0 22px;
+}
+
+.about-value h5,
+.about-value h3 {
+    margin-bottom: 12px;
+}
+
+/* 04 能力磚，鋪在蜂巢底紋面板上 */
+.about-coverage {
+    padding: 56px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+/* 用 minmax(0, 1fr)：單純 1fr 的最小寬度＝最長單字寬度，
+   窄螢幕上「Infrastructure」會把欄撐破、磚超出面板 */
+.cap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.cap-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 22px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+
+.cap-tile:hover {
+    transform: translateY(-3px);
+}
+
+.cap-tile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+@media (max-width: 767.98px) {
+    .about-coverage {
+        padding: 32px 18px;
+    }
+
+    .cap-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .cap-tile {
+        padding: 18px 14px;
+        font-size: 15px;
+    }
+}
+
+/* 一般手機（375–414px）維持兩欄，只有極窄螢幕才單欄 */
+@media (max-width: 359.98px) {
+    .cap-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 05 國際區：左欄標題在桌機捲動時固定 */
+.about-intl {
+    background-position: center;
+    background-size: cover;
+}
+
+@media (min-width: 992px) {
+    .about-intl-intro {
+        position: sticky;
+        top: 120px;
+    }
+}
+
+.intl-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.intl-list li {
+    display: flex;
+    gap: 20px;
+    padding: 26px 0;
+    border-top: 1px solid transparent;
+}
+
+.intl-list li:last-child {
+    border-bottom: 1px solid transparent;
+}
+
+.intl-icon {
+    display: flex;
+    flex: 0 0 48px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 20px;
+}
+
+.intl-list h5,
+.intl-list h3 {
+    margin-bottom: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-value,
+    .cap-tile {
+        transition: none;
+    }
+
+    .about-value:hover,
+    .cap-tile:hover {
+        transform: none;
+    }
+}
+
+.fs-6{
+    font-size: 1rem !important;
+}
+
+.pic-b {
+    border: 1px solid rgba(0, 255, 191, .20);
+}
+/*** About v2 End ***/
+
+
+/*** Work Start ***/
+/* work.html 版面；顏色在 dark-theme.css */
+
+/* Intro 右欄：三則案例的跳轉連結 */
+.work-jump {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.work-jump a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    transition: border-color .2s, transform .2s;
+}
+
+.work-jump a:hover {
+    transform: translateX(4px);
+}
+
+.work-jump-icon {
+    display: flex;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    font-size: 16px;
+}
+
+.work-jump-text {
+    flex: 1 1 auto;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.work-jump-text small {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+/* 案例結構流程條：The challenge → Our approach → What we delivered → The outcome */
+.work-structure {
+    margin-top: 64px;
+    padding: 28px 32px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+.work-structure-label {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* 進度軸：一條線貫穿四個節點，末端節點填實＝終點是成果 */
+.work-flow-ends {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.work-flow {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 軸線：從第一個節點的圓心畫到最後一個 */
+.work-flow::before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+}
+
+.work-flow li {
+    position: relative;
+    padding: 0 12px;
+    text-align: center;
+}
+
+.work-flow .work-step-icon {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    margin-bottom: 16px;
+}
+
+.work-flow-step {
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'Saira', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+
+.work-flow-title {
+    font-family: 'Saira', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.work-structure-foot {
+    margin: 22px 0 0;
+    padding-top: 18px;
+    border-top: 1px solid transparent;
+    font-size: 15px;
+}
+
+/* 示意案例說明 */
+.work-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 20px 24px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    border-left-width: 4px;
+}
+
+.work-note-icon {
+    margin-top: 4px;
+    font-size: 18px;
+}
+
+.work-note-title {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.work-note p {
+    margin-bottom: 8px;
+}
+
+/* 案例：錨點跳轉時避開固定在上方的導覽列 */
+.work-case {
+    scroll-margin-top: 110px;
+}
+
+/* How we work 區塊：遊戲開發頁的 CTA 會跳到這裡 */
+#how-we-work {
+    scroll-margin-top: 110px;
+}
+
+/* 桌機：左欄（案例資訊）捲動時固定，右欄長文慢慢讀 */
+@media (min-width: 992px) {
+    .work-case-aside {
+        position: sticky;
+        top: 110px;
+    }
+}
+
+/* What this illustrates：代表能力標籤 */
+.work-skills {
+    margin-top: 24px;
+}
+
+.work-skills-title {
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.work-skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.work-skills li {
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* What we delivered：勾選清單，平板以上兩欄 */
+.work-delivered {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    .work-delivered {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.work-delivered li {
+    position: relative;
+    padding-left: 28px;
+    line-height: 1.5;
+}
+
+.work-delivered li::before {
+    content: "\f00c";
+    position: absolute;
+    top: 1px;
+    left: 0;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 14px;
+}
+
+
+/* 收尾 CTA：兩顆按鈕 */
+.work-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+@media (min-width: 992px) {
+    .work-cta-actions {
+        justify-content: flex-start;
+        /* justify-content: flex-end; */
+    }
+}
+
+.btn-ghost {
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: .3s;
+}
+
+/* 編號圓圈沿用 Contact 的 .contact-step-num，這裡改為靠左 */
+.work-case .work-case-num {
+    margin: 0 0 20px;
+}
+
+.work-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.work-tag {
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.work-case-art {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+/* Challenge → Approach → What we delivered → Results 時間軸 */
+.work-steps {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.work-steps > li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+.work-steps > li:last-child {
+    padding-bottom: 0;
+}
+
+/* 步驟之間的連接線 */
+.work-steps > li:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 62px;
+    bottom: 6px;
+    left: 27px;
+    width: 2px;
+}
+
+.work-step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    font-size: 19px;
+}
+
+.work-steps h5,
+.work-steps h4 {
+    margin: 10px 0 8px;
+}
+
+/* Results：以薄荷綠框強調 */
+.work-result {
+    padding: 18px 22px 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+}
+
+.work-result h5,
+.work-result h4 {
+    margin-top: 0;
+}
+
+.work-metric {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 14px;
+    margin-bottom: 10px;
+    font-family: 'Saira', sans-serif;
+}
+
+.work-metric-from,
+.work-metric-to {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.work-metric small {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: .06em;
+    /* text-transform: uppercase; */
+}
+
+/* 流程條：窄螢幕改成直向時間軸，與案例內文的時間軸同一種讀法 */
+@media (max-width: 991.98px) {
+    .work-flow {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .work-flow::before {
+        top: 6px;
+        bottom: 6px;
+        left: 23px;
+        right: auto;
+        width: 2px;
+        height: auto;
+    }
+
+    .work-flow li {
+        display: grid;
+        grid-template-columns: 56px minmax(0, 1fr);
+        gap: 16px;
+        padding: 0;
+        text-align: left;
+    }
+
+    .work-flow .work-step-icon {
+        margin-bottom: 0;
+    }
+
+    .work-flow-step {
+        margin-bottom: 2px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .work-structure {
+        padding: 22px 18px;
+    }
+
+    .work-flow::before {
+        left: 19px;
+    }
+
+    .work-flow li {
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .work-flow-title {
+        font-size: 16px;
+    }
+
+
+    .work-cta-actions .btn {
+        width: 100%;
+    }
+
+    .work-note {
+        padding: 18px;
+    }
+
+    .work-steps > li {
+        grid-template-columns: 48px 1fr;
+        gap: 14px;
+    }
+
+    .work-step-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 17px;
+    }
+
+    .work-steps > li:not(:last-child)::before {
+        top: 54px;
+        left: 23px;
+    }
+
+    .work-steps h5,
+    .work-steps h4 {
+        margin-top: 7px;
+    }
+
+    .work-metric-from,
+    .work-metric-to {
+        font-size: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .work-jump a {
+        transition: none;
+    }
+
+    .work-jump a:hover {
+        transform: none;
+    }
+}
+
+/*** Work End ***/
+
+
+/*** Services Page Start ***/
+/* service.html 版面；顏色在 dark-theme.css */
+
+/* 開場插圖 */
+.svc-intro-art {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+/* 三個專業並排 */
+.svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.svc-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 30px 30px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    transition: transform .3s, border-color .3s;
+}
+
+.svc-card:hover {
+    transform: translateY(-6px);
+}
+
+.svc-stage {
+    display: block;
+    margin-bottom: 16px;
+    font-family: 'Saira', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+
+.svc-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 20px;
+}
+
+.svc-card h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* 能力標籤 */
+.svc-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0 26px;
+    padding: 18px 0 0;
+    border-top: 1px solid transparent;
+    list-style: none;
+}
+
+.svc-chips li {
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 14px;
+}
+
+/* 按鈕貼齊卡片底部，三張卡的按鈕才會對齊 */
+.svc-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* 三張卡下方的 Build → Secure → Run 軸 */
+.svc-axis {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 44px 0 0;
+    padding: 38px 0 0;
+    list-style: none;
+}
+
+.svc-axis::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 16.6%;
+    right: 16.6%;
+    height: 2px;
+}
+
+.svc-axis li {
+    position: relative;
+    text-align: center;
+}
+
+/* 每一格上方的節點，落在軸線上 */
+.svc-axis li::before {
+    content: "";
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.svc-axis strong {
+    display: block;
+    font-family: 'Saira', sans-serif;
+    font-size: 18px;
+}
+
+/* 遊戲開發：左右分割卡（左文字、右整片插圖） */
+.svc-game {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+.svc-game-text {
+    padding: 52px 48px;
+}
+
+.svc-game-eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.svc-game-text h2 {
+    margin-bottom: 14px;
+    font-size: 34px;
+}
+
+.svc-game-text p {
+    margin-bottom: 28px;
+}
+
+.svc-game-art {
+    position: relative;
+    min-height: 300px;
+}
+
+.svc-game-art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 插圖左緣用漸層融進卡片，不留硬邊 */
+.svc-game-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+@media (max-width: 991.98px) {
+    .svc-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* 窄螢幕改成上圖下文 */
+    .svc-game {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .svc-game-text {
+        padding: 36px 28px;
+    }
+
+    .svc-game-art {
+        min-height: 220px;
+        order: -1;
+    }
+
+    /* 卡片換行後軸線對不上，改成直向排列 */
+    .svc-axis {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        padding-top: 0;
+    }
+
+    .svc-axis::before,
+    .svc-axis li::before {
+        display: none;
+    }
+
+    .svc-axis li {
+        padding-left: 20px;
+        border-left: 2px solid transparent;
+        text-align: left;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .svc-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .svc-card {
+        padding: 26px 22px;
+    }
+
+    .svc-card h2 {
+        font-size: 21px;
+    }
+
+    .svc-game-text {
+        padding: 28px 22px;
+    }
+
+    .svc-game-text h2 {
+        font-size: 26px;
+    }
+
+    .svc-game-art {
+        min-height: 190px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .svc-card {
+        transition: none;
+    }
+
+    .svc-card:hover {
+        transform: none;
+    }
+}
+
+/*** Services Page End ***/
+
+
+/*** Service: Software Start ***/
+/* service-software.html 版面；顏色在 dark-theme.css */
+
+.sw-hero-art {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+/* 頁內導覽：貼在主導覽列下方的固定子選單。主導覽列高 77px，這條接在它下面 */
+.sw-subnav {
+    position: sticky;
+    top: 77px;
+    z-index: 1019;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 10px 24px rgba(1, 8, 14, .35);
+}
+
+.sw-subnav .nav {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 0;
+    overflow-x: auto;
+    /* 手機橫向捲動時不顯示捲軸 */
+    scrollbar-width: none;
+}
+
+.sw-subnav .nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* 膠囊連結（與上一版相同的樣式），目前段落換色 */
+.sw-subnav .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 22px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color .3s, border-color .3s, background-color .3s;
+}
+
+/* 頁內導覽（選項 C）：固定在畫面右側的圓點索引 */
+.sw-dotnav {
+    position: fixed;
+    top: 50%;
+    right: 26px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transform: translateY(-50%);
+}
+
+/* 圓點之間的細線 */
+.sw-dotnav::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+}
+
+.sw-dotnav .nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+}
+
+.sw-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: background-color .25s, transform .25s;
+}
+
+.sw-dotnav .nav-link:hover .sw-dot,
+.sw-dotnav .nav-link.active .sw-dot {
+    transform: scale(1.35);
+}
+
+/* 標題：滑過或目前段落時滑出 */
+.sw-dot-label {
+    position: absolute;
+    right: 26px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 16px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(6px);
+    transition: opacity .25s, transform .25s;
+}
+
+.sw-dotnav .nav-link:hover .sw-dot-label,
+.sw-dotnav .nav-link:focus-visible .sw-dot-label,
+.sw-dotnav .nav-link.active .sw-dot-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 離開四個段落的範圍（Hero、CTA、頁尾）時淡出收起 */
+.sw-dotnav {
+    transition: opacity .3s, visibility .3s;
+}
+
+.sw-dotnav.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* 窄螢幕沒有空間，隱藏 */
+@media (max-width: 991.98px) {
+    .sw-dotnav {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sw-dot,
+    .sw-dot-label {
+        transition: none;
+    }
+
+    .sw-dotnav .nav-link:hover .sw-dot,
+    .sw-dotnav .nav-link.active .sw-dot {
+        transform: none;
+    }
+}
+
+/* 錨點跳轉時避開導覽列＋子選單 */
+#what-we-build,
+#industries,
+#how-we-engage,
+#approach {
+    scroll-margin-top: 140px;
+}
+
+.sw-section-lead {
+    padding-left: 22px;
+    border-left: 3px solid transparent;
+}
+
+/* ---- What we build：四欄格線，第 1 與第 6 項橫跨兩欄 ---- */
+.sw-build {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sw-build li {
+    position: relative;
+    padding: 32px 30px 30px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    transition: transform .3s, border-color .3s;
+}
+
+.sw-build li:hover {
+    transform: translateY(-5px);
+}
+
+.sw-build-wide {
+    grid-column: span 2;
+}
+
+.sw-build-num {
+    position: absolute;
+    top: 24px;
+    right: 26px;
+    font-family: 'Saira', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+.sw-build-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 20px;
+}
+
+.sw-build h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.sw-build p {
+    max-width: 46ch;
+}
+
+/* ---- Industries：五個產業 ---- */
+.sw-industries {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sw-industries li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-family: 'Saira', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.sw-industry-icon {
+    display: flex;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    font-size: 17px;
+}
+
+/* ---- How we engage：三種合作方式 ---- */
+.sw-engage {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.sw-engage article {
+    position: relative;
+    padding: 34px 30px 30px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    /* 頂部一道品牌色，三張卡各佔一段 */
+    border-top-width: 3px;
+}
+
+.sw-engage-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    font-size: 20px;
+}
+
+.sw-engage h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+/* 三項不變的承諾 */
+.sw-promise {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 40px;
+    margin: 44px 0 0;
+    padding: 26px 30px;
+    border-radius: 18px;
+    border: 1px dashed transparent;
+    list-style: none;
+}
+
+.sw-promise li {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Saira', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* ---- Our approach：引言式 ---- */
+.sw-approach {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sw-approach-lead {
+    max-width: 62ch;
+    margin: 0 auto 30px;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.sw-approach-quote {
+    position: relative;
+    max-width: 22ch;
+    margin: 0 auto 44px;
+    padding: 0 0 4px;
+    font-family: 'Saira', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+/* 引言上方的短線 */
+.sw-approach-quote::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin: 0 auto 28px;
+}
+
+.sw-approach-points {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    margin-bottom: 44px;
+    text-align: left;
+}
+
+.sw-approach-points > div {
+    padding-left: 22px;
+    border-left: 2px solid transparent;
+}
+
+.sw-approach-points h4 {
+    margin-bottom: 8px;
+    font-size: 19px;
+}
+
+/* CTA 下方的其他專業連結 */
+.sw-other {
+    margin-top: 34px;
+    padding-top: 26px;
+    border-top: 1px solid transparent;
+    font-size: 15px;
+}
+
+.sw-other a {
+    margin-left: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sw-other a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 991.98px) {
+    /* 放不下四顆時改成靠左起始，置中會把第一顆切掉一半 */
+    .sw-subnav .nav {
+        justify-content: flex-start;
+    }
+
+    .sw-build {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sw-build-wide {
+        grid-column: span 2;
+    }
+
+    .sw-industries {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sw-engage {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sw-approach-points {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .sw-approach-quote {
+        font-size: 32px;
+        max-width: 26ch;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sw-build {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sw-build-wide {
+        grid-column: span 1;
+    }
+
+    .sw-build li {
+        padding: 26px 22px;
+    }
+
+    .sw-industries {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* 手機放不下四顆，改成靠左起始的橫向滑動 */
+    .sw-subnav .nav {
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .sw-subnav .nav-link {
+        padding: 9px 16px;
+        font-size: 15px;
+    }
+
+    .sw-approach-quote {
+        font-size: 27px;
+    }
+
+    .sw-promise {
+        justify-content: flex-start;
+        padding: 22px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sw-build li {
+        transition: none;
+    }
+
+    .sw-build li:hover {
+        transform: none;
+    }
+}
+
+/*** Service: Software End ***/
+
+
+/*** Service: Cybersecurity Start ***/
+/* service-cybersecurity.html 版面；顏色在 dark-theme.css。
+   刻意與軟體開發頁區隔：Hero 左右相反、服務用清單橫列而非卡片格線、
+   合規用徽章、合作方式只有兩種做對照。 */
+
+.cy-hero-art {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+/* ---- 服務：清單式橫列 ---- */
+.cy-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cy-list > li {
+    display: grid;
+    /* 標籤欄固定寬度，每一列的標籤都從同一條線起算，換行也不會參差 */
+    grid-template-columns: 64px 56px minmax(0, 1fr) 300px;
+    align-items: center;
+    gap: 24px;
+    padding: 30px 24px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    transition: background-color .3s, border-color .3s;
+}
+
+.cy-list > li + li {
+    margin-top: 10px;
+}
+
+.cy-list-num {
+    font-family: 'Saira', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.cy-list-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    font-size: 20px;
+}
+
+.cy-list-main h3 {
+    margin-bottom: 8px;
+    font-size: 21px;
+}
+
+.cy-list-main p {
+    max-width: 62ch;
+}
+
+/* 右側範圍標籤：等寬兩欄網格，左右兩邊都切齊，換行也不會參差 */
+.cy-list-tags {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0;
+    padding-left: 24px;
+    border-left: 1px solid transparent;
+    list-style: none;
+}
+
+.cy-list-tags li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    padding: 5px 10px;
+    margin: 0;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    /* 標籤一律單行，欄寬已預留最長的「24/7 monitoring」 */
+    white-space: nowrap;
+}
+
+/* ---- Why it matters ---- */
+.cy-statement {
+    margin: 0;
+    padding-left: 26px;
+    border-left: 4px solid transparent;
+    font-family: 'Saira', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.cy-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
+    align-items: center;
+    gap: 0;
+}
+
+.cy-split-card {
+    padding: 30px 26px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+.cy-split-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 18px;
+}
+
+.cy-split-card h4 {
+    margin-bottom: 8px;
+    font-size: 19px;
+}
+
+.cy-split-plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+/* ---- 合規徽章 ---- */
+.cy-badges {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cy-badges li {
+    position: relative;
+    padding: 40px 28px 34px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.cy-badge-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 20px;
+    /* 六角形徽章，與全站其他圓形／方形圖示區隔 */
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    font-size: 26px;
+}
+
+.cy-badges h3 {
+    margin-bottom: 8px;
+    font-family: 'Saira', sans-serif;
+    font-size: 24px;
+    letter-spacing: .04em;
+}
+
+.cy-badges p {
+    font-size: 15px;
+}
+
+/* ---- 合作方式：兩種對照 ---- */
+.cy-engage {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.cy-engage article {
+    padding: 36px 32px 32px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+.cy-engage-tag {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-family: 'Saira', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.cy-engage h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* 錨點跳轉時避開導覽列 */
+#services,
+#why-it-matters,
+#compliance,
+#engagement {
+    scroll-margin-top: 110px;
+}
+
+@media (max-width: 991.98px) {
+    /* 清單改成兩行：序號＋圖示＋標題一行，標籤移到下方 */
+    .cy-list > li {
+        grid-template-columns: 52px 48px minmax(0, 1fr);
+        gap: 16px;
+        padding: 26px 20px;
+    }
+
+    .cy-list-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+
+    /* 窄螢幕：標籤移到整列下方，改三欄、取消左側細線與內縮 */
+    .cy-list-tags {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .cy-statement {
+        font-size: 25px;
+    }
+
+    .cy-badges {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .cy-badges li {
+        padding: 30px 16px 26px;
+    }
+
+    .cy-engage {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .cy-list > li {
+        grid-template-columns: 48px minmax(0, 1fr);
+        row-gap: 14px;
+    }
+
+    /* 圖示與標題並排，序號獨立一欄 */
+    .cy-list-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .cy-list-main {
+        grid-column: 1 / -1;
+    }
+
+    /* 手機：標籤兩欄 */
+    .cy-list-tags {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cy-statement {
+        padding-left: 18px;
+        font-size: 22px;
+    }
+
+    .cy-split {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .cy-split-plus {
+        transform: rotate(0deg);
+    }
+
+    .cy-badges {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/*** Service: Cybersecurity End ***/
+
+
+/*** Work B Start ***/
+/* work-b.html：視覺參考版型 Blog 卡片（.blog-item）。顏色在 dark-theme.css */
+
+/* 右上角分類標籤（版型位置 top/right 不變）。改為深底細框，
+   實心主色只留給行動點，避免跟按鈕搶視線 */
+.wb-tab {
+    top: -18px;
+    right: 20px;
+    z-index: 3;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    line-height: 1.2;
+}
+
+/* 圓形頭像框：版型放作者照，這裡改放服務圖示或案例編號 */
+.wb-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    font-size: 28px;
+}
+
+.wb-avatar-num {
+    font-family: 'Saira', sans-serif;
+    font-weight: 700;
+}
+
+/* ---- 總覽卡 ----
+   結構：圖（右上服務標籤）→ 圓形圖示壓在圖片下緣 → 小字標示 → 標題 → 一句成果 → 主色橫條＝唯一行動點。
+   整張卡是一個連結。 */
+.wb-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+
+.wb-card:hover {
+    transform: translateY(-6px);
+}
+
+.wb-card-media {
+    height: 220px;
+    overflow: hidden;
+}
+
+.wb-card-media img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.wb-card .blog-content {
+    flex: 1 1 auto;
+    margin-top: -44px;
+    padding-bottom: 28px;
+}
+
+.wb-card .wb-avatar {
+    margin-bottom: 18px;
+}
+
+.wb-card-kicker {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.wb-card h5,
+.wb-card h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+/* 行動點：底部主色橫條 */
+.wb-card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    font-family: 'Saira', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.wb-card-cta i {
+    transition: transform .3s;
+}
+
+.wb-card:hover .wb-card-cta i {
+    transform: translateY(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wb-card,
+    .wb-card-cta i {
+        transition: none;
+    }
+
+    .wb-card:hover,
+    .wb-card:hover .wb-card-cta i {
+        transform: none;
+    }
+}
+
+.wb-bar small {
+    font-size: 14px;
+}
+
+/* ---- 案例大卡 ---- */
+.wb-case {
+    margin: 28px 0 80px;
+    scroll-margin-top: 140px;
+}
+
+.wb-case:last-child {
+    margin-bottom: 0;
+}
+
+.wb-case-media {
+    position: relative;
+    height: 100%;
+    min-height: 240px;
+    overflow: hidden;
+    border-radius: 18px 18px 0 0;
+}
+
+.wb-case-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wb-case-head {
+    position: relative;
+    padding: 64px 24px 28px;
+}
+
+/* 手機／平板：編號框壓在圖片下緣 */
+.wb-case-head .wb-avatar-num {
+    position: absolute;
+    top: -44px;
+    left: 24px;
+}
+
+@media (min-width: 992px) {
+    .wb-case-media {
+        border-radius: 18px 0 0 0;
+    }
+
+    .wb-case-flip .wb-case-media {
+        border-radius: 0 10px 0 0;
+    }
+
+    /* 桌機：編號框壓在圖片與文字的交界 */
+    .wb-case-head {
+        padding: 56px 48px 40px 76px;
+    }
+
+    .wb-case-head .wb-avatar-num {
+        top: 44px;
+        left: -44px;
+    }
+
+    .wb-case-flip .wb-case-head {
+        padding: 56px 76px 40px 48px;
+    }
+
+    .wb-case-flip .wb-case-head .wb-avatar-num {
+        left: auto;
+        right: -44px;
+        z-index: 1;
+    }
+}
+
+.wb-kicker {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.wb-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.wb-label i {
+    display: inline-flex;
+    flex: 0 0 34px;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    font-size: 13px;
+}
+
+.wb-case-body {
+    padding: 0 24px 28px;
+}
+
+@media (min-width: 992px) {
+    .wb-case-body {
+        padding: 0 48px 44px;
+    }
+}
+
+.wb-block {
+    height: 100%;
+    padding: 24px 26px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+}
+
+/* 半寬區塊裡的交付清單維持單欄 */
+@media (min-width: 992px) {
+    .wb-delivered {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* 底部主色橫條：What this illustrates */
+.wb-case-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 18px;
+}
+
+.wb-bar-title {
+    font-weight: 600;
+}
+
+.wb-case-bar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wb-case-bar li {
+    padding: 3px 12px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* ---- 共同原則：馬賽克排列 ----
+   桌機 12 欄格線，依序 7／5、5／7、整排，讓五項不會排成 3＋2 的空缺。
+   序號改為大型鏤空數字，壓在卡片右上角當底紋。 */
+.wb-common-lead {
+    padding-left: 22px;
+    border-left: 3px solid transparent;
+}
+
+.wb-mosaic {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wb-mo {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 34px 34px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    transition: transform .3s, border-color .3s;
+}
+
+.wb-mo:hover {
+    transform: translateY(-4px);
+}
+
+.wb-mo-num {
+    position: absolute;
+    top: 6px;
+    right: 18px;
+    font-family: 'Saira', sans-serif;
+    font-size: 86px;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.wb-mo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 20px;
+}
+
+.wb-mo h4,
+.wb-mo h3 {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.wb-mo p {
+    position: relative;
+    max-width: 52ch;
+}
+
+/* 平板：兩欄 */
+@media (min-width: 768px) {
+    .wb-mosaic {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wb-mo-full {
+        grid-column: span 2;
+    }
+}
+
+/* 桌機：12 欄交錯寬度，最後一項橫跨整排並改為橫向排列 */
+@media (min-width: 992px) {
+    .wb-mosaic {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 28px;
+    }
+
+    .wb-mo:nth-child(1) { grid-column: span 7; }
+    .wb-mo:nth-child(2) { grid-column: span 5; }
+    .wb-mo:nth-child(3) { grid-column: span 5; }
+    .wb-mo:nth-child(4) { grid-column: span 7; }
+
+    .wb-mo-full {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        grid-column: span 12;
+        padding: 30px 34px;
+    }
+
+    .wb-mo-full .wb-mo-icon {
+        flex: 0 0 48px;
+        margin-bottom: 0;
+    }
+
+    .wb-mo-full h4,
+    .wb-mo-full h3 {
+        margin-bottom: 6px;
+    }
+
+    .wb-mo-full p {
+        max-width: 70ch;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .wb-mo {
+        padding: 26px 22px 28px;
+    }
+
+    .wb-mo-num {
+        font-size: 64px;
+        right: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wb-mo {
+        transition: none;
+    }
+
+    .wb-mo:hover {
+        transform: none;
+    }
+}
+
+/* ---- 共同原則卡（前一版，保留給比較） ---- */
+.wb-principle {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 44px);
+    margin-top: 44px;
+}
+
+.wb-principle .blog-content {
+    flex: 1 1 auto;
+    padding-bottom: 20px;
+}
+
+.wb-principle .wb-avatar {
+    margin: -44px 0 18px;
+}
+
+@media (max-width: 575.98px) {
+    .wb-case {
+        margin-bottom: 56px;
+    }
+
+    .wb-block {
+        padding: 20px 18px;
+    }
+
+    .wb-tab {
+        right: 12px;
+        max-width: calc(100% - 24px);
+        font-size: 12px;
+    }
+}
+
+/*** Work B End ***/
+
+
+/*** Footer Start ***/
+
+.footer .short-link a,
+.footer .help-link a,
+.footer .contact-link a {
+    transition: .5s;
+}
+
+/* 頁尾聯絡資訊：圖示固定在左、文字自成一欄，地址換行時第二行起對齊文字開頭，不會繞到圖示底下。
+   純 CSS，所有頁面的頁尾一起生效，不必改 HTML。 */
+.footer .contact-link > span,
+.footer .contact-link > a {
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer .contact-link > span > i,
+.footer .contact-link > a > i {
+    flex-shrink: 0;
+    width: 16px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.footer .short-link a:hover,
+.footer .help-link a:hover,
+.footer .contact-link a:hover {
+    letter-spacing: 1px;
+}
+
+.footer .hightech-link a:hover {
+    background: var(--bs-secondary);
+    border: 0;
+}
+
+/*** Footer End ***/
+
+
+/*** Service: Managed IT Start ***/
+/* service-managed-it.html 版面；顏色在 dark-theme.css。
+   刻意與前兩個服務子頁區隔：
+   Hero 下方多一條常駐狀態條、服務用「左切換軌＋右面板」而不是卡片或橫列、
+   平台做成一條橫向軌、24/7 用一條時間軸、合作方式只有一張合約面板。 */
+
+.mi-hero-art {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+/* 服務子頁的 Hero 標題（軟體開發 / 資安 / 託管 IT 三頁共用）。
+   balance 讓每一行長度接近，避免最後一行只剩一兩個字的孤字。 */
+.svc-hero-title {
+    /* balance 讓每一行長度接近，避免最後一行只剩一個字；
+       不支援的瀏覽器會忽略這行，顯示結果和原本一樣。 */
+    text-wrap: balance;
+}
+
+/* ---- 服務：左切換軌 ＋ 右面板 ---- */
+.mi-switch {
+    display: grid;
+    grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+    gap: 30px;
+    /* 右側面板拉齊左側切換軌的高度，換面板時版面不會上下跳動 */
+    align-items: stretch;
+}
+
+.mi-rail {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+}
+
+.mi-rail-btn {
+    display: grid;
+    /* 圖示不再有外框，欄寬縮小；一列只剩三個純元素 */
+    grid-template-columns: 30px 26px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 18px 20px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color .25s, border-color .25s, transform .25s;
+}
+
+.mi-rail-btn:hover {
+    transform: translateX(3px);
+}
+
+.mi-rail-num {
+    font-family: "Saira", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.mi-rail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    font-size: 18px;
+    flex: 0 0 auto;
+}
+
+.mi-rail-text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.mi-panels {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.mi-panel {
+    position: relative;
+    flex: 1 1 auto;
+    /* 左欄文字＋清單，右欄大編號與該項服務的插圖 */
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: 44px;
+    align-items: stretch;
+    padding: 44px 44px 40px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+/* 上半是標題與說明、下半是清單區塊，兩塊各自靠上下對齊，中間留白 */
+.mi-panel-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 右欄只剩插圖，垂直置中並放大 */
+.mi-panel-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mi-panel-art {
+    display: block;
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+}
+
+/* Bootstrap 的 reboot 有 [hidden] { display: none !important }，手機版擋不下來，
+   所以顯示與否一律用 class 控制。is-ready 由 JS 掛上：沒有 JS 時五張面板全部展開。 */
+.mi-switch.is-ready .mi-panel {
+    display: none;
+}
+
+.mi-switch.is-ready .mi-panel.is-active {
+    display: grid;
+}
+
+.mi-panel h3 {
+    max-width: 24ch;
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.mi-panel p {
+    max-width: 56ch;
+    margin-bottom: 0;
+    font-size: 17px;
+}
+
+/* 這項服務實際包含什麼：兩欄打勾清單。勾號用 CSS 畫，不依賴圖示字型 */
+.mi-panel-checks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px 30px;
+    margin: 28px 0 0;
+    padding: 26px 0 0;
+    border-top: 1px solid transparent;
+    list-style: none;
+}
+
+.mi-panel-checks li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.mi-panel-checks li::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 6px;
+    height: 11px;
+    margin: 4px 1px 0 2px;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+/* ---- 平台橫向軌 ---- */
+.mi-platforms {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.mi-platforms li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 26px 14px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    transition: border-color .25s, background-color .25s;
+}
+
+.mi-platform-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 20px;
+}
+
+.mi-platform-name {
+    font-family: "Saira", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.mi-platform-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 15px;
+}
+
+.mi-platform-note i {
+    margin-top: 4px;
+    flex: 0 0 auto;
+}
+
+/* ---- 24 小時軌道 ---- */
+.mi-clock-track {
+    position: relative;
+    height: 2px;
+    margin: 0 10px 64px;
+    border-radius: 2px;
+}
+
+.mi-clock-tick {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.mi-clock-tick b {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Saira", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .08em;
+}
+
+.mi-clock-pulse {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    margin-left: -7px;
+    border-radius: 50%;
+    animation: miSweep 9s linear infinite;
+}
+
+@keyframes miSweep {
+    from { left: 0; }
+    to   { left: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mi-clock-pulse {
+        animation: none;
+        left: 50%;
+    }
+}
+
+.mi-clock-points {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mi-clock-points li {
+    padding: 32px 28px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+.mi-clock-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 19px;
+}
+
+.mi-clock-points h4,
+.mi-clock-points h3 {
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+/* ---- Engagement：合約面板 ---- */
+.mi-statement {
+    margin: 0;
+    padding-left: 26px;
+    border-left: 4px solid transparent;
+    font-family: "Saira", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.mi-agreement {
+    position: relative;
+    padding: 42px 40px 36px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+.mi-agreement-tag {
+    position: absolute;
+    top: -14px;
+    left: 40px;
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.mi-agreement-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mi-agreement-list > li {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 20px;
+    padding: 22px 0;
+}
+
+.mi-agreement-list > li + li {
+    border-top: 1px solid transparent;
+}
+
+.mi-agreement-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 18px;
+}
+
+.mi-agreement-list h4 {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+/* ---- 平板 ---- */
+@media (max-width: 1199.98px) {
+    .mi-switch {
+        grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .mi-panel {
+        grid-template-columns: minmax(0, 1fr) 170px;
+        gap: 24px;
+        padding: 34px 30px 30px;
+    }
+
+    .mi-panel-art {
+        max-width: 170px;
+    }
+
+
+    .mi-panel-checks {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 9px;
+    }
+}
+
+/* ---- 手機與小平板：切換軌收起，五個面板直接依序展開 ---- */
+@media (max-width: 991.98px) {
+    .mi-switch {
+        display: block;
+    }
+
+    .mi-rail {
+        display: none;
+    }
+
+    .mi-panels {
+        display: grid;
+        gap: 14px;
+    }
+
+    /* 小螢幕：切換失效，五張面板都要看得到 */
+    .mi-switch.is-ready .mi-panel,
+    .mi-switch.is-ready .mi-panel.is-active {
+        display: block;
+    }
+
+    .mi-panel {
+        padding: 32px 26px 28px;
+    }
+
+    /* 小螢幕：編號回到標題上方，插圖收到文字下方置中 */
+    .mi-panel-aside {
+        display: block;
+        margin-top: 24px;
+        text-align: center;
+    }
+
+    .mi-panel-art {
+        max-width: 180px;
+        margin: 0 auto;
+    }
+
+
+    .mi-panel-checks {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 20px;
+    }
+
+    .mi-panel h3 {
+        font-size: 23px;
+    }
+
+    .mi-clock-points {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .mi-statement {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mi-platforms {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mi-platforms li {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 18px 20px;
+    }
+
+    .mi-platform-name {
+        text-align: left;
+    }
+
+    .mi-agreement {
+        padding: 36px 24px 28px;
+    }
+
+    .mi-agreement-tag {
+        left: 24px;
+    }
+
+    .mi-agreement-list > li {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .mi-clock-track {
+        margin-bottom: 56px;
+    }
+
+    .mi-panel-checks {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 9px;
+    }
+}
+/* 錨點跳轉時避開固定在上方的導覽列。
+   id 是全域的，#platforms 這條同時涵蓋遊戲開發頁，#engagement 也與資安頁共用。 */
+#what-we-manage,
+#platforms,
+#always-on,
+#engagement {
+    scroll-margin-top: 110px;
+}
+/*** Service: Managed IT End ***/
+
+
+/*** Game Development Start ***/
+/* game-development.html 版面；顏色在 dark-theme.css。
+   本頁的特有元件是「生產軸」：一條從 Concept 到 LiveOps 的縱線，
+   四張專業卡片沿著線左右交錯。全站其他頁沒有用過左右交錯的排法。
+   平台區刻意不加外框，與託管 IT 頁的卡片式平台列區隔。 */
+
+.gd-hero-art {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+/* ---- 生產軸 ---- */
+.gd-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 軸線兩端的標記：Concept / LiveOps */
+.gd-track-cap {
+    position: relative;
+    z-index: 1;
+    padding: 9px 26px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-family: "Saira", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.gd-steps {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 中央那條縱線 */
+.gd-steps::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+}
+
+.gd-steps > li {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 84px;
+    align-items: center;
+    padding: 24px 0;
+}
+
+/* 卡片與插圖一律在同一列。偶數列的插圖排在 DOM 後面卻要放左欄，
+   沒有指定 grid-row 的話 Grid 會把它推到下一列，整列高度就變兩倍。 */
+.gd-steps > li > .gd-step,
+.gd-steps > li > .gd-step-art {
+    grid-row: 1;
+}
+
+/* 奇數列：卡片在左、插圖在右；偶數列對調 */
+.gd-steps > li:nth-child(odd) > .gd-step {
+    grid-column: 1;
+}
+
+.gd-steps > li:nth-child(odd) > .gd-step-art {
+    grid-column: 2;
+}
+
+.gd-steps > li:nth-child(even) > .gd-step {
+    grid-column: 2;
+}
+
+.gd-steps > li:nth-child(even) > .gd-step-art {
+    grid-column: 1;
+}
+
+/* 對側的插圖：填滿原本空掉的那半邊 */
+.gd-step-art {
+    display: block;
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+/* 線上的節點 */
+.gd-steps > li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.gd-step {
+    position: relative;
+    padding: 32px 30px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+    transition: border-color .25s, transform .25s;
+}
+
+.gd-step:hover {
+    transform: translateY(-3px);
+}
+
+/* 卡片指向軸線的小接頭 */
+.gd-step::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 42px;
+    height: 1px;
+    margin-top: -0.5px;
+}
+
+.gd-steps > li:nth-child(odd) .gd-step::after {
+    left: 100%;
+}
+
+.gd-steps > li:nth-child(even) .gd-step::after {
+    right: 100%;
+}
+
+.gd-step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 19px;
+}
+
+.gd-step h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.gd-step p {
+    max-width: 44ch;
+}
+
+/* ---- 平台：不加外框，只有圖示與名稱 ---- */
+.gd-platforms {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+}
+
+.gd-platforms li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+}
+
+.gd-platform-icon {
+    font-size: 38px;
+    line-height: 1;
+}
+
+.gd-platform-name {
+    font-family: "Saira", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.gd-porting {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 22px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-size: 15px;
+}
+
+.gd-porting i {
+    margin-top: 4px;
+    flex: 0 0 auto;
+}
+
+/* ---- 平板 ---- */
+@media (max-width: 1199.98px) {
+    .gd-steps > li {
+        column-gap: 56px;
+        padding: 28px 0;
+    }
+
+    .gd-step {
+        padding: 28px 24px;
+    }
+
+    .gd-step::after {
+        width: 28px;
+    }
+}
+
+/* ---- 小平板與手機：軸線移到左側，卡片全部靠右排成一列 ---- */
+@media (max-width: 991.98px) {
+    .gd-track {
+        align-items: flex-start;
+        padding-left: 4px;
+    }
+
+    .gd-steps::before {
+        left: 11px;
+        margin-left: 0;
+    }
+
+    .gd-steps > li {
+        grid-template-columns: minmax(0, 1fr);
+        column-gap: 0;
+        padding: 14px 0 14px 46px;
+    }
+
+    .gd-steps > li:nth-child(odd) > .gd-step,
+    .gd-steps > li:nth-child(even) > .gd-step,
+    .gd-steps > li:nth-child(odd) > .gd-step-art,
+    .gd-steps > li:nth-child(even) > .gd-step-art {
+        grid-column: 1;
+    }
+
+    /* 小螢幕：插圖改放在卡片下方置中，不再佔一整欄 */
+    .gd-steps > li > .gd-step,
+    .gd-steps > li > .gd-step-art {
+        grid-row: auto;
+    }
+
+    .gd-step-art {
+        max-width: 180px;
+        margin: 18px auto 0;
+    }
+
+    .gd-steps > li::after {
+        top: 50%;
+        left: 12px;
+        margin-left: -8px;
+    }
+
+    .gd-steps > li:nth-child(odd) .gd-step::after,
+    .gd-steps > li:nth-child(even) .gd-step::after {
+        left: auto;
+        right: 100%;
+        width: 22px;
+    }
+
+    .gd-track-cap {
+        margin-left: -4px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .gd-step {
+        padding: 24px 20px;
+    }
+
+    .gd-step h3 {
+        font-size: 19px;
+    }
+
+    .gd-platforms {
+        gap: 14px;
+    }
+
+    .gd-platform-icon {
+        font-size: 30px;
+    }
+
+    .gd-platform-name {
+        font-size: 16px;
+    }
+}
+/* 錨點跳轉時避開固定在上方的導覽列（#platforms 已由託管 IT 頁那條涵蓋） */
+#what-we-do {
+    scroll-margin-top: 110px;
+}
+/*** Game Development End ***/
+
+
+/*** Legal Start ***/
+/* privacy.html 的單欄長文排版；顏色在 dark-theme.css。
+   刻意不放任何行銷元件，閱讀寬度限制在 72ch 以內。 */
+
+.legal {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.legal-updated {
+    margin-bottom: 28px;
+    font-size: 14px;
+    letter-spacing: .02em;
+}
+
+.legal-lead {
+    margin-bottom: 44px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid transparent;
+    font-size: 19px;
+    line-height: 1.75;
+}
+
+.legal h2 {
+    margin: 48px 0 14px;
+    font-size: 24px;
+}
+
+.legal h3 {
+    margin: 30px 0 10px;
+    font-size: 19px;
+}
+
+.legal p {
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.legal ul {
+    margin: 0 0 20px;
+    padding-left: 22px;
+}
+
+.legal li {
+    margin-bottom: 9px;
+    line-height: 1.75;
+}
+
+.legal code {
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+@media (max-width: 767.98px) {
+    .legal h2 {
+        margin-top: 38px;
+        font-size: 21px;
+    }
+
+    .legal-lead {
+        font-size: 17px;
+        margin-bottom: 34px;
+    }
+}
+/*** Legal End ***/
+
+
+/*** Footer legal link Start ***/
+/* 版權列右側的隱私權連結：桌機靠右、與左側版權文字分置兩端，
+   手機則各自置中上下堆疊（由 HTML 的 col-md-6 + text-md-start/end 控制）。
+   不加底線：頁尾其他連結都沒有底線，加了會跳出來。 */
+.footer-legal {
+    text-decoration: none;
+    transition: color .25s;
+}
+/*** Footer legal link End ***/
+
+
+/*** Footer credit Start ***/
+/* 版型授權（HTML Codex, CC BY 4.0）要求保留原作者署名連結，移除即違約、授權可被終止。
+   放在版權列最右側、隱私權連結之後，字級縮到 12px 並用次要文字色，盡量不干擾整體視覺。
+   手機版收起分隔線、改成獨立一行置中。 */
+.footer-credit {
+    margin-left: 14px;
+    padding-left: 14px;
+    border-left: 1px solid;
+    font-size: 12px;
+}
+
+@media (max-width: 767.98px) {
+    .footer-credit {
+        display: block;
+        margin: 6px 0 0;
+        padding-left: 0;
+        border-left: 0;
+    }
+}
+/*** Footer credit End ***/
+
+
+/*** Not found Start ***/
+/* 404.html 版面；顏色在 dark-theme.css。
+   左欄是大型鏤空 404 與說明，右欄是常用去處的清單。 */
+
+.nf {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+    gap: 64px;
+    align-items: start;
+}
+
+.nf-code {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Saira", sans-serif;
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .04em;
+}
+
+.nf-main h2 {
+    max-width: 18ch;
+    margin-bottom: 18px;
+    font-size: 34px;
+}
+
+.nf-main p {
+    max-width: 52ch;
+    margin-bottom: 32px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.nf-links {
+    padding: 34px 32px;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+.nf-links h3 {
+    margin-bottom: 18px;
+    font-size: 19px;
+}
+
+.nf-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nf-links li + li {
+    border-top: 1px solid transparent;
+}
+
+.nf-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 13px 0;
+    font-size: 15.5px;
+    text-decoration: none;
+    transition: color .25s, padding-left .25s;
+}
+
+.nf-links a:hover {
+    padding-left: 6px;
+}
+
+@media (max-width: 991.98px) {
+    .nf {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .nf-code {
+        font-size: 92px;
+    }
+
+    .nf-main h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .nf-code {
+        font-size: 76px;
+    }
+
+    .nf-links {
+        padding: 28px 24px;
+    }
+}
+/*** Not found End ***/
+
+
+/*** About photo band Start ***/
+/* about.html 的照片區：三張等高並排。
+   「照片＝人、插圖＝概念」這條規則下，全站只有這一區與首頁 About 區塊用照片。 */
+
+.ab-photos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ab-photos img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+@media (max-width: 991.98px) {
+    .ab-photos {
+        gap: 14px;
+    }
+
+    .ab-photos img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ab-photos {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ab-photos img {
+        height: 240px;
+    }
+}
+/*** About photo band End ***/
+
+
+/*** About team: coverage art Start ***/
+/* 兩個比較版共用的上半部：左＝四領域交疊的覆蓋示意圖，右＝團隊怎麼運作。
+   這一區原本是全站唯一沒有圖像的大區塊，補上視覺主角。 */
+
+.tv {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: center;
+    margin-bottom: 72px;
+}
+
+.tv-art {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.tv-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 26px;
+    padding: 0;
+    list-style: none;
+}
+
+.tv-chips li {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 20px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.tv-side p {
+    margin-bottom: 28px;
+    line-height: 1.8;
+}
+
+@media (max-width: 991.98px) {
+    .tv {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+        margin-bottom: 52px;
+    }
+
+    .tv-art {
+        max-width: 420px;
+    }
+}
+/*** About team: coverage art End ***/
+
+
+/*** About team: editorial (version 1+2) Start ***/
+/* 第 ①+② 版下半部：群組名用大字當分隔，角色用細線分欄。
+   刻意不用卡片與圖示方塊，與全站的卡片語彙形成反差。 */
+
+.te {
+    display: grid;
+    gap: 56px;
+}
+
+.te-group-head {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid transparent;
+}
+
+.te-num {
+    font-family: "Saira", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    flex: 0 0 auto;
+}
+
+.te-group-head h4 {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -.015em;
+}
+
+.te-roles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 56px;
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.te-roles h5 {
+    margin-bottom: 10px;
+    padding-left: 16px;
+    border-left: 2px solid transparent;
+    font-size: 17px;
+}
+
+.te-roles p {
+    padding-left: 16px;
+    line-height: 1.8;
+}
+
+@media (max-width: 1199.98px) {
+    .te-group-head h4 {
+        font-size: 30px;
+    }
+
+    .te-roles {
+        gap: 28px 40px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .te {
+        gap: 44px;
+    }
+
+    .te-group-head {
+        gap: 14px;
+    }
+
+    .te-group-head h4 {
+        font-size: 26px;
+    }
+
+    .te-roles {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        margin-top: 24px;
+    }
+}
+/*** About team: editorial (version 1+2) End ***/

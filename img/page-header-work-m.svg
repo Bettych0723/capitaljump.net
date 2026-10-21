@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Work 頁首的「手機版」底圖（<768px 時取代 page-header-work.svg）。
+       桌機版的圖案分佈在左右兩側，手機用 cover 裁切後只會剩中央的空白，
+       這張改成直向構圖：柱狀圖橫跨整個畫面、折線由左下升到右上，標題就壓在圖案上。
+       安全區：手機頁首約 385x291，用 cover 後左右各裁約 40px、
+       767px 寬時上下各裁約 75px，所以主要圖案都落在 x 60–580、y 80–320 之內。 -->
+  <defs>
+    <linearGradient id="pwmBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="pwmMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.26"/>
+      <stop offset="0.45" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pwmBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.32"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="pwmBar1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0075F1" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#0A8BFF" stop-opacity="0.22"/>
+    </linearGradient>
+    <linearGradient id="pwmBar2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0075F1" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#4DA3FF" stop-opacity="0.24"/>
+    </linearGradient>
+    <linearGradient id="pwmBar3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#00C9D6" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#00D8CE" stop-opacity="0.26"/>
+    </linearGradient>
+    <linearGradient id="pwmBar4" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0.30"/>
+    </linearGradient>
+    <linearGradient id="pwmLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#4DA3FF" stop-opacity="0.5"/>
+      <stop offset="0.6" stop-color="#00D8CE" stop-opacity="0.75"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <pattern id="pwmGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pwmGridMaskG" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pwmGridMask"><rect width="640" height="400" fill="url(#pwmGridMaskG)"/></mask>
+
+    <!-- 中央壓暗：範圍比桌機版窄一點，讓兩側的柱子still 看得到 -->
+    <radialGradient id="pwmDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.70"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.48"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.16"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pwmTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.6"/>
+      <stop offset="0.25" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pwmBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.8"/>
+      <stop offset="0.16" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="pwmSoft" filterUnits="userSpaceOnUse" x="40" y="40" width="580" height="320"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="pwmSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5"/></filter>
+  </defs>
+
+  <style>
+    @keyframes pwmTrail { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -400; } }
+    @keyframes pwmPeak  { 0%,100% { transform: scale(1); opacity: .85; } 50% { transform: scale(1.18); opacity: 1; } }
+    .pwm-trail { stroke-dasharray: 30 370; animation: pwmTrail 4s linear infinite; }
+    .pwm-peak  { transform-origin: 556px 116px; animation: pwmPeak 3.4s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .pwm-peak { animation: none; }
+      .pwm-trail { animation: none; opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="640" height="400" fill="url(#pwmBg)"/>
+  <g mask="url(#pwmGridMask)"><rect width="640" height="400" fill="url(#pwmGrid)"/></g>
+  <ellipse cx="520" cy="130" rx="260" ry="200" fill="url(#pwmMint)"/>
+  <ellipse cx="90"  cy="330" rx="260" ry="190" fill="url(#pwmBlue)"/>
+
+  <!-- 2. 柱狀圖：橫跨整個畫面，基準線 y 318（在上下安全區內） -->
+  <g>
+    <path d="M 60,318 H 580" stroke="#3F9BBE" stroke-opacity="0.40" stroke-width="1.5"/>
+    <g stroke="#3F9BBE" stroke-opacity="0.15" stroke-width="1">
+      <path d="M 60,250 H 580"/>
+      <path d="M 60,182 H 580"/>
+    </g>
+
+    <rect x="76"  y="250" width="62" height="68"  rx="8" fill="url(#pwmBar1)" stroke="#0A8BFF" stroke-opacity="0.40" stroke-width="1.5"/>
+    <rect x="216" y="206" width="62" height="112" rx="8" fill="url(#pwmBar2)" stroke="#4DA3FF" stroke-opacity="0.42" stroke-width="1.5"/>
+    <rect x="356" y="162" width="62" height="156" rx="8" fill="url(#pwmBar3)" stroke="#00D8CE" stroke-opacity="0.48" stroke-width="1.5"/>
+    <rect x="496" y="116" width="62" height="202" rx="8" fill="url(#pwmBar4)" stroke="#00FFBF" stroke-opacity="0.70" stroke-width="2"/>
+  </g>
+
+  <!-- 3. 貫穿柱頂的折線（由左下升到右上） -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 107,250 L 247,206 L 387,162 L 527,116" stroke="url(#pwmLine)" stroke-width="8" filter="url(#pwmSoft)" opacity="0.6"/>
+    <path d="M 107,250 L 247,206 L 387,162 L 527,116" stroke="url(#pwmLine)" stroke-width="2.5"/>
+    <path class="pwm-trail" pathLength="400" d="M 107,250 L 247,206 L 387,162 L 527,116" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+  <g fill="#C6FFEE" fill-opacity="0.75">
+    <circle cx="107" cy="250" r="4"/>
+    <circle cx="247" cy="206" r="4"/>
+    <circle cx="387" cy="162" r="4"/>
+  </g>
+
+  <!-- 4. 峰值亮點 -->
+  <g class="pwm-peak">
+    <circle cx="527" cy="116" r="16" fill="#00FFBF" fill-opacity="0.32" filter="url(#pwmSoft2)"/>
+    <circle cx="527" cy="116" r="6" fill="#DFFFF6"/>
+  </g>
+
+  <!-- 5. 中央壓暗＋上下收邊 -->
+  <ellipse cx="320" cy="200" rx="380" ry="230" fill="url(#pwmDim)"/>
+  <rect width="640" height="400" fill="url(#pwmTopFade)"/>
+  <rect width="640" height="400" fill="url(#pwmBotFade)"/>
+</svg>

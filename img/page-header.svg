@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- 內頁頁首底圖（.page-header 共用）。與 hero-kv-1.svg / cta-band.svg 同一套視覺語彙。
+       版面依據：桌機頁首約顯示 y 20–460，標題落在 y 150–330；最長的服務頁標題約到 x 1680。
+       因此光路在 x 1700 以前都壓在 y 300 以下、到最右側才陡升，匯流點放在右上角 (1790,160)，不會壓到任何標題。
+       手機只顯示中間約 x 680–1240 的直條，所以中央保留網格紋理，不留空。 -->
+  <defs>
+    <linearGradient id="phBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.42" stop-color="#032B3E"/>
+      <stop offset="0.72" stop-color="#03212F"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="phMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.40"/>
+      <stop offset="0.25" stop-color="#00D8CE" stop-opacity="0.18"/>
+      <stop offset="0.6"  stop-color="#0095D8" stop-opacity="0.07"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="phBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.50"/>
+      <stop offset="0.4" stop-color="#0075F1" stop-opacity="0.18"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="phCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.18" stop-color="#C6FFEE" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#00FFBF" stop-opacity="0.45"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="phSweep" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.4"  stop-color="#0075F1" stop-opacity="0.22"/>
+      <stop offset="0.7"  stop-color="#00C9D6" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="phL1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#00FFBF" stop-opacity="0.55"/>
+      <stop offset="1"    stop-color="#8BFFE4" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="phL2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#4DA3FF" stop-opacity="0"/>
+      <stop offset="0.3"  stop-color="#4DA3FF" stop-opacity="0.6"/>
+      <stop offset="1"    stop-color="#C6FFEE" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="phL3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.3"  stop-color="#0A8BFF" stop-opacity="0.7"/>
+      <stop offset="1"    stop-color="#8BFFE4" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="phOut" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="0.3" stop-color="#00FFBF" stop-opacity="0.75"/>
+      <stop offset="1"   stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="phSoft"  x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="phSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="phHaze"  x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="60"/></filter>
+
+    <pattern id="phGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 L0 60" fill="none" stroke="#3F9BBE" stroke-opacity="0.22" stroke-width="1"/>
+    </pattern>
+    <pattern id="phGridBig" width="300" height="300" patternUnits="userSpaceOnUse">
+      <path d="M300 0 L0 0 L0 300" fill="none" stroke="#5FC4E0" stroke-opacity="0.16" stroke-width="1.5"/>
+    </pattern>
+    <pattern id="phDots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.4" fill="#00FFBF" fill-opacity="0.5"/>
+    </pattern>
+
+    <linearGradient id="phDotsFadeBL" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"   stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="0.6" stop-color="#fff" stop-opacity="0.15"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="phDotsFadeTR" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#fff" stop-opacity="0.75"/>
+      <stop offset="0.6" stop-color="#fff" stop-opacity="0.14"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="phDotsMaskBL"><rect x="0" y="290" width="460" height="190" fill="url(#phDotsFadeBL)"/></mask>
+    <mask id="phDotsMaskTR"><rect x="1480" y="0" width="440" height="200" fill="url(#phDotsFadeTR)"/></mask>
+
+    <!-- 網格：外圍清楚、中央淡（但不歸零，手機裁切後才有紋理） -->
+    <radialGradient id="phGridMaskG" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="phGridMask"><rect width="1920" height="480" fill="url(#phGridMaskG)"/></mask>
+
+    <!-- 中央壓暗：置中白字的底 -->
+    <radialGradient id="phDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.62"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.40"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.12"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="phTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.65"/>
+      <stop offset="0.22" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <!-- 下緣收進頁面底色 #0B1220，頁首與內容之間不會有硬邊 -->
+    <linearGradient id="phBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.85"/>
+      <stop offset="0.14" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* 與 hero-kv-1.svg 相同的動態語彙，速度放慢一些：內頁頁首是背景，不該搶標題 */
+    @keyframes phFlow    { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -500; } }
+    @keyframes phPulse   { 0%,100% { opacity: .45; transform: scale(1); } 50% { opacity: .95; transform: scale(1.2); } }
+    @keyframes phSpin    { to { transform: rotate(360deg); } }
+    @keyframes phBreathe { 0%,100% { opacity: .7; } 50% { opacity: 1; } }
+    @keyframes phRipple  { 0% { transform: scale(1); opacity: .5; } 70% { opacity: .08; } 100% { transform: scale(3); opacity: 0; } }
+
+    .ph-flow     { stroke-dasharray: 56 444; animation: phFlow 9s linear infinite; }
+    .ph-flow-2   { animation-duration: 12s; animation-delay: -5s; }
+    .ph-flow-out { stroke-dasharray: 70 430; animation: phFlow 6.5s linear infinite; }
+    .ph-core     { transform-box: fill-box; transform-origin: center; animation: phPulse 5s ease-in-out infinite; }
+    .ph-ring     { transform-box: view-box; transform-origin: 1790px 160px; animation: phSpin 70s linear infinite; }
+    .ph-ring-2   { animation-duration: 50s; animation-direction: reverse; }
+    .ph-halo     { animation: phBreathe 7s ease-in-out infinite; }
+    .ph-ripple   { transform-box: view-box; transform-origin: 1790px 160px; animation: phRipple 7s cubic-bezier(.2,.6,.3,1) infinite; }
+    .ph-ripple-2 { animation-delay: -3.5s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ph-flow, .ph-flow-out, .ph-core, .ph-ring, .ph-halo, .ph-ripple { animation: none; }
+      .ph-flow, .ph-flow-out, .ph-ripple { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底 -->
+  <rect width="1920" height="480" fill="url(#phBg)"/>
+
+  <!-- 2. 斜向能量帶 -->
+  <path d="M -200,560 L 700,560 L 2020,60 L 2020,-80 L 1100,-80 Z" fill="url(#phSweep)" filter="url(#phHaze)"/>
+
+  <!-- 3. 網格 -->
+  <g mask="url(#phGridMask)">
+    <rect width="1920" height="480" fill="url(#phGrid)"/>
+    <rect width="1920" height="480" fill="url(#phGridBig)"/>
+  </g>
+
+  <!-- 4. 光暈 -->
+  <ellipse class="ph-halo" cx="1760" cy="160" rx="540" ry="380" fill="url(#phMint)"/>
+  <ellipse cx="180" cy="470" rx="620" ry="360" fill="url(#phBlue)"/>
+
+  <!-- 5. 點陣 -->
+  <rect x="0" y="290" width="460" height="190" fill="url(#phDots)" mask="url(#phDotsMaskBL)"/>
+  <rect x="1480" y="0" width="440" height="200" fill="url(#phDots)" mask="url(#phDotsMaskTR)"/>
+
+  <!-- 6. 擴散訊號環 + 雷達環（匯流點 1790,160） -->
+  <g fill="none" stroke="#00FFBF" stroke-width="2">
+    <circle class="ph-ripple"             cx="1790" cy="160" r="70"/>
+    <circle class="ph-ripple ph-ripple-2" cx="1790" cy="160" r="70"/>
+  </g>
+  <g fill="none" stroke="#00FFBF">
+    <circle class="ph-ring"           cx="1790" cy="160" r="112" stroke-opacity="0.30" stroke-width="1.5" stroke-dasharray="4 16"/>
+    <circle class="ph-ring ph-ring-2" cx="1790" cy="160" r="176" stroke-opacity="0.20" stroke-width="1.5" stroke-dasharray="2 22"/>
+    <circle cx="1790" cy="160" r="62" stroke-opacity="0.40" stroke-width="2"/>
+  </g>
+
+  <!-- 7. 光路：貼著下緣走，出了標題區才向右上收束 -->
+  <g fill="none" stroke-linecap="round">
+    <g filter="url(#phSoft)" stroke-opacity="0.55">
+      <path d="M -80,452 C 400,440 800,420 1180,420 S 1660,372 1730,290 S 1778,190 1790,160" stroke="url(#phL1)" stroke-width="11"/>
+      <path d="M 700,540 C 1060,505 1420,452 1620,392 S 1740,300 1790,160" stroke="url(#phL3)" stroke-width="11"/>
+      <path d="M 1790,160 C 1850,125 1905,80 2010,14" stroke="url(#phOut)" stroke-width="18"/>
+    </g>
+    <path d="M -80,452 C 400,440 800,420 1180,420 S 1660,372 1730,290 S 1778,190 1790,160" stroke="url(#phL1)" stroke-width="3"/>
+    <path d="M 700,540 C 1060,505 1420,452 1620,392 S 1740,300 1790,160" stroke="url(#phL3)" stroke-width="3"/>
+    <path d="M -80,384 C 240,390 420,420 640,448 S 1020,486 1300,504" stroke="url(#phL2)" stroke-width="2"/>
+    <path d="M 1790,160 C 1850,125 1905,80 2010,14" stroke="url(#phOut)" stroke-width="4.5"/>
+
+    <!-- 流動光點 -->
+    <g filter="url(#phSoft2)">
+      <path class="ph-flow"           pathLength="1000" d="M -80,452 C 400,440 800,420 1180,420 S 1660,372 1730,290 S 1778,190 1790,160" stroke="#B6FFEC" stroke-width="8"/>
+      <path class="ph-flow ph-flow-2" pathLength="1000" d="M 700,540 C 1060,505 1420,452 1620,392 S 1740,300 1790,160" stroke="#A8DEFF" stroke-width="8"/>
+      <path class="ph-flow-out"       pathLength="1000" d="M 1790,160 C 1850,125 1905,80 2010,14" stroke="#FFFFFF" stroke-width="9"/>
+    </g>
+    <path class="ph-flow"           pathLength="1000" d="M -80,452 C 400,440 800,420 1180,420 S 1660,372 1730,290 S 1778,190 1790,160" stroke="#FFFFFF" stroke-width="2.5"/>
+    <path class="ph-flow ph-flow-2" pathLength="1000" d="M 700,540 C 1060,505 1420,452 1620,392 S 1740,300 1790,160" stroke="#FFFFFF" stroke-width="2.5"/>
+    <path class="ph-flow-out"       pathLength="1000" d="M 1790,160 C 1850,125 1905,80 2010,14" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+
+  <!-- 8. 路徑節點 -->
+  <g fill="#C6FFEE">
+    <circle cx="1180" cy="420" r="4.5"/>
+    <circle cx="1620" cy="392" r="4.5"/>
+    <circle cx="420"  cy="441" r="3" fill-opacity="0.55"/>
+    <circle cx="640"  cy="448" r="3" fill-opacity="0.45"/>
+    <circle cx="860"  cy="424" r="3" fill-opacity="0.5"/>
+  </g>
+
+  <!-- 9. 匯流核心 -->
+  <g>
+    <circle class="ph-core" cx="1790" cy="160" r="150" fill="url(#phCore)" opacity="0.5"/>
+    <circle cx="1790" cy="160" r="30" fill="#00FFBF" fill-opacity="0.32" filter="url(#phSoft2)"/>
+    <circle cx="1790" cy="160" r="12" fill="#00FFBF"/>
+    <circle cx="1790" cy="160" r="6"  fill="#FFFFFF"/>
+  </g>
+
+  <!-- 10. 幾何飾件 -->
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 1790,388 l 18,18 l -18,18"/>
+    <path d="M 1830,388 l 18,18 l -18,18"/>
+  </g>
+  <g stroke="#4DA3FF" fill="none" stroke-width="2" stroke-opacity="0.26" stroke-linecap="round">
+    <path d="M 150,92 l -18,18 l 18,18"/>
+    <path d="M 110,92 l -18,18 l 18,18"/>
+  </g>
+
+  <!-- 11. 中央壓暗 + 上下收邊 -->
+  <ellipse cx="960" cy="250" rx="1020" ry="300" fill="url(#phDim)"/>
+  <rect width="1920" height="480" fill="url(#phTopFade)"/>
+  <rect width="1920" height="480" fill="url(#phBotFade)"/>
+</svg>

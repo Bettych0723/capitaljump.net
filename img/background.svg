@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Contact 聯絡卡片後方的底紋（.contact-detail::before），取代版型的白色編織紋 background.jpg。
+       保留原圖「規律格紋」的結構，改為品牌深色的蜂巢網路；色彩與 page-header.svg / hero-kv-1.svg 同一套。
+       這張大部分會被卡片蓋住，只在卡片間隙露出，所以刻意低對比、不放動態。
+       手機上會被 cover 裁成中間一條細長直條，因此紋理平均分布、中央不留空。 -->
+  <defs>
+    <linearGradient id="bgBase" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#021520"/>
+      <stop offset="0.45" stop-color="#04222F"/>
+      <stop offset="0.75" stop-color="#03212F"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="bgMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.28"/>
+      <stop offset="0.35" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bgBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.34"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 蜂巢（尖頂六角形，r = 36）：一個 tile = 一整格六角 + 往下一列的連接邊 -->
+    <pattern id="hex" width="62.354" height="108" patternUnits="userSpaceOnUse">
+      <path d="M31.177,0 L62.354,18 L62.354,54 L31.177,72 L0,54 L0,18 Z M31.177,72 L31.177,108"
+            fill="none" stroke="#3F9BBE" stroke-opacity="0.22" stroke-width="1.2"/>
+      <circle cx="31.177" cy="72" r="1.8" fill="#5FC4E0" fill-opacity="0.35"/>
+      <circle cx="0"      cy="18" r="1.8" fill="#5FC4E0" fill-opacity="0.35"/>
+    </pattern>
+
+    <!-- 紋理在兩個光暈角較清楚，其餘淡出（中央不歸零） -->
+    <radialGradient id="hexMaskG" cx="0.5" cy="0.5" r="0.62">
+      <stop offset="0"   stop-color="#6a6a6a"/>
+      <stop offset="0.6" stop-color="#9a9a9a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="hexMask"><rect width="1600" height="700" fill="url(#hexMaskG)"/></mask>
+
+    <filter id="bgSoft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+
+  <rect width="1600" height="700" fill="url(#bgBase)"/>
+
+  <ellipse cx="1380" cy="120" rx="560" ry="380" fill="url(#bgMint)"/>
+  <ellipse cx="180"  cy="620" rx="560" ry="360" fill="url(#bgBlue)"/>
+
+  <g mask="url(#hexMask)">
+    <rect width="1600" height="700" fill="url(#hex)"/>
+  </g>
+
+  <!-- 亮起的單元：右上三格（薄荷綠）、左下兩格（品牌藍），落在蜂巢格點上 -->
+  <g fill="none" stroke-linejoin="round">
+    <g stroke="#00FFBF" stroke-width="1.6">
+      <path d="M1340.61,0 L1371.79,18 L1371.79,54 L1340.61,72 L1309.43,54 L1309.43,18 Z" stroke-opacity="0.55"/>
+      <path d="M1371.79,54 L1402.96,72 L1402.96,108 L1371.79,126 L1340.61,108 L1340.61,72 Z" stroke-opacity="0.38"/>
+      <path d="M1278.26,108 L1309.43,126 L1309.43,162 L1278.26,180 L1247.08,162 L1247.08,126 Z" stroke-opacity="0.24"/>
+    </g>
+    <g stroke="#4DA3FF" stroke-width="1.6">
+      <path d="M218.25,540 L249.42,558 L249.42,594 L218.25,612 L187.07,594 L187.07,558 Z" stroke-opacity="0.50"/>
+      <path d="M249.42,594 L280.6,612 L280.6,648 L249.42,666 L218.25,648 L218.25,612 Z" stroke-opacity="0.32"/>
+    </g>
+  </g>
+
+  <!-- 節點亮點 -->
+  <g>
+    <circle cx="1371.79" cy="54"  r="9" fill="#00FFBF" fill-opacity="0.30" filter="url(#bgSoft)"/>
+    <circle cx="1371.79" cy="54"  r="3.5" fill="#DFFFF6"/>
+    <circle cx="1340.61" cy="72"  r="2.5" fill="#8BFFE4" fill-opacity="0.8"/>
+    <circle cx="1309.43" cy="126" r="2.2" fill="#8BFFE4" fill-opacity="0.5"/>
+    <circle cx="249.42"  cy="594" r="8" fill="#0A8BFF" fill-opacity="0.35" filter="url(#bgSoft)"/>
+    <circle cx="249.42"  cy="594" r="3.2" fill="#C6E4FF"/>
+    <circle cx="218.25"  cy="612" r="2.2" fill="#A8DEFF" fill-opacity="0.6"/>
+  </g>
+</svg>

@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- 內頁頁首底圖的「手機版」（<768px 時取代 page-header.svg，Services / Contact 等共用頁一起生效）。
+       桌機版的匯流點在右上角、光路貼著下緣走，手機用 cover 裁切後只剩中央空白。
+       這張把同一套語彙收進直向畫面：光路由左下升到右上，匯流點與訊號環落在右上，標題壓在圖案上。
+       安全區：手機頁首約 385x291，cover 後左右各裁約 40px；767px 寬時上下各裁約 75px，
+       主要圖案都落在 x 60–580、y 80–320 之內。 -->
+  <defs>
+    <linearGradient id="phmBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.42" stop-color="#032B3E"/>
+      <stop offset="0.72" stop-color="#03212F"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="phmMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.34"/>
+      <stop offset="0.25" stop-color="#00D8CE" stop-opacity="0.16"/>
+      <stop offset="0.6"  stop-color="#0095D8" stop-opacity="0.06"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="phmBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.44"/>
+      <stop offset="0.4" stop-color="#0075F1" stop-opacity="0.16"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="phmCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.18" stop-color="#C6FFEE" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#00FFBF" stop-opacity="0.42"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="phmSweep" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"   stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.4" stop-color="#0075F1" stop-opacity="0.20"/>
+      <stop offset="0.7" stop-color="#00C9D6" stop-opacity="0.16"/>
+      <stop offset="1"   stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="phmL1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#00FFBF" stop-opacity="0.5"/>
+      <stop offset="1"    stop-color="#8BFFE4" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="phmL2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#0A8BFF" stop-opacity="0.6"/>
+      <stop offset="1"   stop-color="#8BFFE4" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="phmSoft"  filterUnits="userSpaceOnUse" x="0" y="20" width="640" height="380"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="phmSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="phmHaze"  x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="40"/></filter>
+
+    <pattern id="phmGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <pattern id="phmDots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.2" fill="#00FFBF" fill-opacity="0.45"/>
+    </pattern>
+    <linearGradient id="phmDotsFade" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"   stop-color="#fff" stop-opacity="0.8"/>
+      <stop offset="0.6" stop-color="#fff" stop-opacity="0.15"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="phmDotsMask"><rect x="40" y="250" width="240" height="120" fill="url(#phmDotsFade)"/></mask>
+
+    <radialGradient id="phmGridMaskG" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="phmGridMask"><rect width="640" height="400" fill="url(#phmGridMaskG)"/></mask>
+
+    <radialGradient id="phmDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.70"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.48"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.16"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="phmTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.6"/>
+      <stop offset="0.25" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="phmBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.8"/>
+      <stop offset="0.16" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes phmFlow   { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -500; } }
+    @keyframes phmPulse  { 0%,100% { opacity: .45; transform: scale(1); } 50% { opacity: .95; transform: scale(1.2); } }
+    @keyframes phmSpin   { to { transform: rotate(360deg); } }
+    @keyframes phmRipple { 0% { transform: scale(1); opacity: .5; } 70% { opacity: .08; } 100% { transform: scale(2.6); opacity: 0; } }
+
+    .phm-flow   { stroke-dasharray: 56 444; animation: phmFlow 9s linear infinite; }
+    .phm-flow-2 { animation-duration: 12s; animation-delay: -5s; }
+    .phm-core   { transform-box: fill-box; transform-origin: center; animation: phmPulse 5s ease-in-out infinite; }
+    .phm-ring   { transform-box: view-box; transform-origin: 508px 120px; animation: phmSpin 70s linear infinite; }
+    .phm-ring-2 { animation-duration: 50s; animation-direction: reverse; }
+    .phm-ripple { transform-box: view-box; transform-origin: 508px 120px; animation: phmRipple 7s cubic-bezier(.2,.6,.3,1) infinite; }
+    .phm-ripple-2 { animation-delay: -3.5s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .phm-flow, .phm-core, .phm-ring, .phm-ripple { animation: none; }
+      .phm-flow, .phm-ripple { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、斜向能量帶、網格 -->
+  <rect width="640" height="400" fill="url(#phmBg)"/>
+  <path d="M -80,470 L 240,470 L 720,40 L 720,-60 L 380,-60 Z" fill="url(#phmSweep)" filter="url(#phmHaze)"/>
+  <g mask="url(#phmGridMask)"><rect width="640" height="400" fill="url(#phmGrid)"/></g>
+
+  <!-- 2. 光暈 -->
+  <ellipse cx="520" cy="110" rx="260" ry="200" fill="url(#phmMint)"/>
+  <ellipse cx="70"  cy="370" rx="260" ry="190" fill="url(#phmBlue)"/>
+
+  <!-- 3. 左下點陣 -->
+  <rect x="40" y="250" width="240" height="120" fill="url(#phmDots)" mask="url(#phmDotsMask)"/>
+
+  <!-- 4. 訊號環（匯流點 508,120） -->
+  <g fill="none" stroke="#00FFBF" stroke-width="2">
+    <circle class="phm-ripple"              cx="508" cy="120" r="46"/>
+    <circle class="phm-ripple phm-ripple-2" cx="508" cy="120" r="46"/>
+  </g>
+  <g fill="none" stroke="#00FFBF">
+    <circle class="phm-ring"            cx="508" cy="120" r="74"  stroke-opacity="0.28" stroke-width="1.5" stroke-dasharray="4 16"/>
+    <circle class="phm-ring phm-ring-2" cx="508" cy="120" r="110" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="2 22"/>
+    <circle cx="508" cy="120" r="42" stroke-opacity="0.38" stroke-width="2"/>
+  </g>
+
+  <!-- 5. 兩條光路由左下升到匯流點 -->
+  <g fill="none" stroke-linecap="round">
+    <g filter="url(#phmSoft)" stroke-opacity="0.55">
+      <path d="M -40,352 C 120,344 260,326 360,286 S 480,196 508,120" stroke="url(#phmL1)" stroke-width="9"/>
+      <path d="M -40,404 C 160,392 320,360 420,312 S 496,204 508,120" stroke="url(#phmL2)" stroke-width="9"/>
+    </g>
+    <path d="M -40,352 C 120,344 260,326 360,286 S 480,196 508,120" stroke="url(#phmL1)" stroke-width="2.5"/>
+    <path d="M -40,404 C 160,392 320,360 420,312 S 496,204 508,120" stroke="url(#phmL2)" stroke-width="2.5"/>
+
+    <g filter="url(#phmSoft2)">
+      <path class="phm-flow"            pathLength="1000" d="M -40,352 C 120,344 260,326 360,286 S 480,196 508,120" stroke="#B6FFEC" stroke-width="7"/>
+      <path class="phm-flow phm-flow-2" pathLength="1000" d="M -40,404 C 160,392 320,360 420,312 S 496,204 508,120" stroke="#A8DEFF" stroke-width="7"/>
+    </g>
+    <path class="phm-flow"            pathLength="1000" d="M -40,352 C 120,344 260,326 360,286 S 480,196 508,120" stroke="#FFFFFF" stroke-width="2.5"/>
+    <path class="phm-flow phm-flow-2" pathLength="1000" d="M -40,404 C 160,392 320,360 420,312 S 496,204 508,120" stroke="#FFFFFF" stroke-width="2.5"/>
+  </g>
+
+  <!-- 6. 路徑節點 -->
+  <g fill="#C6FFEE">
+    <circle cx="360" cy="286" r="4"/>
+    <circle cx="420" cy="312" r="4" fill-opacity="0.7"/>
+    <circle cx="160" cy="341" r="3" fill-opacity="0.5"/>
+  </g>
+
+  <!-- 7. 匯流核心 -->
+  <g>
+    <circle class="phm-core" cx="508" cy="120" r="100" fill="url(#phmCore)" opacity="0.45"/>
+    <circle cx="508" cy="120" r="20" fill="#00FFBF" fill-opacity="0.30" filter="url(#phmSoft2)"/>
+    <circle cx="508" cy="120" r="9"  fill="#00FFBF"/>
+    <circle cx="508" cy="120" r="4.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 8. 幾何飾件 -->
+  <g stroke="#4DA3FF" fill="none" stroke-width="2" stroke-opacity="0.26" stroke-linecap="round">
+    <path d="M 108,96 l -16,16 l 16,16"/>
+    <path d="M 76,96 l -16,16 l 16,16"/>
+  </g>
+
+  <!-- 9. 中央壓暗＋上下收邊 -->
+  <ellipse cx="320" cy="200" rx="380" ry="230" fill="url(#phmDim)"/>
+  <rect width="640" height="400" fill="url(#phmTopFade)"/>
+  <rect width="640" height="400" fill="url(#phmBotFade)"/>
+</svg>

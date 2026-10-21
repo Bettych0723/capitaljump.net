@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- Google Analytics (GA4) — 評估 ID：G-ZM346VN1R1
+             本機預覽（localhost / 127.0.0.1 / 直接開檔）不載入，避免測試流量混進正式資料。
+             需要在本機驗證時，在網址後面加上 ?ga_test=1 即可暫時啟用。 -->
+        <script>
+            (function () {
+                var host = location.hostname;
+                var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '' || host.indexOf('.local') > -1;
+                var force = location.search.indexOf('ga_test=1') > -1;
+                if (isLocal && !force) { return; }
+
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function () { window.dataLayer.push(arguments); };
+
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZM346VN1R1';
+                document.head.appendChild(s);
+
+                gtag('js', new Date());
+                gtag('config', 'G-ZM346VN1R1');
+            })();
+        </script>
+        <title>Cybersecurity &mdash; Penetration Testing &amp; MDR | CAPITAL JUMP</title>
+        <!-- 版面：Hero（圖左文右）→ 右側圓點導覽 → 服務清單橫列 → Why it matters 對照 → 合規徽章 → 兩種合作方式 → CTA -->
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="cybersecurity, penetration testing, MDR, SOC as a service, ISO 27001, SOC 2, GDPR, incident response, Zero Trust, IAM" name="keywords">
+        <meta content="Penetration testing, managed detection &amp; response, and compliance (ISO 27001, SOC 2, GDPR). Find your risks, defend in real time, and pass your audits." name="description">
+
+        <link href="img/icon.png" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Dark Tech Theme Override (最後載入；移除本行即回復淺色) -->
+        <link href="css/dark-theme.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <!-- 真實電話 / 社群帳號待補（[待填]）後再啟用本區塊 -->
+        <!-- <div class="container-fluid bg-dark py-2 d-none d-md-flex">
+            <div class="container">
+                <div class="d-flex justify-content-between topbar">
+                    <div class="top-info">
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>[待填：Address]</small>
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>[待填：Email]</small>
+                    </div>
+                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We reply to every enquiry within one business day</small></div>
+                    <div class="top-link">
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Topbar End -->
+
+        <!-- Navbar Start -->
+        <!-- sticky-top：捲動時導覽列固定在視窗上方 -->
+        <div class="container-fluid bg-primary sticky-top">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-1">
+                    <a href="index.html" class="navbar-brand">
+                        <img width="182" height="60" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                    </a>
+                    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto mx-xl-auto p-1">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="service.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu bg-light m-0 rounded">
+                                    <a href="service.html" class="dropdown-item">All services</a>
+                                    <a href="service-software.html" class="dropdown-item">Custom software development</a>
+                                    <a href="service-cybersecurity.html" class="dropdown-item active">Cybersecurity</a>
+                                    <a href="service-managed-it.html" class="dropdown-item">Managed IT and cloud</a>
+                                    <a href="game-development.html" class="dropdown-item">Game development</a>
+                                </div>
+                            </div>
+                            <a href="work.html" class="nav-item nav-link">Work</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact.html" class="btn btn-secondary rounded-pill py-2 px-4 my-3 d-xl-none">Let's talk</a>
+                        </div>
+                    </div>
+                    <div class="d-none d-xl-flex flex-shirink-0">
+                        <a href="contact.html" class="btn btn-secondary rounded-pill py-2 px-4">Let's talk</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header page-header-cyber py-5">
+            <div class="container text-center py-5">
+                <h1 class="display-2 text-white mb-4 animated slideInDown">Cybersecurity</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="service.html">Services</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Cybersecurity</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Hero Start -->
+        <!-- 文案「Hero」。與軟體開發頁左右相反：插圖在左、文字在右 -->
+        <div class="container-fluid pt-5 mt-4">
+            <div class="container pt-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2 wow fadeIn" data-wow-delay=".1s">
+                        <p class="h5 text-primary">Cybersecurity</p>
+                        <h2 class="display-5 mb-4 svc-hero-title">Find your weaknesses before someone else does.</h2>
+                        <p class="fs-5 mb-4">We test your systems like an attacker, defend them in real time, and get you audit-ready &mdash; so security stops being a box to tick and becomes a real defense.</p>
+                        <div class="work-cta-actions">
+                            <a href="contact.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Request a security assessment</a>
+                            <a href="work.html#case-security" class="btn btn-ghost rounded-pill px-4 py-3">See a case</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 wow fadeIn" data-wow-delay=".2s">
+                        <img width="640" height="460" src="img/cyber-hero.svg" class="img-fluid cy-hero-art" alt="Illustration: a scan sweeping across a shield, marking findings and resolving them">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+
+        <!-- Section nav Start -->
+        <!-- 頁內導覽：沿用軟體開發頁的右側圓點索引 -->
+        <nav id="cy-sections" class="sw-dotnav" aria-label="Sections on this page">
+            <a class="nav-link" href="#services"><span class="sw-dot" aria-hidden="true"></span><span class="sw-dot-label">Services</span></a>
+            <a class="nav-link" href="#why-it-matters"><span class="sw-dot" aria-hidden="true"></span><span class="sw-dot-label">Why it matters</span></a>
+            <a class="nav-link" href="#compliance"><span class="sw-dot" aria-hidden="true"></span><span class="sw-dot-label">Compliance</span></a>
+            <a class="nav-link" href="#engagement"><span class="sw-dot" aria-hidden="true"></span><span class="sw-dot-label">Engagement</span></a>
+        </nav>
+        <!-- Section nav End -->
+
+
+        <!-- Services Start -->
+        <!-- 文案「Services」五項。做成清單式橫列（序號｜圖示＋標題｜說明），與軟體開發頁的卡片格線區隔 -->
+        <div class="container-fluid py-5 my-4" id="services">
+            <div class="container py-5">
+                <div class="row g-4 align-items-end pb-5">
+                    <div class="col-lg-7 wow fadeIn" data-wow-delay=".1s">
+                        <p class="h5 text-primary">Services</p>
+                        <h2 class="mb-0 h1">Test it, watch it, prove it</h2>
+                    </div>
+                    <div class="col-lg-5 wow fadeIn" data-wow-delay=".2s">
+                        <p class="mb-0 sw-section-lead">Five services that cover finding the risk, defending against it, and showing an auditor you did.</p>
+                    </div>
+                </div>
+
+                <ol class="cy-list wow fadeIn" data-wow-delay=".1s">
+                    <li>
+                        <span class="cy-list-num" aria-hidden="true">01</span>
+                        <span class="cy-list-icon"><i class="fas fa-user-secret" aria-hidden="true"></i></span>
+                        <div class="cy-list-main">
+                            <h3>Penetration testing and red/purple team</h3>
+                            <p class="mb-0">We attack your systems the way a real adversary would, then show you exactly how we got in.</p>
+                        </div>
+                        <ul class="cy-list-tags">
+                            <li>External</li>
+                            <li>Internal</li>
+                            <li>Web</li>
+                            <li>Mobile</li>
+                            <li>API</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="cy-list-num" aria-hidden="true">02</span>
+                        <span class="cy-list-icon"><i class="fas fa-satellite-dish" aria-hidden="true"></i></span>
+                        <div class="cy-list-main">
+                            <h3>Managed Detection and Response (MDR) / SOC-as-a-Service</h3>
+                            <p class="mb-0">24/7 monitoring and response, so an alert at 3am is someone&rsquo;s job &mdash; not a missed email.</p>
+                        </div>
+                        <ul class="cy-list-tags">
+                            <li>24/7 monitoring</li>
+                            <li>Response</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="cy-list-num" aria-hidden="true">03</span>
+                        <span class="cy-list-icon"><i class="fas fa-clipboard-check" aria-hidden="true"></i></span>
+                        <div class="cy-list-main">
+                            <h3>Compliance and audit</h3>
+                            <p class="mb-0">Readiness and audit support for the frameworks your customers and regulators ask about.</p>
+                        </div>
+                        <ul class="cy-list-tags">
+                            <li>ISO 27001</li>
+                            <li>SOC 2</li>
+                            <li>GDPR</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="cy-list-num" aria-hidden="true">04</span>
+                        <span class="cy-list-icon"><i class="fas fa-fire-extinguisher" aria-hidden="true"></i></span>
+                        <div class="cy-list-main">
+                            <h3>Incident response and digital forensics</h3>
+                            <p class="mb-0">Containment, recovery, and investigation &mdash; stopping the bleeding, then finding out what happened.</p>
+                        </div>
+                        <ul class="cy-list-tags">
+                            <li>Containment</li>
+                            <li>Recovery</li>
+                            <li>Investigation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="cy-list-num" aria-hidden="true">05</span>
+                        <span class="cy-list-icon"><i class="fas fa-fingerprint" aria-hidden="true"></i></span>
+                        <div class="cy-list-main">
+                            <h3>Zero Trust and IAM</h3>
+                            <p class="mb-0">Identity and access management and Zero Trust architecture &mdash; so access is earned, not assumed.</p>
+                        </div>
+                        <ul class="cy-list-tags">
+                            <li>Identity</li>
+                            <li>Access</li>
+                            <li>Architecture</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- Services End -->
+
+
+        <!-- Why it matters Start -->
+        <!-- 文案「Why it matters」。左大標語、右兩塊對照（build / break），不置中，與軟體開發頁的引言區隔 -->
+        <div class="container-fluid bg-light py-5" id="why-it-matters">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay=".1s">
+                        <h4 class="h5 text-primary">Why it matters</h4>
+                        <p class="cy-statement">One in-house team that both builds and breaks software sees risks others miss &mdash; and fixes them properly, not just reports them.</p>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay=".2s">
+                        <div class="cy-split">
+                            <div class="cy-split-card">
+                                <span class="cy-split-icon"><i class="fas fa-code" aria-hidden="true"></i></span>
+                                <h4>We build software</h4>
+                                <p class="mb-0">So we know where the weak joints usually are.</p>
+                            </div>
+                            <span class="cy-split-plus" aria-hidden="true"><i class="fas fa-plus"></i></span>
+                            <div class="cy-split-card">
+                                <span class="cy-split-icon"><i class="fas fa-bug" aria-hidden="true"></i></span>
+                                <h4>We break software</h4>
+                                <p class="mb-0">So the fix is a fix, not a line in a report.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Why it matters End -->
+
+
+        <!-- Compliance Start -->
+        <!-- 文案「Compliance & audit」的三個框架做成徽章，這是本頁特有的元件 -->
+        <div class="container-fluid py-5 my-4" id="compliance">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".1s" style="max-width: 640px;">
+                    <p class="h5 text-primary">Compliance and audit</p>
+                    <h2 class="mb-4 h1">Audit-ready, not just documented</h2>
+                    <p class="mb-0">Readiness and audit support for ISO 27001, SOC 2, and GDPR.</p>
+                </div>
+                <ul class="cy-badges wow fadeIn" data-wow-delay=".1s">
+                    <li>
+                        <span class="cy-badge-mark"><i class="fas fa-certificate" aria-hidden="true"></i></span>
+                        <h3>ISO 27001</h3>
+                        <p class="mb-0">Information security management</p>
+                    </li>
+                    <li>
+                        <span class="cy-badge-mark"><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
+                        <h3>SOC 2</h3>
+                        <p class="mb-0">Security, availability, confidentiality</p>
+                    </li>
+                    <li>
+                        <span class="cy-badge-mark"><i class="fas fa-user-shield" aria-hidden="true"></i></span>
+                        <h3>GDPR</h3>
+                        <p class="mb-0">Personal data protection</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Compliance End -->
+
+
+        <!-- Engagement Start -->
+        <!-- 文案「Engagement」：單次檢測 vs 長期合約，兩者對照 -->
+        <div class="container-fluid bg-light py-5" id="engagement">
+            <div class="container py-5">
+                <div class="row g-4 align-items-end pb-5">
+                    <div class="col-lg-7 wow fadeIn" data-wow-delay=".1s">
+                        <p class="h5 text-primary">Engagement</p>
+                        <h2 class="mb-0 h1">Two ways to buy security</h2>
+                    </div>
+                    <div class="col-lg-5 wow fadeIn" data-wow-delay=".2s">
+                        <p class="mb-0 sw-section-lead">Managed and monitoring services are billed monthly, so protection &mdash; and budgeting &mdash; stays predictable.</p>
+                    </div>
+                </div>
+
+                <div class="cy-engage wow fadeIn" data-wow-delay=".1s">
+                    <article>
+                        <span class="cy-engage-tag">One-off</span>
+                        <h3>Point-in-time assessment</h3>
+                        <p class="mb-0">A defined test with a report, a prioritized fix list, and guided remediation.</p>
+                    </article>
+                    <article class="cy-engage-ongoing">
+                        <span class="cy-engage-tag">Monthly</span>
+                        <h3>Ongoing retainer</h3>
+                        <p class="mb-0">Managed detection, monitoring, and advisory on a monthly agreement.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <!-- Engagement End -->
+
+
+        <!-- Closing CTA Start -->
+        <!-- 主要行動：Request a security assessment -->
+        <div class="container-fluid cta-band py-5">
+            <div class="container py-5 wow fadeIn" data-wow-delay=".1s">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <p class="h5 text-primary">Next step</p>
+                        <h2 class="mb-3 h1">Let&rsquo;s find the gaps first.</h2>
+                        <p class="mb-0">Book a 30-minute discovery call and we&rsquo;ll tell you honestly whether &mdash; and how &mdash; we can help.</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="work-cta-actions">
+                            <a href="contact.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Request a security assessment</a>
+                            <a href="work.html" class="btn btn-ghost rounded-pill px-4 py-3">See our work</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="sw-other mb-0">Other practices :
+                    <a href="service-software.html">Custom software development</a>
+                    <a href="service-managed-it.html">Managed IT and Cloud</a>
+                </p>
+            </div>
+        </div>
+        <!-- Closing CTA End -->
+
+        <!-- Footer Start -->
+         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".1s">
+            <div class="container pt-5 pb-4">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html" class="d-inline-block">
+                            <img width="182" height="60" loading="lazy" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                        </a>
+                        <p class="mt-4 text-light">An international software, security, and IT partner. We design, build, secure, and run the technology growing companies depend on.</p>
+                        <!-- 社群連結：待補真實帳號網址後啟用
+                        <div class="d-flex hightech-link">
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        </div>
+                        -->
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="about.html" class="h3 text-secondary">Company</a>
+                        <div class="mt-4 d-flex flex-column short-link">
+                            <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About</a>
+                            <a href="work.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Work</a>
+                            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
+                            <a href="game-development.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Game development</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="service.html" class="h3 text-secondary">Services</a>
+                        <div class="mt-4 d-flex flex-column help-link">
+                            <a href="service-software.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Custom software development</a>
+                            <a href="service-cybersecurity.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Cybersecurity</a>
+                            <a href="service-managed-it.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Managed IT and cloud</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="contact.html" class="h3 text-secondary">Contact</a>
+                        <div class="text-white mt-4 d-flex flex-column contact-link">
+                            <span class="pb-3 text-light border-primary"><i class="fas fa-envelope text-secondary me-2"></i><a href="mailto:capitaljumpinc@gmail.com" class="text-light">capitaljumpinc@gmail.com</a></span>
+                            <!-- <span class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> [待填：Phone]</span> -->
+                            <span class="py-3 text-light border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Vistra Corporate Services Centre, Ground Floor NPF Building, Beach Road, Apia, Samoa</span>
+                            <!-- <span class="py-3 text-light"><i class="fas fa-clock text-secondary me-2"></i> 09:00 - 18:00</span> -->
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-light mt-5 mb-4">
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span class="text-light"><span class="text-secondary">Copyright © CAPITAL JUMP INC.,</span> All rights reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <span class="text-light"><a href="privacy.html" class="footer-legal">Privacy policy</a></span><span class="footer-credit">Designed by <a href="https://htmlcodex.com" class="footer-legal" target="_blank" rel="noopener noreferrer">HTML Codex</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

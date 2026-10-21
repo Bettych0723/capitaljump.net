@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- Google Analytics (GA4) — 評估 ID：G-ZM346VN1R1
+             本機預覽（localhost / 127.0.0.1 / 直接開檔）不載入，避免測試流量混進正式資料。
+             需要在本機驗證時，在網址後面加上 ?ga_test=1 即可暫時啟用。 -->
+        <script>
+            (function () {
+                var host = location.hostname;
+                var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '' || host.indexOf('.local') > -1;
+                var force = location.search.indexOf('ga_test=1') > -1;
+                if (isLocal && !force) { return; }
+
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function () { window.dataLayer.push(arguments); };
+
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZM346VN1R1';
+                document.head.appendChild(s);
+
+                gtag('js', new Date());
+                gtag('config', 'G-ZM346VN1R1');
+            })();
+        </script>
+        <title>About CAPITAL JUMP &mdash; Software, Security &amp; IT Engineering</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="about CAPITAL JUMP, engineering partner, custom software, cybersecurity, managed IT, technical coverage, international delivery" name="keywords">
+        <meta content="CAPITAL JUMP is an engineering partner for custom software, cybersecurity, and managed IT. Learn how we work and why clients worldwide trust us." name="description">
+
+        <link href="img/icon.png" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Dark Tech Theme Override (最後載入；移除本行即回復淺色) -->
+        <link href="css/dark-theme.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <!-- 真實電話 / 社群帳號待補（[待填]）後再啟用本區塊 -->
+        <!-- <div class="container-fluid bg-dark py-2 d-none d-md-flex">
+            <div class="container">
+                <div class="d-flex justify-content-between topbar">
+                    <div class="top-info">
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>[待填：Address]</small>
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>[待填：Email]</small>
+                    </div>
+                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We reply to every enquiry within one business day</small></div>
+                    <div class="top-link">
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Topbar End -->
+
+        <!-- Navbar Start -->
+        <!-- sticky-top：捲動時導覽列固定在視窗上方 -->
+        <div class="container-fluid bg-primary sticky-top">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-1">
+                    <a href="index.html" class="navbar-brand">
+                        <img width="182" height="60" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                    </a>
+                    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto mx-xl-auto p-1">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu bg-light m-0 rounded">
+                                    <a href="service.html" class="dropdown-item">All services</a>
+                                    <a href="service-software.html" class="dropdown-item">Custom software development</a>
+                                    <a href="service-cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+                                    <a href="service-managed-it.html" class="dropdown-item">Managed IT and cloud</a>
+                                    <a href="game-development.html" class="dropdown-item">Game development</a>
+                                </div>
+                            </div>
+                            <a href="work.html" class="nav-item nav-link">Work</a>
+                            <a href="about.html" class="nav-item nav-link active">About</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact.html" class="btn btn-secondary rounded-pill py-2 px-4 my-3 d-xl-none">Let's talk</a>
+                        </div>
+                    </div>
+                    <div class="d-none d-xl-flex flex-shirink-0">
+                        <a href="contact.html" class="btn btn-secondary rounded-pill py-2 px-4">Let's talk</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+
+        <!-- Page Header Start -->
+        <!-- page-header-about：About 專用頁首圖（三層平台堆疊），與下方 Hero 插畫的光路匯流區隔 -->
+        <div class="container-fluid page-header page-header-about py-5">
+            <div class="container text-center py-5">
+                <h1 class="display-2 text-white mb-4 animated slideInDown">About</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">About</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+        <!-- Hero Start -->
+        <!-- 左文右圖。右側插畫 img/about-hero.svg：Build / Secure / Run 三條光路匯流成一個節點＝一個工程夥伴 -->
+        <div class="container-fluid pt-5 mt-4">
+            <div class="container pt-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay=".1s">
+                        <p class="h5 text-primary">About CAPITAL JUMP</p>
+                        <h2 class="display-5 mb-4">An engineering partner, not a vendor.</h2>
+                        <p class="mb-4">CAPITAL JUMP is an engineering partner for companies that need to build, secure, and run technology without managing multiple vendors.</p>
+                        <a href="contact.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Let's talk</a>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay=".2s">
+                        <img width="640" height="560" src="img/about-hero.svg" class="img-fluid about-hero-art" alt="Three streams labelled Build, Secure and Run converging into one engineering partner">
+                    </div>
+                </div>
+
+                <!-- 文案「Suggested Trust Signals」：橫向資訊帶 -->
+                <ul class="about-trust wow fadeIn" data-wow-delay=".1s">
+                    <li class="fs-6"><i class="fas fa-users" aria-hidden="true"></i>Lean engineering team</li>
+                    <li class="fs-6"><i class="fas fa-comments" aria-hidden="true"></i>Direct technical communication</li>
+                    <li class="fs-6"><i class="fas fa-shield-alt" aria-hidden="true"></i>Security by design</li>
+                    <li class="fs-6"><i class="fas fa-file-alt" aria-hidden="true"></i>Documented delivery</li>
+                    <li class="fs-6"><i class="fas fa-key" aria-hidden="true"></i>Client-owned code and knowledge</li>
+                    <li class="fs-6"><i class="fas fa-globe" aria-hidden="true"></i>Cross-time-zone delivery</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+
+        <!-- 01 Who We Are & Our Story Start -->
+        <!-- 左：故事內文；右：把信念那句放大成引言卡 -->
+        <div class="container-fluid py-5 my-4">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-7 wow fadeIn" data-wow-delay=".1s">
+                        <!-- <h5 class="text-primary"><span class="about-num">01</span>Who we are</h5> -->
+                        <h3 class="h5 text-primary">Who we are</h3>
+                        <h2 class="mb-4 h1">Our story</h2>
+                        <p class="">CAPITAL JUMP is an engineering partner for companies that need to build, secure, and run technology without managing multiple vendors. We bring software development, cybersecurity, and managed IT together so growing businesses can move from idea to production with a team that stays accountable from start to finish.</p>
+                        <p class="mb-0">We were built around a simple belief : technology should solve real business problems, not create another layer of complexity. That is why we focus on practical engineering, direct communication, security by design, and solutions that our clients can maintain and own for the long term.</p>
+                    </div>
+                    <div class="col-lg-5 wow fadeIn" data-wow-delay=".2s">
+                        <figure class="about-quote">
+                            <i class="fas fa-quote-left about-quote-mark" aria-hidden="true"></i>
+                            <blockquote class="mb-0">Technology should solve real business problems, not create another layer of complexity.</blockquote>
+                            <figcaption>Our founding belief</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 01 Who We Are & Our Story End -->
+
+
+        <!-- Photo band Start -->
+        <!-- 「照片＝人、插圖＝概念」規則下，About 頁唯一的照片區。
+             ⚠️ 這是圖庫照片，不是 CAPITAL JUMP 的員工。所以這一區刻意不放任何標題或說明文字，
+             alt 也只描述畫面內容，不暗示「這是我們的團隊」。日後換成真實團隊照時可直接替換。 -->
+        <div class="container-fluid pb-5 mb-4">
+            <div class="container">
+                <ul class="ab-photos wow fadeIn" data-wow-delay=".1s">
+                    <li><img width="900" height="1348" loading="lazy" src="img/about-photo-1.jpg" alt="Engineers working at adjacent desks with code on their monitors"></li>
+                    <li><img width="900" height="601" loading="lazy" src="img/about-photo-2.jpg" alt="Two engineers reviewing code together on one screen"></li>
+                    <li><img width="900" height="600" loading="lazy" src="img/about-photo-3.jpg" alt="Two developers discussing code at a shared desk"></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Photo band End -->
+
+
+        <!-- 02 How We Work Start -->
+        <!-- 四張編號卡；編號圓圈沿用 Contact 頁流程帶的 .contact-step-num，全站步驟編號外觀一致 -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".1s" style="max-width: 700px;">
+                    <p class="h5 text-primary">How we work</p>
+                    <h2 class="mb-0 h1">What you can expect from us</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay=".1s">
+                        <div class="about-value">
+                            <span class="contact-step-num about-value-step" aria-hidden="true">1</span>
+                            <h3 class="h5">We solve the problem, not just the ticket.</h3>
+                            <p class="mb-0">We focus on the business outcome behind a request. When a proposed solution does not serve the real goal, we say so and help find a better approach.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay=".1s">
+                        <div class="about-value">
+                            <span class="contact-step-num about-value-step" aria-hidden="true">2</span>
+                            <h3 class="h5">We build to last.</h3>
+                            <p class="mb-0">Maintainable code, clear architecture, real documentation, and security by design are part of the work &mdash; not optional extras.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay=".2s">
+                        <div class="about-value">
+                            <span class="contact-step-num about-value-step" aria-hidden="true">3</span>
+                            <h3 class="h5">We're straight with you.</h3>
+                            <p class="mb-0">Clear scope, realistic timelines, direct communication, and honest answers are part of how we build long-term relationships.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay=".3s">
+                        <div class="about-value">
+                            <span class="contact-step-num about-value-step" aria-hidden="true">4</span>
+                            <h3 class="h5">You own the outcome.</h3>
+                            <p class="mb-0">The code, documentation, and technical knowledge produced through the engagement are structured for long-term ownership and maintainability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 02 How We Work End -->
+
+
+        <!-- 03 Team Start -->
+        <!-- 左欄＝團隊怎麼運作（桌機捲動時固定），右欄＝四個群組的角色清單。
+             論述與名單分開，不需要連接線；群組的角色數不同也不會破版。 -->
+        <div class="container-fluid py-5 my-4">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".1s" style="max-width: 820px;">
+                    <p class="h5 text-primary">Team</p>
+                    <h2 class="mb-4 h1">A lean team with deep technical coverage.</h2>
+                    <!-- 小標與大標題置中，兩段內文靠左（text-start 覆寫外層的 text-center） -->
+                    <p class="text-start">CAPITAL JUMP is structured as a focused engineering team, with specialists across software development, cybersecurity, cloud infrastructure, and technology delivery.</p>
+                    <p class="mb-0 text-start">Our size allows us to stay hands-on, move quickly, and keep communication direct &mdash; while bringing the right expertise into each engagement.</p>
+                </div>
+
+                <!-- 視覺主角：四個領域交疊、匯聚成一個團隊。右側是這支團隊怎麼運作。 -->
+                <div class="tv wow fadeIn" data-wow-delay=".1s">
+                    <img width="640" height="560" loading="lazy" src="img/team-coverage.svg" class="tv-art" alt="Illustration: four overlapping fields of expertise converging on a single bright core">
+                    <div class="tv-side">
+                        <h3 class="h5 text-primary">How the team works</h3>
+                        <h3 class="visually-hidden">One team. Direct communication. Clear ownership.</h3>
+                        <ul class="tv-chips">
+                            <li><i class="fas fa-users" aria-hidden="true"></i>One team</li>
+                            <li><i class="fas fa-comments" aria-hidden="true"></i>Direct communication</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i>Clear ownership</li>
+                        </ul>
+                        <p>Rather than separating every capability into large departments, we build focused project teams around the client's actual requirements. This keeps decision-making close to the work and gives clients direct access to the people responsible for delivery.</p>
+                        <a href="contact.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Talk to the team</a>
+                    </div>
+                </div>
+
+                <!-- 編輯式排版：群組名用大字當分隔，角色用細線分欄，刻意不用卡片與圖示方塊，
+                     與全站的卡片語彙形成反差。 -->
+                <div class="te wow fadeIn" data-wow-delay=".1s">
+                    <section class="te-group">
+                        <div class="te-group-head">
+                            <span class="te-num" aria-hidden="true">01</span>
+                            <h4>Leadership and delivery</h4>
+                        </div>
+                        <ul class="te-roles">
+                            <li>
+                                <h5>Founder / Managing director</h5>
+                                <p class="mb-0">Sets the company's technical direction, client strategy, and delivery standards. Works closely with clients on priorities, scope, and long-term technology decisions.</p>
+                            </li>
+                            <li>
+                                <h5>Project and delivery lead</h5>
+                                <p class="mb-0">Coordinates delivery, milestones, communication, and technical priorities across projects to keep work moving from discovery through launch.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="te-group">
+                        <div class="te-group-head">
+                            <span class="te-num" aria-hidden="true">02</span>
+                            <h4>Software engineering</h4>
+                        </div>
+                        <ul class="te-roles">
+                            <li>
+                                <h5>Software engineers</h5>
+                                <p class="mb-0">Design and build web applications, mobile products, SaaS platforms, APIs, integrations, and internal business systems.</p>
+                            </li>
+                            <li>
+                                <h5>Senior / Lead engineers</h5>
+                                <p class="mb-0">Own architecture, technical decisions, code quality, scalability, and complex implementation work across engagements.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="te-group">
+                        <div class="te-group-head">
+                            <span class="te-num" aria-hidden="true">03</span>
+                            <h4>Cybersecurity</h4>
+                        </div>
+                        <ul class="te-roles">
+                            <li>
+                                <h5>Security engineers / Consultants</h5>
+                                <p class="mb-0">Support security assessments, penetration testing, vulnerability remediation, security architecture, monitoring, and security improvement programs.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="te-group">
+                        <div class="te-group-head">
+                            <span class="te-num" aria-hidden="true">04</span>
+                            <h4>Cloud and IT</h4>
+                        </div>
+                        <ul class="te-roles">
+                            <li>
+                                <h5>Cloud and infrastructure engineers</h5>
+                                <p class="mb-0">Design and manage cloud environments, networking, monitoring, backup, disaster recovery, and infrastructure operations across modern cloud platforms.</p>
+                            </li>
+                            <li>
+                                <h5>IT / Managed services specialists</h5>
+                                <p class="mb-0">Provide ongoing operational support, system monitoring, troubleshooting, and day-to-day technology management.</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- 03 Team End -->
+
+
+        <!-- 04 Technical Coverage Start -->
+        <!-- 3×2 能力磚，鋪在品牌蜂巢底紋面板上。
+             文案註明：此區先不放 ISO、AWS Partner、Microsoft Partner 等資格名稱，
+             待取得實際證明後再加入，因此這裡只列能力項目。 -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="about-coverage wow fadeIn" data-wow-delay=".1s">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-4">
+                            <p class="h5 text-primary">Technical coverage</p>
+                            <h2 class="mb-0 h1">What we cover in-house</h2>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="cap-grid">
+                                <div class="cap-tile"><span class="cap-tile-icon"><i class="fas fa-code" aria-hidden="true"></i></span>Software engineering</div>
+                                <div class="cap-tile"><span class="cap-tile-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></span>Cybersecurity</div>
+                                <div class="cap-tile"><span class="cap-tile-icon"><i class="fas fa-cloud" aria-hidden="true"></i></span>Cloud infrastructure</div>
+                                <div class="cap-tile"><span class="cap-tile-icon"><i class="fas fa-server" aria-hidden="true"></i></span>Managed IT</div>
+                                <div class="cap-tile"><span class="cap-tile-icon"><i class="fas fa-plug" aria-hidden="true"></i></span>API and systems integration</div>
+                                <div class="cap-tile"><span class="cap-tile-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></span>DevOps and monitoring</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 04 Technical Coverage End -->
+
+
+        <!-- 05 Why International Clients Choose Us Start -->
+        <!-- 左：標題與前言（桌機捲動時固定）；右：五項編號清單。底圖 img/about-network.svg -->
+        <div class="container-fluid about-intl py-5">
+            <div class="container py-5">
+                <!-- 不加 align-items-start：左欄要撐滿整列高度，sticky 才有捲動空間 -->
+                <div class="row g-5">
+                    <div class="col-lg-5">
+                        <div class="about-intl-intro wow fadeIn" data-wow-delay=".1s">
+                            <p class="h5 text-primary">International clients</p>
+                            <h2 class="mb-4 h1">Built for international delivery, without making communication complicated.</h2>
+                            <p class="mb-0">CAPITAL JUMP works with clients across different markets and time zones, using a delivery model built around clear communication, documented work, and accountable ownership.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <ol class="intl-list">
+                            <li class="wow fadeIn" data-wow-delay=".1s">
+                                <span class="intl-icon"><i class="fas fa-globe" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 class="h5">Cross-time-zone delivery</h3>
+                                    <p class="mb-0">Project work can continue across working hours in different regions, helping maintain momentum across the delivery cycle.</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeIn" data-wow-delay=".1s">
+                                <span class="intl-icon"><i class="fas fa-comment-dots" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 class="h5">Direct communication</h3>
+                                    <p class="mb-0">Clients can work directly with the people responsible for the technical work instead of navigating multiple layers of management.</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeIn" data-wow-delay=".1s">
+                                <span class="intl-icon"><i class="fas fa-language" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 class="h5">English-first collaboration</h3>
+                                    <p class="mb-0">Our international delivery model supports English-language project discussions, technical documentation, and day-to-day communication.</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeIn" data-wow-delay=".2s">
+                                <span class="intl-icon"><i class="fas fa-handshake" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 class="h5">One accountable engineering partner</h3>
+                                    <p class="mb-0">Software, security, and IT can be coordinated through one team instead of several disconnected vendors.</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeIn" data-wow-delay=".2s">
+                                <span class="intl-icon"><i class="fas fa-file-signature" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 class="h5">Documented handover and ownership</h3>
+                                    <p class="mb-0">Code, technical documentation, and project knowledge are structured for long-term client ownership and maintainability.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 05 Why International Clients Choose Us End -->
+
+
+        <!-- 06 Work With Us Start -->
+        <!-- 左文右按鈕。底圖 img/cta-band.svg -->
+        <div class="container-fluid cta-band py-5">
+            <div class="container py-5 wow fadeIn" data-wow-delay=".1s">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-8">
+                        <p class="h5 text-primary">Work with us</p>
+                        <h2 class="mb-4 h1">Let's solve the right problem together.</h2>
+                        <p class="fs-5 mb-0">Whether you are building a new product, strengthening an existing platform, addressing a security requirement, or looking for a reliable technology partner, start with a conversation.</p>
+                        <!-- <p class="mb-4">Tell us what you are trying to achieve, what is getting in the way, and where you need help. We will review the situation, ask the questions that matter, and tell you honestly whether we are the right fit.</p> -->
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="contact.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Let's talk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 06 Work With Us End -->
+
+
+        <!-- Footer Start -->
+         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".1s">
+            <div class="container pt-5 pb-4">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html" class="d-inline-block">
+                            <img width="182" height="60" loading="lazy" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                        </a>
+                        <p class="mt-4 text-light">An international software, security, and IT partner. We design, build, secure, and run the technology growing companies depend on.</p>
+                        <!-- 社群連結：待補真實帳號網址後啟用
+                        <div class="d-flex hightech-link">
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        </div>
+                        -->
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="about.html" class="h3 text-secondary">Company</a>
+                        <div class="mt-4 d-flex flex-column short-link">
+                            <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About</a>
+                            <a href="work.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Work</a>
+                            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
+                            <a href="game-development.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Game development</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="service.html" class="h3 text-secondary">Services</a>
+                        <div class="mt-4 d-flex flex-column help-link">
+                            <a href="service-software.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Custom software development</a>
+                            <a href="service-cybersecurity.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Cybersecurity</a>
+                            <a href="service-managed-it.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Managed IT and cloud</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="contact.html" class="h3 text-secondary">Contact</a>
+                        <div class="text-white mt-4 d-flex flex-column contact-link">
+                            <span class="pb-3 text-light border-primary"><i class="fas fa-envelope text-secondary me-2"></i><a href="mailto:capitaljumpinc@gmail.com" class="text-light">capitaljumpinc@gmail.com</a></span>
+                            <!-- <span class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> [待填：Phone]</span> -->
+                            <span class="py-3 text-light border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Vistra Corporate Services Centre, Ground Floor NPF Building, Beach Road, Apia, Samoa</span>
+                            <!-- <span class="py-3 text-light"><i class="fas fa-clock text-secondary me-2"></i> 09:00 - 18:00</span> -->
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-light mt-5 mb-4">
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span class="text-light"><span class="text-secondary">Copyright © CAPITAL JUMP INC.,</span> All rights reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <span class="text-light"><a href="privacy.html" class="footer-legal">Privacy policy</a></span><span class="footer-credit">Designed by <a href="https://htmlcodex.com" class="footer-legal" target="_blank" rel="noopener noreferrer">HTML Codex</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

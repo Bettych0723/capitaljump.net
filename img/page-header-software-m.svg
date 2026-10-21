@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Custom Software Development 頁首底圖的「手機版」（<768px 時取代 page-header-software.svg）。
+       三層程式碼視窗改成橫跨畫面、由左下往右上堆疊，標題就壓在上面。
+       安全區：主要圖案落在 x 60–580、y 80–330 之內。 -->
+  <defs>
+    <linearGradient id="pfmBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+    <radialGradient id="pfmMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.24"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.09"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pfmBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.30"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pfmPane" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.04"/>
+    </linearGradient>
+    <pattern id="pfmGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pfmGridMaskG" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pfmGridMask"><rect width="640" height="400" fill="url(#pfmGridMaskG)"/></mask>
+    <radialGradient id="pfmDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.76"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.56"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pfmTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.6"/>
+      <stop offset="0.25" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pfmBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.8"/>
+      <stop offset="0.16" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="pfmSoft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+
+  <style>
+    @keyframes pfmFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes pfmBlink { 0%,100% { opacity: .25; } 50% { opacity: .9; } }
+    .pfm-p1 { animation: pfmFloat 7s ease-in-out infinite; }
+    .pfm-p2 { animation: pfmFloat 7s ease-in-out infinite; animation-delay: -2.4s; }
+    .pfm-p3 { animation: pfmFloat 7s ease-in-out infinite; animation-delay: -4.8s; }
+    .pfm-blink { animation: pfmBlink 3.4s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .pfm-p1, .pfm-p2, .pfm-p3, .pfm-blink { animation: none; }
+    }
+  </style>
+
+  <rect width="640" height="400" fill="url(#pfmBg)"/>
+  <g mask="url(#pfmGridMask)"><rect width="640" height="400" fill="url(#pfmGrid)"/></g>
+  <ellipse cx="470" cy="120" rx="250" ry="190" fill="url(#pfmMint)"/>
+  <ellipse cx="100" cy="330" rx="240" ry="180" fill="url(#pfmBlue)"/>
+
+  <!-- 三層視窗：由左下往右上堆疊 -->
+  <g class="pfm-p3">
+    <rect x="60" y="248" width="330" height="86" rx="12" fill="url(#pfmPane)" stroke="#0A8BFF" stroke-opacity="0.5" stroke-width="1.5"/>
+    <g stroke="#7FC4FF" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round">
+      <path d="M 88,282 H 250"/>
+      <path d="M 88,308 H 186"/>
+    </g>
+  </g>
+  <g class="pfm-p2">
+    <rect x="150" y="164" width="330" height="86" rx="12" fill="url(#pfmPane)" stroke="#00C9D6" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g stroke="#8BFFE4" stroke-opacity="0.4" stroke-width="6" stroke-linecap="round">
+      <path d="M 178,198 H 356"/>
+      <path d="M 178,224 H 268"/>
+    </g>
+  </g>
+  <g class="pfm-p1">
+    <rect x="244" y="80" width="330" height="86" rx="12" fill="url(#pfmPane)" stroke="#00FFBF" stroke-opacity="0.75" stroke-width="2"/>
+    <path d="M 244,108 H 574" stroke="#00FFBF" stroke-opacity="0.28" stroke-width="1.5"/>
+    <g fill="#DFFFF6">
+      <circle cx="264" cy="94" r="3.5"/>
+      <circle cx="277" cy="94" r="3.5" fill-opacity="0.6"/>
+      <circle cx="290" cy="94" r="3.5" fill-opacity="0.4"/>
+    </g>
+    <g stroke="#8BFFE4" stroke-opacity="0.5" stroke-width="6" stroke-linecap="round">
+      <path d="M 272,138 H 424"/>
+    </g>
+    <rect class="pfm-blink" x="436" y="130" width="9" height="16" rx="2" fill="#00FFBF"/>
+    <circle cx="548" cy="122" r="13" fill="#00FFBF" fill-opacity="0.26" filter="url(#pfmSoft)"/>
+    <circle cx="548" cy="122" r="5" fill="#DFFFF6"/>
+  </g>
+
+  <ellipse cx="320" cy="200" rx="380" ry="230" fill="url(#pfmDim)"/>
+  <rect width="640" height="400" fill="url(#pfmTopFade)"/>
+  <rect width="640" height="400" fill="url(#pfmBotFade)"/>
+</svg>

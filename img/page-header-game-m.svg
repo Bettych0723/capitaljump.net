@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Game Development 頁首底圖的「手機版」（<768px 時取代 page-header-game.svg）。
+       三種畫面移到右上、手把移到左下，整組收在安全區（x 60–580、y 80–330）內。 -->
+  <defs>
+    <linearGradient id="pgmBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#0A1126"/>
+      <stop offset="0.42" stop-color="#101C3C"/>
+      <stop offset="0.74" stop-color="#0C1830"/>
+      <stop offset="1"    stop-color="#060B18"/>
+    </linearGradient>
+    <radialGradient id="pgmMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.22"/>
+      <stop offset="0.45" stop-color="#00D8CE" stop-opacity="0.08"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pgmBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.30"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pgmGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#4DA3FF" stroke-opacity="0.16" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pgmGridMaskG" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pgmGridMask"><rect width="640" height="400" fill="url(#pgmGridMaskG)"/></mask>
+    <radialGradient id="pgmDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.76"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.56"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pgmTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.6"/>
+      <stop offset="0.25" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pgmBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.8"/>
+      <stop offset="0.16" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes pgmRise  { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: .9; } 100% { opacity: 0; transform: translateY(-90px); } }
+    @keyframes pgmBlink { 0%,100% { opacity: .30; } 50% { opacity: .95; } }
+    .pgm-px  { transform-box: view-box; animation: pgmRise 4.4s ease-out infinite; }
+    .pgm-px2 { animation-delay: 1.4s; }
+    .pgm-px3 { animation-delay: 2.8s; }
+    .pgm-blink { animation: pgmBlink 2.8s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .pgm-px, .pgm-blink { animation: none; }
+      .pgm-px { opacity: .7; }
+    }
+  </style>
+
+  <rect width="640" height="400" fill="url(#pgmBg)"/>
+  <g mask="url(#pgmGridMask)"><rect width="640" height="400" fill="url(#pgmGrid)"/></g>
+  <ellipse cx="452" cy="128" rx="220" ry="165" fill="url(#pgmMint)"/>
+  <ellipse cx="160" cy="316" rx="220" ry="165" fill="url(#pgmBlue)"/>
+
+  <g>
+    <g fill="#101C3C" stroke="#00FFBF" stroke-opacity="0.45" stroke-width="2.2">
+      <rect x="372" y="104" width="44" height="76" rx="8"/>
+      <rect x="432" y="84" width="112" height="76" rx="8"/>
+      <rect x="560" y="112" width="60" height="60" rx="8"/>
+    </g>
+    <path d="M 464,160 h 48 l 8,20 h -64 Z" fill="#101C3C" stroke="#00FFBF" stroke-opacity="0.45" stroke-width="2.2" stroke-linejoin="round"/>
+    <g fill="none" stroke="#4DA3FF" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round">
+      <path d="M 384,124 h 22"/><path d="M 384,140 h 14"/>
+      <path d="M 446,102 h 58"/><path d="M 446,120 h 40"/>
+      <path d="M 572,130 h 36"/><path d="M 572,146 h 22"/>
+    </g>
+    <g fill="#00FFBF">
+      <circle class="pgm-blink" cx="394" cy="164" r="4"/>
+      <circle class="pgm-blink" cx="520" cy="140" r="4"/>
+      <circle class="pgm-blink" cx="596" cy="158" r="4"/>
+    </g>
+  </g>
+
+  <g>
+    <path d="M 60,300 a 38,38 0 0 1 38,-38 h 98 a 38,38 0 0 1 38,38 l 13,42 a 25,25 0 0 1 -41,23 l -29,-25 h -60 l -29,25 a 25,25 0 0 1 -41,-23 Z"
+          fill="#101C3C" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="2.2" stroke-linejoin="round"/>
+    <g fill="none" stroke="#00FFBF" stroke-opacity="0.75" stroke-width="4" stroke-linecap="round">
+      <path d="M 93,293 h 28"/>
+      <path d="M 107,279 v 28"/>
+    </g>
+    <g fill="#00FFBF" fill-opacity="0.8">
+      <circle cx="173" cy="283" r="6"/>
+      <circle cx="191" cy="298" r="6"/>
+    </g>
+    <g fill="#4DA3FF">
+      <rect class="pgm-px" x="120" y="236" width="10" height="10" rx="2" fill-opacity="0.8"/>
+      <rect class="pgm-px pgm-px2" x="166" y="244" width="9" height="9" rx="2" fill-opacity="0.6"/>
+      <rect class="pgm-px pgm-px3" x="80" y="248" width="11" height="11" rx="2" fill-opacity="0.5"/>
+    </g>
+  </g>
+
+  <ellipse cx="320" cy="200" rx="380" ry="230" fill="url(#pgmDim)"/>
+  <rect width="640" height="400" fill="url(#pgmTopFade)"/>
+  <rect width="640" height="400" fill="url(#pgmBotFade)"/>
+</svg>

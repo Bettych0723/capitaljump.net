@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Game Development 頁專用頁首底圖（.page-header.page-header-game）。
+       左側＝手把與上升的像素粒子；右側＝手機 / 電腦 / 主機三種畫面。
+       版面依據與其他頁首相同：標題置中落在 y 150–330，中央壓暗。 -->
+  <defs>
+    <linearGradient id="pgBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#0A1126"/>
+      <stop offset="0.42" stop-color="#101C3C"/>
+      <stop offset="0.74" stop-color="#0C1830"/>
+      <stop offset="1"    stop-color="#060B18"/>
+    </linearGradient>
+    <radialGradient id="pgMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.20"/>
+      <stop offset="0.45" stop-color="#00D8CE" stop-opacity="0.07"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pgBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.30"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pgGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#4DA3FF" stroke-opacity="0.14" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pgGridMaskG" cx="0.5" cy="0.5" r="0.62">
+      <stop offset="0"   stop-color="#4a4a4a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pgGridMask"><rect width="1920" height="480" fill="url(#pgGridMaskG)"/></mask>
+    <radialGradient id="pgDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.80"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.58"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pgTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.6"/>
+      <stop offset="0.28" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pgBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.82"/>
+      <stop offset="0.18" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes pgRise  { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: .9; } 100% { opacity: 0; transform: translateY(-120px); } }
+    @keyframes pgBlink { 0%,100% { opacity: .30; } 50% { opacity: .95; } }
+    .pg-px   { transform-box: view-box; animation: pgRise 4.4s ease-out infinite; }
+    .pg-px2  { animation-delay: 1.1s; }
+    .pg-px3  { animation-delay: 2.2s; }
+    .pg-px4  { animation-delay: 3.3s; }
+    .pg-blink { animation: pgBlink 2.8s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .pg-px, .pg-blink { animation: none; }
+      .pg-px { opacity: .7; }
+    }
+  </style>
+
+  <rect width="1920" height="480" fill="url(#pgBg)"/>
+  <g mask="url(#pgGridMask)"><rect width="1920" height="480" fill="url(#pgGrid)"/></g>
+  <ellipse cx="300" cy="250" rx="400" ry="240" fill="url(#pgBlue)"/>
+  <ellipse cx="1680" cy="240" rx="380" ry="235" fill="url(#pgMint)"/>
+
+  <!-- 左：手把與上升的像素 -->
+  <g>
+    <g fill="#101C3C" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M 150,300 a 52,52 0 0 1 52,-52 h 136 a 52,52 0 0 1 52,52 l 18,58 a 34,34 0 0 1 -56,32 l -40,-34 h -84 l -40,34 a 34,34 0 0 1 -56,-32 Z"/>
+    </g>
+    <g fill="none" stroke="#00FFBF" stroke-opacity="0.75" stroke-width="5" stroke-linecap="round">
+      <path d="M 196,290 h 40"/>
+      <path d="M 216,270 v 40"/>
+    </g>
+    <g fill="#00FFBF" fill-opacity="0.8">
+      <circle cx="308" cy="276" r="8"/>
+      <circle cx="334" cy="298" r="8"/>
+    </g>
+    <g fill="#4DA3FF">
+      <rect class="pg-px" x="236" y="212" width="12" height="12" rx="2" fill-opacity="0.8"/>
+      <rect class="pg-px pg-px2" x="286" y="222" width="10" height="10" rx="2" fill-opacity="0.6"/>
+      <rect class="pg-px pg-px3" x="178" y="226" width="14" height="14" rx="2" fill-opacity="0.5"/>
+      <rect class="pg-px pg-px4" x="330" y="216" width="10" height="10" rx="2" fill-opacity="0.45"/>
+    </g>
+  </g>
+
+  <!-- 右：手機 / 電腦 / 主機三種畫面 -->
+  <g>
+    <g fill="#101C3C" stroke="#00FFBF" stroke-opacity="0.45" stroke-width="2.5">
+      <rect x="1512" y="196" width="60" height="104" rx="10"/>
+      <rect x="1596" y="170" width="152" height="104" rx="10"/>
+      <rect x="1772" y="206" width="84" height="84" rx="10"/>
+    </g>
+    <path d="M 1640,274 h 64 l 10,26 h -84 Z" fill="#101C3C" stroke="#00FFBF" stroke-opacity="0.45" stroke-width="2.5" stroke-linejoin="round"/>
+    <g fill="none" stroke="#4DA3FF" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round">
+      <path d="M 1526,222 h 32"/><path d="M 1526,240 h 22"/>
+      <path d="M 1614,194 h 80"/><path d="M 1614,214 h 58"/>
+      <path d="M 1788,230 h 52"/><path d="M 1788,250 h 34"/>
+    </g>
+    <g fill="#00FFBF">
+      <circle class="pg-blink" cx="1542" cy="276" r="5"/>
+      <circle class="pg-blink" cx="1716" cy="242" r="5"/>
+      <circle class="pg-blink" cx="1814" cy="272" r="5"/>
+    </g>
+  </g>
+
+  <ellipse cx="960" cy="240" rx="800" ry="262" fill="url(#pgDim)"/>
+  <rect width="1920" height="480" fill="url(#pgTopFade)"/>
+  <rect width="1920" height="480" fill="url(#pgBotFade)"/>
+</svg>

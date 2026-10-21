@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Custom Software Development 頁專用頁首底圖（.page-header.page-header-software）。
+       右側＝逐層堆疊的程式碼視窗（由下往上組成一個產品），左側＝模組方塊與走線。
+       版面依據與 page-header.svg 相同：標題置中落在 y 150–330（本頁標題較長，中央淨空到 x 560–1360），
+       手機另有 page-header-software-m.svg。 -->
+  <defs>
+    <linearGradient id="pfBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+    <radialGradient id="pfMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.26"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pfBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.34"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pfPane" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.04"/>
+    </linearGradient>
+    <pattern id="pfGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 L0 60" fill="none" stroke="#3F9BBE" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pfGridMaskG" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pfGridMask"><rect width="1920" height="480" fill="url(#pfGridMaskG)"/></mask>
+    <linearGradient id="pfModFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.7" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="pfModMask"><rect x="0" y="0" width="520" height="480" fill="url(#pfModFade)"/></mask>
+    <radialGradient id="pfDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.78"/>
+      <stop offset="0.6"  stop-color="#01080E" stop-opacity="0.62"/>
+      <stop offset="0.88" stop-color="#01080E" stop-opacity="0.20"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pfTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.65"/>
+      <stop offset="0.22" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pfBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.85"/>
+      <stop offset="0.14" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="pfSoft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+
+  <style>
+    @keyframes pfFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes pfBlink { 0%,100% { opacity: .25; } 50% { opacity: .9; } }
+    @keyframes pfType  { 0% { width: 0; } 60%,100% { width: 120px; } }
+    .pf-p1 { animation: pfFloat 7s ease-in-out infinite; }
+    .pf-p2 { animation: pfFloat 7s ease-in-out infinite; animation-delay: -2.4s; }
+    .pf-p3 { animation: pfFloat 7s ease-in-out infinite; animation-delay: -4.8s; }
+    .pf-blink   { animation: pfBlink 3.4s ease-in-out infinite; }
+    .pf-blink-2 { animation-delay: -1.2s; }
+    .pf-blink-3 { animation-delay: -2.4s; }
+    @media (prefers-reduced-motion: reduce) {
+      .pf-p1, .pf-p2, .pf-p3, .pf-blink { animation: none; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="1920" height="480" fill="url(#pfBg)"/>
+  <g mask="url(#pfGridMask)"><rect width="1920" height="480" fill="url(#pfGrid)"/></g>
+  <ellipse cx="1660" cy="220" rx="420" ry="300" fill="url(#pfMint)"/>
+  <ellipse cx="220"  cy="390" rx="480" ry="290" fill="url(#pfBlue)"/>
+
+  <!-- 2. 左側：模組方塊與走線 -->
+  <g mask="url(#pfModMask)">
+    <g fill="none" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="1.5">
+      <rect x="60"  y="150" width="80" height="56" rx="8"/>
+      <rect x="180" y="238" width="80" height="56" rx="8"/>
+      <rect x="60"  y="326" width="80" height="56" rx="8"/>
+      <rect x="300" y="150" width="80" height="56" rx="8"/>
+    </g>
+    <g fill="none" stroke="#3F9BBE" stroke-opacity="0.32" stroke-width="1.5" stroke-linecap="round">
+      <path d="M 140,178 H 340 V 206"/>
+      <path d="M 100,206 V 266 H 180"/>
+      <path d="M 220,294 V 354 H 140"/>
+    </g>
+    <g>
+      <rect class="pf-blink"              x="180" y="238" width="80" height="56" rx="8" fill="#4DA3FF" fill-opacity="0.14" stroke="#4DA3FF" stroke-opacity="0.65" stroke-width="1.5"/>
+      <rect class="pf-blink pf-blink-2"   x="300" y="150" width="80" height="56" rx="8" fill="#00FFBF" fill-opacity="0.12" stroke="#00FFBF" stroke-opacity="0.6"  stroke-width="1.5"/>
+      <rect class="pf-blink pf-blink-3"   x="60"  y="326" width="80" height="56" rx="8" fill="#00FFBF" fill-opacity="0.10" stroke="#00FFBF" stroke-opacity="0.5"  stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- 3. 右側：三層堆疊的程式碼視窗 -->
+  <g class="pf-p3">
+    <rect x="1430" y="286" width="380" height="120" rx="14" fill="url(#pfPane)" stroke="#0A8BFF" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g stroke="#7FC4FF" stroke-opacity="0.4" stroke-width="6" stroke-linecap="round">
+      <path d="M 1462,330 H 1610"/>
+      <path d="M 1462,358 H 1546"/>
+    </g>
+  </g>
+  <g class="pf-p2">
+    <rect x="1470" y="180" width="380" height="120" rx="14" fill="url(#pfPane)" stroke="#00C9D6" stroke-opacity="0.6" stroke-width="1.5"/>
+    <g stroke="#8BFFE4" stroke-opacity="0.45" stroke-width="6" stroke-linecap="round">
+      <path d="M 1502,224 H 1690"/>
+      <path d="M 1502,252 H 1598"/>
+    </g>
+  </g>
+  <g class="pf-p1">
+    <rect x="1510" y="74" width="380" height="120" rx="14" fill="url(#pfPane)" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2"/>
+    <!-- 視窗列與游標 -->
+    <path d="M 1510,106 H 1890" stroke="#00FFBF" stroke-opacity="0.3" stroke-width="1.5"/>
+    <g fill="#DFFFF6">
+      <circle cx="1530" cy="90" r="4"/>
+      <circle cx="1544" cy="90" r="4" fill-opacity="0.6"/>
+      <circle cx="1558" cy="90" r="4" fill-opacity="0.4"/>
+    </g>
+    <g stroke="#8BFFE4" stroke-opacity="0.6" stroke-width="6" stroke-linecap="round">
+      <path d="M 1542,138 H 1700"/>
+      <path d="M 1542,166 H 1628"/>
+    </g>
+    <rect class="pf-blink" x="1640" y="158" width="10" height="18" rx="2" fill="#00FFBF"/>
+    <circle cx="1856" cy="140" r="16" fill="#00FFBF" fill-opacity="0.28" filter="url(#pfSoft)"/>
+    <circle cx="1856" cy="140" r="6" fill="#DFFFF6"/>
+  </g>
+
+  <!-- 4. 幾何飾件 -->
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 1360,420 l 18,18 l -18,18"/>
+    <path d="M 1400,420 l 18,18 l -18,18"/>
+  </g>
+
+  <!-- 5. 中央壓暗＋上下收邊 -->
+  <ellipse cx="960" cy="250" rx="1180" ry="310" fill="url(#pfDim)"/>
+  <rect width="1920" height="480" fill="url(#pfTopFade)"/>
+  <rect width="1920" height="480" fill="url(#pfBotFade)"/>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="640" height="320" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Support: a steady monitoring signal pulsing outward">
+  <defs>
+    <linearGradient id="p6bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#010C14"/><stop offset="0.5" stop-color="#04222F"/><stop offset="1" stop-color="#010C14"/>
+    </linearGradient>
+    <radialGradient id="p6glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.32"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="p6blue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0A8BFF" stop-opacity="0.32"/><stop offset="1" stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="p6grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="p6line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#00FFBF" stop-opacity="0.75"/>
+      <stop offset="0.8" stop-color="#00FFBF" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="p6soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+
+  <rect width="640" height="320" fill="url(#p6bg)"/>
+  <rect width="640" height="320" fill="url(#p6grid)"/>
+  <ellipse cx="80" cy="290" rx="240" ry="170" fill="url(#p6blue)"/>
+  <ellipse cx="320" cy="160" rx="250" ry="185" fill="url(#p6glow)"/>
+
+  <!-- 持續向外擴散的訊號環 -->
+  <g fill="none" stroke="#00FFBF">
+    <circle cx="320" cy="160" r="118" stroke-opacity="0.12" stroke-width="1.5" stroke-dasharray="2 16"/>
+    <circle cx="320" cy="160" r="86"  stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="3 12"/>
+    <circle cx="320" cy="160" r="54"  stroke-opacity="0.42" stroke-width="2"/>
+  </g>
+
+  <!-- 監控基線與心跳 -->
+  <path d="M 96,160 L 236,160 L 252,160 L 264,128 L 278,196 L 292,146 L 304,160 L 336,160"
+        fill="none" stroke="url(#p6line)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 336,160 L 544,160" fill="none" stroke="url(#p6line)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- 中心 -->
+  <g>
+    <circle cx="320" cy="160" r="26" fill="#00FFBF" fill-opacity="0.30" filter="url(#p6soft)"/>
+    <circle cx="320" cy="160" r="9" fill="#DFFFF6"/>
+  </g>
+
+  <!-- 常態運作的節點 -->
+  <g fill="#7FD4FF">
+    <circle cx="176" cy="96" r="3" fill-opacity="0.4"/>
+    <circle cx="472" cy="228" r="3" fill-opacity="0.4"/>
+    <circle cx="452" cy="82" r="2.5" fill-opacity="0.32"/>
+    <circle cx="184" cy="232" r="2.5" fill-opacity="0.32"/>
+  </g>
+
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 566,268 l 14,14 l -14,14"/><path d="M 596,268 l 14,14 l -14,14"/>
+  </g>
+</svg>

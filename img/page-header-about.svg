@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- About 頁專用頁首底圖（.page-header.page-header-about）。
+       其他內頁共用 page-header.svg（光路匯流），About 頁 Hero 插畫 about-hero.svg 也是光路匯流，
+       為了避免同頁出現兩張雷同的圖，這張改用完全不同的構圖：
+       右側＝等角視角的三層平台堆疊（Build / Secure / Run 疊成一個完整堆疊），左側＝電路模組方塊。
+       版面依據與 page-header.svg 相同：標題置中落在 y 150–330，手機只顯示中間約 x 680–1240，中央保留網格紋理。 -->
+  <defs>
+    <linearGradient id="paBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="paMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.30"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="paBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.38"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 三層平台的面 -->
+    <linearGradient id="paPlateTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#00C9D6" stop-opacity="0.10"/>
+    </linearGradient>
+    <linearGradient id="paPlateMid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4DA3FF" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="paPlateLow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A8BFF" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#0052A8" stop-opacity="0.06"/>
+    </linearGradient>
+    <!-- 平台側邊厚度 -->
+    <linearGradient id="paEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="paBeam" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"   stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#4DA3FF" stop-opacity="0.45"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <pattern id="paGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 L0 60" fill="none" stroke="#3F9BBE" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="paGridMaskG" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="paGridMask"><rect width="1920" height="480" fill="url(#paGridMaskG)"/></mask>
+
+    <linearGradient id="paModFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.7" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="paModMask"><rect x="0" y="0" width="560" height="480" fill="url(#paModFade)"/></mask>
+
+    <radialGradient id="paDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.62"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.40"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.12"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.65"/>
+      <stop offset="0.22" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="paBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.85"/>
+      <stop offset="0.14" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 光柱是純垂直線（寬度 0），預設以物件邊界計算的濾鏡範圍會是 0、光暈直接消失，所以改用畫布座標 -->
+    <filter id="paSoft" filterUnits="userSpaceOnUse" x="1540" y="40" width="200" height="440"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="paSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+
+  <style>
+    /* 三層平台各自緩慢上下浮動（相位錯開）；左側模組方塊輪流亮起 */
+    @keyframes paFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @keyframes paBlink { 0%,100% { opacity: .25; } 50% { opacity: .9; } }
+    @keyframes paRise  { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -300; } }
+    .pa-top { animation: paFloat 6s ease-in-out infinite; }
+    .pa-mid { animation: paFloat 6s ease-in-out infinite; animation-delay: -2s; }
+    .pa-low { animation: paFloat 6s ease-in-out infinite; animation-delay: -4s; }
+    .pa-blink   { animation: paBlink 4s ease-in-out infinite; }
+    .pa-blink-2 { animation-delay: -1.3s; }
+    .pa-blink-3 { animation-delay: -2.6s; }
+    .pa-rise { stroke-dasharray: 26 274; animation: paRise 3.5s linear infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .pa-top, .pa-mid, .pa-low, .pa-blink, .pa-rise { animation: none; }
+      .pa-rise { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="1920" height="480" fill="url(#paBg)"/>
+  <g mask="url(#paGridMask)"><rect width="1920" height="480" fill="url(#paGrid)"/></g>
+  <ellipse cx="1640" cy="250" rx="420" ry="300" fill="url(#paMint)"/>
+  <ellipse cx="220"  cy="400" rx="520" ry="300" fill="url(#paBlue)"/>
+
+  <!-- 2. 左側電路模組方塊（落在 60px 網格上） -->
+  <g mask="url(#paModMask)">
+    <g fill="none" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="1.5">
+      <rect x="60"  y="120" width="60" height="60" rx="6"/>
+      <rect x="180" y="120" width="60" height="60" rx="6"/>
+      <rect x="120" y="240" width="60" height="60" rx="6"/>
+      <rect x="240" y="240" width="60" height="60" rx="6"/>
+      <rect x="360" y="180" width="60" height="60" rx="6"/>
+      <rect x="60"  y="360" width="60" height="60" rx="6"/>
+      <rect x="300" y="360" width="60" height="60" rx="6"/>
+    </g>
+    <!-- 模組之間的走線 -->
+    <g fill="none" stroke="#3F9BBE" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round">
+      <path d="M 120,150 H 180"/>
+      <path d="M 210,180 V 210 H 150 V 240"/>
+      <path d="M 180,270 H 240"/>
+      <path d="M 300,270 H 330 V 210 H 360"/>
+      <path d="M 90,180 V 390 H 60"/>
+      <path d="M 270,300 V 390 H 300"/>
+    </g>
+    <!-- 亮起的模組 -->
+    <g>
+      <rect class="pa-blink" x="180" y="120" width="60" height="60" rx="6" fill="#00FFBF" fill-opacity="0.16" stroke="#00FFBF" stroke-opacity="0.7" stroke-width="1.5"/>
+      <rect class="pa-blink pa-blink-2" x="240" y="240" width="60" height="60" rx="6" fill="#4DA3FF" fill-opacity="0.16" stroke="#4DA3FF" stroke-opacity="0.7" stroke-width="1.5"/>
+      <rect class="pa-blink pa-blink-3" x="60" y="360" width="60" height="60" rx="6" fill="#00FFBF" fill-opacity="0.12" stroke="#00FFBF" stroke-opacity="0.6" stroke-width="1.5"/>
+    </g>
+    <g fill="#8BFFE4" fill-opacity="0.7">
+      <circle cx="210" cy="150" r="3"/>
+      <circle cx="270" cy="270" r="3"/>
+      <circle cx="90"  cy="390" r="3"/>
+    </g>
+  </g>
+
+  <!-- 3. 右側三層平台堆疊（等角菱形，中心 x 1640） -->
+  <!-- 貫穿三層的光柱 -->
+  <g>
+    <path d="M 1640,440 V 90" stroke="url(#paBeam)" stroke-width="10" filter="url(#paSoft)" opacity="0.7"/>
+    <path d="M 1640,440 V 90" stroke="url(#paBeam)" stroke-width="2"/>
+    <path class="pa-rise" pathLength="300" d="M 1640,440 V 90" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- 下層 -->
+  <g class="pa-low">
+    <path d="M 1470,340 L 1640,425 L 1810,340 L 1810,352 L 1640,437 L 1470,352 Z" fill="url(#paEdge)" opacity="0.5"/>
+    <path d="M 1640,255 L 1810,340 L 1640,425 L 1470,340 Z" fill="url(#paPlateLow)" stroke="#0A8BFF" stroke-opacity="0.6" stroke-width="1.5"/>
+    <g fill="#A8DEFF" fill-opacity="0.7">
+      <circle cx="1470" cy="340" r="3.5"/><circle cx="1810" cy="340" r="3.5"/><circle cx="1640" cy="425" r="3.5"/>
+    </g>
+  </g>
+
+  <!-- 中層 -->
+  <g class="pa-mid">
+    <path d="M 1480,245 L 1640,325 L 1800,245 L 1800,257 L 1640,337 L 1480,257 Z" fill="url(#paEdge)" opacity="0.6"/>
+    <path d="M 1640,165 L 1800,245 L 1640,325 L 1480,245 Z" fill="url(#paPlateMid)" stroke="#4DA3FF" stroke-opacity="0.7" stroke-width="1.5"/>
+    <g fill="#C6E4FF" fill-opacity="0.75">
+      <circle cx="1480" cy="245" r="3.5"/><circle cx="1800" cy="245" r="3.5"/><circle cx="1640" cy="325" r="3.5"/>
+    </g>
+  </g>
+
+  <!-- 上層（最亮） -->
+  <g class="pa-top">
+    <path d="M 1490,150 L 1640,225 L 1790,150 L 1790,162 L 1640,237 L 1490,162 Z" fill="url(#paEdge)" opacity="0.8"/>
+    <path d="M 1640,75 L 1790,150 L 1640,225 L 1490,150 Z" fill="url(#paPlateTop)" stroke="#00FFBF" stroke-opacity="0.85" stroke-width="2"/>
+    <!-- 上層面上的小網格，強調「完成的平台」 -->
+    <g stroke="#00FFBF" stroke-opacity="0.22" stroke-width="1">
+      <path d="M 1565,112 L 1715,187"/>
+      <path d="M 1715,112 L 1565,187"/>
+    </g>
+    <circle cx="1640" cy="150" r="16" fill="#00FFBF" fill-opacity="0.35" filter="url(#paSoft2)"/>
+    <circle cx="1640" cy="150" r="6" fill="#DFFFF6"/>
+    <g fill="#DFFFF6" fill-opacity="0.85">
+      <circle cx="1490" cy="150" r="3.5"/><circle cx="1790" cy="150" r="3.5"/><circle cx="1640" cy="225" r="3.5"/>
+    </g>
+  </g>
+
+  <!-- 4. 幾何飾件 -->
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 1300,400 l 18,18 l -18,18"/>
+    <path d="M 1340,400 l 18,18 l -18,18"/>
+  </g>
+
+  <!-- 5. 中央壓暗＋上下收邊 -->
+  <ellipse cx="960" cy="250" rx="1020" ry="300" fill="url(#paDim)"/>
+  <rect width="1920" height="480" fill="url(#paTopFade)"/>
+  <rect width="1920" height="480" fill="url(#paBotFade)"/>
+</svg>

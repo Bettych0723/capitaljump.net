@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" width="640" height="460" role="img"
+     aria-label="Illustration: a design document on the left becoming a running game screen on the right, with a controller below and a concept-to-LiveOps track along the bottom">
+  <!-- Game Development 的 Hero 插圖。對應文案：「全流程遊戲開發，從概念到 LiveOps。」
+       左上＝設計文件；右上＝已經在跑的遊戲畫面；中下＝手把；底部＝從概念到 LiveOps 的軌道。 -->
+  <defs>
+    <linearGradient id="ghBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#101C30"/>
+      <stop offset="0.55" stop-color="#121A2A"/>
+      <stop offset="1"    stop-color="#0D1626"/>
+    </linearGradient>
+    <radialGradient id="ghMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ghBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0A8BFF" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="ghGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#4DA3FF" stroke-opacity="0.12" stroke-width="1"/>
+    </pattern>
+    <clipPath id="ghClip"><rect x="0" y="0" width="640" height="460" rx="18"/></clipPath>
+  </defs>
+
+  <style>
+    @keyframes ghFlow  { to { stroke-dashoffset: -140; } }
+    @keyframes ghBlink { 0%,100% { opacity: .30; } 50% { opacity: 1; } }
+    @keyframes ghRise  { 0% { opacity: 0; transform: translateY(0); } 25% { opacity: .9; } 100% { opacity: 0; transform: translateY(-70px); } }
+    .gh-flow { stroke-dasharray: 9 14; animation: ghFlow 3s linear infinite; }
+    .gh-blink { animation: ghBlink 2.4s ease-in-out infinite; }
+    .gh-px { transform-box: view-box; animation: ghRise 3.8s ease-out infinite; }
+    .gh-px2 { animation-delay: 1.3s; }
+    .gh-px3 { animation-delay: 2.6s; }
+    @media (prefers-reduced-motion: reduce) {
+      .gh-flow, .gh-blink, .gh-px { animation: none; }
+      .gh-px { opacity: .7; }
+    }
+  </style>
+
+  <g clip-path="url(#ghClip)">
+    <rect width="640" height="460" fill="url(#ghBg)"/>
+    <rect width="640" height="460" fill="url(#ghGrid)"/>
+    <ellipse cx="460" cy="150" rx="220" ry="165" fill="url(#ghMint)"/>
+    <ellipse cx="150" cy="150" rx="200" ry="150" fill="url(#ghBlue)"/>
+
+    <g>
+      <rect x="50" y="56" width="150" height="186" rx="12" fill="#16243C" stroke="#4DA3FF" stroke-opacity="0.5" stroke-width="2"/>
+      <g fill="none" stroke="#4DA3FF" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round">
+        <path d="M 72,88 h 70"/><path d="M 72,112 h 106"/><path d="M 72,136 h 86"/>
+        <path d="M 72,194 h 106"/><path d="M 72,214 h 72"/>
+      </g>
+      <rect x="72" y="152" width="106" height="28" rx="6" fill="#0A8BFF" fill-opacity="0.14" stroke="#4DA3FF" stroke-opacity="0.4" stroke-width="1.5"/>
+    </g>
+
+    <g class="gh-flow" fill="none" stroke="#00FFBF" stroke-opacity="0.55" stroke-width="2.5" stroke-linecap="round">
+      <path d="M 210,120 H 290"/>
+      <path d="M 210,160 H 290"/>
+    </g>
+    <path d="M 282,106 L 300,120 L 282,134" fill="none" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <g>
+      <rect x="312" y="48" width="278" height="200" rx="14" fill="#101C3C" stroke="#00FFBF" stroke-opacity="0.5" stroke-width="2.5"/>
+      <path d="M 312,82 H 590" stroke="#00FFBF" stroke-opacity="0.3" stroke-width="1.5"/>
+      <path d="M 332,66 h 40" fill="none" stroke="#00FFBF" stroke-opacity="0.45" stroke-width="2.5" stroke-linecap="round"/>
+      <circle class="gh-blink" cx="572" cy="65" r="5" fill="#00FFBF"/>
+      <path d="M 334,214 C 374,214 386,170 418,170 C 452,170 462,196 496,196 C 528,196 540,166 570,166"
+            fill="none" stroke="#4DA3FF" stroke-opacity="0.45" stroke-width="2.5" stroke-linecap="round"/>
+      <g fill="#00FFBF">
+        <rect class="gh-px" x="400" y="128" width="14" height="14" rx="3" fill-opacity="0.85"/>
+        <rect class="gh-px gh-px2" x="462" y="140" width="12" height="12" rx="3" fill-opacity="0.65"/>
+        <rect class="gh-px gh-px3" x="520" y="124" width="12" height="12" rx="3" fill-opacity="0.5"/>
+      </g>
+      <path d="M 334,228 h 54" fill="none" stroke="#4DA3FF" stroke-opacity="0.4" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(236 276)">
+      <path d="M 0,34 a 34,34 0 0 1 34,-34 h 96 a 34,34 0 0 1 34,34 l 12,38 a 23,23 0 0 1 -38,21 l -26,-23 h -60 l -26,23 a 23,23 0 0 1 -38,-21 Z"
+            fill="#16243C" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="2.5" stroke-linejoin="round"/>
+      <g fill="none" stroke="#00FFBF" stroke-opacity="0.75" stroke-width="4" stroke-linecap="round">
+        <path d="M 30,30 h 26"/>
+        <path d="M 43,17 v 26"/>
+      </g>
+      <g fill="#00FFBF" fill-opacity="0.8">
+        <circle cx="118" cy="20" r="6"/>
+        <circle cx="136" cy="36" r="6"/>
+      </g>
+    </g>
+
+    <g>
+      <path d="M 60,414 H 580" fill="none" stroke="#3F9BBE" stroke-opacity="0.3" stroke-width="2"/>
+      <g fill="#0B1220" stroke="#00FFBF" stroke-opacity="0.7" stroke-width="2.5">
+        <circle cx="60" cy="414" r="8"/>
+        <circle cx="233" cy="414" r="8"/>
+        <circle cx="406" cy="414" r="8"/>
+        <circle cx="580" cy="414" r="8"/>
+      </g>
+      <g fill="#00FFBF" fill-opacity="0.85">
+        <circle cx="60" cy="414" r="3.5"/>
+        <circle cx="233" cy="414" r="3.5"/>
+        <circle cx="406" cy="414" r="3.5"/>
+        <circle cx="580" cy="414" r="3.5"/>
+      </g>
+    </g>
+
+    <rect x="0.75" y="0.75" width="638.5" height="458.5" rx="17.5" fill="none" stroke="#263349" stroke-width="1.5"/>
+  </g>
+</svg>

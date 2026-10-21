@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- Google Analytics (GA4) — 評估 ID：G-ZM346VN1R1
+             本機預覽（localhost / 127.0.0.1 / 直接開檔）不載入，避免測試流量混進正式資料。
+             需要在本機驗證時，在網址後面加上 ?ga_test=1 即可暫時啟用。 -->
+        <script>
+            (function () {
+                var host = location.hostname;
+                var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '' || host.indexOf('.local') > -1;
+                var force = location.search.indexOf('ga_test=1') > -1;
+                if (isLocal && !force) { return; }
+
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function () { window.dataLayer.push(arguments); };
+
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZM346VN1R1';
+                document.head.appendChild(s);
+
+                gtag('js', new Date());
+                gtag('config', 'G-ZM346VN1R1');
+            })();
+        </script>
+        <title>Contact CAPITAL JUMP &mdash; Book a Discovery Call</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="contact CAPITAL JUMP, discovery call, custom software enquiry, cybersecurity enquiry, managed IT enquiry" name="keywords">
+        <meta content="Tell us about your software, security, or IT project. Book a 30-minute discovery call or send us a message &mdash; we reply within one business day." name="description">
+
+        <link href="img/icon.png" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Dark Tech Theme Override (最後載入；移除本行即回復淺色) -->
+        <link href="css/dark-theme.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <!-- 真實電話 / 社群帳號待補（[待填]）後再啟用本區塊 -->
+        <!-- <div class="container-fluid bg-dark py-2 d-none d-md-flex">
+            <div class="container">
+                <div class="d-flex justify-content-between topbar">
+                    <div class="top-info">
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>[待填：Address]</small>
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>[待填：Email]</small>
+                    </div>
+                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We reply to every enquiry within one business day</small></div>
+                    <div class="top-link">
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Topbar End -->
+
+        <!-- Navbar Start -->
+        <!-- sticky-top：捲動時導覽列固定在視窗上方 -->
+        <div class="container-fluid bg-primary sticky-top">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-1">
+                    <a href="index.html" class="navbar-brand">
+                        <img width="182" height="60" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                    </a>
+                    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto mx-xl-auto p-1">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu bg-light m-0 rounded">
+                                    <a href="service.html" class="dropdown-item">All services</a>
+                                    <a href="service-software.html" class="dropdown-item">Custom software development</a>
+                                    <a href="service-cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+                                    <a href="service-managed-it.html" class="dropdown-item">Managed IT and cloud</a>
+                                    <a href="game-development.html" class="dropdown-item">Game development</a>
+                                </div>
+                            </div>
+                            <a href="work.html" class="nav-item nav-link">Work</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                            <a href="#send-message" class="btn btn-secondary rounded-pill py-2 px-4 my-3 d-xl-none">Let's talk</a>
+                        </div>
+                    </div>
+                    <div class="d-none d-xl-flex flex-shirink-0">
+                        <a href="#send-message" class="btn btn-secondary rounded-pill py-2 px-4">Let's talk</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+
+        <!-- Page Header Start -->
+        <!-- Hero：文案「Contact → Hero」段落。麵包屑改為真實路徑，移除版型的 Pages 空連結。 -->
+        <div class="container-fluid page-header page-header-contact py-5">
+            <div class="container text-center py-5">
+                <h1 class="display-2 text-white mb-4 animated slideInDown">Contact</h1>
+                <!-- <p class="fs-5 text-white mb-4 mx-auto animated slideInDown" style="max-width: 760px;">Book a 30-minute discovery call, or send a message and we'll reply within one business day.</p> -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Contact Start -->
+        <!-- 版面：流程帶 → 寬版表單 → 聯絡資訊＋地圖。 -->
+        <div class="container-fluid py-5 mt-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".1s" style="max-width: 640px;">
+                    <p class="h5 text-primary">Get in touch</p>
+                    <h2 class="mb-3 h1">Let's talk about what you're building.</h2>
+                </div>
+
+                <!-- What happens next：文案三步驟，改為橫向流程帶 -->
+                <div class="contact-steps wow fadeIn" data-wow-delay=".1s">
+                    <div class="contact-step"><div class="contact-step-num">1</div><p>You tell us the problem and the outcome you want.</p></div>
+                    <div class="contact-step"><div class="contact-step-num">2</div><p>We ask a few questions and tell you honestly if we're a fit.</p></div>
+                    <div class="contact-step"><div class="contact-step-num">3</div><p>If we are, you get a clear scope, timeline, and quote.</p></div>
+                </div>
+
+                <!-- 表單：不實際寄信。填完並通過驗證後，彈出下方的感謝視窗（#thankYouModal），驗證與彈窗在 js/main.js。
+                     Service of interest 為膠囊按鈕（radio）。 -->
+                <div class="contact-card wow fadeIn" id="send-message" data-wow-delay=".2s">
+                    <h3 class="mb-4">Send us a message</h3>
+                    <form id="contact-form" novalidate>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label for="cf-name">Name <span class="text-primary">*</span></label>
+                                <input type="text" id="cf-name" name="name" class="form-control" autocomplete="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cf-email">Work email <span class="text-primary">*</span></label>
+                                <input type="email" id="cf-email" name="email" class="form-control" autocomplete="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cf-company">Company</label>
+                                <input type="text" id="cf-company" name="company" class="form-control" autocomplete="organization">
+                            </div>
+                            <div class="col-12">
+                                <fieldset>
+                                    <legend>Service of interest</legend>
+                                    <div class="contact-chips">
+                                        <label class="contact-chip"><input type="radio" name="service" value="Custom Software Development"><span>Custom Software Development</span></label>
+                                        <label class="contact-chip"><input type="radio" name="service" value="Cybersecurity"><span>Cybersecurity</span></label>
+                                        <label class="contact-chip"><input type="radio" name="service" value="Managed IT &amp; Cloud"><span>Managed IT &amp; Cloud</span></label>
+                                        <label class="contact-chip"><input type="radio" name="service" value="Game Development"><span>Game Development</span></label>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-12">
+                                <label for="cf-message">Message <span class="text-primary">*</span></label>
+                                <textarea id="cf-message" name="message" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="contact-actions">
+                                    <small><i class="fa fa-clock" aria-hidden="true"></i>We reply within seven business day.</small>
+                                    <button type="submit" class="contact-submit">Send message<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Direct contact＋地圖：真實 Email／地址沿用頁尾同一份資料 -->
+                <div class="contact-locate wow fadeIn" data-wow-delay=".2s">
+                    <div class="contact-locate-info">
+                        <h4 class="h5">Find us</h4>
+                        <div class="contact-li"><i class="fa fa-envelope" aria-hidden="true"></i>
+                            <div><small>Email</small><a href="mailto:capitaljumpinc@gmail.com">capitaljumpinc@gmail.com</a></div></div>
+                        <div class="contact-li"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <div><small>Office</small><span>Vistra Corporate Services Centre, Ground Floor NPF Building, Beach Road, Apia, Samoa</span></div></div>
+                        <!-- 營業時間：時區確認後再啟用（[待填：time zone]）
+                        <div class="contact-li"><i class="fa fa-clock" aria-hidden="true"></i>
+                            <div><small>Hours</small><span>09:00 &ndash; 18:00</span></div></div>
+                        -->
+                        <!-- 電話待補真實號碼後啟用
+                        <div class="contact-li"><i class="fa fa-phone" aria-hidden="true"></i>
+                            <div><small>Phone</small><a href="tel:[待填：Phone]">[待填：Phone]</a></div></div>
+                        -->
+                        <!-- Google 地圖「分享 → 傳送連結」產生的短網址 -->
+                        <a class="contact-directions" href="https://maps.app.goo.gl/GYFXKsbu7vjgYHkf9" target="_blank" rel="noopener">
+                            Get directions<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                    <!-- Google 地圖「分享 → 嵌入地圖」產生的官方嵌入碼（地點：NPF building）。
+                         語系參數已由 zh-TW / tw 改為 en / us，地圖介面與地名以英文顯示；寬高由 CSS 控制。 -->
+                    <div class="contact-map-embed">
+                        <iframe title="Map: CAPITAL JUMP office, NPF Building, Beach Road, Apia, Samoa" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.131372309077!2d-171.77151312366618!3d-13.831148977689136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71a513f6f6f1f0b9%3A0x4b8ccc575595f6fa!2sNPF%20building!5e0!3m2!1sen!2sus!4v1789464071774!5m2!1sen!2sus"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+
+        <!-- Thank You Modal Start -->
+        <!-- 表單通過驗證後由 js/main.js 開啟；按 Close、按 Esc 或點視窗外都可以關閉 -->
+        <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content thanks-modal">
+                    <div class="modal-body text-center p-0">
+                        <div class="thanks-modal-icon"><i class="fa fa-check" aria-hidden="true"></i></div>
+                        <h3 id="thankYouTitle" class="mb-3">Thank You!</h3>
+                        <p class="mb-4">We have received the message and will contact you as soon as possible</p>
+                        <button type="button" class="btn btn-secondary rounded-pill px-4 py-3 text-white" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Thank You Modal End -->
+
+
+        <!-- Footer Start -->
+         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".1s">
+            <div class="container pt-5 pb-4">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html" class="d-inline-block">
+                            <img width="182" height="60" loading="lazy" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                        </a>
+                        <p class="mt-4 text-light">An international software, security, and IT partner. We design, build, secure, and run the technology growing companies depend on.</p>
+                        <!-- 社群連結：待補真實帳號網址後啟用
+                        <div class="d-flex hightech-link">
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        </div>
+                        -->
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="about.html" class="h3 text-secondary">Company</a>
+                        <div class="mt-4 d-flex flex-column short-link">
+                            <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About</a>
+                            <a href="work.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Work</a>
+                            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
+                            <a href="game-development.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Game Development</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="service.html" class="h3 text-secondary">Services</a>
+                        <div class="mt-4 d-flex flex-column help-link">
+                            <a href="service-software.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Custom Software Development</a>
+                            <a href="service-cybersecurity.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Cybersecurity</a>
+                            <a href="service-managed-it.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Managed IT &amp; Cloud</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="contact.html" class="h3 text-secondary">Contact</a>
+                        <div class="text-white mt-4 d-flex flex-column contact-link">
+                            <span class="pb-3 text-light border-primary"><i class="fas fa-envelope text-secondary me-2"></i><a href="mailto:capitaljumpinc@gmail.com" class="text-light">capitaljumpinc@gmail.com</a></span>
+                            <!-- <span class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> [待填：Phone]</span> -->
+                            <span class="py-3 text-light border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Vistra Corporate Services Centre, Ground Floor NPF Building, Beach Road, Apia, Samoa</span>
+                            <!-- <span class="py-3 text-light"><i class="fas fa-clock text-secondary me-2"></i> 09:00 - 18:00</span> -->
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-light mt-5 mb-4">
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span class="text-light"><span class="text-secondary">Copyright © CAPITAL JUMP INC.,</span> All rights reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <span class="text-light"><a href="privacy.html" class="footer-legal">Privacy policy</a></span><span class="footer-credit">Designed by <a href="https://htmlcodex.com" class="footer-legal" target="_blank" rel="noopener noreferrer">HTML Codex</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

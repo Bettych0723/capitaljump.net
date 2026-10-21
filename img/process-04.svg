@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="640" height="320" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Secure and test: a shield under an active scan">
+  <defs>
+    <linearGradient id="p4bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#010C14"/><stop offset="0.5" stop-color="#04222F"/><stop offset="1" stop-color="#010C14"/>
+    </linearGradient>
+    <radialGradient id="p4glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.32"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="p4blue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0A8BFF" stop-opacity="0.32"/><stop offset="1" stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="p4grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="p4scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00FFBF" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="p4fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="p4soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+
+  <rect width="640" height="320" fill="url(#p4bg)"/>
+  <rect width="640" height="320" fill="url(#p4grid)"/>
+  <ellipse cx="80" cy="290" rx="240" ry="170" fill="url(#p4blue)"/>
+  <ellipse cx="320" cy="160" rx="240" ry="185" fill="url(#p4glow)"/>
+
+  <!-- 盾牌 -->
+  <g>
+    <path d="M320 52 L410 88 V172 C410 226 372 258 320 274 C268 258 230 226 230 172 V88 Z"
+          fill="url(#p4fill)" stroke="#00FFBF" stroke-opacity="0.75" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M320 52 L410 88 V172 C410 226 372 258 320 274 C268 258 230 226 230 172 V88 Z"
+          fill="none" stroke="#00FFBF" stroke-opacity="0.35" stroke-width="8" filter="url(#p4soft)"/>
+    <!-- 內部檢測點 -->
+    <g fill="#DFFFF6">
+      <circle cx="290" cy="130" r="3.5" fill-opacity="0.8"/>
+      <circle cx="350" cy="130" r="3.5" fill-opacity="0.8"/>
+      <circle cx="320" cy="176" r="3.5" fill-opacity="0.8"/>
+      <circle cx="290" cy="216" r="3" fill-opacity="0.5"/>
+      <circle cx="350" cy="216" r="3" fill-opacity="0.5"/>
+    </g>
+    <g fill="none" stroke="#7FD4FF" stroke-opacity="0.4" stroke-width="1.5">
+      <path d="M290,130 L320,176 L350,130"/>
+      <path d="M290,216 L320,176 L350,216"/>
+    </g>
+  </g>
+
+  <!-- 掃描線 -->
+  <rect x="196" y="158" width="248" height="2" fill="url(#p4scan)"/>
+  <rect x="196" y="152" width="248" height="14" fill="url(#p4scan)" opacity="0.22" filter="url(#p4soft)"/>
+
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 566,268 l 14,14 l -14,14"/><path d="M 596,268 l 14,14 l -14,14"/>
+  </g>
+</svg>

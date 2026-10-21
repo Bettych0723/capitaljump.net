@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Services 頁專用頁首底圖（.page-header.page-header-services）。
+       其他頁：page-header.svg＝光路匯流、about＝等角三層平台、work＝上升柱狀圖、contact＝對話框。
+       這張用「三條軌道匯合成一個節點」的構圖，對應文案「Three practices, one accountable partner.」：
+       右側＝三條軌道（Build／Secure／Run）收束到同一個核心；左側＝三個並排的六角節點。
+       版面依據與 page-header.svg 相同：標題置中落在 y 150–330，
+       手機只顯示中間約 x 680–1240，中央保留網格紋理。 -->
+  <defs>
+    <linearGradient id="psBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="psMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.30"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="psBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.36"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="psCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.18" stop-color="#C6FFEE" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#00FFBF" stop-opacity="0.42"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="psTrack1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#00FFBF" stop-opacity="0.55"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="psTrack2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#4DA3FF" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#4DA3FF" stop-opacity="0.55"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="psTrack3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#0A8BFF" stop-opacity="0.6"/>
+      <stop offset="1"   stop-color="#8BFFE4" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <pattern id="psGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 L0 60" fill="none" stroke="#3F9BBE" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="psGridMaskG" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="psGridMask"><rect width="1920" height="480" fill="url(#psGridMaskG)"/></mask>
+
+    <linearGradient id="psHexFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.7" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="psHexMask"><rect x="0" y="0" width="620" height="480" fill="url(#psHexFade)"/></mask>
+
+    <radialGradient id="psDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.62"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.40"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.12"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="psTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.65"/>
+      <stop offset="0.22" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="psBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.85"/>
+      <stop offset="0.14" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="psSoft" filterUnits="userSpaceOnUse" x="1150" y="40" width="740" height="400"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="psSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+
+  <style>
+    /* 三條軌道各有一段光點往匯合點跑；核心呼吸；左側六角節點輪流亮 */
+    @keyframes psFlow  { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -600; } }
+    @keyframes psPulse { 0%,100% { opacity: .5; transform: scale(1); } 50% { opacity: .95; transform: scale(1.15); } }
+    @keyframes psBlink { 0%,100% { opacity: .3; } 50% { opacity: .9; } }
+
+    .ps-flow   { stroke-dasharray: 60 540; animation: psFlow 7s linear infinite; }
+    .ps-flow-2 { animation-duration: 9s;  animation-delay: -3s; }
+    .ps-flow-3 { animation-duration: 11s; animation-delay: -6s; }
+    .ps-core   { transform-box: fill-box; transform-origin: center; animation: psPulse 5s ease-in-out infinite; }
+    .ps-blink   { animation: psBlink 4.5s ease-in-out infinite; }
+    .ps-blink-2 { animation-delay: -1.5s; }
+    .ps-blink-3 { animation-delay: -3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ps-flow, .ps-core, .ps-blink { animation: none; }
+      .ps-flow { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="1920" height="480" fill="url(#psBg)"/>
+  <g mask="url(#psGridMask)"><rect width="1920" height="480" fill="url(#psGrid)"/></g>
+  <ellipse cx="1720" cy="230" rx="420" ry="300" fill="url(#psMint)"/>
+  <ellipse cx="220"  cy="380" rx="500" ry="300" fill="url(#psBlue)"/>
+
+  <!-- 2. 左側：三個並排的六角節點（三個專業） -->
+  <g mask="url(#psHexMask)">
+    <g fill="none" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="1.5">
+      <path d="M 150,180 l 52,-30 l 52,30 l 0,60 l -52,30 l -52,-30 z"/>
+      <path d="M 268,250 l 52,-30 l 52,30 l 0,60 l -52,30 l -52,-30 z"/>
+      <path d="M 386,180 l 52,-30 l 52,30 l 0,60 l -52,30 l -52,-30 z"/>
+    </g>
+    <g fill="none" stroke="#3F9BBE" stroke-opacity="0.30" stroke-width="1.5">
+      <path d="M 254,210 L 268,280"/>
+      <path d="M 372,280 L 386,210"/>
+    </g>
+    <g>
+      <path class="ps-blink"              d="M 150,180 l 52,-30 l 52,30 l 0,60 l -52,30 l -52,-30 z" fill="#00FFBF" fill-opacity="0.12" stroke="#00FFBF" stroke-opacity="0.6" stroke-width="1.5"/>
+      <path class="ps-blink ps-blink-2"   d="M 268,250 l 52,-30 l 52,30 l 0,60 l -52,30 l -52,-30 z" fill="#4DA3FF" fill-opacity="0.12" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="1.5"/>
+      <path class="ps-blink ps-blink-3"   d="M 386,180 l 52,-30 l 52,30 l 0,60 l -52,30 l -52,-30 z" fill="#00FFBF" fill-opacity="0.10" stroke="#00FFBF" stroke-opacity="0.5" stroke-width="1.5"/>
+    </g>
+    <g fill="#8BFFE4" fill-opacity="0.7">
+      <circle cx="202" cy="210" r="3.5"/>
+      <circle cx="320" cy="280" r="3.5"/>
+      <circle cx="438" cy="210" r="3.5"/>
+    </g>
+  </g>
+
+  <!-- 3. 右側：三條軌道收束到同一個核心（1780,190） -->
+  <g fill="none" stroke-linecap="round">
+    <g filter="url(#psSoft)" stroke-opacity="0.5">
+      <path d="M 900,120 C 1200,130 1480,150 1640,168 S 1750,182 1780,190" stroke="url(#psTrack1)" stroke-width="10"/>
+      <path d="M 880,300 C 1180,296 1460,250 1640,212 S 1752,196 1780,190" stroke="url(#psTrack2)" stroke-width="10"/>
+      <path d="M 900,430 C 1220,420 1500,350 1660,250 S 1764,204 1780,190" stroke="url(#psTrack3)" stroke-width="10"/>
+    </g>
+    <path d="M 900,120 C 1200,130 1480,150 1640,168 S 1750,182 1780,190" stroke="url(#psTrack1)" stroke-width="2.5"/>
+    <path d="M 880,300 C 1180,296 1460,250 1640,212 S 1752,196 1780,190" stroke="url(#psTrack2)" stroke-width="2.5"/>
+    <path d="M 900,430 C 1220,420 1500,350 1660,250 S 1764,204 1780,190" stroke="url(#psTrack3)" stroke-width="2.5"/>
+
+    <path class="ps-flow"            pathLength="600" d="M 900,120 C 1200,130 1480,150 1640,168 S 1750,182 1780,190" stroke="#FFFFFF" stroke-width="3"/>
+    <path class="ps-flow ps-flow-2"  pathLength="600" d="M 880,300 C 1180,296 1460,250 1640,212 S 1752,196 1780,190" stroke="#FFFFFF" stroke-width="3"/>
+    <path class="ps-flow ps-flow-3"  pathLength="600" d="M 900,430 C 1220,420 1500,350 1660,250 S 1764,204 1780,190" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+
+  <!-- 軌道上的節點 -->
+  <g fill="#C6FFEE" fill-opacity="0.75">
+    <circle cx="1480" cy="150" r="4"/>
+    <circle cx="1460" cy="250" r="4"/>
+    <circle cx="1500" cy="350" r="4"/>
+  </g>
+
+  <!-- 4. 匯合核心 -->
+  <g>
+    <circle class="ps-core" cx="1780" cy="190" r="130" fill="url(#psCore)" opacity="0.5"/>
+    <circle cx="1780" cy="190" r="56" fill="none" stroke="#00FFBF" stroke-opacity="0.35" stroke-width="2"/>
+    <circle cx="1780" cy="190" r="26" fill="#00FFBF" fill-opacity="0.28" filter="url(#psSoft2)"/>
+    <circle cx="1780" cy="190" r="10" fill="#00FFBF"/>
+    <circle cx="1780" cy="190" r="5"  fill="#FFFFFF"/>
+  </g>
+
+  <!-- 5. 幾何飾件 -->
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 1300,400 l 18,18 l -18,18"/>
+    <path d="M 1340,400 l 18,18 l -18,18"/>
+  </g>
+
+  <!-- 6. 中央壓暗＋上下收邊 -->
+  <ellipse cx="960" cy="250" rx="1020" ry="300" fill="url(#psDim)"/>
+  <rect width="1920" height="480" fill="url(#psTopFade)"/>
+  <rect width="1920" height="480" fill="url(#psBotFade)"/>
+</svg>

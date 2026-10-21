@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 260" width="220" height="260" role="img" aria-label="Illustration: a shared document window with three team members connected to it">
+  <!-- What we manage 05：工作區與協作。共用文件視窗，下方三位成員連上來。 -->
+  <rect x="34" y="40" width="152" height="108" rx="12" fill="#16243C" stroke="#2F6E87" stroke-opacity="0.65" stroke-width="2"/>
+  <path d="M 34,64 H 186" stroke="#2F6E87" stroke-opacity="0.45" stroke-width="1.5"/>
+  <g fill="#4DA3FF" fill-opacity="0.7">
+    <circle cx="48" cy="52" r="3.5"/><circle cx="60" cy="52" r="3.5"/><circle cx="72" cy="52" r="3.5"/>
+  </g>
+  <g fill="none" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round">
+    <path d="M 54,86 H 150"/><path d="M 54,122 H 140"/>
+  </g>
+  <path d="M 54,104 H 124" fill="none" stroke="#00FFBF" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round"/>
+  <g stroke="#00FFBF" stroke-opacity="0.35" stroke-width="2" fill="none" stroke-dasharray="5 8" stroke-linecap="round">
+    <path d="M 60,148 V 186"/><path d="M 110,148 V 186"/><path d="M 160,148 V 186"/>
+  </g>
+  <g>
+    <circle cx="60" cy="206" r="17" fill="#0E2436" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="2.5"/>
+    <circle cx="60" cy="200" r="6" fill="#4DA3FF" fill-opacity="0.75"/>
+    <path d="M 50,218 a 10,10 0 0 1 20,0" fill="#4DA3FF" fill-opacity="0.55"/>
+  </g>
+  <g>
+    <circle cx="110" cy="206" r="17" fill="#0B1220" stroke="#00FFBF" stroke-opacity="0.7" stroke-width="2.5"/>
+    <circle cx="110" cy="200" r="6" fill="#00FFBF" fill-opacity="0.85"/>
+    <path d="M 100,218 a 10,10 0 0 1 20,0" fill="#00FFBF" fill-opacity="0.6"/>
+  </g>
+  <g>
+    <circle cx="160" cy="206" r="17" fill="#0E2436" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="2.5"/>
+    <circle cx="160" cy="200" r="6" fill="#4DA3FF" fill-opacity="0.75"/>
+    <path d="M 150,218 a 10,10 0 0 1 20,0" fill="#4DA3FF" fill-opacity="0.55"/>
+  </g>
+</svg>

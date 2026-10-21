@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Work 頁專用頁首底圖（.page-header.page-header-work）。
+       其他內頁：page-header.svg＝光路匯流，about＝等角三層平台。這張改用「成果」的構圖：
+       右側＝逐級上升的柱狀圖＋貫穿柱頂的折線與峰值亮點（對應 Results）；
+       左側＝三張疊放的案例卡輪廓（對應三則案例），各帶一個勾選圓點。
+       版面依據與 page-header.svg 相同：標題置中落在 y 150–330，手機只顯示中間約 x 680–1240，中央保留網格紋理。 -->
+  <defs>
+    <linearGradient id="pwBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="pwMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.28"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pwBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.34"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 柱體：越右越偏薄荷綠、越亮 -->
+    <linearGradient id="pwBar1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0075F1" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#0A8BFF" stop-opacity="0.28"/>
+    </linearGradient>
+    <linearGradient id="pwBar2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0075F1" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#4DA3FF" stop-opacity="0.32"/>
+    </linearGradient>
+    <linearGradient id="pwBar3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#00C9D6" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#00D8CE" stop-opacity="0.34"/>
+    </linearGradient>
+    <linearGradient id="pwBar4" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0.40"/>
+    </linearGradient>
+    <linearGradient id="pwLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#4DA3FF" stop-opacity="0.55"/>
+      <stop offset="0.6" stop-color="#00D8CE" stop-opacity="0.8"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <pattern id="pwGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 L0 60" fill="none" stroke="#3F9BBE" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pwGridMaskG" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pwGridMask"><rect width="1920" height="480" fill="url(#pwGridMaskG)"/></mask>
+
+    <linearGradient id="pwCardFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.7" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="pwCardMask"><rect x="0" y="0" width="600" height="480" fill="url(#pwCardFade)"/></mask>
+
+    <radialGradient id="pwDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.62"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.40"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.12"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pwTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.65"/>
+      <stop offset="0.22" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pwBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.85"/>
+      <stop offset="0.14" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 折線與峰值的柔光：折線幾乎是細線，濾鏡範圍改用畫布座標才不會被裁掉 -->
+    <filter id="pwSoft" filterUnits="userSpaceOnUse" x="1380" y="60" width="440" height="400"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="pwSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+
+  <style>
+    /* 柱子輪流亮一下；折線上有一段光點持續往右上跑；峰值呼吸 */
+    @keyframes pwPulse { 0%,100% { opacity: .35; } 50% { opacity: .95; } }
+    @keyframes pwTrail { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -400; } }
+    @keyframes pwPeak  { 0%,100% { transform: scale(1); opacity: .85; } 50% { transform: scale(1.18); opacity: 1; } }
+    .pw-pulse   { animation: pwPulse 4.5s ease-in-out infinite; }
+    .pw-pulse-2 { animation-delay: -1.5s; }
+    .pw-pulse-3 { animation-delay: -3s; }
+    .pw-trail { stroke-dasharray: 30 370; animation: pwTrail 4s linear infinite; }
+    .pw-peak  { transform-origin: 1738px 130px; animation: pwPeak 3.4s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .pw-pulse, .pw-peak { animation: none; }
+      .pw-trail { animation: none; opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="1920" height="480" fill="url(#pwBg)"/>
+  <g mask="url(#pwGridMask)"><rect width="1920" height="480" fill="url(#pwGrid)"/></g>
+  <ellipse cx="1700" cy="220" rx="420" ry="300" fill="url(#pwMint)"/>
+  <ellipse cx="240"  cy="400" rx="520" ry="300" fill="url(#pwBlue)"/>
+
+  <!-- 2. 左側：三張疊放的案例卡（落在 60px 網格上，往右淡出） -->
+  <g mask="url(#pwCardMask)">
+    <!-- 最後方 -->
+    <g opacity="0.55">
+      <rect x="180" y="120" width="300" height="96" rx="12" fill="#0A8BFF" fill-opacity="0.05" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="1.5"/>
+      <g stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="6" stroke-linecap="round">
+        <path d="M 240,156 H 380"/>
+        <path d="M 240,182 H 330"/>
+      </g>
+      <circle class="pw-pulse pw-pulse-3" cx="212" cy="168" r="10" fill="#4DA3FF" fill-opacity="0.18" stroke="#4DA3FF" stroke-opacity="0.7" stroke-width="1.5"/>
+    </g>
+    <!-- 中間 -->
+    <g opacity="0.8">
+      <rect x="120" y="240" width="300" height="96" rx="12" fill="#0A8BFF" fill-opacity="0.06" stroke="#4DA3FF" stroke-opacity="0.5" stroke-width="1.5"/>
+      <g stroke="#4DA3FF" stroke-opacity="0.45" stroke-width="6" stroke-linecap="round">
+        <path d="M 180,276 H 340"/>
+        <path d="M 180,302 H 280"/>
+      </g>
+      <circle class="pw-pulse pw-pulse-2" cx="152" cy="288" r="10" fill="#4DA3FF" fill-opacity="0.20" stroke="#4DA3FF" stroke-opacity="0.8" stroke-width="1.5"/>
+    </g>
+    <!-- 最前方（最亮） -->
+    <g>
+      <rect x="60" y="360" width="300" height="96" rx="12" fill="#00FFBF" fill-opacity="0.06" stroke="#00FFBF" stroke-opacity="0.55" stroke-width="1.5"/>
+      <g stroke="#00FFBF" stroke-opacity="0.40" stroke-width="6" stroke-linecap="round">
+        <path d="M 120,396 H 300"/>
+        <path d="M 120,422 H 230"/>
+      </g>
+      <circle class="pw-pulse" cx="92" cy="408" r="10" fill="#00FFBF" fill-opacity="0.22" stroke="#00FFBF" stroke-opacity="0.85" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- 3. 右側：逐級上升的柱狀圖（基準線 y 420） -->
+  <g>
+    <!-- 基準線與刻度 -->
+    <path d="M 1400,420 H 1800" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="1.5"/>
+    <g stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1">
+      <path d="M 1400,340 H 1800"/>
+      <path d="M 1400,260 H 1800"/>
+      <path d="M 1400,180 H 1800"/>
+    </g>
+
+    <!-- 柱體 -->
+    <g>
+      <rect x="1440" y="330" width="56" height="90"  rx="8" fill="url(#pwBar1)" stroke="#0A8BFF" stroke-opacity="0.45" stroke-width="1.5"/>
+      <rect x="1530" y="270" width="56" height="150" rx="8" fill="url(#pwBar2)" stroke="#4DA3FF" stroke-opacity="0.5"  stroke-width="1.5"/>
+      <rect x="1620" y="210" width="56" height="210" rx="8" fill="url(#pwBar3)" stroke="#00D8CE" stroke-opacity="0.55" stroke-width="1.5"/>
+      <rect x="1710" y="130" width="56" height="290" rx="8" fill="url(#pwBar4)" stroke="#00FFBF" stroke-opacity="0.75" stroke-width="2"/>
+    </g>
+
+    <!-- 貫穿柱頂的折線 -->
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 1468,330 L 1558,270 L 1648,210 L 1738,130" stroke="url(#pwLine)" stroke-width="9" filter="url(#pwSoft)" opacity="0.65"/>
+      <path d="M 1468,330 L 1558,270 L 1648,210 L 1738,130" stroke="url(#pwLine)" stroke-width="2.5"/>
+      <path class="pw-trail" pathLength="400" d="M 1468,330 L 1558,270 L 1648,210 L 1738,130" stroke="#FFFFFF" stroke-width="3.5"/>
+    </g>
+
+    <!-- 轉折點 -->
+    <g fill="#C6FFEE" fill-opacity="0.8">
+      <circle cx="1468" cy="330" r="4"/>
+      <circle cx="1558" cy="270" r="4"/>
+      <circle cx="1648" cy="210" r="4"/>
+    </g>
+
+    <!-- 峰值亮點 -->
+    <g class="pw-peak">
+      <circle cx="1738" cy="130" r="18" fill="#00FFBF" fill-opacity="0.35" filter="url(#pwSoft2)"/>
+      <circle cx="1738" cy="130" r="6.5" fill="#DFFFF6"/>
+    </g>
+  </g>
+
+  <!-- 4. 幾何飾件 -->
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 1280,400 l 18,18 l -18,18"/>
+    <path d="M 1320,400 l 18,18 l -18,18"/>
+  </g>
+
+  <!-- 5. 中央壓暗＋上下收邊 -->
+  <ellipse cx="960" cy="250" rx="1020" ry="300" fill="url(#pwDim)"/>
+  <rect width="1920" height="480" fill="url(#pwTopFade)"/>
+  <rect width="1920" height="480" fill="url(#pwBotFade)"/>
+</svg>

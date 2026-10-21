@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- About 頁首底圖的「手機版」（<768px 時取代 page-header-about.svg）。
+       桌機版的平台堆疊在右側、電路模組在左側，手機裁切後只剩中央空白。
+       這張把三層平台收到畫面正中央、縮小比例，標題壓在堆疊上；兩側保留少量模組方塊。
+       安全區：主要圖案落在 x 60–580、y 80–330 之內。 -->
+  <defs>
+    <linearGradient id="pamBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="pamMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.26"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pamBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.34"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="pamPlateTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#00C9D6" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="pamPlateMid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4DA3FF" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="pamPlateLow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A8BFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0052A8" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="pamEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pamBeam" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"   stop-color="#0075F1" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#4DA3FF" stop-opacity="0.40"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <pattern id="pamGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pamGridMaskG" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pamGridMask"><rect width="640" height="400" fill="url(#pamGridMaskG)"/></mask>
+
+    <radialGradient id="pamDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.70"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.48"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.16"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pamTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.6"/>
+      <stop offset="0.25" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pamBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.8"/>
+      <stop offset="0.16" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="pamSoft" filterUnits="userSpaceOnUse" x="260" y="40" width="120" height="330"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="pamSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5"/></filter>
+  </defs>
+
+  <style>
+    @keyframes pamFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes pamBlink { 0%,100% { opacity: .25; } 50% { opacity: .85; } }
+    @keyframes pamRise  { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -300; } }
+    .pam-top { animation: pamFloat 6s ease-in-out infinite; }
+    .pam-mid { animation: pamFloat 6s ease-in-out infinite; animation-delay: -2s; }
+    .pam-low { animation: pamFloat 6s ease-in-out infinite; animation-delay: -4s; }
+    .pam-blink   { animation: pamBlink 4s ease-in-out infinite; }
+    .pam-blink-2 { animation-delay: -1.3s; }
+    .pam-rise { stroke-dasharray: 26 274; animation: pamRise 3.5s linear infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .pam-top, .pam-mid, .pam-low, .pam-blink, .pam-rise { animation: none; }
+      .pam-rise { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="640" height="400" fill="url(#pamBg)"/>
+  <g mask="url(#pamGridMask)"><rect width="640" height="400" fill="url(#pamGrid)"/></g>
+  <ellipse cx="380" cy="130" rx="260" ry="200" fill="url(#pamMint)"/>
+  <ellipse cx="90"  cy="350" rx="240" ry="180" fill="url(#pamBlue)"/>
+
+  <!-- 2. 兩側的電路模組方塊（落在 40px 網格上） -->
+  <g fill="none" stroke="#3F9BBE" stroke-opacity="0.40" stroke-width="1.5">
+    <rect x="60"  y="120" width="40" height="40" rx="5"/>
+    <rect x="60"  y="240" width="40" height="40" rx="5"/>
+    <rect x="540" y="280" width="40" height="40" rx="5"/>
+  </g>
+  <g fill="none" stroke="#3F9BBE" stroke-opacity="0.30" stroke-width="1.5" stroke-linecap="round">
+    <path d="M 80,160 V 240"/>
+    <path d="M 100,140 H 150"/>
+    <path d="M 560,280 V 230 H 520"/>
+  </g>
+  <g>
+    <rect class="pam-blink" x="60" y="240" width="40" height="40" rx="5" fill="#00FFBF" fill-opacity="0.14" stroke="#00FFBF" stroke-opacity="0.6" stroke-width="1.5"/>
+    <rect class="pam-blink pam-blink-2" x="540" y="280" width="40" height="40" rx="5" fill="#4DA3FF" fill-opacity="0.14" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="1.5"/>
+  </g>
+
+  <!-- 3. 貫穿三層的光柱（中央 x 320） -->
+  <g>
+    <path d="M 320,340 V 70" stroke="url(#pamBeam)" stroke-width="8" filter="url(#pamSoft)" opacity="0.65"/>
+    <path d="M 320,340 V 70" stroke="url(#pamBeam)" stroke-width="2"/>
+    <path class="pam-rise" pathLength="300" d="M 320,340 V 70" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- 4. 三層平台（等角菱形，半寬 140／半高 46） -->
+  <g class="pam-low">
+    <path d="M 185,280 L 320,326 L 455,280 L 455,291 L 320,337 L 185,291 Z" fill="url(#pamEdge)" opacity="0.5"/>
+    <path d="M 320,234 L 455,280 L 320,326 L 185,280 Z" fill="url(#pamPlateLow)" stroke="#0A8BFF" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g fill="#A8DEFF" fill-opacity="0.65">
+      <circle cx="185" cy="280" r="3"/><circle cx="455" cy="280" r="3"/><circle cx="320" cy="326" r="3"/>
+    </g>
+  </g>
+
+  <g class="pam-mid">
+    <path d="M 190,215 L 320,261 L 450,215 L 450,226 L 320,272 L 190,226 Z" fill="url(#pamEdge)" opacity="0.6"/>
+    <path d="M 320,169 L 450,215 L 320,261 L 190,215 Z" fill="url(#pamPlateMid)" stroke="#4DA3FF" stroke-opacity="0.65" stroke-width="1.5"/>
+    <g fill="#C6E4FF" fill-opacity="0.7">
+      <circle cx="190" cy="215" r="3"/><circle cx="450" cy="215" r="3"/><circle cx="320" cy="261" r="3"/>
+    </g>
+  </g>
+
+  <g class="pam-top">
+    <path d="M 195,150 L 320,196 L 445,150 L 445,161 L 320,207 L 195,161 Z" fill="url(#pamEdge)" opacity="0.75"/>
+    <path d="M 320,104 L 445,150 L 320,196 L 195,150 Z" fill="url(#pamPlateTop)" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2"/>
+    <g stroke="#00FFBF" stroke-opacity="0.20" stroke-width="1">
+      <path d="M 258,127 L 383,173"/>
+      <path d="M 383,127 L 258,173"/>
+    </g>
+    <circle cx="320" cy="150" r="13" fill="#00FFBF" fill-opacity="0.32" filter="url(#pamSoft2)"/>
+    <circle cx="320" cy="150" r="5" fill="#DFFFF6"/>
+    <g fill="#DFFFF6" fill-opacity="0.8">
+      <circle cx="195" cy="150" r="3"/><circle cx="445" cy="150" r="3"/><circle cx="320" cy="196" r="3"/>
+    </g>
+  </g>
+
+  <!-- 5. 中央壓暗＋上下收邊 -->
+  <ellipse cx="320" cy="200" rx="380" ry="230" fill="url(#pamDim)"/>
+  <rect width="640" height="400" fill="url(#pamTopFade)"/>
+  <rect width="640" height="400" fill="url(#pamBotFade)"/>
+</svg>

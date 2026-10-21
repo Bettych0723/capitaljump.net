@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Services 頁首底圖的「手機版」（<768px 時取代 page-header-services.svg）。
+       桌機版的軌道由左橫跨到右，手機裁切後只剩中央空白，
+       這張改成三條軌道由左側三個六角節點升向右上的匯合核心，整組收在安全區內。
+       安全區：主要圖案落在 x 60–580、y 80–330 之內。 -->
+  <defs>
+    <linearGradient id="psmBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="psmMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.26"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="psmBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.32"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="psmCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="0.18" stop-color="#C6FFEE" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#00FFBF" stop-opacity="0.40"/>
+      <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="psmT1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.15"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="psmT2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#4DA3FF" stop-opacity="0.15"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="psmT3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.15"/>
+      <stop offset="1"   stop-color="#8BFFE4" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <pattern id="psmGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="psmGridMaskG" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="psmGridMask"><rect width="640" height="400" fill="url(#psmGridMaskG)"/></mask>
+
+    <radialGradient id="psmDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.74"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.54"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.16"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="psmTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.6"/>
+      <stop offset="0.25" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="psmBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.8"/>
+      <stop offset="0.16" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="psmSoft" filterUnits="userSpaceOnUse" x="60" y="60" width="520" height="300"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="psmSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+
+  <style>
+    @keyframes psmFlow  { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -400; } }
+    @keyframes psmPulse { 0%,100% { opacity: .5; transform: scale(1); } 50% { opacity: .95; transform: scale(1.15); } }
+    @keyframes psmBlink { 0%,100% { opacity: .3; } 50% { opacity: .9; } }
+
+    .psm-flow   { stroke-dasharray: 40 360; animation: psmFlow 6s linear infinite; }
+    .psm-flow-2 { animation-duration: 8s;  animation-delay: -2.5s; }
+    .psm-flow-3 { animation-duration: 10s; animation-delay: -5s; }
+    .psm-core   { transform-box: fill-box; transform-origin: center; animation: psmPulse 5s ease-in-out infinite; }
+    .psm-blink   { animation: psmBlink 4.5s ease-in-out infinite; }
+    .psm-blink-2 { animation-delay: -1.5s; }
+    .psm-blink-3 { animation-delay: -3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .psm-flow, .psm-core, .psm-blink { animation: none; }
+      .psm-flow { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="640" height="400" fill="url(#psmBg)"/>
+  <g mask="url(#psmGridMask)"><rect width="640" height="400" fill="url(#psmGrid)"/></g>
+  <ellipse cx="500" cy="130" rx="250" ry="190" fill="url(#psmMint)"/>
+  <ellipse cx="90"  cy="330" rx="240" ry="180" fill="url(#psmBlue)"/>
+
+  <!-- 2. 左側：三個六角節點（三個專業） -->
+  <g fill="none" stroke="#3F9BBE" stroke-opacity="0.42" stroke-width="1.5">
+    <path d="M 70,120 l 34,-20 l 34,20 l 0,40 l -34,20 l -34,-20 z"/>
+    <path d="M 70,220 l 34,-20 l 34,20 l 0,40 l -34,20 l -34,-20 z"/>
+    <path d="M 70,300 l 34,-20 l 34,20 l 0,40 l -34,20 l -34,-20 z"/>
+  </g>
+  <g>
+    <path class="psm-blink"               d="M 70,120 l 34,-20 l 34,20 l 0,40 l -34,20 l -34,-20 z" fill="#00FFBF" fill-opacity="0.12" stroke="#00FFBF" stroke-opacity="0.6" stroke-width="1.5"/>
+    <path class="psm-blink psm-blink-2"   d="M 70,220 l 34,-20 l 34,20 l 0,40 l -34,20 l -34,-20 z" fill="#4DA3FF" fill-opacity="0.12" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="1.5"/>
+    <path class="psm-blink psm-blink-3"   d="M 70,300 l 34,-20 l 34,20 l 0,40 l -34,20 l -34,-20 z" fill="#00FFBF" fill-opacity="0.10" stroke="#00FFBF" stroke-opacity="0.5" stroke-width="1.5"/>
+  </g>
+
+  <!-- 3. 三條軌道升向右上的匯合核心（520,120） -->
+  <g fill="none" stroke-linecap="round">
+    <g filter="url(#psmSoft)" stroke-opacity="0.5">
+      <path d="M 142,140 C 260,136 400,130 470,126 S 508,122 520,120" stroke="url(#psmT1)" stroke-width="8"/>
+      <path d="M 142,240 C 280,236 420,190 480,150 S 512,126 520,120" stroke="url(#psmT2)" stroke-width="8"/>
+      <path d="M 142,320 C 300,316 440,240 492,170 S 516,132 520,120" stroke="url(#psmT3)" stroke-width="8"/>
+    </g>
+    <path d="M 142,140 C 260,136 400,130 470,126 S 508,122 520,120" stroke="url(#psmT1)" stroke-width="2"/>
+    <path d="M 142,240 C 280,236 420,190 480,150 S 512,126 520,120" stroke="url(#psmT2)" stroke-width="2"/>
+    <path d="M 142,320 C 300,316 440,240 492,170 S 516,132 520,120" stroke="url(#psmT3)" stroke-width="2"/>
+
+    <path class="psm-flow"              pathLength="400" d="M 142,140 C 260,136 400,130 470,126 S 508,122 520,120" stroke="#FFFFFF" stroke-width="2.5"/>
+    <path class="psm-flow psm-flow-2"   pathLength="400" d="M 142,240 C 280,236 420,190 480,150 S 512,126 520,120" stroke="#FFFFFF" stroke-width="2.5"/>
+    <path class="psm-flow psm-flow-3"   pathLength="400" d="M 142,320 C 300,316 440,240 492,170 S 516,132 520,120" stroke="#FFFFFF" stroke-width="2.5"/>
+  </g>
+
+  <!-- 4. 匯合核心 -->
+  <g>
+    <circle class="psm-core" cx="520" cy="120" r="92" fill="url(#psmCore)" opacity="0.45"/>
+    <circle cx="520" cy="120" r="40" fill="none" stroke="#00FFBF" stroke-opacity="0.32" stroke-width="2"/>
+    <circle cx="520" cy="120" r="18" fill="#00FFBF" fill-opacity="0.26" filter="url(#psmSoft2)"/>
+    <circle cx="520" cy="120" r="8"  fill="#00FFBF"/>
+    <circle cx="520" cy="120" r="4"  fill="#FFFFFF"/>
+  </g>
+
+  <!-- 5. 中央壓暗＋上下收邊 -->
+  <ellipse cx="320" cy="200" rx="380" ry="230" fill="url(#psmDim)"/>
+  <rect width="640" height="400" fill="url(#psmTopFade)"/>
+  <rect width="640" height="400" fill="url(#psmBotFade)"/>
+</svg>

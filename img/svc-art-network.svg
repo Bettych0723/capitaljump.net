@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 260" width="220" height="260" role="img" aria-label="Illustration: a network topology with a central hub connected to surrounding nodes">
+  <!-- What we manage 03：網路與基礎建設。中央節點連向四周，代表架構設計。 -->
+  <g stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M 110,130 L 54,70"/><path d="M 110,130 L 166,70"/>
+    <path d="M 110,130 L 40,164"/><path d="M 110,130 L 180,164"/>
+    <path d="M 110,130 L 110,214"/>
+    <path d="M 54,70 L 166,70" stroke-opacity="0.22" stroke-dasharray="6 10"/>
+    <path d="M 40,164 L 180,164" stroke-opacity="0.22" stroke-dasharray="6 10"/>
+  </g>
+  <g fill="#0E2436" stroke="#4DA3FF" stroke-opacity="0.65" stroke-width="2.5">
+    <rect x="34" y="52" width="40" height="34" rx="9"/>
+    <rect x="146" y="52" width="40" height="34" rx="9"/>
+    <rect x="20" y="148" width="40" height="34" rx="9"/>
+    <rect x="160" y="148" width="40" height="34" rx="9"/>
+    <rect x="90" y="198" width="40" height="34" rx="9"/>
+  </g>
+  <g fill="#4DA3FF" fill-opacity="0.75">
+    <circle cx="54" cy="69" r="4"/><circle cx="166" cy="69" r="4"/>
+    <circle cx="40" cy="165" r="4"/><circle cx="180" cy="165" r="4"/>
+    <circle cx="110" cy="215" r="4"/>
+  </g>
+  <circle cx="110" cy="130" r="38" fill="none" stroke="#00FFBF" stroke-opacity="0.18" stroke-width="2" stroke-dasharray="4 12"/>
+  <circle cx="110" cy="130" r="26" fill="#0B1220" stroke="#00FFBF" stroke-opacity="0.7" stroke-width="3"/>
+  <circle cx="110" cy="130" r="9" fill="#00FFBF" fill-opacity="0.85"/>
+</svg>

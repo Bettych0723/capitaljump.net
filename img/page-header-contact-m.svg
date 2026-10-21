@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Contact 頁首底圖的「手機版」（<768px 時取代 page-header-contact.svg）。
+       桌機版的對話框在右、地點標記在左，手機裁切後只剩中央空白，
+       這張把對話框移到上方中央、地點標記移到左下，訊息線由標記升向對話框。
+       安全區：主要圖案落在 x 60–580、y 80–330 之內。 -->
+  <defs>
+    <linearGradient id="pcmBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+
+    <radialGradient id="pcmMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.26"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pcmBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.32"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="pcmBubbleA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00C9D6" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="pcmBubbleB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4DA3FF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="pcmLine" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"   stop-color="#4DA3FF" stop-opacity="0.18"/>
+      <stop offset="0.6" stop-color="#00D8CE" stop-opacity="0.6"/>
+      <stop offset="1"   stop-color="#C6FFEE" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <pattern id="pcmGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pcmGridMaskG" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pcmGridMask"><rect width="640" height="400" fill="url(#pcmGridMaskG)"/></mask>
+
+    <radialGradient id="pcmDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.70"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.48"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.16"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pcmTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.6"/>
+      <stop offset="0.25" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pcmBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.8"/>
+      <stop offset="0.16" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="pcmSoft" filterUnits="userSpaceOnUse" x="60" y="60" width="520" height="300"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="pcmSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5"/></filter>
+  </defs>
+
+  <style>
+    @keyframes pcmTrail  { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -400; } }
+    @keyframes pcmDot    { 0%,100% { opacity: .25; } 50% { opacity: .95; } }
+    @keyframes pcmRipple { 0% { transform: scale(1); opacity: .45; } 70% { opacity: .08; } 100% { transform: scale(2.6); opacity: 0; } }
+    @keyframes pcmFloat  { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+    .pcm-trail { stroke-dasharray: 34 366; animation: pcmTrail 4.5s linear infinite; }
+    .pcm-dot   { animation: pcmDot 1.8s ease-in-out infinite; }
+    .pcm-dot-2 { animation-delay: -1.2s; }
+    .pcm-dot-3 { animation-delay: -0.6s; }
+    .pcm-ripple   { transform-box: view-box; transform-origin: 140px 300px; animation: pcmRipple 6s cubic-bezier(.2,.6,.3,1) infinite; }
+    .pcm-ripple-2 { animation-delay: -3s; }
+    .pcm-bubble-a { animation: pcmFloat 7s ease-in-out infinite; }
+    .pcm-bubble-b { animation: pcmFloat 7s ease-in-out infinite; animation-delay: -3.5s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pcm-trail, .pcm-dot, .pcm-ripple, .pcm-bubble-a, .pcm-bubble-b { animation: none; }
+      .pcm-trail, .pcm-ripple { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="640" height="400" fill="url(#pcmBg)"/>
+  <g mask="url(#pcmGridMask)"><rect width="640" height="400" fill="url(#pcmGrid)"/></g>
+  <ellipse cx="430" cy="120" rx="250" ry="190" fill="url(#pcmMint)"/>
+  <ellipse cx="110" cy="330" rx="240" ry="180" fill="url(#pcmBlue)"/>
+
+  <!-- 2. 左下：地點標記＋擴散圈 -->
+  <g fill="none" stroke="#4DA3FF" stroke-width="2">
+    <circle class="pcm-ripple"              cx="140" cy="300" r="34"/>
+    <circle class="pcm-ripple pcm-ripple-2" cx="140" cy="300" r="34"/>
+  </g>
+  <g fill="none" stroke="#4DA3FF" stroke-opacity="0.30" stroke-width="1.5">
+    <circle cx="140" cy="300" r="62"/>
+    <circle cx="140" cy="300" r="96" stroke-opacity="0.16"/>
+  </g>
+  <path d="M 140,256 c -19,0 -34,15 -34,34 c 0,24 34,56 34,56 c 0,0 34,-32 34,-56 c 0,-19 -15,-34 -34,-34 z"
+        fill="#0A8BFF" fill-opacity="0.16" stroke="#4DA3FF" stroke-opacity="0.75" stroke-width="2"/>
+  <circle cx="140" cy="290" r="9" fill="#C6E4FF" fill-opacity="0.85"/>
+
+  <!-- 3. 訊息線：由標記升向對話框 -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M 196,268 C 268,250 330,224 382,196" stroke="url(#pcmLine)" stroke-width="7" filter="url(#pcmSoft)" opacity="0.5"/>
+    <path d="M 196,268 C 268,250 330,224 382,196" stroke="url(#pcmLine)" stroke-width="2"/>
+    <path class="pcm-trail" pathLength="400" d="M 196,268 C 268,250 330,224 382,196" stroke="#FFFFFF" stroke-width="2.5"/>
+  </g>
+
+  <!-- 4. 後方：回覆（藍） -->
+  <g class="pcm-bubble-b">
+    <path d="M 300,196 h 232 a 14,14 0 0 1 14,14 v 64 a 14,14 0 0 1 -14,14 h -178 l -30,26 v -26 h -24 a 14,14 0 0 1 -14,-14 v -64 a 14,14 0 0 1 14,-14 z"
+          fill="url(#pcmBubbleB)" stroke="#4DA3FF" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g stroke="#4DA3FF" stroke-opacity="0.40" stroke-width="6" stroke-linecap="round">
+      <path d="M 326,226 H 478"/>
+      <path d="M 326,252 H 418"/>
+    </g>
+  </g>
+
+  <!-- 5. 前方：送出（薄荷綠），內有輸入中的三點 -->
+  <g class="pcm-bubble-a">
+    <path d="M 220,82 h 296 a 16,16 0 0 1 16,16 v 86 a 16,16 0 0 1 -16,16 h -238 l -36,30 v -30 h -22 a 16,16 0 0 1 -16,-16 v -86 a 16,16 0 0 1 16,-16 z"
+          fill="url(#pcmBubbleA)" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2"/>
+    <g stroke="#00FFBF" stroke-opacity="0.45" stroke-width="7" stroke-linecap="round">
+      <path d="M 250,116 H 462"/>
+      <path d="M 250,146 H 392"/>
+    </g>
+    <g fill="#DFFFF6">
+      <circle class="pcm-dot"          cx="256" cy="176" r="6"/>
+      <circle class="pcm-dot pcm-dot-3" cx="280" cy="176" r="6"/>
+      <circle class="pcm-dot pcm-dot-2" cx="304" cy="176" r="6"/>
+    </g>
+    <circle cx="532" cy="98" r="14" fill="#00FFBF" fill-opacity="0.30" filter="url(#pcmSoft2)"/>
+    <circle cx="532" cy="98" r="5.5" fill="#DFFFF6"/>
+  </g>
+
+  <!-- 6. 中央壓暗＋上下收邊 -->
+  <ellipse cx="320" cy="200" rx="380" ry="230" fill="url(#pcmDim)"/>
+  <rect width="640" height="400" fill="url(#pcmTopFade)"/>
+  <rect width="640" height="400" fill="url(#pcmBotFade)"/>
+</svg>

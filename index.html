@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- Google Analytics (GA4) — 評估 ID：G-ZM346VN1R1
+             本機預覽（localhost / 127.0.0.1 / 直接開檔）不載入，避免測試流量混進正式資料。
+             需要在本機驗證時，在網址後面加上 ?ga_test=1 即可暫時啟用。 -->
+        <script>
+            (function () {
+                var host = location.hostname;
+                var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '' || host.indexOf('.local') > -1;
+                var force = location.search.indexOf('ga_test=1') > -1;
+                if (isLocal && !force) { return; }
+
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function () { window.dataLayer.push(arguments); };
+
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZM346VN1R1';
+                document.head.appendChild(s);
+
+                gtag('js', new Date());
+                gtag('config', 'G-ZM346VN1R1');
+            })();
+        </script>
+        <title>CAPITAL JUMP | Custom Software, Cybersecurity &amp; Managed IT</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="custom software development, cybersecurity, managed IT, cloud services, penetration testing, MDR, SOC 2, ISO 27001, game development" name="keywords">
+        <meta content="One engineering partner for custom software, cybersecurity, and managed IT &amp; cloud. We design, build, secure, and run the technology growing companies rely on." name="description">
+
+        <link href="img/icon.png" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Dark Tech Theme Override (最後載入；移除本行即回復淺色) -->
+        <link href="css/dark-theme.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <!-- 真實地址 / Email / 社群帳號待補（[待填]）後再啟用本區塊 -->
+        <!-- <div class="container-fluid bg-dark py-2 d-none d-md-flex">
+            <div class="container">
+                <div class="d-flex justify-content-between topbar">
+                    <div class="top-info">
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>[待填：Address]</small>
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>[待填：Email]</small>
+                    </div>
+                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We reply to every enquiry within one business day</small></div>
+                    <div class="top-link">
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Topbar End -->
+
+        <!-- Navbar Start -->
+        <!-- sticky-top：捲動時導覽列固定在視窗上方 -->
+        <div class="container-fluid bg-primary sticky-top">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-1">
+                    <a href="index.html" class="navbar-brand">
+                        <img width="182" height="60" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                    </a>
+                    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto mx-xl-auto p-1">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu bg-light m-0 rounded">
+                                    <a href="service.html" class="dropdown-item">All services</a>
+                                    <a href="service-software.html" class="dropdown-item">Custom software development</a>
+                                    <a href="service-cybersecurity.html" class="dropdown-item">Cybersecurity</a>
+                                    <a href="service-managed-it.html" class="dropdown-item">Managed IT and cloud</a>
+                                    <a href="game-development.html" class="dropdown-item">Game development</a>
+                                </div>
+                            </div>
+                            <a href="work.html" class="nav-item nav-link">Work</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact.html" class="btn btn-secondary rounded-pill py-2 px-4 my-3 d-xl-none">Let's talk</a>
+                        </div>
+                    </div>
+                    <div class="d-none d-xl-flex flex-shirink-0">
+                        <a href="contact.html" class="btn btn-secondary rounded-pill py-2 px-4">Let's talk</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+        <!-- Carousel Start -->
+        <div class="container-fluid px-0">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <!-- 主視覺拆成兩層：靜態底圖（漸層、光帶、網格、點陣、光路外發光）烘焙成
+                         hero-kv-1-base.webp，只柵格化一次；會動的元素留在下方的 .hero-fx inline SVG。
+                         原始的 hero-kv-1.svg 內含 3 個 feGaussianBlur 濾鏡，整張在 1425x802 下柵格化
+                         一次要 245ms（一個影格只有 16.7ms），而 SVG 內嵌 CSS 動畫放在 img 裡會逐影格
+                         重繪整張圖，這是首頁主視覺區段捲不動的原因。原始向量檔保留在 img/ 供日後編修。 -->
+                    <!-- hero-left = A 案（文字左對齊、右半邊留給主視覺）。移除 hero-left 即回到 B 案置中版 -->
+                    <div class="carousel-item carousel-item-kv hero-left active">
+                        <img width="2560" height="1440" src="img/hero-kv-1-base.webp" class="img-fluid" alt="CAPITAL JUMP brand key visual: three streams of light converging into a single bright node">
+                        <!-- 主視覺動態層。底圖（漸層、光帶、網格、點陣、光路外發光）已烘焙進
+                             hero-kv-1-base.webp，只柵格化一次；這裡只留會動的元素，讓瀏覽器
+                             僅重繪變動的部分。原始完整向量檔保留在 img/hero-kv-1.svg。
+                             動畫定義在 css/style.css 的 Hero motion 區段。 -->
+                        <!-- 薄荷光暈獨立成一層：它是整個動態層最貴的單一元素（1360x1200
+                             的漸層橢圓，單次柵格化 4.8ms，佔動態層 7.2ms 的三分之二）。
+                             放在同一層的話，光流線每影格重繪就會連帶重畫它。拆出來後
+                             由 CSS 改變整個 svg 的 opacity，這種動畫交給合成器，零重繪。 -->
+                        <svg class="hero-halo" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                            <radialGradient id="fxMint" cx="0.5" cy="0.5" r="0.5">
+                                <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.44"/>
+                                <stop offset="0.22" stop-color="#00D8CE" stop-opacity="0.21"/>
+                                <stop offset="0.55" stop-color="#0095D8" stop-opacity="0.10"/>
+                                <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+                            </radialGradient>
+                            <ellipse cx="1470" cy="560" rx="680" ry="600" fill="url(#fxMint)"/>
+                        </svg>
+                        <svg class="hero-fx" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                            <defs>
+                                <radialGradient id="fxCore" cx="0.5" cy="0.5" r="0.5">
+                                    <stop offset="0"    stop-color="#FFFFFF" stop-opacity="1"/>
+                                    <stop offset="0.16" stop-color="#C6FFEE" stop-opacity="0.95"/>
+                                    <stop offset="0.42" stop-color="#00FFBF" stop-opacity="0.55"/>
+                                    <stop offset="1"    stop-color="#00FFBF" stop-opacity="0"/>
+                                </radialGradient>
+                                <filter id="fxSoft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9"/></filter>
+                                <!-- 光點的連續光暈。中段用縱向線性漸層、兩端用徑向漸層的
+                                     半圓帽，拼成膠囊狀。座標用 userSpaceOnUse 並以光點本身
+                                     的局部座標為準，所以同一組漸層可以給四條線共用。 -->
+                                <linearGradient id="fxLatA" gradientUnits="userSpaceOnUse" x1="0" y1="-28" x2="0" y2="28">
+                                    <stop offset="0.000" stop-color="#B6FFEC" stop-opacity="0.004"/>
+                                    <stop offset="0.071" stop-color="#B6FFEC" stop-opacity="0.016"/>
+                                    <stop offset="0.143" stop-color="#B6FFEC" stop-opacity="0.047"/>
+                                    <stop offset="0.214" stop-color="#B6FFEC" stop-opacity="0.090"/>
+                                    <stop offset="0.286" stop-color="#B6FFEC" stop-opacity="0.169"/>
+                                    <stop offset="0.357" stop-color="#B6FFEC" stop-opacity="0.275"/>
+                                    <stop offset="0.429" stop-color="#B6FFEC" stop-opacity="0.337"/>
+                                    <stop offset="0.500" stop-color="#B6FFEC" stop-opacity="0.373"/>
+                                    <stop offset="0.571" stop-color="#B6FFEC" stop-opacity="0.337"/>
+                                    <stop offset="0.643" stop-color="#B6FFEC" stop-opacity="0.275"/>
+                                    <stop offset="0.714" stop-color="#B6FFEC" stop-opacity="0.169"/>
+                                    <stop offset="0.786" stop-color="#B6FFEC" stop-opacity="0.090"/>
+                                    <stop offset="0.857" stop-color="#B6FFEC" stop-opacity="0.047"/>
+                                    <stop offset="0.929" stop-color="#B6FFEC" stop-opacity="0.016"/>
+                                    <stop offset="1.000" stop-color="#B6FFEC" stop-opacity="0.004"/>
+                                </linearGradient>
+                                <radialGradient id="fxCapA" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="28">
+                                    <stop offset="0.000" stop-color="#B6FFEC" stop-opacity="0.373"/>
+                                    <stop offset="0.143" stop-color="#B6FFEC" stop-opacity="0.337"/>
+                                    <stop offset="0.286" stop-color="#B6FFEC" stop-opacity="0.275"/>
+                                    <stop offset="0.429" stop-color="#B6FFEC" stop-opacity="0.169"/>
+                                    <stop offset="0.571" stop-color="#B6FFEC" stop-opacity="0.090"/>
+                                    <stop offset="0.714" stop-color="#B6FFEC" stop-opacity="0.047"/>
+                                    <stop offset="0.857" stop-color="#B6FFEC" stop-opacity="0.016"/>
+                                    <stop offset="1.000" stop-color="#B6FFEC" stop-opacity="0.000"/>
+                                </radialGradient>
+                                <linearGradient id="fxLatB" gradientUnits="userSpaceOnUse" x1="0" y1="-28" x2="0" y2="28">
+                                    <stop offset="0.000" stop-color="#FFFFFF" stop-opacity="0.004"/>
+                                    <stop offset="0.071" stop-color="#FFFFFF" stop-opacity="0.016"/>
+                                    <stop offset="0.143" stop-color="#FFFFFF" stop-opacity="0.047"/>
+                                    <stop offset="0.214" stop-color="#FFFFFF" stop-opacity="0.090"/>
+                                    <stop offset="0.286" stop-color="#FFFFFF" stop-opacity="0.169"/>
+                                    <stop offset="0.357" stop-color="#FFFFFF" stop-opacity="0.275"/>
+                                    <stop offset="0.429" stop-color="#FFFFFF" stop-opacity="0.337"/>
+                                    <stop offset="0.500" stop-color="#FFFFFF" stop-opacity="0.373"/>
+                                    <stop offset="0.571" stop-color="#FFFFFF" stop-opacity="0.337"/>
+                                    <stop offset="0.643" stop-color="#FFFFFF" stop-opacity="0.275"/>
+                                    <stop offset="0.714" stop-color="#FFFFFF" stop-opacity="0.169"/>
+                                    <stop offset="0.786" stop-color="#FFFFFF" stop-opacity="0.090"/>
+                                    <stop offset="0.857" stop-color="#FFFFFF" stop-opacity="0.047"/>
+                                    <stop offset="0.929" stop-color="#FFFFFF" stop-opacity="0.016"/>
+                                    <stop offset="1.000" stop-color="#FFFFFF" stop-opacity="0.004"/>
+                                </linearGradient>
+                                <radialGradient id="fxCapB" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="28">
+                                    <stop offset="0.000" stop-color="#FFFFFF" stop-opacity="0.373"/>
+                                    <stop offset="0.143" stop-color="#FFFFFF" stop-opacity="0.337"/>
+                                    <stop offset="0.286" stop-color="#FFFFFF" stop-opacity="0.275"/>
+                                    <stop offset="0.429" stop-color="#FFFFFF" stop-opacity="0.169"/>
+                                    <stop offset="0.571" stop-color="#FFFFFF" stop-opacity="0.090"/>
+                                    <stop offset="0.714" stop-color="#FFFFFF" stop-opacity="0.047"/>
+                                    <stop offset="0.857" stop-color="#FFFFFF" stop-opacity="0.016"/>
+                                    <stop offset="1.000" stop-color="#FFFFFF" stop-opacity="0.000"/>
+                                </radialGradient>
+                                <linearGradient id="fxLatC" gradientUnits="userSpaceOnUse" x1="0" y1="-28" x2="0" y2="28">
+                                    <stop offset="0.000" stop-color="#A8DEFF" stop-opacity="0.004"/>
+                                    <stop offset="0.071" stop-color="#A8DEFF" stop-opacity="0.016"/>
+                                    <stop offset="0.143" stop-color="#A8DEFF" stop-opacity="0.047"/>
+                                    <stop offset="0.214" stop-color="#A8DEFF" stop-opacity="0.090"/>
+                                    <stop offset="0.286" stop-color="#A8DEFF" stop-opacity="0.169"/>
+                                    <stop offset="0.357" stop-color="#A8DEFF" stop-opacity="0.275"/>
+                                    <stop offset="0.429" stop-color="#A8DEFF" stop-opacity="0.337"/>
+                                    <stop offset="0.500" stop-color="#A8DEFF" stop-opacity="0.373"/>
+                                    <stop offset="0.571" stop-color="#A8DEFF" stop-opacity="0.337"/>
+                                    <stop offset="0.643" stop-color="#A8DEFF" stop-opacity="0.275"/>
+                                    <stop offset="0.714" stop-color="#A8DEFF" stop-opacity="0.169"/>
+                                    <stop offset="0.786" stop-color="#A8DEFF" stop-opacity="0.090"/>
+                                    <stop offset="0.857" stop-color="#A8DEFF" stop-opacity="0.047"/>
+                                    <stop offset="0.929" stop-color="#A8DEFF" stop-opacity="0.016"/>
+                                    <stop offset="1.000" stop-color="#A8DEFF" stop-opacity="0.004"/>
+                                </linearGradient>
+                                <radialGradient id="fxCapC" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="28">
+                                    <stop offset="0.000" stop-color="#A8DEFF" stop-opacity="0.373"/>
+                                    <stop offset="0.143" stop-color="#A8DEFF" stop-opacity="0.337"/>
+                                    <stop offset="0.286" stop-color="#A8DEFF" stop-opacity="0.275"/>
+                                    <stop offset="0.429" stop-color="#A8DEFF" stop-opacity="0.169"/>
+                                    <stop offset="0.571" stop-color="#A8DEFF" stop-opacity="0.090"/>
+                                    <stop offset="0.714" stop-color="#A8DEFF" stop-opacity="0.047"/>
+                                    <stop offset="0.857" stop-color="#A8DEFF" stop-opacity="0.016"/>
+                                    <stop offset="1.000" stop-color="#A8DEFF" stop-opacity="0.000"/>
+                                </radialGradient>
+                            </defs>
+
+                            <!-- 擴散訊號環 -->
+                            <g fill="none" stroke="#00FFBF" stroke-width="2">
+                                <circle class="cj-ripple"             cx="1450" cy="560" r="96"/>
+                                <circle class="cj-ripple cj-ripple-2" cx="1450" cy="560" r="96"/>
+                                <circle class="cj-ripple cj-ripple-3" cx="1450" cy="560" r="96"/>
+                            </g>
+
+                            <!-- 雷達／防護環：緩慢反向旋轉 -->
+                            <g fill="none" stroke="#00FFBF">
+                                <circle class="cj-ring"           cx="1450" cy="560" r="152" stroke-opacity="0.32" stroke-width="1.5" stroke-dasharray="4 16"/>
+                                <circle class="cj-ring cj-ring-2" cx="1450" cy="560" r="234" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="2 22"/>
+                                <circle class="cj-ring"           cx="1450" cy="560" r="336" stroke-opacity="0.13" stroke-width="1.5" stroke-dasharray="2 30"/>
+                                <circle cx="1450" cy="560" r="84" stroke-opacity="0.42" stroke-width="2"/>
+                            </g>
+
+                            <!-- 流動光點。原本靠 feGaussianBlur（sigma=9）發光，但模糊每影格
+                                 重算，實測單是這四條線就要 26.1ms（影格預算 16.7ms）。
+                                 改法：每顆光點是一個沿路徑移動的群組 —— 中段用縱向漸層的
+                                 矩形、兩端用徑向漸層的半圓帽，拼成一個連續的膠囊狀光暈。
+                                 漸層連續，放大也不會出現分層邊界（先前用多層描邊疊加會看到
+                                 一圈圈等高線）。移動靠 offset-path + offset-distance，屬於
+                                 transform 類動畫，由合成器處理、不產生重繪。
+                                 光暈膠囊刻意比亮芯短 7px，讓亮芯末端落在漸層的衰減段上 ——
+                                 否則端點會以完整亮度外擴，比原始模糊亮一倍。
+                                 亮度分布取自原始模糊的實測剖面（橫向 ±4:86 / ±8:70 /
+                                 ±12:43 / ±16:23 / ±20:12 / ±24:4 / ±28:1，alpha 0-255）。 -->
+                            <g class="cj-dot cj-dot-1a">
+                                <rect x="-37.3" y="-28" width="74.5" height="56" fill="url(#fxLatA)"/>
+                                <g transform="translate(37.3,0)"><path d="M 0,-28 A 28,28 0 0 1 0,28 Z" fill="url(#fxCapA)"/></g>
+                                <g transform="translate(-37.3,0)"><path d="M 0,-28 A 28,28 0 0 0 0,28 Z" fill="url(#fxCapA)"/></g>
+                                <rect x="-44.3" y="-1.50" width="88.5" height="3" rx="1.50" fill="#FFFFFF"/>
+                            </g>
+                            <g class="cj-dot cj-dot-1b">
+                                <rect x="-37.3" y="-28" width="74.5" height="56" fill="url(#fxLatA)"/>
+                                <g transform="translate(37.3,0)"><path d="M 0,-28 A 28,28 0 0 1 0,28 Z" fill="url(#fxCapA)"/></g>
+                                <g transform="translate(-37.3,0)"><path d="M 0,-28 A 28,28 0 0 0 0,28 Z" fill="url(#fxCapA)"/></g>
+                                <rect x="-44.3" y="-1.50" width="88.5" height="3" rx="1.50" fill="#FFFFFF"/>
+                            </g>
+                            <g class="cj-dot cj-dot-2a">
+                                <rect x="-35.9" y="-28" width="71.8" height="56" fill="url(#fxLatB)"/>
+                                <g transform="translate(35.9,0)"><path d="M 0,-28 A 28,28 0 0 1 0,28 Z" fill="url(#fxCapB)"/></g>
+                                <g transform="translate(-35.9,0)"><path d="M 0,-28 A 28,28 0 0 0 0,28 Z" fill="url(#fxCapB)"/></g>
+                                <rect x="-42.9" y="-1.50" width="85.8" height="3" rx="1.50" fill="#FFFFFF"/>
+                            </g>
+                            <g class="cj-dot cj-dot-2b">
+                                <rect x="-35.9" y="-28" width="71.8" height="56" fill="url(#fxLatB)"/>
+                                <g transform="translate(35.9,0)"><path d="M 0,-28 A 28,28 0 0 1 0,28 Z" fill="url(#fxCapB)"/></g>
+                                <g transform="translate(-35.9,0)"><path d="M 0,-28 A 28,28 0 0 0 0,28 Z" fill="url(#fxCapB)"/></g>
+                                <rect x="-42.9" y="-1.50" width="85.8" height="3" rx="1.50" fill="#FFFFFF"/>
+                            </g>
+                            <g class="cj-dot cj-dot-3a">
+                                <rect x="-37.6" y="-28" width="75.2" height="56" fill="url(#fxLatC)"/>
+                                <g transform="translate(37.6,0)"><path d="M 0,-28 A 28,28 0 0 1 0,28 Z" fill="url(#fxCapC)"/></g>
+                                <g transform="translate(-37.6,0)"><path d="M 0,-28 A 28,28 0 0 0 0,28 Z" fill="url(#fxCapC)"/></g>
+                                <rect x="-44.6" y="-1.50" width="89.2" height="3" rx="1.50" fill="#FFFFFF"/>
+                            </g>
+                            <g class="cj-dot cj-dot-3b">
+                                <rect x="-37.6" y="-28" width="75.2" height="56" fill="url(#fxLatC)"/>
+                                <g transform="translate(37.6,0)"><path d="M 0,-28 A 28,28 0 0 1 0,28 Z" fill="url(#fxCapC)"/></g>
+                                <g transform="translate(-37.6,0)"><path d="M 0,-28 A 28,28 0 0 0 0,28 Z" fill="url(#fxCapC)"/></g>
+                                <rect x="-44.6" y="-1.50" width="89.2" height="3" rx="1.50" fill="#FFFFFF"/>
+                            </g>
+                            <g class="cj-dot cj-dot-4a">
+                                <rect x="-17.6" y="-28" width="35.2" height="56" fill="url(#fxLatB)"/>
+                                <g transform="translate(17.6,0)"><path d="M 0,-28 A 28,28 0 0 1 0,28 Z" fill="url(#fxCapB)"/></g>
+                                <g transform="translate(-17.6,0)"><path d="M 0,-28 A 28,28 0 0 0 0,28 Z" fill="url(#fxCapB)"/></g>
+                                <rect x="-24.6" y="-1.75" width="49.2" height="3.5" rx="1.75" fill="#FFFFFF"/>
+                            </g>
+                            <g class="cj-dot cj-dot-4b">
+                                <rect x="-17.6" y="-28" width="35.2" height="56" fill="url(#fxLatB)"/>
+                                <g transform="translate(17.6,0)"><path d="M 0,-28 A 28,28 0 0 1 0,28 Z" fill="url(#fxCapB)"/></g>
+                                <g transform="translate(-17.6,0)"><path d="M 0,-28 A 28,28 0 0 0 0,28 Z" fill="url(#fxCapB)"/></g>
+                                <rect x="-24.6" y="-1.75" width="49.2" height="3.5" rx="1.75" fill="#FFFFFF"/>
+                            </g>
+
+                            <!-- 路徑節點 -->
+                            <g fill="#C6FFEE">
+                                <circle cx="920"  cy="450" r="5"/>
+                                <circle cx="1020" cy="578" r="5"/>
+                                <circle cx="1070" cy="660" r="5"/>
+                                <circle cx="430"  cy="222" r="3.5" fill-opacity="0.6"/>
+                                <circle cx="600"  cy="614" r="3.5" fill-opacity="0.6"/>
+                                <circle cx="700"  cy="884" r="3.5" fill-opacity="0.6"/>
+                                <circle cx="1780" cy="360" r="3.5" fill-opacity="0.6"/>
+                            </g>
+
+                            <!-- 匯流核心：脈動 + 中心亮點呼吸 -->
+                            <g>
+                                <circle class="cj-core"    cx="1450" cy="560" r="230" fill="url(#fxCore)" opacity="0.55"/>
+                                <circle class="cj-coredot" cx="1450" cy="560" r="46" fill="#00FFBF" fill-opacity="0.35" filter="url(#fxSoft2)"/>
+                                <circle cx="1450" cy="560" r="17" fill="#00FFBF"/>
+                                <circle cx="1450" cy="560" r="8.5" fill="#FFFFFF"/>
+                            </g>
+
+                            <!-- 幾何飾件 -->
+                            <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.32" stroke-linecap="round">
+                                <path d="M 1700,880 l 26,26 l -26,26"/>
+                                <path d="M 1760,880 l 26,26 l -26,26"/>
+                            </g>
+                            <g stroke="#4DA3FF" fill="none" stroke-width="2" stroke-opacity="0.28" stroke-linecap="round">
+                                <path d="M 214,946 l -26,26 l 26,26"/>
+                                <path d="M 154,946 l -26,26 l 26,26"/>
+                            </g>
+
+                        </svg>
+                        <!-- 左側壓暗與上下收邊：必須疊在動態元素之上。原本是 SVG 裡的三層
+                             全幅漸層，實測佔動態層單次重繪 20.3ms 中的 13.6ms（光流線每
+                             影格重繪時會連帶重畫它們）。改用 CSS 漸層獨立成一層。 -->
+                        <div class="hero-veil" aria-hidden="true"></div>
+                        <div class="carousel-caption">
+                            <div class="container carousel-content">
+                                <p class="hero-eyebrow text-secondary h4 animated fadeInUp">One engineering partner</p>
+                                <h1 class="text-white display-2 mb-4 animated fadeInRight">Custom software, cybersecurity, and managed IT 
+                                    <!-- &mdash; from one engineering partner. -->
+                                </h1>
+                                <p class="mb-4 text-white fs-5 animated fadeInDown">We design, build, secure, and run the technology growing companies depend on &mdash; with fewer vendors, tighter delivery, and results you can measure.</p>
+                                <a href="contact.html" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Book a call</button></a>
+                                <a href="service.html" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">See our services</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item hero-left">
+                        <img width="1920" height="1080" fetchpriority="low" src="img/carousel-2.jpg" class="img-fluid" alt="Close-up of an illuminated teal circuit panel">
+                        <div class="carousel-caption">
+                            <div class="container carousel-content">
+                                <p class="hero-eyebrow text-secondary h4 animated fadeInUp">Build &middot; Secure &middot; Run</p>
+                                <h2 class="text-white display-2 mb-4 animated fadeInLeft">Ship faster. Stay secure. Scale with confidence.</h2>
+                                <p class="mb-4 text-white fs-5 animated fadeInDown">One engineering team for the whole journey &mdash; from MVP to enterprise platform, hardened against real threats and monitored around the clock.</p>
+                                <a href="contact.html" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Start your project</button></a>
+                                <a href="contact.html" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Talk to an engineer</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+
+        <!-- About Start -->
+        <div class="container-fluid py-5 my-4">
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".1s">
+                        <div class="h-100 position-relative">
+                            <img width="900" height="811" loading="lazy" src="img/home-about-1.jpg" class="img-fluid w-75 rounded pic-b" alt="An engineer at a standing desk by a window wall, code on two monitors" style="margin-bottom: 25%;">
+                            <!-- 前景圖縮小並移到右下角，只疊到後方那張的右下角（螢幕下緣那塊），兩張人臉都不會被蓋掉 -->
+                            <div class="position-absolute" style="width: 55%; top: 50%; left: 45%;">
+                                <img width="900" height="811" loading="lazy" src="img/home-about-2.jpg" class="img-fluid w-100 rounded pic-b" alt="Close-up of a developer typing, source code on the laptop screen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".2s">
+                        <p class="h5 text-primary">About CAPITAL JUMP</p>
+                        <h2 class="mb-4 h1">Engineering that carries the whole load.</h2>
+                        <p>CAPITAL JUMP is an international software, security, and IT partner. We help companies turn ideas into working products, protect what they've built, and keep it running &mdash; without juggling separate vendors for each.</p>
+                        <p class="mb-4">Senior engineers, security by design, and documentation you actually own.</p>
+                        <a href="about.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">More about us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Fact Start -->
+        <div class="container-fluid bg-secondary py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay=".1s">
+                        <div class="d-flex counter">
+                            <span class="h1 me-3 text-primary">3</span>
+                            <h3 class="h5 text-white mt-1">Practices under one accountable partner</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay=".1s">
+                        <div class="d-flex counter">
+                            <span class="h1 me-3 text-primary">24/7</span>
+                            <h3 class="h5 text-white mt-1">Security monitoring and response</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay=".2s">
+                        <div class="d-flex counter">
+                            <span class="h1 me-3 text-primary"><span class="counter-value">1</span></span>
+                            <h3 class="h5 text-white mt-1">Business-day response to every enquiry</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay=".3s">
+                        <div class="d-flex counter">
+                            <span class="h1 me-3 text-primary">100%</span>
+                            <h3 class="h5 text-white mt-1">Code ownership and documented handover</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fact End -->
+
+
+        <!-- Services Start -->
+        <div class="container-fluid services py-5 my-4">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".1s" style="max-width: 700px;">
+                    <p class="h5 text-primary">What we do</p>
+                    <h2 class="h1">One engineering partner across build, secure, and run</h2>
+                </div>
+                <div class="row g-5 services-inner">
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".1s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon1">
+                                    <i class="fa fa-code fa-2x mb-4 text-primary1"></i>
+                                    <h3 class="h4 mb-3">Custom Software Development</h3>
+                                    <p class="mb-4">Web, mobile and SaaS, plus AI, ERP/CRM, and e-commerce.</p>
+                                    <a href="service-software.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".2s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon1">
+                                    <i class="fas fa-user-secret fa-2x mb-4 text-primary1"></i>
+                                    <h4 class="mb-3">Cybersecurity</h4>
+                                    <p class="mb-4">Penetration testing, MDR/SOC, and compliance (ISO 27001, SOC 2, GDPR).</p>
+                                    <a href="service-cybersecurity.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon1">
+                                    <i class="fas fa-cloud fa-2x mb-4 text-primary1"></i>
+                                    <h4 class="mb-3">Managed IT and Cloud</h4>
+                                    <p class="mb-4">Cloud migration, 24/7 monitoring, and responsive support.</p>
+                                    <a href="service-managed-it.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services End -->
+
+
+        <!-- Why CAPITAL JUMP Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".1s" style="max-width: 700px;">
+                    <p class="h5 text-primary">Why us</p>
+                    <h2 class="h1">Why CAPITAL JUMP</h2>
+                </div>
+                <div class="row g-5">
+                    <!-- justify-content-center -->
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".1s">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0 btn-lg-square bg-primary rounded-circle">
+                                <i class="fas fa-handshake text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h3 class="h5 mb-2">One partner across build, secure, and run</h3>
+                                <p class="mb-0">Fewer vendors, clearer accountability, less finger-pointing when something breaks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".1s">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0 btn-lg-square bg-primary rounded-circle">
+                                <i class="fas fa-user-cog text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h3 class="h5 mb-2">Senior engineers on every engagement</h3>
+                                <p class="mb-0">You work with people who ship, not account managers who relay messages.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".2s">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0 btn-lg-square bg-primary rounded-circle">
+                                <i class="fas fa-shield-alt text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h3 class="h5 mb-2">Security by design</h3>
+                                <p class="mb-0">We build with threats in mind from the first commit, not as a pre-launch checklist.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".1s">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0 btn-lg-square bg-primary rounded-circle">
+                                <i class="fas fa-file-code text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h3 class="h5 mb-2">You own everything</h3>
+                                <p class="mb-0">Clean, documented, maintainable code and a proper handover.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".2s">
+                        <div class="d-flex h-100">
+                            <div class="flex-shrink-0 btn-lg-square bg-primary rounded-circle">
+                                <i class="fas fa-globe text-white"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h3 class="h5 mb-2">Global delivery across time zones</h3>
+                                <p class="mb-0">Momentum on your project while your office sleeps.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Why CAPITAL JUMP End -->
+
+
+        <!-- How we work Start -->
+        <div class="container-fluid py-5 my-4">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".1s" style="max-width: 800px;">
+                    <p class="h5 text-primary">How we work</p>
+                    <h2 class="mb-4 h1">From discovery to ongoing support</h2>
+                    <p class="mb-0">We start with the problem and the outcome &mdash; not a feature list. We design the architecture, build in focused iterations, harden and test security before release, then support and improve after launch.</p>
+                </div>
+
+                <!-- 六步流程：橫向輪播（桌機 3 張 / 平板 2 張 / 手機 1 張，右側露出下一張一角）
+                     控制程式在 js/main.js 的 "Process carousel" 段落 -->
+                <div class="process-carousel wow fadeIn" data-wow-delay=".1s">
+                    <div class="process-track" id="processTrack">
+
+                        <article class="process-card">
+                            <!-- 卡片圖為自製品牌圖（img/process-0X.svg），與首頁主視覺同一套視覺語彙。
+                                 圖只是輔助說明，卡片標題與內文已表達完整資訊，因此 alt 留空不重複朗讀。 -->
+                            <div class="process-card-media">
+                                <span class="process-card-step">01</span>
+                                <img width="640" height="320" loading="lazy" src="img/process-01.svg" alt="">
+                            </div>
+                            <div class="process-card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="h5 mb-0">Discover</h3>
+                                    <span class="process-card-dot"></span>
+                                </div>
+                                <p class="mb-0 mt-2">We start with the problem and the outcome, not a feature list.</p>
+                            </div>
+                        </article>
+
+                        <article class="process-card">
+                            <div class="process-card-media">
+                                <span class="process-card-step">02</span>
+                                <img width="640" height="320" loading="lazy" src="img/process-02.svg" alt="">
+                            </div>
+                            <div class="process-card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="h5 mb-0">Design</h3>
+                                    <span class="process-card-dot"></span>
+                                </div>
+                                <p class="mb-0 mt-2">We design the architecture before anything gets built.</p>
+                            </div>
+                        </article>
+
+                        <article class="process-card">
+                            <div class="process-card-media">
+                                <span class="process-card-step">03</span>
+                                <img width="640" height="320" loading="lazy" src="img/process-03.svg" alt="">
+                            </div>
+                            <div class="process-card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="h5 mb-0">Build</h3>
+                                    <span class="process-card-dot"></span>
+                                </div>
+                                <p class="mb-0 mt-2">We build in focused iterations, with code you own.</p>
+                            </div>
+                        </article>
+
+                        <article class="process-card">
+                            <div class="process-card-media">
+                                <span class="process-card-step">04</span>
+                                <img width="640" height="320" loading="lazy" src="img/process-04.svg" alt="">
+                            </div>
+                            <div class="process-card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="h5 mb-0">Secure &amp; Test</h3>
+                                    <span class="process-card-dot"></span>
+                                </div>
+                                <p class="mb-0 mt-2">We harden and test security before release, not after.</p>
+                            </div>
+                        </article>
+
+                        <article class="process-card">
+                            <div class="process-card-media">
+                                <span class="process-card-step">05</span>
+                                <img width="640" height="320" loading="lazy" src="img/process-05.svg" alt="">
+                            </div>
+                            <div class="process-card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="h5 mb-0">Launch</h3>
+                                    <span class="process-card-dot"></span>
+                                </div>
+                                <p class="mb-0 mt-2">We release with a documented handover.</p>
+                            </div>
+                        </article>
+
+                        <article class="process-card">
+                            <div class="process-card-media">
+                                <span class="process-card-step">06</span>
+                                <img width="640" height="320" loading="lazy" src="img/process-06.svg" alt="">
+                            </div>
+                            <div class="process-card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="h5 mb-0">Support</h3>
+                                    <span class="process-card-dot"></span>
+                                </div>
+                                <p class="mb-0 mt-2">We support and improve after launch.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <div class="process-controls">
+                        <button type="button" class="btn btn-primary btn-lg-square rounded-circle process-arrow" data-dir="-1" aria-label="Previous step" aria-controls="processTrack">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-lg-square rounded-circle process-arrow" data-dir="1" aria-label="Next step" aria-controls="processTrack">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <div class="process-progress" aria-hidden="true"><span id="processBar"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- How we work End -->
+
+
+        <!-- Specialized practice Start -->
+        <div class="container-fluid pb-5 mb-4">
+            <div class="container">
+                <div class="bg-light rounded p-4 p-md-5 wow fadeIn" data-wow-delay=".1s">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-8">
+                            <p class="h5 text-primary">Specialized practice</p>
+                            <h2 class="mb-3 h1">Game Development studio</h2>
+                            <p class="mb-0">We also run a dedicated Game Development studio &mdash; full-cycle mobile, PC, and console games, from gameplay engineering to art, audio, and LiveOps.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a href="game-development.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Explore Game Development</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Specialized practice End -->
+
+
+        <!-- Proof Start -->
+        <div class="container-fluid services pb-5 mb-4">
+            <div class="container">
+                <div class="row g-5">
+
+                    <!-- 左欄：標題 + 說明 + CTA -->
+                    <div class="col-lg-4 wow fadeIn" data-wow-delay=".1s">
+                        <p class="h5 text-primary">Proof</p>
+                        <h2 class="mb-4 h1">Representative examples</h2>
+                        <!-- <div class="bg-light rounded border-start border-4 border-primary p-3 mb-4">
+                            <small class="d-block fst-italic mb-0 text-muted"><i class="fas fa-info-circle text-primary me-2"></i>Illustrative / representative &mdash; These examples reflect the kind of work we do and the outcomes teams can expect. Named client stories will be published as engagements complete.</small>
+                        </div> -->
+                        <a href="work.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">See our work</a>
+                    </div>
+
+                    <!-- 右欄：錯落卡片（DOM 順序即 01→02→03，窄螢幕堆疊時編號不亂） -->
+                    <div class="col-lg-8">
+                        <div class="row g-4 services-inner align-items-start">
+
+                            <div class="col-md-6 wow fadeIn" data-wow-delay=".1s">
+                                <div class="services-item bg-light">
+                                    <div class="p-4 services-content">
+                                        <div class="services-content-icon">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <div class="flex-shrink-0 btn-lg-square bg-primary rounded-circle">
+                                                    <i class="fas fa-truck-moving text-white"></i>
+                                                </div>
+                                                <h3 class="h4 ms-3 mb-0">Logistics startup</h3>
+                                            </div>
+                                            <p class="mb-2">A custom operations platform replaced a fragile spreadsheet workflow, cutting order-processing time from around 15 minutes to under 3.</p>
+                                            <a href="work.html#case-software" class="d-inline-block mb-4">Read the case &gt;</a>
+                                            <div class="d-flex align-items-center">
+                                                <span class="flex-grow-1 border-top border-secondary"></span>
+                                                <span class="ms-3 text-secondary text-nowrap">Case <span class="fw-bold">01.</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 向下錯開 -->
+                            <div class="col-md-6 proof-stagger wow fadeIn" data-wow-delay=".2s">
+                                <div class="services-item bg-light">
+                                    <div class="p-4 services-content">
+                                        <div class="services-content-icon">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <div class="flex-shrink-0 btn-lg-square bg-primary rounded-circle">
+                                                    <i class="fas fa-lock text-white"></i>
+                                                </div>
+                                                <h4 class="ms-3 mb-0">Fintech app</h4>
+                                            </div>
+                                            <p class="mb-2">A pre-launch penetration test surfaced and fixed critical issues before go-live, with ongoing monitoring put in place.</p>
+                                            <a href="work.html#case-security" class="d-inline-block mb-4">Read the case &gt;</a>
+                                            <div class="d-flex align-items-center">
+                                                <span class="flex-grow-1 border-top border-secondary"></span>
+                                                <span class="ms-3 text-secondary text-nowrap">Case <span class="fw-bold">02.</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 wow fadeIn" data-wow-delay=".3s">
+                                <div class="services-item bg-light">
+                                    <div class="p-4 services-content">
+                                        <div class="services-content-icon">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <div class="flex-shrink-0 btn-lg-square bg-primary rounded-circle">
+                                                    <i class="fas fa-server text-white"></i>
+                                                </div>
+                                                <h4 class="ms-3 mb-0">E-commerce brand</h4>
+                                            </div>
+                                            <p class="mb-2">A cloud migration with 24/7 monitoring improved peak-time availability and made monthly costs more predictable.</p>
+                                            <a href="work.html#case-cloud" class="d-inline-block mb-4">Read the case &gt;</a>
+                                            <div class="d-flex align-items-center">
+                                                <span class="flex-grow-1 border-top border-secondary"></span>
+                                                <span class="ms-3 text-secondary text-nowrap">Case <span class="fw-bold">03.</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Proof End -->
+
+
+        <!-- Testimonials Start -->
+        <!-- 目前沒有可公開的真實客戶見證，本區塊先隱藏；取得授權後再啟用。 -->
+        <!-- Testimonials End -->
+
+
+        <!-- Closing CTA Start -->
+        <!-- 底圖 img/cta-band.svg：與主視覺、流程卡片同一套品牌視覺語彙 -->
+        <div class="container-fluid cta-band py-5">
+            <div class="container py-5 text-center wow fadeIn" data-wow-delay=".1s">
+                <div class="mx-auto" style="max-width: 700px;">
+                    <h2 class="mb-4 h1">Tell us what you're building.</h2>
+                    <p class="fs-5 mb-4">Book a 30-minute discovery call and we'll tell you honestly whether and how we can help.</p>
+                    <a href="contact.html" class="btn btn-secondary rounded-pill px-4 py-3 text-white">Book a call</a>
+                </div>
+            </div>
+        </div>
+        <!-- Closing CTA End -->
+
+
+        <!-- Footer Start -->
+         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".1s">
+            <div class="container pt-5 pb-4">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html" class="d-inline-block">
+                            <img width="182" height="60" loading="lazy" src="img/cj-logo.png" class="brand-logo" alt="CAPITAL JUMP">
+                        </a>
+                        <p class="mt-4 text-light">An international software, security, and IT partner. We design, build, secure, and run the technology growing companies depend on.</p>
+                        <!-- 社群連結：待補真實帳號網址後啟用
+                        <div class="d-flex hightech-link">
+                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        </div>
+                        -->
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="about.html" class="h3 text-secondary">Company</a>
+                        <div class="mt-4 d-flex flex-column short-link">
+                            <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About</a>
+                            <a href="work.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Work</a>
+                            <a href="contact.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
+                            <a href="game-development.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Game development</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="service.html" class="h3 text-secondary">Services</a>
+                        <div class="mt-4 d-flex flex-column help-link">
+                            <a href="service-software.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Custom software development</a>
+                            <a href="service-cybersecurity.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Cybersecurity</a>
+                            <a href="service-managed-it.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Managed IT and cloud</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="contact.html" class="h3 text-secondary">Contact</a>
+                        <div class="text-white mt-4 d-flex flex-column contact-link">
+                            <span class="pb-3 text-light border-primary"><i class="fas fa-envelope text-secondary me-2"></i><a href="mailto:capitaljumpinc@gmail.com" class="text-light">capitaljumpinc@gmail.com</a></span>
+                            <!-- <span class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> [待填：Phone]</span> -->
+                            <span class="py-3 text-light border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Vistra Corporate Services Centre, Ground Floor NPF Building, Beach Road, Apia, Samoa</span>
+                            <!-- <span class="py-3 text-light"><i class="fas fa-clock text-secondary me-2"></i> 09:00 - 18:00</span> -->
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-light mt-5 mb-4">
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span class="text-light"><span class="text-secondary">Copyright © CAPITAL JUMP INC.,</span> All rights reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <span class="text-light"><a href="privacy.html" class="footer-legal">Privacy policy</a></span><span class="footer-credit">Designed by <a href="https://htmlcodex.com" class="footer-legal" target="_blank" rel="noopener noreferrer">HTML Codex</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

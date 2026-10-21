@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Managed IT & Cloud 頁首底圖的「手機版」（<768px 時取代 page-header-managed.svg）。
+       24 小時環移到右上、機櫃與遷移路徑移到左下，整組收在安全區（x 60–580、y 80–330）內。 -->
+  <defs>
+    <linearGradient id="pmmBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#02141C"/>
+      <stop offset="0.4"  stop-color="#06273A"/>
+      <stop offset="0.72" stop-color="#042433"/>
+      <stop offset="1"    stop-color="#010E16"/>
+    </linearGradient>
+    <radialGradient id="pmmMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#00FFBF" stop-opacity="0.22"/>
+      <stop offset="0.45" stop-color="#00D8CE" stop-opacity="0.08"/>
+      <stop offset="1"    stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pmmBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.30"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pmmGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#3F9BBE" stroke-opacity="0.18" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pmmGridMaskG" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pmmGridMask"><rect width="640" height="400" fill="url(#pmmGridMaskG)"/></mask>
+    <radialGradient id="pmmDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.76"/>
+      <stop offset="0.55" stop-color="#01080E" stop-opacity="0.56"/>
+      <stop offset="0.85" stop-color="#01080E" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pmmTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.6"/>
+      <stop offset="0.25" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pmmBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.8"/>
+      <stop offset="0.16" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="pmmSoft" x="-60%" y="-60%" width="220%" height="220%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pmmFlow { to { stroke-dashoffset: -140; } }
+    @keyframes pmmSpin { to { transform: rotate(360deg); } }
+    @keyframes pmmBeat { 0%,100% { opacity: .30; } 50% { opacity: .95; } }
+    .pmm-flow { stroke-dasharray: 9 14; animation: pmmFlow 3.2s linear infinite; }
+    .pmm-ring { transform-box: view-box; transform-origin: 452px 132px; animation: pmmSpin 24s linear infinite; }
+    .pmm-beat { animation: pmmBeat 2.6s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .pmm-flow, .pmm-ring, .pmm-beat { animation: none; }
+    }
+  </style>
+
+  <rect width="640" height="400" fill="url(#pmmBg)"/>
+  <g mask="url(#pmmGridMask)"><rect width="640" height="400" fill="url(#pmmGrid)"/></g>
+  <ellipse cx="452" cy="132" rx="230" ry="175" fill="url(#pmmMint)"/>
+  <ellipse cx="150" cy="320" rx="230" ry="175" fill="url(#pmmBlue)"/>
+
+  <!-- 右上：24 小時環 -->
+  <g>
+    <circle cx="452" cy="132" r="80" fill="none" stroke="#00FFBF" stroke-opacity="0.16" stroke-width="1.5"/>
+    <circle cx="452" cy="132" r="60" fill="none" stroke="#00FFBF" stroke-opacity="0.10" stroke-width="1.5"/>
+    <g class="pmm-ring" fill="none" stroke="#00FFBF" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 22">
+      <circle cx="452" cy="132" r="80"/>
+    </g>
+    <circle class="pmm-beat" cx="452" cy="52" r="6" fill="#00FFBF"/>
+    <circle cx="452" cy="132" r="22" fill="#00FFBF" fill-opacity="0.18" filter="url(#pmmSoft)"/>
+    <text x="452" y="128" text-anchor="middle" font-family="Saira, Segoe UI, sans-serif" font-size="24" font-weight="700" fill="#DFFFF6" fill-opacity="0.9">24/7</text>
+    <text x="452" y="149" text-anchor="middle" font-family="Inter, Segoe UI, sans-serif" font-size="10" letter-spacing="1.6" fill="#8FD8E8" fill-opacity="0.75">MONITORED</text>
+  </g>
+
+  <!-- 左下：機櫃 → 雲 -->
+  <g>
+    <g transform="translate(70 196)">
+      <path d="M 30,46 a 27,27 0 0 1 27,-27 a 35,35 0 0 1 67,-8 a 26,26 0 0 1 24,35 Z"
+            fill="#0A8BFF" fill-opacity="0.12" stroke="#4DA3FF" stroke-opacity="0.55" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle class="pmm-beat" cx="104" cy="27" r="4.5" fill="#00FFBF"/>
+    </g>
+    <g class="pmm-flow" fill="none" stroke="#00FFBF" stroke-opacity="0.55" stroke-width="2.2" stroke-linecap="round">
+      <path d="M 118,282 C 118,250 150,240 174,252"/>
+      <path d="M 162,282 C 162,258 184,244 200,252"/>
+      <path d="M 206,282 C 206,266 214,252 224,252"/>
+    </g>
+    <g fill="#0E2436" fill-opacity="0.9" stroke="#2F6E87" stroke-opacity="0.65" stroke-width="2">
+      <rect x="92" y="286" width="146" height="26" rx="7"/>
+      <rect x="92" y="318" width="146" height="26" rx="7"/>
+    </g>
+    <g fill="#4DA3FF" fill-opacity="0.75">
+      <circle cx="110" cy="299" r="3.5"/><circle cx="110" cy="331" r="3.5"/>
+    </g>
+    <g fill="none" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round">
+      <path d="M 126,299 H 220"/><path d="M 126,331 H 196"/>
+    </g>
+  </g>
+
+  <ellipse cx="320" cy="200" rx="380" ry="230" fill="url(#pmmDim)"/>
+  <rect width="640" height="400" fill="url(#pmmTopFade)"/>
+  <rect width="640" height="400" fill="url(#pmmBotFade)"/>
+</svg>

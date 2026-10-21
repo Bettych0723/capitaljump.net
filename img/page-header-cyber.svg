@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <!-- Cybersecurity 頁專用頁首底圖（.page-header.page-header-cyber）。
+       右側＝雷達掃描圈與被標記的目標點；左側＝鎖定框與探測虛線。
+       版面依據與其他頁首相同：標題置中落在 y 150–330，中央壓暗。 -->
+  <defs>
+    <linearGradient id="pcyBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#01121B"/>
+      <stop offset="0.45" stop-color="#062638"/>
+      <stop offset="0.75" stop-color="#04202E"/>
+      <stop offset="1"    stop-color="#010C14"/>
+    </linearGradient>
+    <radialGradient id="pcyMint" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.24"/>
+      <stop offset="0.4" stop-color="#00D8CE" stop-opacity="0.09"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pcyBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.34"/>
+      <stop offset="0.5" stop-color="#0075F1" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 雷達掃描扇形 -->
+    <linearGradient id="pcySweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.35"/>
+      <stop offset="1"   stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="pcyGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 L0 60" fill="none" stroke="#3F9BBE" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pcyGridMaskG" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0"   stop-color="#5a5a5a"/>
+      <stop offset="0.5" stop-color="#8a8a8a"/>
+      <stop offset="1"   stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="pcyGridMask"><rect width="1920" height="480" fill="url(#pcyGridMaskG)"/></mask>
+    <linearGradient id="pcyLeftFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.7" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="pcyLeftMask"><rect x="0" y="0" width="560" height="480" fill="url(#pcyLeftFade)"/></mask>
+    <radialGradient id="pcyDim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.70"/>
+      <stop offset="0.58" stop-color="#01080E" stop-opacity="0.50"/>
+      <stop offset="0.88" stop-color="#01080E" stop-opacity="0.16"/>
+      <stop offset="1"    stop-color="#01080E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pcyTopFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#01080E" stop-opacity="0.65"/>
+      <stop offset="0.22" stop-color="#01080E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pcyBotFade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0"    stop-color="#0B1220" stop-opacity="0.85"/>
+      <stop offset="0.14" stop-color="#0B1220" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="pcySoft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+
+  <style>
+    @keyframes pcySpin  { to { transform: rotate(360deg); } }
+    @keyframes pcyPing  { 0% { r: 6; opacity: .9; } 70% { opacity: .1; } 100% { r: 34; opacity: 0; } }
+    @keyframes pcyBlink { 0%,100% { opacity: .25; } 50% { opacity: .9; } }
+
+    .pcy-sweep { transform-box: view-box; transform-origin: 1660px 230px; animation: pcySpin 8s linear infinite; }
+    .pcy-ring  { transform-box: view-box; transform-origin: 1660px 230px; animation: pcySpin 60s linear infinite; }
+    .pcy-ping  { animation: pcyPing 4s ease-out infinite; }
+    .pcy-ping-2 { animation-delay: -2s; }
+    .pcy-blink { animation: pcyBlink 3.2s ease-in-out infinite; }
+    .pcy-blink-2 { animation-delay: -1.1s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pcy-sweep, .pcy-ring, .pcy-ping, .pcy-blink { animation: none; }
+      .pcy-sweep, .pcy-ping { opacity: 0; }
+    }
+  </style>
+
+  <!-- 1. 底、網格、光暈 -->
+  <rect width="1920" height="480" fill="url(#pcyBg)"/>
+  <g mask="url(#pcyGridMask)"><rect width="1920" height="480" fill="url(#pcyGrid)"/></g>
+  <ellipse cx="1660" cy="230" rx="400" ry="290" fill="url(#pcyMint)"/>
+  <ellipse cx="240"  cy="380" rx="480" ry="290" fill="url(#pcyBlue)"/>
+
+  <!-- 2. 左側：鎖定框與探測虛線 -->
+  <g mask="url(#pcyLeftMask)">
+    <g fill="none" stroke="#3F9BBE" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round">
+      <path d="M 90,150 h -30 v -30"/>
+      <path d="M 230,150 h 30 v -30"/>
+      <path d="M 90,290 h -30 v 30"/>
+      <path d="M 230,290 h 30 v 30"/>
+    </g>
+    <rect class="pcy-blink" x="100" y="160" width="120" height="120" rx="10" fill="#4DA3FF" fill-opacity="0.10" stroke="#4DA3FF" stroke-opacity="0.6" stroke-width="1.5"/>
+    <g fill="none" stroke="#FF8A5B" stroke-opacity="0.40" stroke-width="2" stroke-dasharray="6 9" stroke-linecap="round">
+      <path d="M 300,200 H 430"/>
+      <path d="M 300,250 H 400"/>
+      <path d="M 300,300 H 450"/>
+    </g>
+    <g fill="#FF8A5B" fill-opacity="0.55">
+      <circle class="pcy-blink pcy-blink-2" cx="430" cy="200" r="5"/>
+      <circle cx="400" cy="250" r="5"/>
+      <circle class="pcy-blink" cx="450" cy="300" r="5"/>
+    </g>
+  </g>
+
+  <!-- 3. 右側：雷達 -->
+  <g>
+    <g fill="none" stroke="#00FFBF" stroke-opacity="0.22" stroke-width="1.5">
+      <circle cx="1660" cy="230" r="80"/>
+      <circle cx="1660" cy="230" r="140"/>
+      <circle cx="1660" cy="230" r="200" stroke-opacity="0.14"/>
+    </g>
+    <g class="pcy-ring" stroke="#00FFBF" stroke-opacity="0.30" stroke-width="1.5" fill="none" stroke-dasharray="4 16">
+      <circle cx="1660" cy="230" r="170"/>
+    </g>
+    <!-- 掃描扇形 -->
+    <g class="pcy-sweep">
+      <path d="M 1660,230 L 1860,230 A 200,200 0 0 0 1801,89 Z" fill="url(#pcySweep)"/>
+      <path d="M 1660,230 L 1860,230" stroke="#00FFBF" stroke-opacity="0.75" stroke-width="2"/>
+    </g>
+    <!-- 目標點與擴散 -->
+    <g>
+      <circle class="pcy-ping" cx="1740" cy="160" r="6" fill="none" stroke="#FF8A5B" stroke-opacity="0.8" stroke-width="2"/>
+      <circle cx="1740" cy="160" r="6" fill="#FF8A5B" fill-opacity="0.85"/>
+      <circle class="pcy-ping pcy-ping-2" cx="1580" cy="300" r="6" fill="none" stroke="#4DA3FF" stroke-opacity="0.8" stroke-width="2"/>
+      <circle cx="1580" cy="300" r="6" fill="#4DA3FF" fill-opacity="0.85"/>
+    </g>
+    <!-- 中心 -->
+    <circle cx="1660" cy="230" r="22" fill="#00FFBF" fill-opacity="0.26" filter="url(#pcySoft)"/>
+    <circle cx="1660" cy="230" r="8" fill="#DFFFF6"/>
+  </g>
+
+  <!-- 4. 幾何飾件 -->
+  <g stroke="#00FFBF" fill="none" stroke-width="2" stroke-opacity="0.30" stroke-linecap="round">
+    <path d="M 1340,410 l 18,18 l -18,18"/>
+    <path d="M 1380,410 l 18,18 l -18,18"/>
+  </g>
+
+  <!-- 5. 中央壓暗＋上下收邊 -->
+  <ellipse cx="960" cy="250" rx="1100" ry="305" fill="url(#pcyDim)"/>
+  <rect width="1920" height="480" fill="url(#pcyTopFade)"/>
+  <rect width="1920" height="480" fill="url(#pcyBotFade)"/>
+</svg>

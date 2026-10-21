@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" width="640" height="460" role="img"
+     aria-label="Illustration: a requirements sheet on the left turning into a running application window on the right">
+  <!-- Custom Software Development 的 Hero 插圖。對應文案：「依你的需求打造的軟體——不是硬塞進一套版型。」
+       左＝你的需求（手寫規格清單，逐項打勾）；中＝轉換箭頭；右＝依規格長出來的應用程式視窗
+       （側欄、圖表、資料列都對應左邊的項目）。全圖無文字。 -->
+  <defs>
+    <linearGradient id="shBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#101C30"/>
+      <stop offset="1"    stop-color="#0B1220"/>
+    </linearGradient>
+    <radialGradient id="shGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0.22"/>
+      <stop offset="0.5" stop-color="#00D8CE" stop-opacity="0.08"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shSpec" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4DA3FF" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="shApp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="shBar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#00FFBF" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#00FFBF" stop-opacity="0.75"/>
+    </linearGradient>
+    <pattern id="shGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0 L0 0 L0 32" fill="none" stroke="#3F9BBE" stroke-opacity="0.14" stroke-width="1"/>
+    </pattern>
+    <filter id="shSoft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+
+  <style>
+    /* 規格逐項打勾；轉換箭頭上的光點往右跑；App 視窗的長條圖輪流長高 */
+    @keyframes shCheck { 0%,12% { opacity: 0; transform: scale(.6); } 22%,100% { opacity: 1; transform: scale(1); } }
+    @keyframes shFlow  { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -160; } }
+    @keyframes shGrow  { 0%,100% { transform: scaleY(.62); } 50% { transform: scaleY(1); } }
+    @keyframes shBlink { 0%,100% { opacity: .3; } 50% { opacity: .95; } }
+
+    .sh-check   { transform-box: fill-box; transform-origin: center; animation: shCheck 6s ease-in-out infinite; }
+    .sh-check-2 { animation-delay: -4s; }
+    .sh-check-3 { animation-delay: -2s; }
+    .sh-flow  { stroke-dasharray: 18 142; animation: shFlow 2.8s linear infinite; }
+    .sh-bar   { transform-box: fill-box; transform-origin: bottom; animation: shGrow 4.5s ease-in-out infinite; }
+    .sh-bar-2 { animation-delay: -1.5s; }
+    .sh-bar-3 { animation-delay: -3s; }
+    .sh-dot   { animation: shBlink 3s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sh-check, .sh-flow, .sh-bar, .sh-dot { animation: none; }
+      .sh-flow { opacity: 0; }
+      .sh-check { opacity: 1; }
+    }
+  </style>
+
+  <rect width="640" height="460" rx="18" fill="url(#shBg)"/>
+  <rect width="640" height="460" rx="18" fill="url(#shGrid)"/>
+  <ellipse cx="430" cy="230" rx="220" ry="180" fill="url(#shGlow)"/>
+
+  <!-- ===== 左：你的需求（規格清單） ===== -->
+  <g>
+    <rect x="42" y="96" width="196" height="268" rx="14" fill="url(#shSpec)" stroke="#4DA3FF" stroke-opacity="0.55" stroke-width="2"/>
+    <!-- 標題列 -->
+    <g stroke="#4DA3FF" stroke-opacity="0.5" stroke-width="6" stroke-linecap="round">
+      <path d="M 68,130 H 176"/>
+    </g>
+    <!-- 需求項目：方框＋線，逐項打勾 -->
+    <g>
+      <rect x="68" y="160" width="18" height="18" rx="4" fill="none" stroke="#7FC4FF" stroke-opacity="0.8" stroke-width="2"/>
+      <path class="sh-check" d="M 72,169 l 5,5 l 10,-11" fill="none" stroke="#00FFBF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 98,169 H 206" stroke="#A8DEFF" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round"/>
+
+      <rect x="68" y="206" width="18" height="18" rx="4" fill="none" stroke="#7FC4FF" stroke-opacity="0.8" stroke-width="2"/>
+      <path class="sh-check sh-check-2" d="M 72,215 l 5,5 l 10,-11" fill="none" stroke="#00FFBF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 98,215 H 186" stroke="#A8DEFF" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round"/>
+
+      <rect x="68" y="252" width="18" height="18" rx="4" fill="none" stroke="#7FC4FF" stroke-opacity="0.8" stroke-width="2"/>
+      <path class="sh-check sh-check-3" d="M 72,261 l 5,5 l 10,-11" fill="none" stroke="#00FFBF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 98,261 H 200" stroke="#A8DEFF" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round"/>
+
+      <rect x="68" y="298" width="18" height="18" rx="4" fill="none" stroke="#7FC4FF" stroke-opacity="0.5" stroke-width="2"/>
+      <path d="M 98,307 H 170" stroke="#A8DEFF" stroke-opacity="0.3" stroke-width="5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ===== 中：轉換 ===== -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M 250,230 H 316" stroke="#00D8CE" stroke-opacity="0.5" stroke-width="2.5"/>
+    <path class="sh-flow" pathLength="160" d="M 250,230 H 316" stroke="#FFFFFF" stroke-width="3"/>
+    <path d="M 300,216 l 16,14 l -16,14" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ===== 右：長出來的應用程式 ===== -->
+  <g>
+    <rect x="330" y="72" width="268" height="316" rx="16" fill="url(#shApp)" stroke="#00FFBF" stroke-opacity="0.7" stroke-width="2"/>
+    <!-- 視窗列 -->
+    <path d="M 330,106 H 598" stroke="#00FFBF" stroke-opacity="0.35" stroke-width="1.5"/>
+    <g fill="#8BFFE4">
+      <circle class="sh-dot" cx="350" cy="89" r="4.5"/>
+      <circle cx="366" cy="89" r="4.5" fill-opacity="0.55"/>
+      <circle cx="382" cy="89" r="4.5" fill-opacity="0.35"/>
+    </g>
+    <!-- 側欄 -->
+    <path d="M 386,106 V 388" stroke="#00FFBF" stroke-opacity="0.22" stroke-width="1.5"/>
+    <g stroke="#8BFFE4" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round">
+      <path d="M 348,132 H 370"/>
+      <path d="M 348,156 H 370"/>
+      <path d="M 348,180 H 370"/>
+    </g>
+    <rect x="342" y="124" width="34" height="16" rx="5" fill="#00FFBF" fill-opacity="0.16"/>
+    <!-- 內容：長條圖 -->
+    <g>
+      <rect class="sh-bar"            x="408" y="214" width="26" height="80"  rx="5" fill="url(#shBar)"/>
+      <rect class="sh-bar sh-bar-2"   x="448" y="184" width="26" height="110" rx="5" fill="url(#shBar)"/>
+      <rect class="sh-bar sh-bar-3"   x="488" y="154" width="26" height="140" rx="5" fill="url(#shBar)"/>
+      <rect class="sh-bar sh-bar-2"   x="528" y="196" width="26" height="98"  rx="5" fill="url(#shBar)"/>
+      <path d="M 400,300 H 570" stroke="#00FFBF" stroke-opacity="0.35" stroke-width="1.5"/>
+    </g>
+    <!-- 資料列 -->
+    <g stroke="#A8DEFF" stroke-opacity="0.35" stroke-width="5" stroke-linecap="round">
+      <path d="M 408,330 H 566"/>
+      <path d="M 408,352 H 520"/>
+    </g>
+    <!-- 上線指示燈 -->
+    <circle cx="566" cy="132" r="16" fill="#00FFBF" fill-opacity="0.25" filter="url(#shSoft)"/>
+    <circle cx="566" cy="132" r="6" fill="#DFFFF6"/>
+  </g>
+</svg>

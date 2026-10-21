@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" width="640" height="460" role="img"
+     aria-label="Illustration: a scan sweeping across a shield, marking findings and resolving them">
+  <!-- Cybersecurity 的 Hero 插圖。對應文案：「在別人找到你的漏洞之前，先找出來。」
+       中央＝受測系統的盾牌與模組網格；一道掃描線由上往下掃過，掃到的弱點先亮紅橘色，
+       修復後轉為主色勾選；右側是依風險排序的發現清單。全圖無文字。 -->
+  <defs>
+    <linearGradient id="chBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#0F1C2F"/>
+      <stop offset="1"    stop-color="#0B1220"/>
+    </linearGradient>
+    <radialGradient id="chGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#0A8BFF" stop-opacity="0.26"/>
+      <stop offset="0.5" stop-color="#00D8CE" stop-opacity="0.10"/>
+      <stop offset="1"   stop-color="#0075F1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chShield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4DA3FF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#0075F1" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="chScan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00FFBF" stop-opacity="0.9"/>
+      <stop offset="1"   stop-color="#00FFBF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="chScanBand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#00FFBF" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#00FFBF" stop-opacity="0.18"/>
+    </linearGradient>
+    <pattern id="chGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0 L0 0 L0 32" fill="none" stroke="#3F9BBE" stroke-opacity="0.14" stroke-width="1"/>
+    </pattern>
+    <filter id="chSoft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+    <clipPath id="chShieldClip">
+      <path d="M 196,96 l 108,-40 l 108,40 v 120 c 0,86 -72,128 -108,142 c -36,-14 -108,-56 -108,-142 z"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    /* 掃描線由上往下反覆掃過盾牌；發現項目依序亮起；左下兩個弱點修復後轉綠勾 */
+    @keyframes chScan  { 0% { transform: translateY(0); } 100% { transform: translateY(300px); } }
+    @keyframes chFound { 0%, 12% { opacity: 0; } 20%, 72% { opacity: 1; } 86%, 100% { opacity: 0; } }
+    @keyframes chFixed { 0%, 60% { opacity: 0; } 72%, 100% { opacity: 1; } }
+    @keyframes chRow   { 0%, 20% { opacity: .25; } 35%, 100% { opacity: 1; } }
+
+    .ch-scan  { animation: chScan 5s ease-in-out infinite alternate; }
+    .ch-found { animation: chFound 6s ease-in-out infinite; }
+    .ch-found-2 { animation-delay: -2s; }
+    .ch-fixed { animation: chFixed 6s ease-in-out infinite; }
+    .ch-fixed-2 { animation-delay: -2s; }
+    .ch-row   { animation: chRow 6s ease-in-out infinite; }
+    .ch-row-2 { animation-delay: -1.2s; }
+    .ch-row-3 { animation-delay: -2.4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ch-scan, .ch-found, .ch-fixed, .ch-row { animation: none; }
+      .ch-scan { transform: translateY(150px); }
+      .ch-found { opacity: 0; }
+      .ch-fixed { opacity: 1; }
+    }
+  </style>
+
+  <rect width="640" height="460" rx="18" fill="url(#chBg)"/>
+  <rect width="640" height="460" rx="18" fill="url(#chGrid)"/>
+  <ellipse cx="300" cy="230" rx="230" ry="190" fill="url(#chGlow)"/>
+
+  <!-- ===== 盾牌本體 ===== -->
+  <g>
+    <path d="M 196,96 l 108,-40 l 108,40 v 120 c 0,86 -72,128 -108,142 c -36,-14 -108,-56 -108,-142 z"
+          fill="url(#chShield)" stroke="#4DA3FF" stroke-opacity="0.7" stroke-width="2.5"/>
+
+    <!-- 盾內的模組網格＝受測系統 -->
+    <g clip-path="url(#chShieldClip)">
+      <g fill="none" stroke="#7FC4FF" stroke-opacity="0.35" stroke-width="1.5">
+        <rect x="222" y="112" width="68" height="46" rx="7"/>
+        <rect x="318" y="112" width="68" height="46" rx="7"/>
+        <rect x="222" y="178" width="68" height="46" rx="7"/>
+        <rect x="318" y="178" width="68" height="46" rx="7"/>
+        <rect x="270" y="244" width="68" height="46" rx="7"/>
+      </g>
+
+      <!-- 掃描帶 -->
+      <g class="ch-scan">
+        <rect x="186" y="26" width="236" height="60" fill="url(#chScanBand)"/>
+        <rect x="186" y="84" width="236" height="3" fill="url(#chScan)"/>
+      </g>
+
+      <!-- 掃到的弱點（橘紅）→ 修好（主色勾） -->
+      <g>
+        <g class="ch-found">
+          <rect x="222" y="178" width="68" height="46" rx="7" fill="#FF8A5B" fill-opacity="0.16" stroke="#FF8A5B" stroke-opacity="0.85" stroke-width="2"/>
+          <circle cx="256" cy="201" r="7" fill="#FF8A5B"/>
+        </g>
+        <g class="ch-fixed">
+          <rect x="222" y="178" width="68" height="46" rx="7" fill="#00FFBF" fill-opacity="0.12" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2"/>
+          <path d="M 246,201 l 7,7 l 14,-15" fill="none" stroke="#DFFFF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <g class="ch-found ch-found-2">
+          <rect x="318" y="112" width="68" height="46" rx="7" fill="#FF8A5B" fill-opacity="0.16" stroke="#FF8A5B" stroke-opacity="0.85" stroke-width="2"/>
+          <circle cx="352" cy="135" r="7" fill="#FF8A5B"/>
+        </g>
+        <g class="ch-fixed ch-fixed-2">
+          <rect x="318" y="112" width="68" height="46" rx="7" fill="#00FFBF" fill-opacity="0.12" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2"/>
+          <path d="M 342,135 l 7,7 l 14,-15" fill="none" stroke="#DFFFF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- 盾牌中央的鎖芯光點 -->
+    <circle cx="304" cy="330" r="16" fill="#00FFBF" fill-opacity="0.26" filter="url(#chSoft)"/>
+    <circle cx="304" cy="330" r="6" fill="#DFFFF6"/>
+  </g>
+
+  <!-- ===== 右側：依風險排序的發現清單 ===== -->
+  <g>
+    <rect x="452" y="128" width="156" height="204" rx="14" fill="#0B1220" fill-opacity="0.75" stroke="#263349" stroke-width="1.5"/>
+    <g class="ch-row">
+      <rect x="470" y="150" width="120" height="14" rx="4" fill="#FF8A5B" fill-opacity="0.75"/>
+      <rect x="470" y="172" width="86" height="10" rx="3" fill="#7D8DA6" fill-opacity="0.5"/>
+    </g>
+    <g class="ch-row ch-row-2">
+      <rect x="470" y="200" width="104" height="14" rx="4" fill="#FFC46B" fill-opacity="0.7"/>
+      <rect x="470" y="222" width="72" height="10" rx="3" fill="#7D8DA6" fill-opacity="0.5"/>
+    </g>
+    <g class="ch-row ch-row-3">
+      <rect x="470" y="250" width="92" height="14" rx="4" fill="#4DA3FF" fill-opacity="0.7"/>
+      <rect x="470" y="272" width="64" height="10" rx="3" fill="#7D8DA6" fill-opacity="0.5"/>
+    </g>
+    <path d="M 470,300 H 590" stroke="#263349" stroke-width="1.5"/>
+    <g class="ch-fixed">
+      <circle cx="478" cy="316" r="7" fill="none" stroke="#00FFBF" stroke-opacity="0.8" stroke-width="2"/>
+      <path d="M 474,316 l 3,3 l 6,-7" fill="none" stroke="#00FFBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="494" y="310" width="78" height="12" rx="3" fill="#00FFBF" fill-opacity="0.45"/>
+    </g>
+  </g>
+
+  <!-- ===== 左側：攻擊者視角的探針 ===== -->
+  <g fill="none" stroke="#FF8A5B" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 8">
+    <path d="M 40,150 H 150"/>
+    <path d="M 40,230 H 130"/>
+    <path d="M 40,310 H 150"/>
+  </g>
+  <g fill="#FF8A5B" fill-opacity="0.6">
+    <circle cx="40" cy="150" r="5"/>
+    <circle cx="40" cy="230" r="5"/>
+    <circle cx="40" cy="310" r="5"/>
+  </g>
+</svg>
